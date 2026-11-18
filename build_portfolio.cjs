@@ -2445,12 +2445,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       </div>
 
       <div class="portfolio-container relative z-[2] pt-8 pb-6 md:pt-12 md:pb-8 flex-1 flex flex-col justify-between">
-        <div class="hero-stagger flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
+        <div class="hero-stagger mb-6">
           <p class="text-sm md:text-base text-[#111111] tracking-wide">
             Architecture | Engineering | Interiors
-          </p>
-          <p class="text-lg md:text-2xl tracking-wider text-[#111111]">
-            <span style="color:#FF0000;">|</span> DESIGN <strong>PORTFOLIO</strong>
           </p>
         </div>
 

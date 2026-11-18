@@ -744,7 +744,7 @@ const customCss = `
       z-index: 1;
     }
 
-    /* Architectural Preloader Curtain (Borderless Paper Canvas + Elevation & B&W Cover Reveal) */
+    /* Architectural Preloader Curtain (Full-Page Architectural Elevation & Art Drawing) */
     .studio-preloader {
       position: fixed;
       inset: 0;
@@ -757,40 +757,29 @@ const customCss = `
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
       pointer-events: auto;
+      overflow: hidden;
     }
     .preloader-center-stage {
-      position: relative;
-      width: min(680px, 90vw);
-      aspect-ratio: 1280 / 878;
-      max-height: 52vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .preloader-bw-reveal {
-      position: absolute;
+      position: fixed;
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      opacity: 0;
-      filter: contrast(1.08);
-      mask-image: radial-gradient(ellipse at center, black 55%, transparent 94%);
-      -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 94%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
     }
     .preloader-sketch-svg {
       position: relative;
       z-index: 2;
       width: 100%;
-      height: auto;
-      max-height: 46vh;
+      height: 100%;
       display: block;
     }
     .preloader-sketch-path {
-      stroke-dasharray: 900;
-      stroke-dashoffset: 900;
+      stroke-dasharray: 2400;
+      stroke-dashoffset: 2400;
     }
     .preloader-hr-track {
       position: fixed;
@@ -1114,28 +1103,6 @@ const customCss = `
     .service-pillar-cell:hover .service-pillar-icon {
       color: var(--crimson);
       transform: scale(1.08);
-    }
-
-    /* Footer Display Wordmark Ink-Fill */
-    .footer-wordmark-ink {
-      font-family: var(--font-serif);
-      font-weight: 700;
-      font-size: clamp(2.8rem, 8.2vw, 7.2rem);
-      line-height: 0.92;
-      letter-spacing: -0.02em;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
-      background-image: linear-gradient(90deg, #FFFFFF 0%, #C00000 50%, rgba(255, 255, 255, 0.14) 50%);
-      background-size: 200% 100%;
-      background-position: 100% 0;
-      -webkit-background-clip: text;
-      background-clip: text;
-      transition: background-position 1.1s var(--ease-expo);
-      user-select: none;
-    }
-    .footer-wordmark-ink.is-filled,
-    .footer-wordmark-ink:hover {
-      background-position: 0% 0;
     }
 
     /* Watercolor Ink Reveal Frame */
@@ -1748,22 +1715,56 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </defs>
   </svg>
 
-  <!-- BORDERLESS ARCHITECTURAL PRELOADER CURTAIN (Elevation Draw -> Monochrome Cover -> Aperture) -->
+  <!-- FULL-PAGE ARCHITECTURAL PRELOADER CURTAIN (Full-Canvas Elevation & Art Sketch Draw) -->
   <div id="studioPreloader" class="studio-preloader" aria-hidden="true">
     <div id="preRulerV" class="preloader-ruler-v"></div>
     <div class="preloader-hr-track"><div id="preHrFill" class="preloader-hr-fill"></div></div>
     <span id="preloaderPct" class="preloader-pct-tag">0%</span>
 
     <div class="preloader-center-stage">
-      <img id="preBwCover" src="assets/projects/cover_studio_tower_bw.jpg" alt="" class="preloader-bw-reveal" />
-      <svg class="preloader-sketch-svg" viewBox="0 0 380 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <line class="preloader-sketch-path" x1="12" y1="82" x2="368" y2="82" stroke="#111111" stroke-width="1.2" />
-        <path class="preloader-sketch-path" d="M44 82V42H136V22L198 14V82" stroke="#111111" stroke-width="1.4" />
-        <path class="preloader-sketch-path" d="M136 42H264V54H336V82" stroke="#111111" stroke-width="1.3" />
-        <path class="preloader-sketch-path" d="M26 52H228" stroke="#8F0000" stroke-width="1.4" />
-        <path class="preloader-sketch-path" d="M64 82V56H104V82M152 82V36H184V82M222 82V60H252V82" stroke="#767070" stroke-width="1" />
-        <path class="preloader-sketch-path" d="M294 54A28 28 0 1 1 322 82" stroke="#8F0000" stroke-width="1.4" />
-        <circle cx="294" cy="82" r="2.5" fill="#8F0000" />
+      <svg class="preloader-sketch-svg" viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- Subtle Full-Canvas Architectural Grid & Datum Axes -->
+        <line class="preloader-sketch-path" x1="0" y1="620" x2="1440" y2="620" stroke="#111111" stroke-width="1.35" />
+        <line class="preloader-sketch-path" x1="0" y1="634" x2="1440" y2="634" stroke="#767070" stroke-width="0.7" />
+        <line class="preloader-sketch-path" x1="0" y1="410" x2="1440" y2="410" stroke="#8F0000" stroke-width="0.9" stroke-opacity="0.45" />
+        <line class="preloader-sketch-path" x1="280" y1="90" x2="280" y2="690" stroke="#111111" stroke-width="0.6" stroke-opacity="0.18" />
+        <line class="preloader-sketch-path" x1="520" y1="70" x2="520" y2="710" stroke="#111111" stroke-width="0.6" stroke-opacity="0.18" />
+        <line class="preloader-sketch-path" x1="920" y1="70" x2="920" y2="710" stroke="#111111" stroke-width="0.6" stroke-opacity="0.18" />
+        <line class="preloader-sketch-path" x1="1160" y1="90" x2="1160" y2="690" stroke="#111111" stroke-width="0.6" stroke-opacity="0.18" />
+
+        <!-- Golden Ratio & Compass Elevation Sweep Curves -->
+        <path class="preloader-sketch-path" d="M880 410 A290 290 0 1 1 1170 620" stroke="#8F0000" stroke-width="1.4" stroke-opacity="0.65" />
+        <circle class="preloader-sketch-path" cx="1015" cy="275" r="95" stroke="#EC7C30" stroke-width="1.15" stroke-opacity="0.55" />
+        <path class="preloader-sketch-path" d="M160 620 A460 460 0 0 1 620 160" stroke="#767070" stroke-width="0.85" stroke-dasharray="6 6" />
+
+        <!-- Left Wing: Stepped Cantilever Villa & Colonnade Plinth -->
+        <path class="preloader-sketch-path" d="M140 620 V560 H260 V480 H520" stroke="#111111" stroke-width="1.5" />
+        <path class="preloader-sketch-path" d="M180 480 V385 H470 V340 H520" stroke="#111111" stroke-width="1.6" />
+        <path class="preloader-sketch-path" d="M150 385 H490 L520 355" stroke="#8F0000" stroke-width="1.4" />
+        <path class="preloader-sketch-path" d="M210 620 V520 H250 V620 M290 620 V520 H330 V620 M370 620 V520 H410 V620 M450 620 V520 H490 V620" stroke="#767070" stroke-width="1" />
+        <path class="preloader-sketch-path" d="M235 480 V415 H360 V480 M395 480 V415 H485 V480" stroke="#111111" stroke-width="1.05" />
+
+        <!-- Center Core: Contemporary Atrium Tower & Cross-Braced Structural Frame -->
+        <path class="preloader-sketch-path" d="M520 620 V195 L720 135 L920 195 V620" stroke="#111111" stroke-width="1.8" />
+        <path class="preloader-sketch-path" d="M500 205 L720 120 L940 205" stroke="#8F0000" stroke-width="1.6" />
+        <path class="preloader-sketch-path" d="M555 620 V235 H885 V620" stroke="#111111" stroke-width="1.2" />
+        <path class="preloader-sketch-path" d="M555 315 H885 M555 410 H885 M555 510 H885" stroke="#111111" stroke-width="1.15" />
+        <path class="preloader-sketch-path" d="M635 235 V620 M720 140 V620 M805 235 V620" stroke="#767070" stroke-width="0.95" />
+        <path class="preloader-sketch-path" d="M635 315 L720 410 L805 315 M635 410 L720 315 L805 410 M635 410 L720 510 L805 410 M635 510 L720 410 L805 510" stroke="#8F0000" stroke-width="1" stroke-opacity="0.7" />
+
+        <!-- Right Wing: Modern Institutional Terrace Pavilion & Grand Steps -->
+        <path class="preloader-sketch-path" d="M920 440 H1240 V505 H1310 V620" stroke="#111111" stroke-width="1.55" />
+        <path class="preloader-sketch-path" d="M920 315 H1180 V440" stroke="#111111" stroke-width="1.45" />
+        <path class="preloader-sketch-path" d="M905 315 H1210" stroke="#8F0000" stroke-width="1.45" />
+        <path class="preloader-sketch-path" d="M965 620 V490 H1065 V620 M1110 620 V490 H1210 V620" stroke="#767070" stroke-width="1.05" />
+        <path class="preloader-sketch-path" d="M950 440 V350 H1145 V440" stroke="#111111" stroke-width="1.1" />
+        <path class="preloader-sketch-path" d="M1240 545 H1355 M1260 570 H1375 M1280 595 H1395" stroke="#767070" stroke-width="1" />
+
+        <!-- Architectural Foliage Contour Linework (Left & Right Flanks) -->
+        <path class="preloader-sketch-path" d="M88 620 C70 575 72 520 96 475 C118 430 108 370 128 335 C148 370 138 435 152 485 C166 535 162 580 144 620" stroke="#767070" stroke-width="1.1" />
+        <path class="preloader-sketch-path" d="M114 620 V440 M114 525 L92 495 M114 490 L136 465" stroke="#767070" stroke-width="0.9" />
+        <path class="preloader-sketch-path" d="M1325 620 C1290 565 1298 485 1340 445 C1375 415 1410 455 1405 510 C1400 560 1382 595 1358 620" stroke="#767070" stroke-width="1.1" />
+        <path class="preloader-sketch-path" d="M1348 620 V495 M1348 545 L1320 515 M1348 525 L1375 500" stroke="#767070" stroke-width="0.9" />
       </svg>
     </div>
 
@@ -1974,30 +1975,14 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          <!-- 10 Deliverables Clean Hairline List (Zero Card Boxes) -->
-          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 scope-grid">
-            ${scopeItems.map(item => `
-              <div class="scope-list-item">
-                <span class="scope-square"></span>
-                <span class="text-base font-normal text-[#111111]">${item}</span>
-              </div>
-            `).join('')}
-          </div>
-
-          <!-- Borderless Watercolor Architectural Plate -->
-          <div id="atelierInkStage" class="lg:col-span-6 reveal-card relative wc-ink-plate">
-            <svg viewBox="0 0 1200 896" width="100%" class="block w-full h-auto" role="img" aria-label="Architectural watercolor elevation and perspective by Scale and Spaces Pvt. Ltd.">
-              <defs>
-                <mask id="atelierWatercolorMask" maskContentUnits="userSpaceOnUse">
-                  <rect x="0" y="0" width="1200" height="896" fill="#181818" opacity="0.14" />
-                  <circle id="atelierInkCircle" cx="560" cy="430" r="880" fill="white" style="filter: url(#studioInkDisplace);" />
-                </mask>
-              </defs>
-              <rect x="0" y="0" width="1200" height="896" fill="#F7F6F2" />
-              <image href="assets/art/atelier-architecture-art.jpg" x="0" y="0" width="1200" height="896" preserveAspectRatio="xMidYMid slice" mask="url(#atelierWatercolorMask)" />
-            </svg>
-          </div>
+        <!-- 10 Deliverables Full-Width Hairline Grid matching Page 2 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-14 scope-grid">
+          ${scopeItems.map(item => `
+            <div class="scope-list-item">
+              <span class="scope-square"></span>
+              <span class="text-base font-normal text-[#111111]">${item}</span>
+            </div>
+          `).join('')}
         </div>
 
         <!-- Open 6-Column Architectural Practice Lifecycle Hairline Grid (Zero Card Boxes) -->
@@ -2432,15 +2417,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </div>
       </div>
 
-      <div class="pt-6 pb-8 flex flex-col sm:flex-row justify-between items-center text-xs text-[#888888] gap-2">
+      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-[#888888] gap-2">
         <div>
           &copy; <span id="footer-year">2026</span> Scale and Spaces Private Limited. All rights reserved.
         </div>
         <div>www.scaleandspaces.com</div>
-      </div>
-
-      <div id="footerWordmarkInk" class="footer-wordmark-ink text-center pt-4 pb-2" aria-hidden="true">
-        SCALE &amp; SPACES
       </div>
     </div>
   </footer>
@@ -2777,24 +2758,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
       });
 
-      // 2. Interactive replayable ink-mask bloom on the Architectural Atelier Plate
-      const atelierStage = document.getElementById('atelierInkStage');
-      const inkCircle = document.getElementById('atelierInkCircle');
-      if (atelierStage && inkCircle) {
-        atelierStage.addEventListener('click', function(e) {
-          if (!window.gsap) return;
-          const svg = atelierStage.querySelector('svg');
-          if (!svg) return;
-          const rect = svg.getBoundingClientRect();
-          const cx = ((e.clientX - rect.left) / rect.width) * 1200;
-          const cy = ((e.clientY - rect.top) / rect.height) * 896;
-          inkCircle.setAttribute('cx', cx.toFixed(0));
-          inkCircle.setAttribute('cy', cy.toFixed(0));
-          gsap.fromTo(inkCircle, { attr: { r: 30 } }, { attr: { r: 960 }, duration: 1.35, ease: 'power2.out' });
-        });
-      }
-
-      // 3. Kinetic Architectural Plate Stream (Silent Ambient Gallery)
+      // 2. Kinetic Architectural Plate Stream (Silent Ambient Gallery)
       (function initAtelierImageTrail() {
         const trailStage = document.getElementById('atelierTrailStage');
         const trailLayer = document.getElementById('atelierTrailLayer');
@@ -2944,7 +2908,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         ring.classList.remove('is-card-hover', 'is-interactive-hover');
         if (!target || !target.closest) return;
 
-        if (target.closest('.project-card, .team-card, #atelierInkStage')) {
+        if (target.closest('.project-card, .team-card')) {
           ring.classList.add('is-card-hover');
         } else if (target.closest('a, button, .discipline-card, .filter-tab')) {
           ring.classList.add('is-interactive-hover');
@@ -2965,7 +2929,6 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       const preloader = document.getElementById('studioPreloader');
       const preHrFill = document.getElementById('preHrFill');
       const preloaderPct = document.getElementById('preloaderPct');
-      const preBwCover = document.getElementById('preBwCover');
       const preRulerV = document.getElementById('preRulerV');
       const mainEl = document.querySelector('main');
       let preloaderDismissed = false;
@@ -2976,31 +2939,28 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         });
       }
 
-      // Draw Architectural Wireframe Paths -> Fade into B&W Monochrome Studio Cover
+      // Draw Full-Page Architectural Elevation & Landscape Contour Artwork
       if (window.gsap) {
         const sketchPaths = document.querySelectorAll('.preloader-sketch-path');
         if (sketchPaths.length) {
           gsap.to(sketchPaths, {
             strokeDashoffset: 0,
-            duration: 0.72,
-            stagger: 0.045,
+            duration: 0.92,
+            stagger: 0.025,
             ease: 'power2.inOut'
           });
-        }
-        if (preBwCover) {
-          gsap.to(preBwCover, { opacity: 0.9, duration: 0.45, delay: 0.48, ease: 'power2.out' });
         }
         const pctCounter = { val: 0 };
         gsap.to(pctCounter, {
           val: 100,
-          duration: 0.85,
+          duration: 0.95,
           ease: 'power2.out',
           onUpdate: function() {
             if (preloaderPct) preloaderPct.textContent = Math.round(pctCounter.val) + '%';
           }
         });
         if (preHrFill) {
-          gsap.to(preHrFill, { scaleX: 1, duration: 0.85, ease: 'power2.out' });
+          gsap.to(preHrFill, { scaleX: 1, duration: 0.95, ease: 'power2.out' });
         }
       }
 
@@ -3030,11 +2990,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
       }
 
-      // Guarantee preloader never stalls on any slow resource
-      const safetyTimer = setTimeout(dismissPreloader, 1050);
+      // Guarantee preloader lets full-page elevation art draw cleanly without ever stalling
+      const safetyTimer = setTimeout(dismissPreloader, 1350);
       window.addEventListener('load', function() {
         clearTimeout(safetyTimer);
-        setTimeout(dismissPreloader, 350);
+        setTimeout(dismissPreloader, 750);
       });
 
       if (!window.gsap) {
@@ -3104,7 +3064,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             duration: 0.85,
             stagger: 0.06,
             ease: 'expo.out',
-            delay: 0.45,
+            delay: 0.9,
             clearProps: 'transform,opacity'
           });
         } catch (err) {}
@@ -3116,7 +3076,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         duration: 0.75,
         stagger: 0.08,
         ease: 'power3.out',
-        delay: 0.48,
+        delay: 0.92,
         clearProps: 'transform,opacity'
       });
 
@@ -3150,24 +3110,6 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               scrub: 0.45
             }
           });
-        }
-
-        const inkCircle = document.getElementById('atelierInkCircle');
-        if (inkCircle) {
-          gsap.fromTo(
-            inkCircle,
-            { attr: { r: 60 } },
-            {
-              attr: { r: 920 },
-              duration: 1.5,
-              ease: 'power2.out',
-              scrollTrigger: {
-                trigger: '#atelierInkStage',
-                start: 'top 84%',
-                once: true
-              }
-            }
-          );
         }
 
         gsap.utils.toArray('.wc-ink-plate').forEach(function(el) {
@@ -3242,18 +3184,6 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             });
           }
         });
-
-        const footerMark = document.getElementById('footerWordmarkInk');
-        if (footerMark) {
-          ScrollTrigger.create({
-            trigger: footerMark,
-            start: 'top 92%',
-            once: true,
-            onEnter: function() {
-              footerMark.classList.add('is-filled');
-            }
-          });
-        }
       }
     })();
   </script>

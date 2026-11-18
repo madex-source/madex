@@ -1193,14 +1193,15 @@ const customCss = `
       z-index: 1;
     }
 
-    /* Architectural Preloader Curtain (Transparent Frosted Cream Surface + Company Logo Draw) */
+    /* Architectural Preloader Curtain (Solid Non-Transparent Alabaster Paper Wash & Company Logo Draw) */
     .studio-preloader {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: rgba(240, 239, 234, 0.84);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background-color: #F0EFEA;
+      background-image: url('assets/art/watercolor-paper-wash.jpg');
+      background-size: cover;
+      background-position: center;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1214,7 +1215,6 @@ const customCss = `
       width: min(260px, 60vw);
       height: auto;
       pointer-events: none;
-      filter: drop-shadow(0 8px 24px rgba(17, 17, 17, 0.06));
     }
     .ss-transition-veil {
       position: fixed;
@@ -1225,9 +1225,10 @@ const customCss = `
       align-items: center;
       justify-content: center;
       gap: 0.75rem;
-      background: rgba(240, 239, 234, 0.56);
-      backdrop-filter: blur(7px);
-      -webkit-backdrop-filter: blur(7px);
+      background-color: #F0EFEA;
+      background-image: url('assets/art/watercolor-paper-wash.jpg');
+      background-size: cover;
+      background-position: center;
       pointer-events: none;
       opacity: 0;
       visibility: hidden;
@@ -1239,10 +1240,9 @@ const customCss = `
     }
     .ss-transition-veil.is-blocking {
       pointer-events: auto;
-      background: rgba(240, 239, 234, 0.78);
     }
     .ss-transition-logo-svg {
-      width: min(200px, 44vw);
+      width: min(220px, 50vw);
       height: auto;
       display: block;
     }
@@ -1253,45 +1253,9 @@ const customCss = `
       text-transform: uppercase;
       color: var(--crimson);
       font-weight: 700;
-      background: rgba(244, 243, 238, 0.72);
+      background: #F4F3EE;
       padding: 0.2rem 0.65rem;
-      border: 1px solid rgba(143, 0, 0, 0.14);
-    }
-    .ss-heading-hud {
-      position: fixed;
-      bottom: 1.25rem;
-      left: 1.25rem;
-      z-index: 42;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.42rem 0.85rem 0.42rem 0.6rem;
-      background: rgba(244, 243, 238, 0.82);
-      backdrop-filter: blur(9px);
-      -webkit-backdrop-filter: blur(9px);
-      border: 1px solid rgba(143, 0, 0, 0.2);
-      box-shadow: 0 6px 20px -8px rgba(17, 17, 17, 0.14);
-      pointer-events: none;
-      opacity: 0;
-      transform: translateY(8px);
-      transition: opacity 300ms ease, transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .ss-heading-hud.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .ss-heading-hud-svg {
-      width: 34px;
-      height: 25px;
-      display: block;
-      flex-shrink: 0;
-    }
-    @media (max-width: 640px) {
-      .ss-heading-hud {
-        bottom: 0.9rem;
-        left: 0.9rem;
-        max-width: calc(100vw - 5.5rem);
-      }
+      border: 1px solid #DDD8CE;
     }
     .preloader-center-stage {
       position: fixed;
@@ -2841,16 +2805,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </div>
   </div>
 
-  <!-- TRANSPARENT PAGE & SECTION TRANSITION VEIL (Draws Company Logo Smoothly on Page/Heading Jump) -->
+  <!-- SOLID NON-TRANSPARENT PAGE LOADING SCREEN FOR CROSS-PAGE NAVIGATION -->
   <div id="ssTransitionVeil" class="ss-transition-veil" aria-hidden="true">
     ${animatedCompanyLogoSvg('ssMaskVeil', { className: 'ss-transition-logo-svg', dur: '0.82s', loop: false })}
     <span id="ssTransitionLabel" class="ss-transition-label">Scale &amp; Spaces</span>
-  </div>
-
-  <!-- SUBTLE HEADING-TO-HEADING SCROLL HUD (Non-blocking Transparent Emblem Draw) -->
-  <div id="ssHeadingHud" class="ss-heading-hud" aria-hidden="true">
-    ${animatedCompanyLogoSvg('ssMaskHud', { className: 'ss-heading-hud-svg', dur: '0.72s', loop: false, guideOpacity: '0.22' })}
-    <span id="ssHeadingHudText" class="text-[10.5px] font-mono uppercase tracking-widest text-[#111111] font-bold truncate">Home</span>
   </div>
 
   <!-- 2D CANVAS INK RIBBON TRAIL + SUBTLE ARCHITECTURAL NIB POINTER -->
@@ -4082,7 +4040,6 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       applyFilter(cat, true);
       const sec = document.getElementById('projects');
       if (sec) {
-        if (window.playLogoTransition) window.playLogoTransition('Projects / ' + (cat === 'all' ? 'All' : cat), 680, false);
         if (window.lenisInstance) {
           window.lenisInstance.scrollTo(sec, { offset: -76, duration: 0.9 });
         } else {
@@ -4459,7 +4416,6 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         if (target) {
           if (e) { e.preventDefault(); e.stopPropagation(); }
           if (typeof closeArticleModal === 'function') closeArticleModal();
-          playLogoTransition((target.id || 'Section').replace(/[-_]/g, ' '), 680, false);
           if (window.lenisInstance) window.lenisInstance.scrollTo(target, { offset: -76, duration: 0.9 });
           else target.scrollIntoView({ behavior: 'smooth' });
           return true;
@@ -5543,7 +5499,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         window.replayLogoStroke(preloader, 980);
       }
 
-      // Cross-page navigation transition using transparent Company Logo draw veil
+      // Cross-page navigation loading screen using non-transparent Company Logo draw
       document.querySelectorAll('a[href]').forEach(function(linkEl) {
         const href = linkEl.getAttribute('href') || '';
         const tgt = linkEl.getAttribute('target') || '';
@@ -5553,45 +5509,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
           e.preventDefault();
           const pageLabel = (linkEl.textContent || 'Loading').replace(/\\s+/g, ' ').trim();
-          if (window.playLogoTransition) window.playLogoTransition(pageLabel, 380, true);
-          setTimeout(function() { window.location.href = href; }, 240);
+          if (window.playLogoTransition) window.playLogoTransition(pageLabel, 480, true);
+          setTimeout(function() { window.location.href = href; }, 320);
         });
       });
-
-      // Non-blocking Heading-to-Heading scroll indicator (Company Logo draws on heading entry)
-      (function initHeadingScrollHud() {
-        const hudEl = document.getElementById('ssHeadingHud');
-        const hudTxt = document.getElementById('ssHeadingHudText');
-        if (!hudEl || !hudTxt || !('IntersectionObserver' in window)) return;
-        let lastId = 'home';
-        let hideTimer = null;
-        let readyForHud = false;
-        setTimeout(function() { readyForHud = true; }, 1600);
-
-        const sections = document.querySelectorAll('main section[id], #studio-locations');
-        const io = new IntersectionObserver(function(entries) {
-          if (!readyForHud || (document.documentElement && document.documentElement.classList.contains('modal-open'))) return;
-          entries.forEach(function(entry) {
-            if (!entry.isIntersecting) return;
-            const id = entry.target.id || '';
-            if (!id || id === lastId || window.scrollY < 110) return;
-            lastId = id;
-            const hd = entry.target.querySelector('h2, h3, h1');
-            const cleanTitle = hd
-              ? hd.textContent.replace(/_+$/g, '').replace(/\\s+/g, ' ').trim()
-              : id.replace(/[-_]/g, ' ');
-            hudTxt.textContent = cleanTitle.slice(0, 36);
-            hudEl.classList.add('is-visible');
-            if (window.replayLogoStroke) window.replayLogoStroke(hudEl, 640);
-            clearTimeout(hideTimer);
-            hideTimer = setTimeout(function() {
-              hudEl.classList.remove('is-visible');
-            }, 1500);
-          });
-        }, { rootMargin: '-32% 0px -52% 0px', threshold: 0.01 });
-
-        sections.forEach(function(sec) { io.observe(sec); });
-      })();
 
       // Draw Full-Page Architectural Elevation & Landscape Contour Artwork using real path lengths
       if (window.gsap) {
@@ -5689,7 +5610,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         });
         gsap.ticker.lagSmoothing(0);
 
-        // Anchor smooth scrolling via Lenis + smooth transparent Company Logo draw
+        // Anchor smooth scrolling via Lenis
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
           anchor.addEventListener('click', function(e) {
             const href = anchor.getAttribute('href');
@@ -5697,9 +5618,6 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               const target = document.querySelector(href);
               if (target) {
                 e.preventDefault();
-                const hd = target.querySelector('h1, h2, h3');
-                const secTitle = hd ? hd.textContent.replace(/_+$/g, '').replace(/\\s+/g, ' ').trim() : href.replace('#', '');
-                if (window.playLogoTransition) window.playLogoTransition(secTitle, 720, false);
                 lenis.scrollTo(target, { offset: -76, duration: 0.9 });
               }
             }
@@ -6048,7 +5966,7 @@ function buildLegalPage(page, compiledCss) {
   <style>${compiledCss}</style>
 </head>
 <body class="bg-[#F0EFEA] text-[#111111]">
-  <div id="ssTransitionVeil" class="ss-transition-veil is-active" aria-hidden="true">
+  <div id="ssTransitionVeil" class="ss-transition-veil is-active" style="background-color:#F0EFEA;background-image:url('../assets/art/watercolor-paper-wash.jpg');background-size:cover;background-position:center;" aria-hidden="true">
     ${animatedCompanyLogoSvg('ssMaskLegalVeil', { className: 'ss-transition-logo-svg', dur: '0.82s', loop: false })}
     <span id="ssTransitionLabel" class="ss-transition-label">${page.heading}</span>
   </div>

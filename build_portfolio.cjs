@@ -866,6 +866,13 @@ const customCss = `
     }
 
     /* 2D Canvas Pen Velocity Trail + Magnetic Architectural Cursor (Desktop) */
+    .atelier-trail-layer {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 3;
+    }
     .studio-cursor-canvas {
       position: fixed;
       inset: 0;
@@ -883,11 +890,15 @@ const customCss = `
       z-index: 9998;
       display: none;
     }
-    @media (hover: hover) and (pointer: fine) {
+    @media (any-hover: hover) and (any-pointer: fine) {
       .studio-cursor-canvas,
       .studio-cursor {
         display: block;
       }
+    }
+    html.has-pointer .studio-cursor-canvas,
+    html.has-pointer .studio-cursor {
+      display: block;
     }
     .studio-cursor-ring {
       position: fixed;
@@ -1132,8 +1143,15 @@ const customCss = `
     /* Hero Interactive Architectural Viewport & CAD Crosshair */
     .hero-viewport-frame {
       position: relative;
+      width: 100%;
+      height: 240px;
       overflow: hidden;
       cursor: crosshair;
+    }
+    @media (min-width: 768px) {
+      .hero-viewport-frame {
+        height: 400px;
+      }
     }
     .cad-crosshair-v {
       position: absolute;
@@ -1560,13 +1578,9 @@ const customCss = `
       display: block;
     }
 
-    /* Reduced Motion Support */
+    /* Accessibility Fallback (preserve interactive user-triggered hovers) */
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
-      .studio-preloader { display: none !important; }
+      .vellum-drafting-grid { opacity: 0.4; }
     }
 `;
 
@@ -1803,7 +1817,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <span class="arch-crosshair" style="top:8px;left:8px;z-index:5;" aria-hidden="true">${icons.crosshair}</span>
           <span class="arch-crosshair" style="top:8px;right:8px;z-index:5;" aria-hidden="true">${icons.crosshair}</span>
 
-          <div id="heroViewport" class="hero-viewport-frame aspect-[16/9] md:aspect-[21/8] bg-[#E2DFD8]" style="max-height: 410px;" onclick="openLightbox(currentHeroId)">
+          <div id="heroViewport" class="hero-viewport-frame bg-[#E2DFD8]" onclick="openLightbox(currentHeroId)">
             <img src="assets/projects/cover_studio_tower.jpg" data-hero-slide="0" data-project-id="mithila-tower" alt="Scale and Spaces conceptual steel-and-timber tower sketch to build render" class="hero-slide-img is-active" />
             <img src="assets/projects/mithila_tower.jpg" data-hero-slide="1" data-project-id="mithila-tower" alt="Mithila Tower commercial building in Jiwisa Chowk, Malangwa by Scale and Spaces Pvt. Ltd." class="hero-slide-img" />
             <img src="assets/projects/hyatt_hospital_1.jpg" data-hero-slide="2" data-project-id="hyatt-community-hospital" alt="Hyatt Community Hospital architectural facade in Barhathwa, Sarlahi" class="hero-slide-img" />
@@ -1933,9 +1947,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       <span class="arch-crosshair" style="bottom:14px;left:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
       <span class="arch-crosshair" style="bottom:14px;right:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
 
-      <div id="atelierTrailLayer" class="pointer-events-none absolute inset-0 overflow-hidden z-[1]" aria-hidden="true"></div>
+      <div id="atelierTrailLayer" class="atelier-trail-layer" aria-hidden="true"></div>
 
-      <div class="portfolio-container text-center relative z-[2] pointer-events-none select-none">
+      <div class="portfolio-container text-center relative z-[4] pointer-events-none select-none" style="background: radial-gradient(ellipse at center, rgba(239, 236, 229, 0.72) 0%, transparent 72%); padding-top: 1.5rem; padding-bottom: 1.5rem;">
         <span class="inline-block text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-2">
           ATELIER IMAGE AFTER-EFFECT // MOVE POINTER OR CLICK STAGE
         </span>
@@ -2651,10 +2665,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     // POINTER HOVER ENGINE: 2D CANVAS INK TRAIL + MAGNETIC BADGE + WATERCOLOR
     // =========================================================================
     (function initPointerAndWatercolorHover() {
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
       // 1. Per-card radial watercolor light & shadow depth (--mx / --my)
       document.addEventListener('mousemove', function(e) {
+        document.documentElement.classList.add('has-pointer');
         const card = e.target.closest ? e.target.closest('.wc-hover-card') : null;
         if (card) {
           const rect = card.getBoundingClientRect();
@@ -2670,7 +2683,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       const inkCircle = document.getElementById('atelierInkCircle');
       if (atelierStage && inkCircle) {
         atelierStage.addEventListener('click', function(e) {
-          if (!window.gsap || reducedMotion) return;
+          if (!window.gsap) return;
           const svg = atelierStage.querySelector('svg');
           if (!svg) return;
           const rect = svg.getBoundingClientRect();
@@ -2687,7 +2700,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         const trailStage = document.getElementById('atelierTrailStage');
         const trailLayer = document.getElementById('atelierTrailLayer');
         const cascadeBtn = document.getElementById('atelierCascadeBtn');
-        if (!trailStage || !trailLayer || reducedMotion) return;
+        if (!trailStage || !trailLayer) return;
 
         const plateUrls = [
           'assets/projects/cover_studio_tower.jpg',
@@ -2705,7 +2718,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         let activeClones = 0;
 
         function spawnTrailPlate(x, y, vx, vy) {
-          if (activeClones > 11) return;
+          if (activeClones > 14) return;
           const img = document.createElement('img');
           img.src = plateUrls[plateIdx % plateUrls.length];
           img.alt = '';
@@ -2718,9 +2731,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           img.style.zIndex = String(zSeed);
           trailLayer.appendChild(img);
 
-          const rot = (Math.random() - 0.5) * 10;
-          const throwX = Math.max(-70, Math.min(70, vx * 0.45));
-          const throwY = Math.max(-50, Math.min(50, vy * 0.45));
+          const rot = (Math.random() - 0.5) * 12;
+          const throwX = Math.max(-75, Math.min(75, vx * 0.45));
+          const throwY = Math.max(-55, Math.min(55, vy * 0.45));
 
           if (window.gsap) {
             gsap.timeline({
@@ -2731,21 +2744,21 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             })
               .fromTo(img,
                 { opacity: 0, scale: 0.72, xPercent: -50, yPercent: -50, x: 0, y: 0, rotation: rot * 0.4 },
-                { opacity: 0.96, scale: 1, x: throwX, y: throwY, rotation: rot, duration: 0.42, ease: 'expo.out' }
+                { opacity: 0.98, scale: 1, x: throwX, y: throwY, rotation: rot, duration: 0.36, ease: 'expo.out' }
               )
               .to(img, {
                 opacity: 0,
-                y: throwY + 95,
+                y: throwY + 85,
                 scale: 0.88,
-                duration: 0.68,
+                duration: 0.75,
                 ease: 'power2.in'
-              }, 0.52);
+              }, 1.25);
           } else {
             img.style.transform = 'translate(-50%, -50%) rotate(' + rot + 'deg)';
             setTimeout(function() {
               img.remove();
               activeClones = Math.max(0, activeClones - 1);
-            }, 900);
+            }, 1400);
           }
         }
 
@@ -2755,7 +2768,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           const y = e.clientY - rect.top;
           const dx = x - lastSpawnX;
           const dy = y - lastSpawnY;
-          if (Math.hypot(dx, dy) > 54) {
+          if (Math.hypot(dx, dy) > 48) {
             spawnTrailPlate(x, y, dx, dy);
             lastSpawnX = x;
             lastSpawnY = y;
@@ -2764,13 +2777,14 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
         function playPlateCascade() {
           const rect = trailStage.getBoundingClientRect();
-          for (let k = 0; k < 5; k++) {
+          const anchors = [0.12, 0.26, 0.4, 0.6, 0.74, 0.88];
+          anchors.forEach(function(pct, k) {
             setTimeout(function() {
-              const cx = rect.width * (0.2 + k * 0.15);
-              const cy = rect.height * (0.42 + (k % 2 === 0 ? -0.08 : 0.1));
-              spawnTrailPlate(cx, cy, (k - 2) * 18, -12);
-            }, k * 90);
-          }
+              const cx = rect.width * pct;
+              const cy = rect.height * (k % 2 === 0 ? 0.32 : 0.68);
+              spawnTrailPlate(cx, cy, (k - 2.5) * 16, k % 2 === 0 ? -16 : 16);
+            }, k * 45);
+          });
         }
 
         if (cascadeBtn) {
@@ -2779,15 +2793,18 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             playPlateCascade();
           });
         }
+        trailStage.addEventListener('click', function(e) {
+          const rect = trailStage.getBoundingClientRect();
+          spawnTrailPlate(e.clientX - rect.left, e.clientY - rect.top, 0, -18);
+        });
       })();
 
       // 4. Desktop 2D Canvas Pen Velocity Ink Trail + Magnetic Context Badge
-      const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
       const ring = document.getElementById('cursorRing');
       const dot = document.getElementById('cursorDot');
       const label = document.getElementById('cursorLabel');
       const cursorCanvas = document.getElementById('studioCursorCanvas');
-      if (!canHover || !ring || !dot || !label || reducedMotion) return;
+      if (!ring || !dot || !label) return;
 
       const moveRingX = window.gsap ? gsap.quickTo(ring, 'x', { duration: 0.28, ease: 'power3.out' }) : function(v) { ring.style.left = v + 'px'; };
       const moveRingY = window.gsap ? gsap.quickTo(ring, 'y', { duration: 0.28, ease: 'power3.out' }) : function(v) { ring.style.top = v + 'px'; };
@@ -2883,7 +2900,6 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     // HERON-INSPIRED GSAP + LENIS + SPLITTEXT + WATERCOLOR MOTION ENGINE
     // =========================================================================
     (function initStudioMotion() {
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const preloader = document.getElementById('studioPreloader');
       const preloaderFill = document.getElementById('preloaderFill');
       const preloaderPct = document.getElementById('preloaderPct');
@@ -2904,7 +2920,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       }
 
       // Animate Architectural Wireframe Paths during boot preloader
-      if (window.gsap && !reducedMotion) {
+      if (window.gsap) {
         const sketchPaths = document.querySelectorAll('.preloader-sketch-path');
         if (sketchPaths.length) {
           gsap.to(sketchPaths, {
@@ -2932,7 +2948,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         if (!preloader || preloaderDismissed) return;
         preloaderDismissed = true;
         if (preloaderPct) preloaderPct.textContent = '100%';
-        if (window.gsap && !reducedMotion) {
+        if (window.gsap) {
           gsap.to(preloaderFill, { scaleX: 1, duration: 0.25, ease: 'power2.out' });
           gsap.to(preloader, {
             yPercent: -100,
@@ -2961,7 +2977,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         setTimeout(dismissPreloader, 350);
       });
 
-      if (reducedMotion || !window.gsap) {
+      if (!window.gsap) {
         if (preloader) preloader.style.display = 'none';
         return;
       }

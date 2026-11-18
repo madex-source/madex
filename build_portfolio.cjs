@@ -572,18 +572,148 @@ const projectsData = [
   }
 ];
 
-// ALL 10 Team Members matching Page 3 of portfolio_67fe3a57.pdf exact grid order!
+// ALL 10 Team Members with starter profile credentials & downloadable dossier metadata (fully editable via Team Sheet tab)
 const teamData = [
-  { name: 'YATEENDRA K LABH', role: 'Director/Architect', image: 'assets/team/team-yateendra.jpg' },
-  { name: 'SUPRIYA THAPA', role: 'Principal Architect', image: 'assets/team/team-supriya.jpg' },
-  { name: 'SHEETAL GUPTA', role: 'Architect', image: 'assets/team/team-sheetal.jpg' },
-  { name: 'ASHMIN R BHATTARAI', role: 'Architect', image: 'assets/team/team-ashmin.jpg' },
-  { name: 'SUNIL CHAURASIYA', role: 'Structural Engineer', image: 'assets/team/team-sunil.jpg' },
-  { name: 'CHETAN K SARRAF', role: 'Interior Designer', image: 'assets/team/team-chetan.jpg' },
-  { name: 'ROHAN K PASWAN', role: 'Sanitary Designer', image: 'assets/team/team-rohan.jpg' },
-  { name: 'BISHAL MANANDAR', role: 'Electrical Engineer', image: 'assets/team/team-bishal.jpg' },
-  { name: 'MEGNATH GUPTA', role: 'Project Manager', image: 'assets/team/team-megnath.jpg' },
-  { name: 'WASIM ALAM', role: 'Site Engineer', image: 'assets/team/team-wasim.jpg' }
+  {
+    name: 'YATEENDRA K LABH',
+    role: 'Director/Architect',
+    image: 'assets/team/team-yateendra.jpg',
+    office: 'Kathmandu & Birgunj Studios',
+    experience: 'Practice Leadership',
+    qualification: 'Architect & Studio Director (Editable Template)',
+    specialization: 'Masterplanning, Commercial Complexes, Civic Identity & Conceptual Architecture',
+    bio: 'Leads architectural vision, urban masterplanning, civic competitions, and multidisciplinary studio oversight across Kathmandu Valley and Terai Nepal.',
+    keyProjects: 'Mithila Tower (Malangwa), Jeetpur Simara Civic Emblem (1st Prize Winner), Shavdaahgriham Ranighat Masterplan',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Architect Profile & Dossier (Template)',
+    cvUrl: ''
+  },
+  {
+    name: 'SUPRIYA THAPA',
+    role: 'Principal Architect',
+    image: 'assets/team/team-supriya.jpg',
+    office: 'Tokha-6, Kathmandu',
+    experience: 'Principal Lead',
+    qualification: 'Principal Architect (Editable Template)',
+    specialization: 'Residential Villas, Healthcare Facilities, Daylight Modeling & Hospitality Interiors',
+    bio: 'Directs architectural design development, human-centric residential zoning, hospital layouts, and permit-ready architectural documentation.',
+    keyProjects: 'Hyatt Community Hospital (Sarlahi), Residence of Mr. Tulsi Gupta, Residence of Mrs. Uma Shah',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Principal Architect Profile (Template)',
+    cvUrl: ''
+  },
+  {
+    name: 'SHEETAL GUPTA',
+    role: 'Architect',
+    image: 'assets/team/team-sheetal.jpg',
+    office: 'Birgunj & Kathmandu Studios',
+    experience: 'Architectural Design',
+    qualification: 'Registered Practice Architect (Editable Template)',
+    specialization: 'Residential Elevation Design, Working Drawings & Spatial Planning',
+    bio: 'Translates client lifestyle briefs into clear functional plans, facade compositions, and coordinated municipal working drawings.',
+    keyProjects: 'Private Residences & Institutional Campuses across Parsa, Chitwan, and Kathmandu',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Architect Portfolio Sheet (Template)',
+    cvUrl: ''
+  },
+  {
+    name: 'ASHMIN R BHATTARAI',
+    role: 'Architect',
+    image: 'assets/team/team-ashmin.jpg',
+    office: 'Tokha-6, Kathmandu',
+    experience: 'Architectural Design & 3D',
+    qualification: 'Project Architect (Editable Template)',
+    specialization: 'Institutional Buildings, Religious Complexes & 3D Visualization',
+    bio: 'Specializes in cultural and institutional architecture, 3D massing studies, and exterior contextual rendering.',
+    keyProjects: 'ISKCON Temple Complex (Birgunj), Kalikamai Temple Complex, Educational & Civic Works',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Architect Bio & Works (Template)',
+    cvUrl: ''
+  },
+  {
+    name: 'SUNIL CHAURASIYA',
+    role: 'Structural Engineer',
+    image: 'assets/team/team-sunil.jpg',
+    office: 'Birgunj & Kathmandu Studios',
+    experience: 'Structural Engineering',
+    qualification: 'Structural Engineer (Editable Template)',
+    specialization: 'NBC Seismic Analysis, RCC/Steel Framing & Foundation Detailing',
+    bio: 'Leads structural finite-element modeling, Nepal National Building Code seismic design checks, and bar-bending reinforcement details.',
+    keyProjects: 'Multi-Story Commercial Complexes, Hyatt Hospital Framing & Residential Seismic Detailing',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Structural Engineering Profile (Template)',
+    cvUrl: ''
+  },
+  {
+    name: 'CHETAN K SARRAF',
+    role: 'Interior Designer',
+    image: 'assets/team/team-chetan.jpg',
+    office: 'Birgunj-12, Parsa',
+    experience: 'Interior Architecture & BOQ',
+    qualification: 'Civil & Interior Design Lead (Editable Template)',
+    specialization: 'Bespoke Residential & Executive Interiors, Custom Joinery & 3D Renders',
+    bio: 'Combines civil engineering precision with warm materiality, lighting hierarchies, modular joinery detailing, and budget-aligned BOQ estimation.',
+    keyProjects: 'Corporate & Residence Interiors in Birgunj & Kathmandu (Modern Luxury Living, Bidur Khatiwada Residence)',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Interior Design Dossier (Template)',
+    cvUrl: ''
+  },
+  {
+    name: 'ROHAN K PASWAN',
+    role: 'Sanitary Designer',
+    image: 'assets/team/team-rohan.jpg',
+    office: 'Birgunj & Kathmandu Studios',
+    experience: 'Plumbing & Sanitary MEP',
+    qualification: 'Sanitary Systems Designer (Editable Template)',
+    specialization: 'Water Supply Risers, Storm Drainage, Septic & Healthcare MEP',
+    bio: 'Designs reliable domestic water supply networks, rainwater harvesting, waste routing, and chamber inspection schedules.',
+    keyProjects: 'Commercial Towers, Residential Utilities & Healthcare Sanitary Infrastructures',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Sanitary Designer Profile (Template)',
+    cvUrl: ''
+  },
+  {
+    name: 'BISHAL MANANDAR',
+    role: 'Electrical Engineer',
+    image: 'assets/team/team-bishal.jpg',
+    office: 'Tokha-6, Kathmandu',
+    experience: 'Electrical & Lighting Systems',
+    qualification: 'Electrical Engineer (Editable Template)',
+    specialization: 'Power Distribution, Load Calculations, Panel Schedules & Earthing',
+    bio: 'Prepares safe residential and commercial electrical schematics, lighting circuit layouts, backup power zoning, and safety grounding details.',
+    keyProjects: 'BYD Showroom Illumination, Commercial Hubs, Hospitals & Apartments',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Electrical Engineer Profile (Template)',
+    cvUrl: ''
+  },
+  {
+    name: 'MEGNATH GUPTA',
+    role: 'Project Manager',
+    image: 'assets/team/team-megnath.jpg',
+    office: 'Kathmandu & Birgunj Studios',
+    experience: 'Project Scheduling & Procurement',
+    qualification: 'Project Management Lead (Editable Template)',
+    specialization: 'Milestone Scheduling, Tendering, Contractor Coordination & Cost Control',
+    bio: 'Coordinates multi-team consultant schedules, BOQ tender packaging, client approvals, and phased construction timelines.',
+    keyProjects: 'Turnkey Commercial, Institutional & Mixed-Use Deliveries across Nepal',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Project Manager Resume (Template)',
+    cvUrl: ''
+  },
+  {
+    name: 'WASIM ALAM',
+    role: 'Site Engineer',
+    image: 'assets/team/team-wasim.jpg',
+    office: 'Birgunj-12, Parsa',
+    experience: 'Site Supervision & QA',
+    qualification: 'Site Engineer (Editable Template)',
+    specialization: 'Layout Execution, Rebar Checking, Quality Assurance & Site Billing',
+    bio: 'Oversees daily site layout verification, concrete pouring inspections, bar-bending compliance, and measurement billing on active sites.',
+    keyProjects: 'Field Supervision across Birgunj, Parsa, Sarlahi, and Kathmandu Valley',
+    email: 'studio@scaleandspaces.com',
+    cvLabel: 'Site Engineer Profile (Template)',
+    cvUrl: ''
+  }
 ];
 
 const scopeItems = [
@@ -599,21 +729,63 @@ const scopeItems = [
   { title: 'Site Supervision', note: 'Procurement & construction oversight' }
 ];
 
-const testimonialsData = [
+const reviewsData = [
   {
-    quote: 'Scale and Spaces translated a complex commercial brief into a standout landmark with clear retail flow, crisp elevations, and coordinated structural drawings.',
     author: 'Commercial Tower Commission',
-    context: 'Mithila Tower • Malangwa, Sarlahi'
+    rating: 5,
+    city: 'Malangwa, Sarlahi',
+    scope: 'Architecture & Structural Design',
+    quote: 'Scale and Spaces translated a complex commercial brief into a standout landmark with clear retail flow, crisp elevations, and coordinated structural drawings.',
+    date: '2024'
   },
   {
-    quote: 'From initial floor plans and 3D views to structural detailing and interior joinery, the studio maintained clarity, daylight quality, and budget discipline throughout.',
     author: 'Private Residence Clients',
-    context: 'Custom Homes • Birgunj & Kathmandu'
+    rating: 5,
+    city: 'Birgunj & Kathmandu',
+    scope: 'Full Design, 3D & Interiors',
+    quote: 'From initial floor plans and 3D views to structural detailing and interior joinery, the studio maintained clarity, daylight quality, and budget discipline throughout.',
+    date: '2024'
   },
   {
-    quote: 'Their contextual approach balanced serene public circulation, indigenous Khapada heritage detailing, and seismic safety tailored cleanly to the Terai climate.',
     author: 'Civic & Institutional Works',
-    context: 'Public & Healthcare Projects • Sarlahi & Parsa'
+    rating: 5,
+    city: 'Sarlahi & Parsa',
+    scope: 'Masterplanning & Public Works',
+    quote: 'Their contextual approach balanced serene public circulation, indigenous Khapada heritage detailing, and seismic safety tailored cleanly to the Terai climate.',
+    date: '2025'
+  }
+];
+
+const faqsData = [
+  {
+    category: 'Design Scope',
+    question: 'What architectural and engineering services does Scale and Spaces provide?',
+    answer: 'We deliver complete end-to-end services under one roof: topographical site survey, masterplanning, conceptual & municipal architectural plans, photorealistic 3D views/walkthroughs, Nepal National Building Code (NBC) seismic structural design, electrical & sanitary MEP drawings, detailed cost estimation & BOQ, and construction site supervision.'
+  },
+  {
+    category: 'Seismic & Permits',
+    question: 'Are your structural drawings compliant with Nepal municipal permit requirements?',
+    answer: 'Yes. Every building design is engineered against the latest Nepal National Building Code (NBC) seismic provisions and tailored to local Metropolitan or Rural Municipality setbacks, FAR, ground coverage, and structural check documentation across Kathmandu Valley and Terai cities.'
+  },
+  {
+    category: 'Timelines',
+    question: 'How long does it take to prepare conceptual plans, 3D views, and complete working drawings?',
+    answer: 'For standard residences, initial spatial concepts take 5 to 7 working days after site measurement. Once layouts are finalized, photorealistic 3D views and integrated architectural, structural, electrical, and sanitary permit/construction sets typically complete within 2 to 4 weeks depending on scale.'
+  },
+  {
+    category: 'Visualization',
+    question: 'Can we preview 3D exteriors and interior joinery before site construction starts?',
+    answer: 'Yes. We prepare photorealistic exterior perspectives, lighting mood renders, material boards, and 3D walkthrough studies so clients can finalize facades, tile/timber palettes, ceiling coves, and wardrobe layouts before contractor execution begins.'
+  },
+  {
+    category: 'Cost Control',
+    question: 'How do your Detailed Estimate and Bill of Quantities (BOQ) prevent cost overruns?',
+    answer: 'Our itemized quantity takeoff covers excavation, reinforcement steel, concrete grades, brickwork, finishes, and MEP fixtures prior to tendering. This enables transparent contractor comparison and minimizes mid-project scope surprises.'
+  },
+  {
+    category: 'Consultation',
+    question: 'How do I start a project consultation from Kathmandu, Birgunj, or abroad?',
+    answer: 'Share your plot location, land area, and requirements via WhatsApp (+977-9703881733), email (studio@scaleandspaces.com), or the inquiry form below. Both in-person office visits in Tokha-6 (Kathmandu) & Birgunj-12 (Parsa) and remote online meetings for NRNs are supported.'
   }
 ];
 
@@ -1887,6 +2059,70 @@ const customCss = `
       margin-bottom: 0.4rem;
     }
 
+    /* Interactive Team Profile Trigger & FAQ Hairline Accordion */
+    .team-card {
+      cursor: pointer;
+    }
+    .team-detail-hint {
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding-top: 0.35rem;
+      transition: color 0.25s ease;
+    }
+    .team-card:hover .team-detail-hint {
+      color: var(--crimson);
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border-line);
+    }
+    .faq-trigger {
+      width: 100%;
+      background: transparent;
+      border: none;
+      padding: 1.1rem 0.25rem;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      transition: color 0.25s ease;
+    }
+    .faq-trigger:hover {
+      color: var(--crimson);
+    }
+    .faq-plus {
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--crimson);
+      flex-shrink: 0;
+      transition: transform 0.3s var(--ease-expo);
+    }
+    .faq-item.is-open .faq-plus {
+      transform: rotate(45deg);
+    }
+    .faq-body {
+      display: none;
+      padding: 0 0.25rem 1.15rem;
+      font-size: 0.92rem;
+      line-height: 1.68;
+      color: #444444;
+    }
+    .faq-item.is-open .faq-body {
+      display: block;
+    }
+
     /* Accessibility Fallback (preserve interactive user-triggered hovers) */
     @media (prefers-reduced-motion: reduce) {
       .vellum-drafting-grid { opacity: 0.4; }
@@ -1911,7 +2147,10 @@ const icons = {
   quote: '<svg class="inline-block w-5 h-5 text-[#8F0000]/65 shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M10 7H6C4.9 7 4 7.9 4 9v4c0 1.1.9 2 2 2h2v2H5v2h3c1.66 0 3-1.34 3-3V9c0-1.1-.9-2-2-2zm10 0h-4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2v2h-3v2h3c1.66 0 3-1.34 3-3V9c0-1.1-.9-2-2-2z"/></svg>',
   building: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 10h2M13 10h2M9 14h2M13 14h2M10 21v-4h4v4"/></svg>',
   award: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.21 13.89 7 22l5-3 5 3-1.21-8.12"/></svg>',
-  check: '<svg class="inline-block w-3.5 h-3.5 text-[#8F0000] shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>'
+  check: '<svg class="inline-block w-3.5 h-3.5 text-[#8F0000] shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>',
+  help: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 9.2a2.5 2.5 0 0 1 4.9.7c0 1.6-2.4 2-2.4 3.4M12 17h.01"/></svg>',
+  download: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>',
+  star: '<svg class="inline-block w-3.5 h-3.5 text-[#8F0000]" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>'
 };
 
 const htmlBodyTemplate = `<!DOCTYPE html>
@@ -1948,8 +2187,17 @@ const htmlBodyTemplate = `<!DOCTYPE html>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
 
-  <!-- Google SEO Structured Data (JSON-LD) -->
+  <!-- Google SEO Structured Data (JSON-LD + FAQPage) -->
   <script type="application/ld+json">${JSON.stringify(jsonLdSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqsData.map(f => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer }
+    }))
+  })}</script>
 
   <style>/*__COMPILED_CSS__*/</style>
 </head>
@@ -2077,12 +2325,12 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </div>
       </a>
 
-      <!-- Semantic 8-Section Navigation w/ Clean Practice Dropdowns -->
-      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-4 xl:gap-5">
-        <a href="#home" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Home</a>
+      <!-- Semantic Section Navigation w/ Clean Practice Dropdowns -->
+      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-3.5 xl:gap-4.5">
+        <a href="#home" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Home</a>
 
         <div class="nav-dropdown-wrap">
-          <a href="#services" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Services &#9662;</a>
+          <a href="#services" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Services &#9662;</a>
           <div class="nav-dropdown-panel">
             <div class="nav-dropdown-inner">
               <a href="#services" class="nav-dropdown-link">Full Scope &amp; Deliverables</a>
@@ -2095,7 +2343,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </div>
 
         <div class="nav-dropdown-wrap">
-          <a href="#projects" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Projects &#9662;</a>
+          <a href="#projects" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Projects &#9662;</a>
           <div class="nav-dropdown-panel">
             <div class="nav-dropdown-inner">
               <a href="#projects" onclick="selectCategoryFilter('all'); return false;" class="nav-dropdown-link">All Projects (${projectsData.length})</a>
@@ -2110,22 +2358,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </div>
 
         <div class="nav-dropdown-wrap">
-          <a href="#about" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">About &#9662;</a>
+          <a href="#about" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">About &#9662;</a>
           <div class="nav-dropdown-panel">
             <div class="nav-dropdown-inner">
               <a href="#about" class="nav-dropdown-link">Studio Overview</a>
               <a href="#team" class="nav-dropdown-link">Our Team</a>
-              <a href="#testimonials" class="nav-dropdown-link">Testimonials</a>
+              <a href="#reviews" class="nav-dropdown-link">Client Reviews</a>
+              <a href="#faqs" class="nav-dropdown-link">FAQs</a>
               <a href="#partners" class="nav-dropdown-link">Partner Companies</a>
               <a href="privacy-policy/" class="nav-dropdown-link">Policies &amp; Terms</a>
             </div>
           </div>
         </div>
 
-        <a href="#team" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Team</a>
-        <a href="#testimonials" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Testimonials</a>
-        <a href="#partners" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Partners</a>
-        <a href="#contact" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Contact</a>
+        <a href="#team" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Team</a>
+        <a href="#reviews" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Reviews</a>
+        <a href="#faqs" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">FAQs</a>
+        <a href="#partners" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Partners</a>
+        <a href="#contact" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Contact</a>
       </nav>
 
       <div class="flex items-center gap-2.5 shrink-0">
@@ -2159,7 +2409,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       <a href="#projects" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.grid} <span>Projects (${projectsData.length})</span></a>
       <a href="#about" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.info} <span>About Studio</span></a>
       <a href="#team" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.users} <span>Our Team</span></a>
-      <a href="#testimonials" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.quote} <span>Testimonials</span></a>
+      <a href="#reviews" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.quote} <span>Reviews</span></a>
+      <a href="#faqs" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.help} <span>FAQs</span></a>
       <a href="#partners" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.building} <span>Partners Companies</span></a>
       <a href="#contact" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.phone} <span>Contact Studio</span></a>
       <div class="pt-3 mt-1 border-t border-[#DDD8CE] flex flex-wrap gap-3 text-[11px] font-semibold text-[#767070]">
@@ -2279,8 +2530,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </div>
         </div>
 
-        <!-- 10 Deliverables Open Hairline Grid (No Boxes) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 scope-grid">
+        <!-- 10 Deliverables Open Hairline Grid (No Boxes — Sheet Upgradable via #services-grid) -->
+        <div id="services-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 scope-grid">
           ${scopeItems.map(item => `
             <div class="scope-list-item justify-between">
               <div class="flex items-center gap-3 min-w-0">
@@ -2504,15 +2755,15 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               ${icons.info} About Practice
             </span>
             <h2 class="portfolio-section-title">ABOUT STUDIO_</h2>
-            <p class="text-xl sm:text-2xl font-bold serif-heading text-[#111111] mt-3 leading-snug">
+            <p id="cms-about-title" class="text-xl sm:text-2xl font-bold serif-heading text-[#111111] mt-3 leading-snug">
               Architecture Rooted in Context, Climate &amp; Engineering Precision
             </p>
           </div>
           <div class="lg:col-span-6 flex flex-col gap-3 text-sm text-[#333333] leading-relaxed">
-            <p>
+            <p id="cms-about-p1">
               <strong class="text-[#111111]">Scale and Spaces Private Limited</strong> is a multidisciplinary design and engineering firm practicing from Kathmandu Valley and Birgunj. We unite architectural aesthetics, NBC seismic safety, bioclimatic light, and transparent costing under one roof.
             </p>
-            <p class="text-[#767070]">
+            <p id="cms-about-p2" class="text-[#767070]">
               From bespoke family residences and commercial high-rises to community hospitals, civic ghats, and corporate interiors, every drawing transitions seamlessly from sketch to site execution.
             </p>
           </div>
@@ -2521,20 +2772,20 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <!-- Clean Open 4-Metric Hairline Strip -->
         <div class="grid grid-cols-2 md:grid-cols-4 border-t border-b border-[#DDD8CE] mt-10 reveal-card">
           <div class="py-5 px-4 border-r border-b md:border-b-0 border-[#DDD8CE]">
-            <div class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">44+</div>
-            <div class="text-xs font-bold text-[#111111] mt-0.5">Portfolio Works</div>
+            <div id="cms-stat1-num" class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">44+</div>
+            <div id="cms-stat1-label" class="text-xs font-bold text-[#111111] mt-0.5">Portfolio Works</div>
           </div>
           <div class="py-5 px-4 md:border-r border-b md:border-b-0 border-[#DDD8CE]">
-            <div class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">10</div>
-            <div class="text-xs font-bold text-[#111111] mt-0.5">Core Specialists</div>
+            <div id="cms-stat2-num" class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">10</div>
+            <div id="cms-stat2-label" class="text-xs font-bold text-[#111111] mt-0.5">Core Specialists</div>
           </div>
           <div class="py-5 px-4 border-r border-[#DDD8CE]">
-            <div class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">2</div>
-            <div class="text-xs font-bold text-[#111111] mt-0.5">Nepal Offices</div>
+            <div id="cms-stat3-num" class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">2</div>
+            <div id="cms-stat3-label" class="text-xs font-bold text-[#111111] mt-0.5">Nepal Offices</div>
           </div>
           <div class="py-5 px-4">
-            <div class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">1st</div>
-            <div class="text-xs font-bold text-[#111111] mt-0.5">Civic Emblem Prize</div>
+            <div id="cms-stat4-num" class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">1st</div>
+            <div id="cms-stat4-label" class="text-xs font-bold text-[#111111] mt-0.5">Civic Emblem Prize</div>
           </div>
         </div>
       </div>
@@ -2543,7 +2794,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       <div id="atelierTrailStage" class="atelier-trail-stage py-14 md:py-16 mt-10">
         <div id="atelierTrailLayer" class="atelier-trail-layer" aria-hidden="true"></div>
         <div class="portfolio-container text-center relative z-[4] pointer-events-none select-none">
-          <p class="text-xl sm:text-3xl font-bold serif-heading text-[#111111] max-w-2xl mx-auto leading-tight">
+          <p id="cms-banner-title" class="text-xl sm:text-3xl font-bold serif-heading text-[#111111] max-w-2xl mx-auto leading-tight">
             From Concept Massing to Built Architectural Realities
           </p>
           <a href="#projects" class="btn-outline text-xs py-2 px-5 mt-5 pointer-events-auto no-underline">
@@ -2554,7 +2805,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
 
     <!-- ======================================================================
-         5. TEAM (Mobile-First 2-Col -> 5-Col Circular Portraits)
+         5. TEAM (Clickable 2-Col -> 5-Col Portraits w/ Profile & Download Modal)
          ====================================================================== -->
     <section id="team" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] wc-section-wash">
       <div class="portfolio-container">
@@ -2564,17 +2815,17 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </span>
           <h2 class="portfolio-section-title">OUR TEAM_</h2>
           <p class="text-sm text-[#767070] mt-2">
-            Architects, Structural &amp; Civil Engineers, Interior Designers &amp; Project Managers
+            Click any team specialist below to inspect full credentials &amp; download studio profile sheet
           </p>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 team-grid">
-          ${teamData.map(m => {
+        <div id="team-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 team-grid">
+          ${teamData.map((m, idx) => {
             const parts = m.name.split(' ');
             const first = parts.slice(0, -1).join(' ');
             const last = parts[parts.length - 1];
             return `
-              <div class="team-card wc-hover-card">
+              <div class="team-card wc-hover-card" role="button" tabindex="0" aria-label="View profile and downloads for ${m.name}" onclick="openTeamModal(${idx})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamModal(${idx});}">
                 <div class="team-circle-stage">
                   <div class="team-img-wrap">
                     <img src="${m.image}" alt="${m.name} — ${m.role} at Scale and Spaces Pvt. Ltd." loading="lazy" />
@@ -2582,6 +2833,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 </div>
                 <div class="team-name-box">${first} <b>${last}</b></div>
                 <div class="team-role-box">${m.role}</div>
+                <div class="team-detail-hint">Profile &amp; CV &rarr;</div>
               </div>
             `;
           }).join('')}
@@ -2590,18 +2842,19 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
 
     <!-- ======================================================================
-         6. TESTIMONIALS (Open 3-Column Hairline Grid — Commission Feedback)
+         6. REVIEWS (Upgraded Client & Commission Reviews — Synced w/ Google Sheet)
          ====================================================================== -->
-    <section id="testimonials" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
+    <section id="reviews" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
+      <span id="testimonials" class="sr-only"></span>
       <div class="portfolio-container">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-              ${icons.quote} Client Endorsements
+              ${icons.quote} Verified Client &amp; Commission Reviews
             </span>
-            <h2 class="portfolio-section-title">TESTIMONIALS_</h2>
+            <h2 class="portfolio-section-title">CLIENT REVIEWS_</h2>
             <p class="text-sm text-[#767070] mt-1">
-              Project feedback across commercial, residential, and civic commissions.
+              Project feedback across commercial, residential, and civic commissions across Nepal.
             </p>
           </div>
           <a href="#contact" class="text-xs font-bold uppercase tracking-wider text-[#8F0000] no-underline hover:underline">
@@ -2609,16 +2862,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </a>
         </div>
 
-        <div class="hairline-matrix-3 reveal-card">
-          ${testimonialsData.map(t => `
+        <div id="reviews-grid" class="hairline-matrix-3 reveal-card">
+          ${reviewsData.map(r => `
             <div class="hairline-matrix-cell flex flex-col justify-between gap-4">
               <div>
-                <div class="mb-3">${icons.quote}</div>
-                <p class="text-sm text-[#2A2A2A] leading-relaxed italic font-serif">&ldquo;${t.quote}&rdquo;</p>
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span>${icons.quote}</span>
+                  <span class="inline-flex items-center gap-0.5 text-[11px] font-bold text-[#8F0000]" aria-label="${r.rating} out of 5 stars">
+                    ${Array.from({ length: r.rating }).map(() => icons.star).join('')}
+                  </span>
+                </div>
+                <p class="text-sm text-[#2A2A2A] leading-relaxed italic font-serif">&ldquo;${r.quote}&rdquo;</p>
               </div>
-              <div class="pt-3 border-t border-[#DDD8CE]/70">
-                <div class="text-xs font-bold text-[#111111]">${t.author}</div>
-                <div class="text-[11px] text-[#767070] mt-0.5">${t.context}</div>
+              <div class="pt-3 border-t border-[#DDD8CE]/70 flex items-end justify-between gap-2">
+                <div>
+                  <div class="text-xs font-bold text-[#111111]">${r.author}</div>
+                  <div class="text-[11px] text-[#767070] mt-0.5">${r.scope} &bull; ${r.city}</div>
+                </div>
+                <span class="text-[10px] font-mono text-[#767070]">${r.date}</span>
               </div>
             </div>
           `).join('')}
@@ -2627,9 +2888,48 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
 
     <!-- ======================================================================
-         7. PARTNER COMPANIES (Clean Hairline Logo Matrix & Civic Partners)
+         7. FAQS (Expandable Architectural & Engineering Q&A + FAQPage Schema)
          ====================================================================== -->
-    <section id="partners" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] relative">
+    <section id="faqs" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] wc-section-wash">
+      <div class="portfolio-container max-w-4xl">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
+          <div>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
+              ${icons.help} Practice Answers
+            </span>
+            <h2 class="portfolio-section-title">FAQS_</h2>
+            <p class="text-sm text-[#767070] mt-1">
+              Common questions on architectural workflow, Nepal NBC structural design, timelines &amp; supervision.
+            </p>
+          </div>
+          <a href="#contact" class="text-xs font-bold uppercase tracking-wider text-[#8F0000] no-underline hover:underline">
+            Ask a Specific Question &rarr;
+          </a>
+        </div>
+
+        <div id="faqs-list" class="border-t border-[#DDD8CE] reveal-card">
+          ${faqsData.map((f, idx) => `
+            <div class="faq-item ${idx === 0 ? 'is-open' : ''}">
+              <button type="button" class="faq-trigger" aria-expanded="${idx === 0 ? 'true' : 'false'}" onclick="toggleFaqItem(this)">
+                <div class="pr-2">
+                  <span class="block text-[10px] font-mono uppercase tracking-widest text-[#8F0000] font-bold mb-0.5">${f.category}</span>
+                  <span class="text-sm sm:text-base font-bold leading-snug">${f.question}</span>
+                </div>
+                <span class="faq-plus" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-body">
+                ${f.answer}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         8. PARTNER COMPANIES (Clean Hairline Logo Matrix & Civic Partners)
+         ====================================================================== -->
+    <section id="partners" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] relative">
       <div class="portfolio-container">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
@@ -2641,12 +2941,12 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               Corporate partners, engineering labs, energy ventures, and municipalities we serve.
             </p>
           </div>
-          <div class="text-xs font-bold uppercase tracking-widest text-[#767070]">
+          <div id="cms-partners-count" class="text-xs font-bold uppercase tracking-widest text-[#767070]">
             10 Corporate Marks
           </div>
         </div>
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 border-t border-l border-[#DDD8CE] reveal-card">
+        <div id="partners-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 border-t border-l border-[#DDD8CE] reveal-card">
           ${clientLogos.map(l => `
             <div class="partner-logo-cell">
               <img src="${l.img}" alt="${l.alt}" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy" />
@@ -2779,7 +3079,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <a href="#services" class="text-[#CCCCCC] no-underline hover:text-white">Services &amp; Scope</a>
           <a href="#projects" class="text-[#CCCCCC] no-underline hover:text-white">Projects (${projectsData.length})</a>
           <a href="#about" class="text-[#CCCCCC] no-underline hover:text-white">About Studio</a>
-          <a href="#team" class="text-[#CCCCCC] no-underline hover:text-white">Team &bull; Testimonials &bull; Partners</a>
+          <a href="#team" class="text-[#CCCCCC] no-underline hover:text-white">Team &bull; Reviews &bull; FAQs &bull; Partners</a>
         </div>
 
         <div class="lg:col-span-2 flex flex-col gap-1.5 text-xs">
@@ -2870,6 +3170,65 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </div>
   </div>
 
+  <!-- TEAM MEMBER PROFILE & CREDENTIALS DOWNLOAD MODAL -->
+  <div id="team-modal" class="lightbox-modal" onclick="closeTeamOnBackdrop(event)">
+    <div id="teamModalCard" class="lightbox-content" style="max-width: 780px;">
+      <div class="p-4 md:p-5 bg-[#E8E6DF] border-b border-[#DDD8CE] flex justify-between items-center">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-[#C00000] font-bold block">Practice Specialist Profile</span>
+          <p id="team-modal-role" class="text-lg md:text-xl font-bold text-[#111111]" style="font-family: var(--font-sans);"></p>
+        </div>
+        <button type="button" onclick="closeTeamModal()" aria-label="Close Team Profile Modal" class="p-2 text-[#111] hover:text-[#8F0000] bg-transparent border-0 cursor-pointer">
+          ${icons.close}
+        </button>
+      </div>
+
+      <div class="p-5 md:p-7 flex flex-col gap-6">
+        <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+          <div class="team-img-wrap shrink-0" style="width: 148px; height: 148px;">
+            <img id="team-modal-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Team member portrait" />
+          </div>
+          <div class="flex-1 text-center sm:text-left">
+            <h3 id="team-modal-name" class="text-2xl font-bold tracking-wide text-[#EC7C30] mb-1" style="font-family: var(--font-sans);"></h3>
+            <p id="team-modal-qual" class="text-xs font-bold uppercase tracking-wider text-[#8F0000] mb-3"></p>
+            <p id="team-modal-bio" class="text-sm text-[#333333] leading-relaxed mb-4"></p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs border-t border-b border-[#DDD8CE] py-3 text-left">
+              <div><strong class="text-[#767070] uppercase tracking-wider">Studio Office:</strong><span id="team-modal-office" class="block font-bold text-[#111111] mt-0.5"></span></div>
+              <div><strong class="text-[#767070] uppercase tracking-wider">Practice Focus:</strong><span id="team-modal-exp" class="block font-bold text-[#111111] mt-0.5"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs">
+          <div>
+            <h4 class="font-bold uppercase tracking-wider text-[#111111] mb-1.5">Specialization</h4>
+            <p id="team-modal-spec" class="text-[#444444] leading-relaxed"></p>
+            <h4 class="font-bold uppercase tracking-wider text-[#111111] mt-4 mb-1.5">Selected Involvements</h4>
+            <p id="team-modal-projects" class="text-[#444444] leading-relaxed"></p>
+          </div>
+
+          <div class="bg-white border border-[#DDD8CE] p-4 flex flex-col justify-between gap-4">
+            <div>
+              <span class="text-[11px] font-mono uppercase tracking-widest text-[#8F0000] font-bold block mb-1">Downloads &amp; Credentials</span>
+              <p id="team-modal-cv-label" class="text-sm font-bold text-[#111111] mb-1"></p>
+              <p class="text-[11px] text-[#767070] leading-relaxed">
+                Download printable profile &amp; role dossier (automatically linked to official CV PDF when updated via Google Sheets).
+              </p>
+            </div>
+            <div class="flex flex-col gap-2">
+              <button type="button" id="team-modal-download-btn" onclick="downloadTeamDossier()" class="btn-crimson w-full text-xs py-2.5">
+                ${icons.download} <span>Download Profile / CV</span>
+              </button>
+              <a id="team-modal-email-link" href="mailto:studio@scaleandspaces.com" class="btn-outline w-full text-xs py-2 text-center no-underline">
+                ${icons.mail} <span>Contact Via Studio Email</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- BUNDLED MOTION ENGINE (From heron-ai-clone vendor stack: GSAP, ScrollTrigger, SplitText, Lenis) -->
   <script src="vendor/lenis.min.js"></script>
   <script src="vendor/gsap.min.js"></script>
@@ -2877,7 +3236,12 @@ const htmlBodyTemplate = `<!DOCTYPE html>
   <script src="vendor/SplitText.min.js"></script>
 
   <script>
-    const projects = ${JSON.stringify(projectsData)};
+    let projects = ${JSON.stringify(projectsData)};
+    let teamMembers = ${JSON.stringify(teamData)};
+    let reviewsList = ${JSON.stringify(reviewsData)};
+    let faqsList = ${JSON.stringify(faqsData)};
+    let partnersList = ${JSON.stringify(clientLogos)};
+    const scopeServicesList = ${JSON.stringify(scopeItems)};
 
     // Copyright year
     const yearEl = document.getElementById('footer-year');
@@ -2902,12 +3266,13 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
     // Category Filtering with Clean URL Sync & GSAP Staggered Entrance
     const tabs = document.querySelectorAll('.filter-tab');
-    const projectCards = document.querySelectorAll('.project-card');
     const projectCountEl = document.getElementById('project-count');
     const validCategories = ['all', 'Commercial', 'Landscape', 'Residences', 'Institutional', 'Religious', 'Interior', 'Branding'];
+    let currentCategoryFilter = 'all';
 
     function applyFilter(cat, updateUrl) {
       const targetCat = validCategories.indexOf(cat) !== -1 ? cat : 'all';
+      currentCategoryFilter = targetCat;
       tabs.forEach(function(t) {
         t.classList.toggle('active', t.getAttribute('data-category') === targetCat);
       });
@@ -2915,8 +3280,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         dc.classList.toggle('is-active', dc.getAttribute('data-cat') === targetCat);
       });
 
+      const liveCards = document.querySelectorAll('.project-card');
       const shown = [];
-      projectCards.forEach(function(card) {
+      liveCards.forEach(function(card) {
         const cardCat = card.getAttribute('data-category');
         if (targetCat === 'all' || cardCat === targetCat) {
           card.style.display = 'flex';
@@ -3049,8 +3415,428 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     window.closeLightboxOnBackdrop = closeLightboxOnBackdrop;
 
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+      if (e.key === 'Escape') {
+        if (lightbox && lightbox.classList.contains('active')) closeLightbox();
+        if (typeof closeTeamModal === 'function') closeTeamModal();
+      }
     });
+
+    // Team Member Profile Modal & Printable/Direct CV Downloads
+    let activeTeamMember = null;
+    const teamModalEl = document.getElementById('team-modal');
+    const teamModalCardEl = document.getElementById('teamModalCard');
+
+    function openTeamModal(idx) {
+      const m = teamMembers[idx];
+      if (!m || !teamModalEl) return;
+      activeTeamMember = m;
+
+      const parts = String(m.name || '').split(' ');
+      const first = parts.slice(0, -1).join(' ');
+      const last = parts[parts.length - 1] || '';
+
+      document.getElementById('team-modal-img').src = m.image || '';
+      document.getElementById('team-modal-img').alt = m.name + ' portrait';
+      document.getElementById('team-modal-name').innerHTML = escHtml(first) + ' <b>' + escHtml(last) + '</b>';
+      document.getElementById('team-modal-role').textContent = m.role || '';
+      document.getElementById('team-modal-qual').textContent = m.qualification || 'Practice Specialist';
+      document.getElementById('team-modal-bio').textContent = m.bio || '';
+      document.getElementById('team-modal-office').textContent = m.office || 'Kathmandu & Birgunj';
+      document.getElementById('team-modal-exp').textContent = m.experience || 'Architecture & Engineering';
+      document.getElementById('team-modal-spec').textContent = m.specialization || m.role || '';
+      document.getElementById('team-modal-projects').textContent = m.keyProjects || 'Scale and Spaces Architectural Works';
+      document.getElementById('team-modal-cv-label').textContent = m.cvLabel || (m.name + ' — Profile & CV');
+      document.getElementById('team-modal-email-link').href = 'mailto:' + (m.email || 'studio@scaleandspaces.com') + '?subject=' + encodeURIComponent('Profile Inquiry: ' + m.name);
+
+      teamModalEl.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      if (window.lenisInstance) window.lenisInstance.stop();
+      if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.fromTo(teamModalEl, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: 'power2.out' });
+        gsap.fromTo(teamModalCardEl, { opacity: 0, y: 24, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'expo.out', clearProps: 'transform' });
+      }
+    }
+
+    function closeTeamModal() {
+      if (!teamModalEl || !teamModalEl.classList.contains('active')) return;
+      teamModalEl.classList.remove('active');
+      document.body.style.overflow = '';
+      if (window.lenisInstance) window.lenisInstance.start();
+    }
+
+    function closeTeamOnBackdrop(e) {
+      if (e.target === teamModalEl) closeTeamModal();
+    }
+
+    function downloadTeamDossier() {
+      if (!activeTeamMember) return;
+      const m = activeTeamMember;
+      if (m.cvUrl && String(m.cvUrl).trim() !== '' && !String(m.cvUrl).includes('...')) {
+        window.open(normalizeSheetMediaUrl(m.cvUrl), '_blank', 'noopener,noreferrer');
+        return;
+      }
+      // Generate clean printable archival profile sheet when external CV URL isn't configured yet
+      const cleanName = String(m.name || 'Specialist').replace(/[^a-zA-Z0-9]+/g, '_');
+      const openH1 = '<' + 'h1>';
+      const closeH1 = '</' + 'h1>';
+      const openH2 = '<' + 'h2>';
+      const closeH2 = '</' + 'h2>';
+      const htmlDoc = '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>' + escHtml(m.name) + ' | Scale and Spaces Pvt. Ltd.</title>' +
+        '<style>body{font-family:Calibri,Arial,sans-serif;background:#F0EFEA;color:#111;margin:0;padding:40px}.sheet{max-width:760px;margin:0 auto;background:#fff;border:1px solid #ddd;padding:40px}.top{border-bottom:2px solid #8F0000;padding-bottom:16px;margin-bottom:24px}h1{font-family:Georgia,serif;color:#EC7C30;margin:0;font-size:28px}.role{font-weight:bold;color:#111;margin-top:4px;font-size:16px}h2{font-size:13px;text-transform:uppercase;letter-spacing:1.4px;color:#8F0000;border-bottom:1px solid #eee;padding-bottom:4px;margin-top:22px}p{font-size:14px;line-height:1.65;color:#333}.foot{margin-top:32px;padding-top:14px;border-top:1px solid #ddd;font-size:12px;color:#666}@media print{body{background:#fff;padding:0}.sheet{border:none}}</style></head><body>' +
+        '<div class="sheet"><div class="top"><div style="font-size:11px;letter-spacing:2px;color:#767070;font-weight:bold;">SCALE AND SPACES PVT. LTD. &bull; ARCHITECTS &bull; ENGINEERS</div>' +
+        openH1 + escHtml(m.name) + closeH1 + '<div class="role">' + escHtml(m.role) + ' &mdash; ' + escHtml(m.office || '') + '</div></div>' +
+        openH2 + 'Overview &amp; Practice Role' + closeH2 + '<p>' + escHtml(m.bio) + '</p>' +
+        openH2 + 'Credentials &amp; Qualification' + closeH2 + '<p><strong>Qualification / Status:</strong> ' + escHtml(m.qualification || '') + '<br><strong>Focus:</strong> ' + escHtml(m.experience || '') + '</p>' +
+        openH2 + 'Core Specialization' + closeH2 + '<p>' + escHtml(m.specialization || '') + '</p>' +
+        openH2 + 'Selected Project Involvements' + closeH2 + '<p>' + escHtml(m.keyProjects || '') + '</p>' +
+        '<div class="foot"><strong>Head Office:</strong> Tokha-6, Kathmandu &bull; <strong>Contact Office:</strong> Birgunj-12, Parsa &bull; <strong>Email:</strong> studio@scaleandspaces.com &bull; <strong>Website:</strong> https://scaleandspaces.com.np/</div>' +
+        '</div></body></html>';
+
+      const blob = new Blob([htmlDoc], { type: 'text/html;charset=utf-8' });
+      const blobUrl = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = 'Scale_and_Spaces_' + cleanName + '_Profile.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function() { URL.revokeObjectURL(blobUrl); }, 2000);
+    }
+
+    function toggleFaqItem(btn) {
+      const item = btn && btn.closest ? btn.closest('.faq-item') : null;
+      if (!item) return;
+      const isOpen = item.classList.contains('is-open');
+      item.classList.toggle('is-open', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    }
+
+    function escHtml(str) {
+      return String(str == null ? '' : str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function normalizeSheetMediaUrl(url) {
+      const raw = String(url || '').trim();
+      if (!raw) return '';
+      const driveMatch = raw.match(/https?:\\/\\/drive\\.google\\.com\\/(?:file\\/d\\/|open\\?id=|uc\\?[^#]*id=)([a-zA-Z0-9_-]+)/);
+      if (driveMatch && driveMatch[1]) {
+        return 'https://lh3.googleusercontent.com/d/' + driveMatch[1] + '=w1600';
+      }
+      return raw;
+    }
+
+    window.openTeamModal = openTeamModal;
+    window.closeTeamModal = closeTeamModal;
+    window.closeTeamOnBackdrop = closeTeamOnBackdrop;
+    window.downloadTeamDossier = downloadTeamDossier;
+    window.toggleFaqItem = toggleFaqItem;
+
+    // Live Google Sheet CMS Hydration (Upgradable Settings, Hero, About, Services, Projects, Team, Reviews, FAQs, Partners)
+    (function initGoogleSheetCms() {
+      function parseGvizResponse(text) {
+        const start = text.indexOf('{');
+        const end = text.lastIndexOf('}');
+        if (start === -1 || end === -1) return [];
+        const json = JSON.parse(text.slice(start, end + 1));
+        const table = json && json.table;
+        if (!table || !table.cols || !table.rows) return [];
+        const headers = table.cols.map(function(c, i) {
+          return String((c && (c.label || c.id)) || ('col' + i)).trim();
+        });
+        const out = [];
+        table.rows.forEach(function(r) {
+          if (!r || !r.c) return;
+          const rowObj = {};
+          let hasValue = false;
+          headers.forEach(function(h, idx) {
+            const cell = r.c[idx];
+            const val = cell ? (cell.f != null && cell.v instanceof Date ? cell.f : (cell.v != null ? String(cell.v) : '')) : '';
+            if (val !== '') hasValue = true;
+            if (h) rowObj[h] = val.trim();
+          });
+          if (hasValue) out.push(rowObj);
+        });
+        return out;
+      }
+
+      async function fetchSheetTab(sheetId, tabName) {
+        const url = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) + '/gviz/tq?tqx=out:json&headers=1&sheet=' + encodeURIComponent(tabName);
+        const res = await fetch(url, { mode: 'cors' });
+        if (!res.ok) return [];
+        const txt = await res.text();
+        return parseGvizResponse(txt);
+      }
+
+      function kvRowsToMap(rows) {
+        const map = {};
+        rows.forEach(function(r) {
+          const keys = Object.keys(r);
+          if (keys.length >= 2) {
+            const k = (r.Key || r.key || r[keys[0]] || '').trim();
+            const v = (r.Value || r.value || r[keys[1]] || '').trim();
+            if (k && v) map[k] = v;
+          }
+        });
+        return map;
+      }
+
+      async function runSheetSync() {
+        let sheetId = '';
+        try {
+          const q = new URLSearchParams(window.location.search).get('sheet');
+          if (q) sheetId = q.trim();
+        } catch (err) {}
+        if (!sheetId) {
+          try {
+            const cfgRes = await fetch('cms-config.json?v=' + Date.now());
+            if (cfgRes.ok) {
+              const cfg = await cfgRes.json();
+              if (cfg && cfg.sheetId && cfg.enabled !== false) sheetId = String(cfg.sheetId).trim();
+            }
+          } catch (err) {}
+        }
+        if (!sheetId) return;
+
+        const tabsToLoad = ['Settings', 'Hero', 'About', 'Services', 'Projects', 'Team', 'Reviews', 'FAQs', 'Partners'];
+        const results = await Promise.allSettled(tabsToLoad.map(function(name) { return fetchSheetTab(sheetId, name); }));
+        const dataByTab = {};
+        tabsToLoad.forEach(function(name, i) {
+          dataByTab[name] = results[i].status === 'fulfilled' ? results[i].value : [];
+        });
+
+        // 1. Settings overrides (Email, Phone, Offices, Website)
+        if (dataByTab.Settings.length) {
+          const s = kvRowsToMap(dataByTab.Settings);
+          if (s.Email) {
+            document.querySelectorAll('a[href^="mailto:"]').forEach(function(a) {
+              if (!a.id || a.id !== 'team-modal-email-link') {
+                a.href = 'mailto:' + s.Email;
+                if (a.textContent.includes('@')) a.textContent = s.Email;
+              }
+            });
+          }
+          if (s.Phone) {
+            const telDigits = s.Phone.replace(/[^+0-9]/g, '');
+            document.querySelectorAll('a[href^="tel:"]').forEach(function(a) {
+              a.href = 'tel:' + telDigits;
+              if (a.textContent.includes('97')) a.textContent = s.Phone;
+            });
+          }
+          if (s.SEO_Title) document.title = s.SEO_Title;
+        }
+
+        // 2. Hero overrides
+        if (dataByTab.Hero.length) {
+          const h = kvRowsToMap(dataByTab.Hero);
+          if (h.Cover_Color_URL) {
+            const hc = document.getElementById('heroBgColor');
+            if (hc) hc.src = normalizeSheetMediaUrl(h.Cover_Color_URL);
+          }
+          if (h.Cover_BW_URL) {
+            const hbw = document.querySelector('.hero-bg-bw');
+            if (hbw) hbw.src = normalizeSheetMediaUrl(h.Cover_BW_URL);
+          }
+          if (h.Headline_Line1 || h.Headline_Line2) {
+            const h1 = document.getElementById('heroHeadline');
+            if (h1) {
+              h1.innerHTML = '<span class="block text-2xl sm:text-3xl md:text-4xl font-bold mb-1" style="font-family: Georgia, \\'EB Garamond\\', serif;">' +
+                escHtml(h.Headline_Line1 || 'Designing Spaces,') + '</span>' +
+                '<span class="block text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight" style="font-family: \\'EB Garamond\\', Georgia, serif;">' +
+                escHtml(h.Headline_Line2 || 'Defining Lifestyles') + '<span style="font-size: 1.15em;">!</span></span>';
+            }
+          }
+        }
+
+        // 3. About overrides
+        if (dataByTab.About.length) {
+          const ab = kvRowsToMap(dataByTab.About);
+          const mapEls = {
+            'cms-about-title': ab.Title,
+            'cms-about-p1': ab.Bio_P1,
+            'cms-about-p2': ab.Bio_P2,
+            'cms-stat1-num': ab.Stat1_Num,
+            'cms-stat1-label': ab.Stat1_Label,
+            'cms-stat2-num': ab.Stat2_Num,
+            'cms-stat2-label': ab.Stat2_Label,
+            'cms-stat3-num': ab.Stat3_Num,
+            'cms-stat3-label': ab.Stat3_Label,
+            'cms-stat4-num': ab.Stat4_Num,
+            'cms-stat4-label': ab.Stat4_Label,
+            'cms-banner-title': ab.Banner_Headline
+          };
+          Object.keys(mapEls).forEach(function(id) {
+            if (mapEls[id]) {
+              const el = document.getElementById(id);
+              if (el) el.textContent = mapEls[id];
+            }
+          });
+        }
+
+        // 4. Services sync
+        if (dataByTab.Services.length) {
+          const svcRows = dataByTab.Services.filter(function(r) { return r.Title; });
+          const svcGrid = document.getElementById('services-grid');
+          if (svcGrid && svcRows.length) {
+            svcRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            svcGrid.innerHTML = svcRows.map(function(item) {
+              return '<div class="scope-list-item justify-between"><div class="flex items-center gap-3 min-w-0">' +
+                '<span class="inline-block w-2 h-2 bg-[#8F0000] shrink-0"></span>' +
+                '<span class="text-sm sm:text-base font-bold text-[#111111]">' + escHtml(item.Title) + '</span></div>' +
+                '<span class="text-xs text-[#767070] text-right shrink-0 ml-2">' + escHtml(item.Note || '') + '</span></div>';
+            }).join('');
+          }
+        }
+
+        // 5. Projects sync
+        if (dataByTab.Projects.length) {
+          const pRows = dataByTab.Projects.filter(function(r) { return r.Title && r.Image_URL; });
+          const pGrid = document.getElementById('projects-grid');
+          if (pGrid && pRows.length) {
+            projects = pRows.map(function(r, idx) {
+              const imgMain = normalizeSheetMediaUrl(r.Image_URL);
+              const extraImgs = String(r.Gallery_URLs || '').split(/[|,\\n]+/).map(normalizeSheetMediaUrl).filter(Boolean);
+              const imgs = extraImgs.length ? ([imgMain].concat(extraImgs.filter(function(u) { return u !== imgMain; }))) : [imgMain];
+              return {
+                id: r.ID || ('sheet-project-' + (idx + 1)),
+                title: r.Title,
+                client: r.Client || 'Studio Commission',
+                location: r.Location || 'Nepal',
+                year: r.Year || '2025 A.D.',
+                category: r.Category || 'Commercial',
+                categoryLabel: r.Category_Label || r.Category || 'Architecture',
+                image: imgMain,
+                images: imgs,
+                desc: r.Desc || ''
+              };
+            });
+            pGrid.innerHTML = projects.map(function(p) {
+              return '<article class="project-card wc-hover-card" data-category="' + escHtml(p.category) + '" data-id="' + escHtml(p.id) + '">' +
+                '<div class="project-image-box" onclick="openLightbox(\\'' + escHtml(p.id).replace(/'/g, '') + '\\')">' +
+                '<img src="' + escHtml(p.image) + '" alt="' + escHtml(p.title + ' - ' + p.client) + '" loading="lazy" />' +
+                '<div class="project-overlay"><span class="btn-crimson text-xs py-2 px-4 shadow-lg">View Project (' + p.images.length + ')</span></div></div>' +
+                '<div class="p-4 sm:p-5 flex flex-col flex-1 justify-between bg-white"><div>' +
+                '<div class="flex justify-between items-center text-xs text-[#767070] mb-1.5"><span class="font-semibold">' + escHtml(p.location) + '</span><span class="font-bold text-[#111111]">' + escHtml(p.year) + '</span></div>' +
+                '<h3 class="text-base sm:text-lg font-bold text-[#C00000] mb-0.5 leading-snug cursor-pointer hover:underline" style="font-family: var(--font-sans);" onclick="openLightbox(\\'' + escHtml(p.id).replace(/'/g, '') + '\\')">' + escHtml(p.title) + '</h3>' +
+                '<p class="text-sm font-bold text-[#111111] mb-1.5">' + escHtml(p.client) + '</p>' +
+                '<p class="text-xs text-[#767070] leading-relaxed mb-3">' + escHtml(p.desc) + '</p></div>' +
+                '<div class="pt-3 border-t border-[#DDD8CE] flex justify-between items-center text-xs"><span class="text-[#767070] font-semibold">' + escHtml(p.categoryLabel) + '</span>' +
+                '<button type="button" onclick="openLightbox(\\'' + escHtml(p.id).replace(/'/g, '') + '\\')" class="text-[#8F0000] font-bold bg-transparent border-0 cursor-pointer hover:underline p-0">Inspect &rarr;</button></div></div></article>';
+            }).join('');
+            const allTab = document.querySelector('.filter-tab[data-category="all"]');
+            if (allTab) allTab.textContent = 'All (' + projects.length + ')';
+            applyFilter(currentCategoryFilter, false);
+          }
+        }
+
+        // 6. Team sync
+        if (dataByTab.Team.length) {
+          const tRows = dataByTab.Team.filter(function(r) { return r.Name; });
+          const tGrid = document.getElementById('team-grid');
+          if (tGrid && tRows.length) {
+            tRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            teamMembers = tRows.map(function(r) {
+              return {
+                name: r.Name,
+                role: r.Role || 'Team Member',
+                image: normalizeSheetMediaUrl(r.Photo_URL || 'assets/team/team-yateendra.jpg'),
+                office: r.Office || 'Kathmandu & Birgunj',
+                experience: r.Experience || 'Practice Specialist',
+                qualification: r.Qualification || 'Studio Specialist',
+                specialization: r.Specialization || r.Role || '',
+                bio: r.Bio || '',
+                keyProjects: r.Key_Projects || '',
+                email: r.Email || 'studio@scaleandspaces.com',
+                cvLabel: r.CV_Label || (r.Name + ' — Profile & CV'),
+                cvUrl: r.CV_URL || ''
+              };
+            });
+            tGrid.innerHTML = teamMembers.map(function(m, idx) {
+              const parts = String(m.name).split(' ');
+              const first = parts.slice(0, -1).join(' ');
+              const last = parts[parts.length - 1] || '';
+              return '<div class="team-card wc-hover-card" role="button" tabindex="0" onclick="openTeamModal(' + idx + ')">' +
+                '<div class="team-circle-stage"><div class="team-img-wrap"><img src="' + escHtml(m.image) + '" alt="' + escHtml(m.name) + '" loading="lazy" /></div></div>' +
+                '<div class="team-name-box">' + escHtml(first) + ' <b>' + escHtml(last) + '</b></div>' +
+                '<div class="team-role-box">' + escHtml(m.role) + '</div>' +
+                '<div class="team-detail-hint">Profile &amp; CV &rarr;</div></div>';
+            }).join('');
+          }
+        }
+
+        // 7. Reviews sync
+        if (dataByTab.Reviews.length) {
+          const rRows = dataByTab.Reviews.filter(function(r) { return r.Name && r.Review_Comment; });
+          const rGrid = document.getElementById('reviews-grid');
+          if (rGrid && rRows.length) {
+            reviewsList = rRows.map(function(r) {
+              return {
+                author: r.Name,
+                rating: Math.max(1, Math.min(5, parseInt(r.Rating, 10) || 5)),
+                city: r.City || 'Nepal',
+                scope: r.Project_Scope || 'Architecture',
+                quote: r.Review_Comment,
+                date: r.Date || ''
+              };
+            });
+            rGrid.innerHTML = reviewsList.map(function(r) {
+              const stars = new Array(r.rating + 1).join('&#9733;');
+              return '<div class="hairline-matrix-cell flex flex-col justify-between gap-4"><div>' +
+                '<div class="flex items-center justify-between gap-2 mb-3"><span class="text-[#8F0000] font-serif text-lg">&ldquo;</span>' +
+                '<span class="text-xs font-bold text-[#8F0000]">' + stars + '</span></div>' +
+                '<p class="text-sm text-[#2A2A2A] leading-relaxed italic font-serif">&ldquo;' + escHtml(r.quote) + '&rdquo;</p></div>' +
+                '<div class="pt-3 border-t border-[#DDD8CE]/70 flex items-end justify-between gap-2"><div>' +
+                '<div class="text-xs font-bold text-[#111111]">' + escHtml(r.author) + '</div>' +
+                '<div class="text-[11px] text-[#767070] mt-0.5">' + escHtml(r.scope + ' • ' + r.city) + '</div></div>' +
+                '<span class="text-[10px] font-mono text-[#767070]">' + escHtml(r.date) + '</span></div></div>';
+            }).join('');
+          }
+        }
+
+        // 8. FAQs sync
+        if (dataByTab.FAQs.length) {
+          const fRows = dataByTab.FAQs.filter(function(r) { return r.Question && r.Answer; });
+          const fList = document.getElementById('faqs-list');
+          if (fList && fRows.length) {
+            fRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            faqsList = fRows.map(function(r) {
+              return { category: r.Category || 'FAQ', question: r.Question, answer: r.Answer };
+            });
+            fList.innerHTML = faqsList.map(function(f, idx) {
+              return '<div class="faq-item ' + (idx === 0 ? 'is-open' : '') + '">' +
+                '<button type="button" class="faq-trigger" aria-expanded="' + (idx === 0 ? 'true' : 'false') + '" onclick="toggleFaqItem(this)">' +
+                '<div class="pr-2"><span class="block text-[10px] font-mono uppercase tracking-widest text-[#8F0000] font-bold mb-0.5">' + escHtml(f.category) + '</span>' +
+                '<span class="text-sm sm:text-base font-bold leading-snug">' + escHtml(f.question) + '</span></div>' +
+                '<span class="faq-plus" aria-hidden="true">+</span></button>' +
+                '<div class="faq-body">' + escHtml(f.answer) + '</div></div>';
+            }).join('');
+          }
+        }
+
+        // 9. Partners sync
+        if (dataByTab.Partners.length) {
+          const ptRows = dataByTab.Partners.filter(function(r) { return r.Logo_URL; });
+          const ptGrid = document.getElementById('partners-grid');
+          if (ptGrid && ptRows.length) {
+            ptRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            ptGrid.innerHTML = ptRows.map(function(l) {
+              return '<div class="partner-logo-cell"><img src="' + escHtml(normalizeSheetMediaUrl(l.Logo_URL)) + '" alt="' + escHtml(l.Name || 'Partner Logo') + '" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy" /></div>';
+            }).join('');
+            const ptCount = document.getElementById('cms-partners-count');
+            if (ptCount) ptCount.textContent = ptRows.length + ' Corporate Marks';
+          }
+        }
+
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+      }
+
+      if (typeof fetch === 'function') {
+        runSheetSync().catch(function() {});
+      }
+    })();
 
     // Mobile Drawer
     const mobileToggle = document.getElementById('mobile-toggle');
@@ -3915,6 +4701,77 @@ async function run() {
     path.join('C:', 'Users', 'maste', '.gemini', 'antigravity', 'scratch', 'scale-and-spaces-website')
   ];
 
+  // Build Complete Pre-Populated CMS Workbook (Matches Live Google Sheet Structure)
+  const XLSX = require('C:/Users/maste/.gemini/antigravity/scratch/scale-and-spaces-website/node_modules/xlsx');
+  const wb = XLSX.utils.book_new();
+  const sheetTabs = {
+    Settings: [
+      ['Key', 'Value'],
+      ['Site_Title', 'Scale and Spaces Pvt. Ltd. | Architecture, Structural Engineering & Interior Design in Nepal'],
+      ['Tagline', 'Designing Spaces, Defining Lifestyles!'],
+      ['Email', 'studio@scaleandspaces.com'],
+      ['Phone', '+977-9703881733'],
+      ['WhatsApp', '9779703881733'],
+      ['Head_Office', 'Tokha-6, Dhapasi, Kathmandu'],
+      ['Contact_Office', 'Birgunj-12, Parsa'],
+      ['Custom_Domain', 'https://scaleandspaces.com.np/']
+    ],
+    Hero: [
+      ['Key', 'Value'],
+      ['Badge', 'Architecture | Engineering | Interiors'],
+      ['Headline_Line1', 'Designing Spaces,'],
+      ['Headline_Line2', 'Defining Lifestyles'],
+      ['Subtitle', 'Full-service architectural design, seismic engineering, masterplanning & interior studio by Scale and Spaces Pvt. Ltd. across Nepal.'],
+      ['Cover_Color_URL', 'https://scaleandspaces.com.np/assets/projects/cover_studio_tower.jpg'],
+      ['Cover_BW_URL', 'https://scaleandspaces.com.np/assets/projects/cover_studio_tower_bw.jpg']
+    ],
+    About: [
+      ['Key', 'Value'],
+      ['Title', 'Architecture Rooted in Context, Climate & Engineering Precision'],
+      ['Bio_P1', 'Scale and Spaces Private Limited is a multidisciplinary design and engineering firm practicing from Kathmandu Valley and Birgunj. We unite architectural aesthetics, NBC seismic safety, bioclimatic light, and transparent costing under one roof.'],
+      ['Bio_P2', 'From bespoke family residences and commercial high-rises to community hospitals, civic ghats, and corporate interiors, every drawing transitions seamlessly from sketch to site execution.'],
+      ['Stat1_Num', '44+'],
+      ['Stat1_Label', 'Portfolio Works'],
+      ['Stat2_Num', '10'],
+      ['Stat2_Label', 'Core Specialists'],
+      ['Stat3_Num', '2'],
+      ['Stat3_Label', 'Nepal Offices'],
+      ['Stat4_Num', '1st'],
+      ['Stat4_Label', 'Civic Emblem Prize'],
+      ['Banner_Headline', 'From Concept Massing to Built Architectural Realities']
+    ],
+    Services: [['Title', 'Note', 'Order']].concat(scopeItems.map((s, i) => [s.title, s.note, i + 1])),
+    Projects: [['ID', 'Title', 'Client', 'Category', 'Category_Label', 'Location', 'Year', 'Desc', 'Image_URL', 'Gallery_URLs']].concat(
+      projectsData.map(p => [p.id, p.title, p.client, p.category, p.categoryLabel, p.location, p.year, p.desc, p.image, (p.images || []).join(' | ')])
+    ),
+    Team: [['Name', 'Role', 'Photo_URL', 'Qualification', 'Experience', 'Specialization', 'Bio', 'Key_Projects', 'Office', 'Email', 'CV_Label', 'CV_URL', 'Order']].concat(
+      teamData.map((m, i) => [m.name, m.role, m.image, m.qualification, m.experience, m.specialization, m.bio, m.keyProjects, m.office, m.email, m.cvLabel, m.cvUrl, i + 1])
+    ),
+    Reviews: [['Name', 'Rating', 'City', 'Project_Scope', 'Review_Comment', 'Date']].concat(
+      reviewsData.map(r => [r.author, r.rating, r.city, r.scope, r.quote, r.date])
+    ),
+    FAQs: [['Question', 'Answer', 'Category', 'Order']].concat(
+      faqsData.map((f, i) => [f.question, f.answer, f.category, i + 1])
+    ),
+    Partners: [['Name', 'Logo_URL', 'Order']].concat(
+      clientLogos.map((l, i) => [l.alt.replace(' logo', ''), l.img, i + 1])
+    )
+  };
+  Object.keys(sheetTabs).forEach(tabName => {
+    const ws = XLSX.utils.aoa_to_sheet(sheetTabs[tabName]);
+    XLSX.utils.book_append_sheet(wb, ws, tabName);
+  });
+
+  const existingCfgPath = path.join(__dirname, 'cms-config.json');
+  let existingCfg = { sheetId: '', enabled: true, note: 'Paste Google Spreadsheet ID from the shared sheet URL (Anyone with link -> Viewer)' };
+  if (fs.existsSync(existingCfgPath)) {
+    try {
+      const parsed = JSON.parse(fs.readFileSync(existingCfgPath, 'utf8'));
+      if (parsed && typeof parsed === 'object') existingCfg = parsed;
+    } catch (e) {}
+  }
+  const cmsConfigStr = JSON.stringify(existingCfg, null, 2) + '\n';
+
   baseDirs.forEach(dir => {
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'), finalHtml, 'utf8');
@@ -3923,6 +4780,8 @@ async function run() {
     fs.writeFileSync(path.join(dir, 'sitemap.xml'), sitemapXml, 'utf8');
     fs.writeFileSync(path.join(dir, 'robots.txt'), robotsTxt, 'utf8');
     fs.writeFileSync(path.join(dir, 'CNAME'), cnameTxt, 'utf8');
+    fs.writeFileSync(path.join(dir, 'cms-config.json'), cmsConfigStr, 'utf8');
+    XLSX.writeFile(wb, path.join(dir, 'Scale_and_Spaces_CMS.xlsx'));
 
     renderedLegalPages.forEach(lp => {
       const targetSub = path.join(dir, lp.slug);
@@ -3936,6 +4795,7 @@ async function run() {
       fs.writeFileSync(path.join(pubDir, 'sitemap.xml'), sitemapXml, 'utf8');
       fs.writeFileSync(path.join(pubDir, 'robots.txt'), robotsTxt, 'utf8');
       fs.writeFileSync(path.join(pubDir, 'CNAME'), cnameTxt, 'utf8');
+      fs.writeFileSync(path.join(pubDir, 'cms-config.json'), cmsConfigStr, 'utf8');
       renderedLegalPages.forEach(lp => {
         const pubSub = path.join(pubDir, lp.slug);
         fs.mkdirSync(pubSub, { recursive: true });

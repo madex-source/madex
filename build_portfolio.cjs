@@ -2939,28 +2939,34 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         });
       }
 
-      // Draw Full-Page Architectural Elevation & Landscape Contour Artwork
+      // Draw Full-Page Architectural Elevation & Landscape Contour Artwork using real path lengths
       if (window.gsap) {
         const sketchPaths = document.querySelectorAll('.preloader-sketch-path');
         if (sketchPaths.length) {
+          sketchPaths.forEach(function(p) {
+            let len = 800;
+            try { len = Math.ceil(p.getTotalLength()) || 800; } catch (err) {}
+            p.style.strokeDasharray = String(len);
+            p.style.strokeDashoffset = String(len);
+          });
           gsap.to(sketchPaths, {
             strokeDashoffset: 0,
-            duration: 0.92,
-            stagger: 0.025,
-            ease: 'power2.inOut'
+            duration: 0.68,
+            stagger: 0.014,
+            ease: 'power2.out'
           });
         }
         const pctCounter = { val: 0 };
         gsap.to(pctCounter, {
           val: 100,
-          duration: 0.95,
+          duration: 0.9,
           ease: 'power2.out',
           onUpdate: function() {
             if (preloaderPct) preloaderPct.textContent = Math.round(pctCounter.val) + '%';
           }
         });
         if (preHrFill) {
-          gsap.to(preHrFill, { scaleX: 1, duration: 0.95, ease: 'power2.out' });
+          gsap.to(preHrFill, { scaleX: 1, duration: 0.9, ease: 'power2.out' });
         }
       }
 

@@ -2868,7 +2868,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <a href="#projects" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Projects &#9662;</a>
           <div class="nav-dropdown-panel">
             <div class="nav-dropdown-inner">
-              <a href="#projects" onclick="selectCategoryFilter('all'); return false;" class="nav-dropdown-link">All Projects (${projectsData.length})</a>
+              <a href="#projects" onclick="selectCategoryFilter('all'); return false;" class="nav-dropdown-link">All Projects (<span id="cms-nav-projects-count">${projectsData.length}</span>)</a>
               <a href="#projects" onclick="selectCategoryFilter('Commercial'); return false;" class="nav-dropdown-link">Commercial Towers</a>
               <a href="#projects" onclick="selectCategoryFilter('Residences'); return false;" class="nav-dropdown-link">Private Residences</a>
               <a href="#projects" onclick="selectCategoryFilter('Landscape'); return false;" class="nav-dropdown-link">Landscape Masterplans</a>
@@ -3011,7 +3011,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
       <!-- Thin Architectural Practice Marquee Strip -->
       <div class="studio-marquee-wrap" aria-hidden="true">
-        <div class="studio-marquee-track">
+        <div id="cms-marquee-track" class="studio-marquee-track">
           <span>TOPOGRAPHICAL SURVEY</span><span>&bull;</span>
           <span>ARCHITECTURAL DESIGN</span><span>&bull;</span>
           <span>3D VISUALIZATION</span><span>&bull;</span>
@@ -3040,14 +3040,14 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-              ${icons.compass} Practice Scope
+              ${icons.compass} <span id="cms-services-eyebrow">Practice Scope</span>
             </span>
-            <h2 class="portfolio-section-title">SERVICES_</h2>
-            <p class="text-sm text-[#767070] mt-2 max-w-2xl">
+            <h2 id="cms-services-heading" class="portfolio-section-title">SERVICES</h2>
+            <p id="cms-services-subtitle" class="text-sm text-[#767070] mt-2 max-w-2xl">
               End-to-end architectural, structural, MEP, costing, and supervision deliverables across Nepal.
             </p>
           </div>
-          <div class="text-xs font-bold uppercase tracking-widest text-[#767070]">
+          <div id="cms-services-stamp" class="text-xs font-bold uppercase tracking-widest text-[#767070]">
             SCALE AND SPACES Pvt. Ltd.
           </div>
         </div>
@@ -3109,10 +3109,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-3 reveal-head">
           <div>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-              ${icons.grid} Portfolio Archive
+              ${icons.grid} <span id="cms-projects-eyebrow">Portfolio Archive</span>
             </span>
-            <h2 class="portfolio-section-title">PROJECTS_</h2>
-            <p class="text-sm text-[#767070] mt-1">
+            <h2 id="cms-projects-heading" class="portfolio-section-title">PROJECTS</h2>
+            <p id="cms-projects-subtitle" class="text-sm text-[#767070] mt-1">
               Commercial towers, private residences, landscapes, interiors, hospitals &amp; civic masterplans across Nepal.
             </p>
           </div>
@@ -3274,9 +3274,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal-head">
           <div class="lg:col-span-6">
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-              ${icons.info} About Practice
+              ${icons.info} <span id="cms-about-eyebrow">About Practice</span>
             </span>
-            <h2 class="portfolio-section-title">ABOUT STUDIO_</h2>
+            <h2 id="cms-about-heading" class="portfolio-section-title">ABOUT STUDIO</h2>
             <p id="cms-about-title" class="text-xl sm:text-2xl font-bold serif-heading text-[#111111] mt-3 leading-snug">
               Architecture Rooted in Context, Climate &amp; Engineering Precision
             </p>
@@ -3336,10 +3336,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       <div class="portfolio-container">
         <div class="text-center mb-10 reveal-head">
           <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-            ${icons.users} Multidisciplinary Practice
+            ${icons.users} <span id="cms-team-eyebrow">Multidisciplinary Practice</span>
           </span>
-          <h2 class="portfolio-section-title">OUR TEAM_</h2>
-          <p class="text-sm text-[#767070] mt-2">
+          <h2 id="cms-team-heading" class="portfolio-section-title">OUR TEAM</h2>
+          <p id="cms-team-subtitle" class="text-sm text-[#767070] mt-2">
             Architects, Structural &amp; Civil Engineers, Interior Designers &amp; Project Managers
           </p>
         </div>
@@ -3373,10 +3373,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-              ${icons.article} Studio Journal &amp; Insights
+              ${icons.article} <span id="cms-articles-eyebrow">Studio Journal &amp; Insights</span>
             </span>
-            <h2 class="portfolio-section-title">ARTICLES_</h2>
-            <p class="text-sm text-[#767070] mt-1">
+            <h2 id="cms-articles-heading" class="portfolio-section-title">ARTICLES</h2>
+            <p id="cms-articles-subtitle" class="text-sm text-[#767070] mt-1">
               Technical notes on Nepal seismic compliance, climate-responsive architecture, materials, and interior craft.
             </p>
           </div>
@@ -3422,10 +3422,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-              ${icons.quote} Verified Client &amp; Commission Reviews
+              ${icons.quote} <span id="cms-reviews-eyebrow">Verified Client &amp; Commission Reviews</span>
             </span>
-            <h2 class="portfolio-section-title">CLIENT REVIEWS_</h2>
-            <p class="text-sm text-[#767070] mt-1">
+            <h2 id="cms-reviews-heading" class="portfolio-section-title">CLIENT REVIEWS</h2>
+            <p id="cms-reviews-subtitle" class="text-sm text-[#767070] mt-1">
               Project feedback across commercial, residential, and civic commissions across Nepal.
             </p>
           </div>
@@ -3467,10 +3467,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-              ${icons.help} Practice Answers
+              ${icons.help} <span id="cms-faqs-eyebrow">Practice Answers</span>
             </span>
-            <h2 class="portfolio-section-title">FAQS_</h2>
-            <p class="text-sm text-[#767070] mt-1">
+            <h2 id="cms-faqs-heading" class="portfolio-section-title">FAQS</h2>
+            <p id="cms-faqs-subtitle" class="text-sm text-[#767070] mt-1">
               Common questions on architectural workflow, Nepal NBC structural design, timelines &amp; supervision.
             </p>
           </div>
@@ -3506,10 +3506,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
             <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-              ${icons.building} Brand &amp; Civic Collaborations
+              ${icons.building} <span id="cms-partners-eyebrow">Brand &amp; Civic Collaborations</span>
             </span>
-            <h2 class="portfolio-section-title">PARTNERS COMPANIES_</h2>
-            <p class="text-sm text-[#767070] mt-1">
+            <h2 id="cms-partners-heading" class="portfolio-section-title">PARTNERS COMPANIES</h2>
+            <p id="cms-partners-subtitle" class="text-sm text-[#767070] mt-1">
               Corporate partners, engineering labs, energy ventures, and municipalities we serve.
             </p>
           </div>
@@ -3545,10 +3545,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <div class="lg:col-span-5 flex flex-col gap-5 reveal-card">
             <div>
               <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#8F0000] mb-1">
-                ${icons.phone} Studio Offices
+                ${icons.phone} <span id="cms-contact-eyebrow">Studio Offices</span>
               </span>
-              <h2 class="portfolio-section-title">CONTACT_</h2>
-              <p class="text-sm text-[#767070] mt-2">
+              <h2 id="cms-contact-heading" class="portfolio-section-title">CONTACT</h2>
+              <p id="cms-contact-subtitle" class="text-sm text-[#767070] mt-2">
                 Reach out to start residential, commercial, institutional, or interior commissions.
               </p>
             </div>
@@ -3578,8 +3578,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </div>
 
           <div class="lg:col-span-7 border-t lg:border-t-0 lg:border-l border-[#DDD8CE] pt-6 lg:pt-0 lg:pl-10 reveal-card">
-            <h3 class="text-xl font-bold serif-heading text-[#111111] mb-1">Start a Project Inquiry</h3>
-            <p class="text-xs text-[#767070] mb-5">
+            <h3 id="cms-contact-form-heading" class="text-xl font-bold serif-heading text-[#111111] mb-1">Start a Project Inquiry</h3>
+            <p id="cms-contact-form-subtitle" class="text-xs text-[#767070] mb-5">
               Share your site details directly via WhatsApp for architecture, structural design, or interiors.
             </p>
 
@@ -3631,11 +3631,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
             <div>
               <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
-                ${icons.pin} Find Us On Google
+                ${icons.pin} <span id="cms-locations-eyebrow">Find Us On Google</span>
               </span>
-              <h3 class="text-xl sm:text-2xl font-bold serif-heading text-[#111111]">FIND US ON GOOGLE_</h3>
+              <h3 id="cms-locations-heading" class="text-xl sm:text-2xl font-bold serif-heading text-[#111111]">FIND US ON GOOGLE</h3>
             </div>
-            <p class="text-xs text-[#767070] m-0">
+            <p id="cms-locations-subtitle" class="text-xs text-[#767070] m-0">
               Verified Google Business Profiles in Kathmandu &amp; Birgunj
             </p>
           </div>
@@ -3646,11 +3646,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 <div class="p-4 border-b border-[#DDD8CE] bg-[#FBFBF9] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div class="min-w-0">
                     <div class="flex flex-wrap items-center gap-2 mb-1">
-                      <span class="text-[10px] font-mono uppercase tracking-widest text-[#8F0000] font-bold">${loc.label}</span>
+                      <span id="cms-loc-${loc.id}-label" class="text-[10px] font-mono uppercase tracking-widest text-[#8F0000] font-bold">${loc.label}</span>
                       <span id="cms-loc-${loc.id}-rating" class="inline-flex items-center gap-1 text-[10px] font-bold text-[#111111] bg-[#E8E6DF] px-2 py-0.5">${loc.rating} &#9733; (${loc.reviews})</span>
                     </div>
                     <h4 id="cms-loc-${loc.id}-name" class="text-sm sm:text-base font-bold text-[#111111] truncate" style="font-family: var(--font-sans);">${loc.name}</h4>
-                    <p id="cms-loc-${loc.id}-address" class="text-xs text-[#767070] mt-0.5 m-0">${loc.address} &bull; <span class="font-mono text-[11px]">${loc.plusCode}</span></p>
+                    <p class="text-xs text-[#767070] mt-0.5 m-0"><span id="cms-loc-${loc.id}-address">${loc.address}</span> &bull; <span id="cms-loc-${loc.id}-pluscode" class="font-mono text-[11px]">${loc.plusCode}</span></p>
                   </div>
                   <div class="flex items-center gap-2 shrink-0">
                     <a id="cms-loc-${loc.id}-maps" href="${loc.mapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-crimson text-[11px] py-2 px-3 no-underline whitespace-nowrap">
@@ -3725,7 +3725,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       </div>
 
       <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-[#888888] gap-3">
-        <div>
+        <div id="cms-footer-copyright">
           &copy; <span id="footer-year">2026</span> Scale and Spaces Private Limited. All rights reserved.
         </div>
         <div class="flex flex-wrap items-center gap-4">
@@ -4586,10 +4586,40 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         return true;
       }
 
-      function parseGvizTable(json) {
+      function isKeyValueTab(tabName) {
+        return tabName === 'Settings' || tabName === 'Hero' || tabName === 'About';
+      }
+
+      function parseGvizTable(json, isKvTab) {
         if (!json || json.status === 'error') return null;
         const table = json.table;
         if (!table || !table.cols || !table.rows || !table.rows.length) return [];
+
+        function cellStr(cell) {
+          if (!cell) return '';
+          if (cell.f != null && cell.v instanceof Date) return String(cell.f).trim();
+          if (cell.v != null) return String(cell.v).trim();
+          return '';
+        }
+
+        if (isKvTab) {
+          const kvOut = [];
+          const col0Lbl = (table.cols[0] && table.cols[0].label) ? String(table.cols[0].label).replace(/^\\uFEFF/, '').trim() : '';
+          const col1Lbl = (table.cols[1] && table.cols[1].label) ? String(table.cols[1].label).replace(/^\\uFEFF/, '').trim() : '';
+          if (col0Lbl && col1Lbl && !/^(key|field|setting)$/i.test(col0Lbl)) {
+            kvOut.push({ Key: col0Lbl, Value: col1Lbl });
+          }
+          table.rows.forEach(function(r) {
+            if (!r || !r.c) return;
+            const k = cellStr(r.c[0]);
+            const v = cellStr(r.c[1]);
+            if (!k) return;
+            if (/^(key|field|setting)$/i.test(k) && /^(value|val|content)$/i.test(v)) return;
+            kvOut.push({ Key: k, Value: v });
+          });
+          return kvOut;
+        }
+
         const hasColLabels = table.cols.some(function(c) { return c && c.label && String(c.label).trim() !== ''; });
         let headers = table.cols.map(function(c, i) {
           return String((c && (c.label || c.id)) || ('col' + i)).replace(/^\\uFEFF/, '').trim();
@@ -4599,7 +4629,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           const firstRow = table.rows[0];
           if (firstRow && firstRow.c) {
             headers = firstRow.c.map(function(cell, i) {
-              const v = cell && cell.v != null ? String(cell.v).replace(/^\\uFEFF/, '').trim() : '';
+              const v = cellStr(cell).replace(/^\\uFEFF/, '').trim();
               return v || headers[i];
             });
             dataRows = table.rows.slice(1);
@@ -4611,24 +4641,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           const rowObj = {};
           let hasValue = false;
           headers.forEach(function(h, idx) {
-            const cell = r.c[idx];
-            const val = cell ? (cell.f != null && cell.v instanceof Date ? cell.f : (cell.v != null ? String(cell.v) : '')) : '';
+            const val = cellStr(r.c[idx]);
             if (val !== '') hasValue = true;
-            if (h) rowObj[h] = val.trim();
+            if (h) rowObj[h] = val;
           });
           if (hasValue) out.push(rowObj);
         });
         return out;
       }
 
-      function parseGvizResponse(text) {
+      function parseGvizResponse(text, isKvTab) {
         const start = text.indexOf('{');
         const end = text.lastIndexOf('}');
         if (start === -1 || end === -1) return null;
-        return parseGvizTable(JSON.parse(text.slice(start, end + 1)));
+        return parseGvizTable(JSON.parse(text.slice(start, end + 1)), isKvTab);
       }
 
       function fetchSheetTabJsonp(sheetId, tabName) {
+        const kvFlag = isKeyValueTab(tabName);
         return new Promise(function(resolve) {
           const cbName = '__ssGvizCb_' + (++jsonpCounter) + '_' + Date.now();
           let settled = false;
@@ -4646,7 +4676,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             clearTimeout(timer);
             try { delete window[cbName]; } catch (e) {}
             if (script.parentNode) script.parentNode.removeChild(script);
-            resolve(parseGvizTable(payload));
+            resolve(parseGvizTable(payload, kvFlag));
           };
           script.onerror = function() {
             if (settled) return;
@@ -4658,23 +4688,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           };
           script.src = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) +
             '/gviz/tq?tqx=' + encodeURIComponent('responseHandler:' + cbName) +
-            '&headers=1&sheet=' + encodeURIComponent(tabName) + '&_ts=' + Date.now();
+            '&headers=0&sheet=' + encodeURIComponent(tabName) + '&_ts=' + Date.now();
           document.head.appendChild(script);
         });
       }
 
       async function fetchSheetTab(sheetId, tabName) {
+        const kvFlag = isKeyValueTab(tabName);
         if (window.location && window.location.protocol === 'file:') {
           return fetchSheetTabJsonp(sheetId, tabName);
         }
         try {
           const url = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) +
-            '/gviz/tq?tqx=out:json&headers=1&sheet=' + encodeURIComponent(tabName) + '&_ts=' + Date.now();
+            '/gviz/tq?tqx=out:json&headers=0&sheet=' + encodeURIComponent(tabName) + '&_ts=' + Date.now();
           const res = await fetch(url, { mode: 'cors', cache: 'no-store' });
           if (res.ok) {
             const txt = await res.text();
             if (txt.indexOf('"status":"error"') === -1 && txt.indexOf('google.visualization.Query.setResponse') !== -1) {
-              return parseGvizResponse(txt);
+              return parseGvizResponse(txt, kvFlag);
             }
           }
         } catch (err) {}
@@ -4784,9 +4815,30 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           return;
         }
 
+        function applyDynamicCmsKeys(map, skipKeys) {
+          if (!map) return;
+          Object.keys(map).forEach(function(rawKey) {
+            if (!map[rawKey]) return;
+            if (skipKeys && skipKeys.indexOf(rawKey) !== -1) return;
+            const normId = rawKey.indexOf('cms-') === 0 ? rawKey : ('cms-' + rawKey.toLowerCase().replace(/_/g, '-'));
+            const el = document.getElementById(normId);
+            if (el) el.textContent = map[rawKey];
+          });
+        }
+
+        function updateMarqueeTrack(items) {
+          const track = document.getElementById('cms-marquee-track');
+          if (!track || !items || !items.length) return;
+          const clean = items.map(function(t) { return String(t || '').trim(); }).filter(Boolean);
+          if (!clean.length) return;
+          const onceHtml = clean.map(function(t) { return '<span>' + escHtml(t.toUpperCase()) + '</span><span>&bull;</span>'; }).join('');
+          track.innerHTML = onceHtml + onceHtml;
+        }
+
+        let settingsLockedMarquee = false;
         let anyTabChanged = false;
 
-        // 1. Settings overrides (Email, Phone, WhatsApp, Offices, Tagline, Domain, Studio Locations)
+        // 1. Settings overrides (Email, Phone, WhatsApp, Offices, Tagline, Domain, Studio Locations, Any cms-* ID)
         if (isTabChanged('Settings', dataByTab.Settings)) {
           anyTabChanged = true;
           const s = kvRowsToMap(dataByTab.Settings);
@@ -4832,22 +4884,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               if (el) el.textContent = s.Contact_Office;
             });
           }
-          if (s.Maps_KTM_Address) {
-            const el = document.getElementById('cms-loc-kathmandu-address');
-            if (el) el.textContent = s.Maps_KTM_Address;
-          }
-          if (s.Maps_BRJ_Address) {
-            const el = document.getElementById('cms-loc-birgunj-address');
-            if (el) el.textContent = s.Maps_BRJ_Address;
-          }
-          if (s.Maps_KTM_Rating) {
-            const el = document.getElementById('cms-loc-kathmandu-rating');
-            if (el) el.textContent = s.Maps_KTM_Rating;
-          }
-          if (s.Maps_BRJ_Rating) {
-            const el = document.getElementById('cms-loc-birgunj-rating');
-            if (el) el.textContent = s.Maps_BRJ_Rating;
-          }
+          const locFieldMap = {
+            'Maps_KTM_Label': 'cms-loc-kathmandu-label',
+            'Maps_KTM_Name': 'cms-loc-kathmandu-name',
+            'Maps_KTM_Address': 'cms-loc-kathmandu-address',
+            'Maps_KTM_PlusCode': 'cms-loc-kathmandu-pluscode',
+            'Maps_KTM_Rating': 'cms-loc-kathmandu-rating',
+            'Maps_BRJ_Label': 'cms-loc-birgunj-label',
+            'Maps_BRJ_Name': 'cms-loc-birgunj-name',
+            'Maps_BRJ_Address': 'cms-loc-birgunj-address',
+            'Maps_BRJ_PlusCode': 'cms-loc-birgunj-pluscode',
+            'Maps_BRJ_Rating': 'cms-loc-birgunj-rating'
+          };
+          Object.keys(locFieldMap).forEach(function(k) {
+            if (s[k]) {
+              const el = document.getElementById(locFieldMap[k]);
+              if (el) el.textContent = s[k];
+            }
+          });
           if (s.Maps_KTM_URL) applySmartLinkAttrs(document.getElementById('cms-loc-kathmandu-maps'), s.Maps_KTM_URL);
           if (s.Maps_KTM_Directions) applySmartLinkAttrs(document.getElementById('cms-loc-kathmandu-dir'), s.Maps_KTM_Directions);
           if (s.Maps_KTM_Embed) {
@@ -4859,6 +4913,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           if (s.Maps_BRJ_Embed) {
             const emb = document.getElementById('cms-loc-birgunj-embed');
             if (emb && /^https:\\/\\//i.test(s.Maps_BRJ_Embed)) emb.src = s.Maps_BRJ_Embed;
+          }
+          if (s.Marquee) {
+            settingsLockedMarquee = true;
+            updateMarqueeTrack(String(s.Marquee).split(/[|,\\n]+/));
           }
           if (s.Tagline) {
             const tagEl = document.getElementById('cms-footer-tagline');
@@ -4875,6 +4933,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           if (!lastHeroMetaTitle && (s.Site_Title || s.SEO_Title)) {
             document.title = s.Site_Title || s.SEO_Title;
           }
+          applyDynamicCmsKeys(s, ['Site_Title', 'SEO_Title', 'Tagline', 'Email', 'Phone', 'WhatsApp', 'Head_Office', 'Contact_Office', 'Custom_Domain', 'Marquee', 'Maps_KTM_URL', 'Maps_KTM_Directions', 'Maps_KTM_Embed', 'Maps_BRJ_URL', 'Maps_BRJ_Directions', 'Maps_BRJ_Embed']);
         }
 
         // 2. Hero overrides (Badge, Headline, Subtitle, Cover Photos, SEO Meta)
@@ -4935,6 +4994,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                   escHtml(nextL1) + '</span>' +
                   '<span class="block text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight" style="font-family: \\'EB Garamond\\', Georgia, serif;">' +
                   escHtml(nextL2) + '<span style="font-size: 1.15em;">!</span></span>';
+                h1.style.opacity = '1';
               }
             }
           }
@@ -5006,6 +5066,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 (note ? '<span class="text-xs text-[#767070]">' + escHtml(note) + '</span>' : '') +
                 linkHtml + '</div></div>';
             }).join('');
+            if (!settingsLockedMarquee) {
+              updateMarqueeTrack(svcRows.map(function(item) { return pickField(item, ['Title', 'Service', 'Name']); }));
+            }
           }
         }
 
@@ -5068,6 +5131,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             if (allTab) allTab.textContent = 'All (' + projects.length + ')';
             const fProjCount = document.getElementById('cms-footer-projects-count');
             if (fProjCount) fProjCount.textContent = String(projects.length);
+            const navProjCount = document.getElementById('cms-nav-projects-count');
+            if (navProjCount) navProjCount.textContent = String(projects.length);
             applyFilter(currentCategoryFilter, false);
           }
         }
@@ -6199,7 +6264,11 @@ async function run() {
       ['WhatsApp', '9779703881733'],
       ['Head_Office', 'Dhapasi, Tokha-6, Kathmandu 44600'],
       ['Contact_Office', 'Main Road, In front of Consulate General of India, Birgunj 44300'],
-      ['Custom_Domain', 'https://scaleandspaces.com.np/']
+      ['Custom_Domain', 'https://scaleandspaces.com.np/'],
+      ['Maps_KTM_Rating', '5.0 ★ (14 Google reviews)'],
+      ['Maps_BRJ_Rating', '5.0 ★ (1 Google review)'],
+      ['Locations_Heading', 'FIND US ON GOOGLE'],
+      ['Locations_Subtitle', 'Verified Google Business Profiles in Kathmandu & Birgunj']
     ],
     Hero: [
       ['Key', 'Value'],

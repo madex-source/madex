@@ -4353,18 +4353,29 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
     // Live Google Sheet CMS Hydration (Upgradable Settings, Hero, About, Services, Projects, Team, Reviews, FAQs, Partners)
     (function initGoogleSheetCms() {
-      function parseGvizResponse(text) {
-        const start = text.indexOf('{');
-        const end = text.lastIndexOf('}');
-        if (start === -1 || end === -1) return [];
-        const json = JSON.parse(text.slice(start, end + 1));
+      const DEFAULT_SHEET_ID = '1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts';
+      let jsonpCounter = 0;
+
+      function parseGvizTable(json) {
         const table = json && json.table;
-        if (!table || !table.cols || !table.rows) return [];
-        const headers = table.cols.map(function(c, i) {
+        if (!table || !table.cols || !table.rows || !table.rows.length) return [];
+        const hasColLabels = table.cols.some(function(c) { return c && c.label && String(c.label).trim() !== ''; });
+        let headers = table.cols.map(function(c, i) {
           return String((c && (c.label || c.id)) || ('col' + i)).trim();
         });
+        let dataRows = table.rows;
+        if (!hasColLabels && table.rows.length > 1) {
+          const firstRow = table.rows[0];
+          if (firstRow && firstRow.c) {
+            headers = firstRow.c.map(function(cell, i) {
+              const v = cell && cell.v != null ? String(cell.v).trim() : '';
+              return v || headers[i];
+            });
+            dataRows = table.rows.slice(1);
+          }
+        }
         const out = [];
-        table.rows.forEach(function(r) {
+        dataRows.forEach(function(r) {
           if (!r || !r.c) return;
           const rowObj = {};
           let hasValue = false;
@@ -4379,12 +4390,62 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         return out;
       }
 
+      function parseGvizResponse(text) {
+        const start = text.indexOf('{');
+        const end = text.lastIndexOf('}');
+        if (start === -1 || end === -1) return [];
+        return parseGvizTable(JSON.parse(text.slice(start, end + 1)));
+      }
+
+      function fetchSheetTabJsonp(sheetId, tabName) {
+        return new Promise(function(resolve) {
+          const cbName = '__ssGvizCb_' + (++jsonpCounter) + '_' + Date.now();
+          let settled = false;
+          const script = document.createElement('script');
+          const timer = setTimeout(function() {
+            if (settled) return;
+            settled = true;
+            try { delete window[cbName]; } catch (e) {}
+            if (script.parentNode) script.parentNode.removeChild(script);
+            resolve([]);
+          }, 8000);
+          window[cbName] = function(payload) {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            try { delete window[cbName]; } catch (e) {}
+            if (script.parentNode) script.parentNode.removeChild(script);
+            resolve(parseGvizTable(payload));
+          };
+          script.onerror = function() {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            try { delete window[cbName]; } catch (e) {}
+            if (script.parentNode) script.parentNode.removeChild(script);
+            resolve([]);
+          };
+          script.src = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) +
+            '/gviz/tq?tqx=' + encodeURIComponent('responseHandler:' + cbName) +
+            '&headers=1&sheet=' + encodeURIComponent(tabName);
+          document.head.appendChild(script);
+        });
+      }
+
       async function fetchSheetTab(sheetId, tabName) {
-        const url = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) + '/gviz/tq?tqx=out:json&headers=1&sheet=' + encodeURIComponent(tabName);
-        const res = await fetch(url, { mode: 'cors' });
-        if (!res.ok) return [];
-        const txt = await res.text();
-        return parseGvizResponse(txt);
+        if (window.location && window.location.protocol === 'file:') {
+          return fetchSheetTabJsonp(sheetId, tabName);
+        }
+        try {
+          const url = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) + '/gviz/tq?tqx=out:json&headers=1&sheet=' + encodeURIComponent(tabName);
+          const res = await fetch(url, { mode: 'cors', cache: 'no-store' });
+          if (res.ok) {
+            const txt = await res.text();
+            const parsed = parseGvizResponse(txt);
+            if (parsed.length) return parsed;
+          }
+        } catch (err) {}
+        return fetchSheetTabJsonp(sheetId, tabName);
       }
 
       function kvRowsToMap(rows) {
@@ -4406,15 +4467,17 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           const q = new URLSearchParams(window.location.search).get('sheet');
           if (q) sheetId = q.trim();
         } catch (err) {}
-        if (!sheetId) {
+        if (!sheetId && (!window.location || window.location.protocol !== 'file:')) {
           try {
             const cfgRes = await fetch('cms-config.json?v=' + Date.now());
             if (cfgRes.ok) {
               const cfg = await cfgRes.json();
-              if (cfg && cfg.sheetId && cfg.enabled !== false) sheetId = String(cfg.sheetId).trim();
+              if (cfg && cfg.enabled === false) return;
+              if (cfg && cfg.sheetId) sheetId = String(cfg.sheetId).trim();
             }
           } catch (err) {}
         }
+        if (!sheetId) sheetId = DEFAULT_SHEET_ID;
         if (!sheetId) return;
 
         const tabsToLoad = ['Settings', 'Hero', 'About', 'Services', 'Projects', 'Team', 'Articles', 'Reviews', 'FAQs', 'Partners'];
@@ -4435,7 +4498,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               }
             });
           }
-          if (s.Phone) {
+          if (s.Phone && !/^-/.test(s.Phone) && s.Phone.replace(/[^0-9]/g, '').length >= 7) {
             const telDigits = s.Phone.replace(/[^+0-9]/g, '');
             document.querySelectorAll('a[href^="tel:"]').forEach(function(a) {
               a.href = 'tel:' + telDigits;

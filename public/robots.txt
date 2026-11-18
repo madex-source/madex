@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://madex-source.github.io/madex/sitemap.xml
+Sitemap: https://scaleandspaces.com.np/sitemap.xml

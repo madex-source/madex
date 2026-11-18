@@ -635,11 +635,11 @@ const jsonLdSchema = {
   "@type": "ProfessionalService",
   "name": "Scale and Spaces Private Limited",
   "alternateName": "Scale and Spaces Pvt. Ltd.",
-  "url": "https://madex-source.github.io/madex/",
-  "logo": "https://madex-source.github.io/madex/assets/logo.jpg",
+  "url": "https://scaleandspaces.com.np/",
+  "logo": "https://scaleandspaces.com.np/assets/logo.jpg",
   "image": [
-    "https://madex-source.github.io/madex/assets/projects/cover_studio_tower.jpg",
-    "https://madex-source.github.io/madex/assets/projects/mithila_tower.jpg"
+    "https://scaleandspaces.com.np/assets/projects/cover_studio_tower.jpg",
+    "https://scaleandspaces.com.np/assets/projects/mithila_tower.jpg"
   ],
   "description": "Scale and Spaces Pvt. Ltd. is an architectural, structural engineering, landscape masterplanning, and interior design firm practicing in Tokha-6, Kathmandu and Birgunj-12, Parsa, Nepal.",
   "slogan": "Designing Spaces, Defining Lifestyles!",
@@ -1923,7 +1923,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
   <meta name="description" content="Scale and Spaces Pvt. Ltd. — Leading architecture, structural engineering, landscape masterplanning, and interior design practice in Tokha-6, Kathmandu and Birgunj-12, Parsa, Nepal." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#8F0000" />
-  <link rel="canonical" href="https://madex-source.github.io/madex/" />
+  <meta name="google-site-verification" content="mf4GOtcYonLwbYRts_cwxyovvrpZwiXa3juGaPnaX8I" />
+  <link rel="canonical" href="https://scaleandspaces.com.np/" />
 
   <!-- Open Graph & Social Meta -->
   <meta property="og:locale" content="en_US" />
@@ -1931,13 +1932,13 @@ const htmlBodyTemplate = `<!DOCTYPE html>
   <meta property="og:title" content="Scale and Spaces Pvt. Ltd. | Architecture, Engineering &amp; Interior Design" />
   <meta property="og:description" content="Designing Spaces, Defining Lifestyles! Architectural, structural, and interior design portfolio across Kathmandu and Birgunj, Nepal." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://madex-source.github.io/madex/" />
-  <meta property="og:image" content="https://madex-source.github.io/madex/assets/projects/cover_studio_tower.jpg" />
+  <meta property="og:url" content="https://scaleandspaces.com.np/" />
+  <meta property="og:image" content="https://scaleandspaces.com.np/assets/projects/cover_studio_tower.jpg" />
   <meta property="og:image:alt" content="Scale and Spaces architectural tower perspective study" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Scale and Spaces Pvt. Ltd. | Design Portfolio" />
   <meta name="twitter:description" content="Architecture, structural engineering, landscape masterplanning, and interior design in Kathmandu &amp; Birgunj, Nepal." />
-  <meta name="twitter:image" content="https://madex-source.github.io/madex/assets/projects/cover_studio_tower.jpg" />
+  <meta name="twitter:image" content="https://scaleandspaces.com.np/assets/projects/cover_studio_tower.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
   <link rel="apple-touch-icon" href="assets/logo.jpg" />
@@ -2691,7 +2692,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               <div class="flex flex-col gap-2 text-xs sm:text-sm">
                 <p class="flex items-center gap-2">${icons.mail} <strong>Email:</strong> <a href="mailto:studio@scaleandspaces.com" class="text-[#8F0000] underline">studio@scaleandspaces.com</a></p>
                 <p class="flex items-center gap-2">${icons.phone} <strong>Phone:</strong> <a href="tel:+9779703881733" class="text-[#111111] no-underline hover:underline">+977-9703881733</a></p>
-                <p><strong>Website:</strong> www.scaleandspaces.com</p>
+                <p><strong>Website:</strong> <a href="https://scaleandspaces.com.np" class="text-[#111111] no-underline hover:text-[#8F0000]">scaleandspaces.com.np</a></p>
               </div>
             </div>
 
@@ -2806,7 +2807,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <a href="privacy-policy/" class="text-[#888888] no-underline hover:text-white">Privacy</a>
           <a href="terms-and-conditions/" class="text-[#888888] no-underline hover:text-white">Terms</a>
           <a href="cookie-policy/" class="text-[#888888] no-underline hover:text-white">Cookies</a>
-          <span>www.scaleandspaces.com</span>
+          <span>scaleandspaces.com.np</span>
         </div>
       </div>
     </div>
@@ -3721,7 +3722,8 @@ function buildLegalPage(page, compiledCss) {
   <meta name="description" content="${page.description}" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#8F0000" />
-  <link rel="canonical" href="https://madex-source.github.io/madex/${page.slug}/" />
+  <meta name="google-site-verification" content="mf4GOtcYonLwbYRts_cwxyovvrpZwiXa3juGaPnaX8I" />
+  <link rel="canonical" href="https://scaleandspaces.com.np/${page.slug}/" />
   <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -3835,31 +3837,31 @@ const notFoundHtml = `<!DOCTYPE html>
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://madex-source.github.io/madex/</loc>
+    <loc>https://scaleandspaces.com.np/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://madex-source.github.io/madex/privacy-policy/</loc>
+    <loc>https://scaleandspaces.com.np/privacy-policy/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://madex-source.github.io/madex/terms-and-conditions/</loc>
+    <loc>https://scaleandspaces.com.np/terms-and-conditions/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://madex-source.github.io/madex/cookie-policy/</loc>
+    <loc>https://scaleandspaces.com.np/cookie-policy/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://madex-source.github.io/madex/disclaimer/</loc>
+    <loc>https://scaleandspaces.com.np/disclaimer/</loc>
     <lastmod>2026-11-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
@@ -3870,8 +3872,10 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 const robotsTxt = `User-agent: *
 Allow: /
 
-Sitemap: https://madex-source.github.io/madex/sitemap.xml
+Sitemap: https://scaleandspaces.com.np/sitemap.xml
 `;
+
+const cnameTxt = 'scaleandspaces.com.np\n';
 
 async function run() {
   const twNodeUrl = pathToFileURL('C:/Users/maste/.gemini/antigravity/scratch/scale-and-spaces-website/node_modules/@tailwindcss/node/dist/index.mjs').href;
@@ -3918,6 +3922,7 @@ async function run() {
     fs.writeFileSync(path.join(dir, '404.html'), notFoundHtml, 'utf8');
     fs.writeFileSync(path.join(dir, 'sitemap.xml'), sitemapXml, 'utf8');
     fs.writeFileSync(path.join(dir, 'robots.txt'), robotsTxt, 'utf8');
+    fs.writeFileSync(path.join(dir, 'CNAME'), cnameTxt, 'utf8');
 
     renderedLegalPages.forEach(lp => {
       const targetSub = path.join(dir, lp.slug);
@@ -3930,6 +3935,7 @@ async function run() {
       fs.writeFileSync(path.join(pubDir, '404.html'), notFoundHtml, 'utf8');
       fs.writeFileSync(path.join(pubDir, 'sitemap.xml'), sitemapXml, 'utf8');
       fs.writeFileSync(path.join(pubDir, 'robots.txt'), robotsTxt, 'utf8');
+      fs.writeFileSync(path.join(pubDir, 'CNAME'), cnameTxt, 'utf8');
       renderedLegalPages.forEach(lp => {
         const pubSub = path.join(pubDir, lp.slug);
         fs.mkdirSync(pubSub, { recursive: true });

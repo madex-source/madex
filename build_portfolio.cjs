@@ -4722,8 +4722,8 @@ async function run() {
       ['Headline_Line1', 'Designing Spaces,'],
       ['Headline_Line2', 'Defining Lifestyles'],
       ['Subtitle', 'Full-service architectural design, seismic engineering, masterplanning & interior studio by Scale and Spaces Pvt. Ltd. across Nepal.'],
-      ['Cover_Color_URL', 'https://scaleandspaces.com.np/assets/projects/cover_studio_tower.jpg'],
-      ['Cover_BW_URL', 'https://scaleandspaces.com.np/assets/projects/cover_studio_tower_bw.jpg']
+      ['Cover_Color_URL', 'assets/projects/cover_studio_tower.jpg'],
+      ['Cover_BW_URL', 'assets/projects/cover_studio_tower_bw.jpg']
     ],
     About: [
       ['Key', 'Value'],
@@ -4763,11 +4763,21 @@ async function run() {
   });
 
   const existingCfgPath = path.join(__dirname, 'cms-config.json');
-  let existingCfg = { sheetId: '', enabled: true, note: 'Paste Google Spreadsheet ID from the shared sheet URL (Anyone with link -> Viewer)' };
+  const defaultSheetId = '1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts';
+  let existingCfg = {
+    sheetId: defaultSheetId,
+    enabled: true,
+    sheetUrl: 'https://docs.google.com/spreadsheets/d/' + defaultSheetId + '/edit',
+    note: 'Share Sheet as Anyone with link -> Viewer (or transfer ownership to scaleandspaces@gmail.com anytime)'
+  };
   if (fs.existsSync(existingCfgPath)) {
     try {
       const parsed = JSON.parse(fs.readFileSync(existingCfgPath, 'utf8'));
-      if (parsed && typeof parsed === 'object') existingCfg = parsed;
+      if (parsed && typeof parsed === 'object') {
+        existingCfg = Object.assign({}, existingCfg, parsed);
+        if (!existingCfg.sheetId) existingCfg.sheetId = defaultSheetId;
+        existingCfg.sheetUrl = 'https://docs.google.com/spreadsheets/d/' + existingCfg.sheetId + '/edit';
+      }
     } catch (e) {}
   }
   const cmsConfigStr = JSON.stringify(existingCfg, null, 2) + '\n';

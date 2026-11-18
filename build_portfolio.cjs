@@ -790,16 +790,160 @@ const faqsData = [
 ];
 
 const clientLogos = [
-  { img: 'assets/logos/client-logo-1.jpg', alt: 'Amico Books & Stationery logo' },
-  { img: 'assets/logos/client-logo-2.jpg', alt: 'Aarnav Nirman Sewa logo' },
-  { img: 'assets/logos/client-logo-3.jpg', alt: 'NITCO Construction Laboratory logo' },
-  { img: 'assets/logos/client-logo-4.jpg', alt: 'Planetably Energy Pvt. Ltd. logo' },
-  { img: 'assets/logos/client-logo-5.jpg', alt: 'Jupiter Power logo' },
-  { img: 'assets/logos/client-logo-6.jpg', alt: 'Lions Club of Kathmandu Sarang logo' },
-  { img: 'assets/logos/client-logo-7.jpg', alt: 'Global Career Care Pvt. Ltd. logo' },
-  { img: 'assets/logos/client-logo-8.jpg', alt: 'Viewport logo' },
-  { img: 'assets/logos/client-logo-9.jpg', alt: 'Shristi Engineering Consultancy logo' },
-  { img: 'assets/logos/client-logo-10.jpg', alt: 'Abhiyanta Multipurpose Cooperative logo' }
+  {
+    img: 'assets/logos/client-logo-1.jpg',
+    name: 'Amico Books & Stationery',
+    alt: 'Amico Books & Stationery logo',
+    desc: 'Educational publications, academic books, and institutional stationery enterprise.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/client-logo-2.jpg',
+    name: 'Aarnav Nirman Sewa',
+    alt: 'Aarnav Nirman Sewa logo',
+    desc: 'Civil engineering contracting and commercial infrastructure execution partner.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/client-logo-3.jpg',
+    name: 'NITCO Construction Laboratory',
+    alt: 'NITCO Construction Laboratory logo',
+    desc: 'Construction materials testing, soil investigation, and quality assurance laboratory.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/client-logo-4.jpg',
+    name: 'Planetably Energy Pvt. Ltd.',
+    alt: 'Planetably Energy Pvt. Ltd. logo',
+    desc: 'Clean energy engineering and sustainable power development venture.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/client-logo-5.jpg',
+    name: 'Jupiter Power',
+    alt: 'Jupiter Power logo',
+    desc: 'Electrical power generation and utility infrastructure engineering partner.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/client-logo-6.jpg',
+    name: 'Lions Club of Kathmandu Sarang',
+    alt: 'Lions Club of Kathmandu Sarang logo',
+    desc: 'Community welfare, humanitarian service, and civic leadership organization.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/client-logo-7.jpg',
+    name: 'Global Career Care Pvt. Ltd.',
+    alt: 'Global Career Care Pvt. Ltd. logo',
+    desc: 'International academic counseling and global career advisory institution.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/client-logo-8.jpg',
+    name: 'Viewport',
+    alt: 'Viewport logo',
+    desc: 'Architectural visualization, creative studio production, and spatial media collaborator.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/client-logo-9.jpg',
+    name: 'Shristi Engineering Consultancy',
+    alt: 'Shristi Engineering Consultancy logo',
+    desc: 'Multidisciplinary civil and structural engineering technical consultancy.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/client-logo-10.jpg',
+    name: 'Abhiyanta Multipurpose Cooperative',
+    alt: 'Abhiyanta Multipurpose Cooperative logo',
+    desc: 'Engineer-led multipurpose financial cooperative and capital institution.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/partner-kendrabindu.gif',
+    name: 'Kendrabindu.com',
+    alt: 'Kendrabindu Online Media logo',
+    desc: 'National digital news portal by Kendrabindu Online Media Pvt. Ltd. (Kathmandu) covering current affairs, economy, and society.',
+    url: 'https://kendrabindu.com'
+  },
+  {
+    img: 'assets/logos/partner-nrb.jpg',
+    name: 'Nepal Rastra Bank, Birgunj',
+    alt: 'Nepal Rastra Bank Birgunj crest',
+    desc: 'Regional branch of Nepal’s central bank in Adarshnagar, Birgunj overseeing provincial currency management and banking operations.',
+    url: 'https://www.nrb.org.np'
+  },
+  {
+    img: 'assets/logos/partner-laminar.svg',
+    name: 'Laminar Tiles',
+    alt: 'Laminar Tiles logo',
+    desc: '100% fully vitrified porcelain tiles manufactured in Gulariya, Bardiya by Lumbini Ceramics Ltd. with ultra-low water absorption.',
+    url: 'https://laminartiles.com'
+  },
+  {
+    img: 'assets/logos/partner-ats-tiles.svg',
+    name: 'ATS Tiles',
+    alt: 'ATS Tiles wordmark',
+    desc: 'Domestic floor and heavy-duty parking porcelain tile brand manufactured at Pashupati Ceramics Pvt. Ltd., Simara SEZ, Bara.',
+    url: ''
+  },
+  {
+    img: 'assets/logos/partner-isha.jpg',
+    name: 'Isha Build Mart, Birgunj',
+    alt: 'Isha Build Mart Pvt. Ltd. logo',
+    desc: 'One-stop building material showroom on Link Road, Birgunj supplying tiles, sanitary ware, marble, granite, and fixtures.',
+    url: 'https://www.ishabuildmart.com'
+  },
+  {
+    img: 'assets/logos/partner-kajaria.png',
+    name: 'Kajaria Tiles',
+    alt: 'Kajaria Ramesh Tiles Ltd. logo',
+    desc: 'Kajaria Ramesh Tiles Ltd., Nepal’s largest ceramic and vitrified tile plant in Nawalparasi formed with Ramesh Corp.',
+    url: 'https://kajariaramesh.com'
+  },
+  {
+    img: 'assets/logos/partner-merino.png',
+    name: 'Merino Laminates',
+    alt: 'Merino Laminates logo',
+    desc: 'Global interior surfaces leader manufacturing decorative high-pressure laminates, plywood, and architectural panel systems.',
+    url: 'https://www.merinolaminates.com'
+  }
+];
+
+const articlesData = [
+  {
+    heading: 'Seismic-Resilient Residence Design Under Nepal National Building Code',
+    image: 'assets/projects/prakash_amatya_residence.jpg',
+    desc: 'How integrated architectural grid planning, balanced shear stiffness, and NBC ductile detailing safeguard modern reinforced-concrete homes across Kathmandu Valley and the Terai belt while streamlining municipal building permit approvals.',
+    link: '',
+    category: 'Structural & NBC',
+    date: 'Studio Note · 2026'
+  },
+  {
+    heading: 'Passive Cooling & Solar Orientation for Terai Homes in Birgunj',
+    image: 'assets/projects/ashok_shah_residence.jpg',
+    desc: 'Designing deep cantilevered verandas, shaded recessed fenestration, stack-effect stairwells, and high-albedo terrace roofing to reduce peak summer heat gain across Parsa, Bara, and Madhesh Province residences.',
+    link: '',
+    category: 'Climate Architecture',
+    date: 'Studio Note · 2026'
+  },
+  {
+    heading: 'Mixed-Use Commercial Facade Economics: From 3D Concept to BOQ',
+    image: 'assets/projects/adarsh_city_center_1.jpg',
+    desc: 'Aligning street-facing curtain glazing, ACP cladding modules, clear structural column bays, and itemized Bills of Quantities before tendering so commercial developments stay visually sharp and financially predictable.',
+    link: '',
+    category: 'Commercial Practice',
+    date: 'Studio Note · 2026'
+  },
+  {
+    heading: 'Specifying Durable Vitrified Tiles, Laminates & Joinery Finishes',
+    image: 'assets/projects/interior_modern_luxury_living.jpg',
+    desc: 'A practical material specification guide comparing water-absorption grades in full-body vitrified tiles, high-pressure architectural laminates, acoustic ceilings, and warm layered LED coves for timeless interior spaces.',
+    link: '',
+    category: 'Interior Materials',
+    date: 'Studio Note · 2026'
+  }
 ];
 
 const jsonLdSchema = {
@@ -813,7 +957,7 @@ const jsonLdSchema = {
     "https://scaleandspaces.com.np/assets/projects/cover_studio_tower.jpg",
     "https://scaleandspaces.com.np/assets/projects/mithila_tower.jpg"
   ],
-  "description": "Scale and Spaces Pvt. Ltd. is an architectural, structural engineering, landscape masterplanning, and interior design firm practicing in Tokha-6, Kathmandu and Birgunj-12, Parsa, Nepal.",
+  "description": "Trusted Architects & Interior Designers in Kathmandu, Birgunj & Nepal. 3D renders, NBC seismic plans & turnkey interiors by Scale and Spaces.",
   "slogan": "Designing Spaces, Defining Lifestyles!",
   "email": "studio@scaleandspaces.com",
   "telephone": "+977-9703881733",
@@ -835,7 +979,18 @@ const jsonLdSchema = {
       "addressCountry": "NP"
     }
   ],
-  "areaServed": "Nepal",
+  "areaServed": ["Nepal", "Kathmandu", "Birgunj", "Parsa", "Sarlahi", "Bara"],
+  "knowsAbout": [
+    "Architect in Nepal",
+    "Best Architect in Nepal",
+    "Architect in Kathmandu",
+    "Architect in Birgunj",
+    "Interior Designer in Nepal",
+    "Best Interior Designer in Nepal",
+    "Interior Designer in Kathmandu",
+    "Interior Designer in Birgunj",
+    "Structural & Seismic Engineering"
+  ],
   "serviceType": [
     "Architecture",
     "Civil & Structural Engineering",
@@ -890,6 +1045,12 @@ const customCss = `
 
     html {
       scroll-padding-top: 84px;
+      overflow-x: clip;
+    }
+
+    html.modal-open,
+    html.modal-open body {
+      overflow: hidden;
     }
 
     body {
@@ -899,7 +1060,7 @@ const customCss = `
       font-size: 16px;
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+      overflow-x: clip;
       position: relative;
     }
 
@@ -1700,19 +1861,93 @@ const customCss = `
     .project-image-box {
       position: relative;
       overflow: hidden;
-      aspect-ratio: 16 / 9;
-      background-color: #E2DFD8;
+      aspect-ratio: 16 / 10;
+      background-color: #ECEAE3;
       cursor: pointer;
     }
     .project-image-box img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s var(--ease-expo);
+      object-fit: contain;
+      transition: transform 0.6s var(--ease-expo);
       display: block;
     }
     .project-card:hover .project-image-box img {
-      transform: scale(1.06);
+      transform: scale(1.03);
+    }
+    .lightbox-stage {
+      position: relative;
+      border: 1px solid var(--border-line);
+      background-color: #ECEAE3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;
+      overflow: hidden;
+    }
+    .lightbox-nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 38px;
+      height: 48px;
+      background: rgba(17, 17, 17, 0.72);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 20px;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 4;
+      transition: background-color 0.2s ease;
+    }
+    .lightbox-nav-arrow:hover {
+      background: var(--crimson);
+    }
+    .fullscreen-viewer {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      background: rgba(12, 12, 12, 0.96);
+      display: none;
+      flex-direction: column;
+      overscroll-behavior: contain;
+    }
+    .fullscreen-viewer.active {
+      display: flex;
+    }
+    .fullscreen-canvas {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+    .fullscreen-canvas.is-zoomed {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    .fullscreen-canvas img {
+      max-width: 96vw;
+      max-height: 86dvh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      cursor: zoom-in;
+      transition: transform 0.25s ease;
+      margin: auto;
+    }
+    .fullscreen-canvas.is-zoomed img {
+      max-width: none;
+      max-height: none;
+      width: 145vw;
+      cursor: zoom-out;
     }
     .project-overlay {
       position: absolute;
@@ -1823,27 +2058,50 @@ const customCss = `
     /* Partner Logo Grayscale -> Full Color Micro-interaction */
     .partner-logo-cell {
       padding: 1.35rem 1rem;
+      border: none;
       border-bottom: 1px solid var(--border-line);
       border-right: 1px solid var(--border-line);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 108px;
-      background: rgba(255, 255, 255, 0.45);
-      transition: background-color 0.3s ease;
+      text-align: center;
+      min-height: 158px;
+      height: auto;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.48);
+      transition: background-color 0.3s ease, transform 0.3s var(--ease-expo);
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+    }
+    .partner-logo-stage {
+      height: 64px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.7rem;
     }
     .partner-logo-cell img {
-      filter: grayscale(100%) contrast(1.05);
-      opacity: 0.78;
+      filter: grayscale(100%) contrast(1.06);
+      opacity: 0.82;
       transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s var(--ease-expo);
     }
-    .partner-logo-cell:hover {
-      background: rgba(255, 255, 255, 0.92);
+    .partner-logo-cell:hover,
+    .partner-logo-cell:focus-visible {
+      background: rgba(255, 255, 255, 0.96);
+      outline: none;
     }
-    .partner-logo-cell:hover img {
+    .partner-logo-cell:hover img,
+    .partner-logo-cell:focus-visible img {
       filter: grayscale(0%);
       opacity: 1;
-      transform: scale(1.05);
+      transform: scale(1.06);
+    }
+    .partner-logo-cell:hover .partner-cell-name,
+    .partner-logo-cell:focus-visible .partner-cell-name {
+      color: var(--crimson);
     }
 
     /* Mobile Touch & Input Zoom Safeguards */
@@ -1897,9 +2155,12 @@ const customCss = `
       background: rgba(17, 17, 17, 0.9);
       backdrop-filter: blur(8px);
       display: none;
-      align-items: center;
+      align-items: safe center;
       justify-content: center;
       padding: 1rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
     }
     .lightbox-modal.active {
       display: flex;
@@ -1908,11 +2169,22 @@ const customCss = `
       background: var(--bg-canvas);
       max-width: 1020px;
       width: 100%;
-      max-height: 92vh;
-      overflow-y: auto;
+      max-height: 90dvh;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
       border: 1px solid var(--border-line);
       position: relative;
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .lightbox-scroll-body {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+      outline: none;
     }
 
     /* Mobile menu drawer */
@@ -2013,21 +2285,21 @@ const customCss = `
       bottom: 0.75rem;
       right: 0.75rem;
       left: 0.75rem;
-      max-width: 390px;
+      max-width: 400px;
       margin-left: auto;
-      z-index: 80;
-      background: rgba(26, 26, 26, 0.94);
+      z-index: 95;
+      background: rgba(26, 26, 26, 0.96);
       color: #F0EFEA;
       border: 1px solid #3A3632;
-      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
-      padding: 0.8rem 1rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+      padding: 0.9rem 1.05rem;
       display: none;
       flex-direction: column;
-      gap: 0.55rem;
+      gap: 0.65rem;
       backdrop-filter: blur(8px);
     }
     .cookie-consent-bar.is-visible {
-      display: flex;
+      display: flex !important;
     }
 
     /* Legal & Policy Pages Editorial Typography */
@@ -2129,6 +2401,114 @@ const customCss = `
     }
 `;
 
+function cookieBannerMarkup(isSubpage) {
+  const cookieHref = isSubpage ? '../cookie-policy/index.html' : 'cookie-policy/index.html';
+  const privacyHref = isSubpage ? '../privacy-policy/index.html' : 'privacy-policy/index.html';
+  return `
+  <!-- DISCRETE COOKIE NOTICE BAR -->
+  <aside id="cookieConsentBar" class="cookie-consent-bar" role="dialog" aria-label="Cookie Preferences">
+    <div class="flex items-center justify-between gap-2">
+      <span class="text-[10px] font-mono uppercase tracking-widest text-[#FF8F8F] font-bold">Cookie &amp; Privacy Notice</span>
+      <button type="button" id="cookieCloseBtn" aria-label="Close Cookie Notice" class="text-[#CCCCCC] hover:text-white bg-transparent border-0 text-sm leading-none px-1 cursor-pointer">&times;</button>
+    </div>
+    <p class="text-xs leading-relaxed text-[#E5E3DC] m-0">
+      Scale and Spaces uses essential local preferences for navigation and interface state. Review our
+      <a href="${cookieHref}" class="text-[#FF8F8F] underline hover:text-white">Cookie Policy</a> &amp;
+      <a href="${privacyHref}" class="text-[#FF8F8F] underline hover:text-white">Privacy Policy</a>.
+    </p>
+    <p id="cookieStatusMsg" class="text-[11px] font-mono text-[#CCCCCC] m-0 hidden"></p>
+    <div class="flex items-center justify-end gap-2">
+      <button type="button" id="cookieDismissBtn" class="bg-transparent border border-[#55504B] text-[#CCCCCC] hover:text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 cursor-pointer">
+        Essential Only
+      </button>
+      <button type="button" id="cookieAcceptBtn" class="bg-[#8F0000] hover:bg-[#B00000] border-0 text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1.5 cursor-pointer">
+        Accept Cookies
+      </button>
+    </div>
+  </aside>`;
+}
+
+const cookieBannerScript = String.raw`
+    (function initCookieConsentSystem() {
+      const cookieBar = document.getElementById('cookieConsentBar');
+      const statusMsg = document.getElementById('cookieStatusMsg');
+      const legalStatusEl = document.getElementById('legalCookieStatus');
+
+      function readConsent() {
+        let val = '';
+        try { val = localStorage.getItem('ss_cookie_consent') || ''; } catch (err) {}
+        if (!val && document.cookie) {
+          const m = document.cookie.match(/(?:^|;\s*)ss_cookie_consent=([^;]+)/);
+          if (m && m[1]) val = decodeURIComponent(m[1]);
+        }
+        return val;
+      }
+
+      function writeConsent(choice) {
+        try { localStorage.setItem('ss_cookie_consent', choice); } catch (err) {}
+        try { document.cookie = 'ss_cookie_consent=' + encodeURIComponent(choice) + '; path=/; max-age=15552000; SameSite=Lax'; } catch (err) {}
+        if (statusMsg) {
+          statusMsg.textContent = 'Saved preference: ' + (choice === 'accepted' ? 'All Cookies Accepted' : 'Essential Preferences Only');
+          statusMsg.classList.remove('hidden');
+          statusMsg.style.display = 'block';
+        }
+        if (legalStatusEl) {
+          legalStatusEl.textContent = choice === 'accepted' ? 'All Cookies Accepted' : (choice === 'essential' ? 'Essential Only' : 'Not Set Yet');
+        }
+      }
+
+      function openCookiePopup() {
+        if (!cookieBar) return;
+        const current = readConsent();
+        if (statusMsg) {
+          if (current) {
+            statusMsg.textContent = 'Current setting: ' + (current === 'accepted' ? 'All Cookies Accepted' : 'Essential Preferences Only');
+            statusMsg.classList.remove('hidden');
+            statusMsg.style.display = 'block';
+          } else {
+            statusMsg.style.display = 'none';
+          }
+        }
+        cookieBar.classList.add('is-visible');
+        cookieBar.style.display = 'flex';
+      }
+
+      const initialChoice = readConsent();
+      if (legalStatusEl) {
+        legalStatusEl.textContent = initialChoice === 'accepted' ? 'All Cookies Accepted' : (initialChoice === 'essential' ? 'Essential Only' : 'Default Notice Active');
+      }
+      if (!initialChoice && cookieBar) {
+        cookieBar.classList.add('is-visible');
+        cookieBar.style.display = 'flex';
+      }
+
+      function applyAndClose(choice) {
+        writeConsent(choice);
+        if (cookieBar) {
+          setTimeout(function() {
+            cookieBar.classList.remove('is-visible');
+            cookieBar.style.display = '';
+          }, 260);
+        }
+      }
+
+      const acceptBtn = document.getElementById('cookieAcceptBtn');
+      const dismissBtn = document.getElementById('cookieDismissBtn');
+      const closeBtn = document.getElementById('cookieCloseBtn');
+      if (acceptBtn) acceptBtn.addEventListener('click', function() { applyAndClose('accepted'); });
+      if (dismissBtn) dismissBtn.addEventListener('click', function() { applyAndClose('essential'); });
+      if (closeBtn) closeBtn.addEventListener('click', function() {
+        if (cookieBar) { cookieBar.classList.remove('is-visible'); cookieBar.style.display = ''; }
+      });
+
+      window.openCookiePopup = openCookiePopup;
+      window.setCookiePreferenceChoice = function(choice) {
+        writeConsent(choice);
+        openCookiePopup();
+      };
+    })();
+`;
+
 const icons = {
   pin: '<svg class="inline-block w-3.5 h-3.5 text-[#8F0000] shrink-0" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>',
   mail: '<svg class="inline-block w-3.5 h-3.5 text-[#8F0000] shrink-0" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>',
@@ -2150,7 +2530,8 @@ const icons = {
   check: '<svg class="inline-block w-3.5 h-3.5 text-[#8F0000] shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>',
   help: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M9.5 9.2a2.5 2.5 0 0 1 4.9.7c0 1.6-2.4 2-2.4 3.4M12 17h.01"/></svg>',
   download: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 19h16"/></svg>',
-  star: '<svg class="inline-block w-3.5 h-3.5 text-[#8F0000]" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>'
+  star: '<svg class="inline-block w-3.5 h-3.5 text-[#8F0000]" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.9 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l7.1-1.01L12 2z"/></svg>',
+  article: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13z"/><path stroke-linecap="round" d="M8 9h8M8 13h8M8 17h5"/></svg>'
 };
 
 const htmlBodyTemplate = `<!DOCTYPE html>
@@ -2158,8 +2539,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Scale and Spaces Pvt. Ltd. | Architecture, Structural Engineering &amp; Interior Design in Nepal</title>
-  <meta name="description" content="Scale and Spaces Pvt. Ltd. — Leading architecture, structural engineering, landscape masterplanning, and interior design practice in Tokha-6, Kathmandu and Birgunj-12, Parsa, Nepal." />
+  <title>Scale and Spaces Pvt. Ltd. | Best Architect &amp; Interior Designer in Nepal</title>
+  <meta name="description" content="Trusted Architects &amp; Interior Designers in Kathmandu, Birgunj &amp; Nepal. 3D renders, NBC seismic plans &amp; turnkey interiors by Scale and Spaces." />
+  <meta name="keywords" content="Architect in Nepal, Best Architect in Nepal, Architect in Kathmandu, Architect in Birgunj, Interior Designer in Nepal, Best Interior Designer in Nepal, Interior Designer in Kathmandu, Interior Designer in Birgunj, Architecture Firm Nepal, Structural Engineer Nepal, Scale and Spaces" />
+  <meta name="geo.region" content="NP" />
+  <meta name="geo.placename" content="Kathmandu, Birgunj, Nepal" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#8F0000" />
   <meta name="google-site-verification" content="mf4GOtcYonLwbYRts_cwxyovvrpZwiXa3juGaPnaX8I" />
@@ -2168,15 +2552,15 @@ const htmlBodyTemplate = `<!DOCTYPE html>
   <!-- Open Graph & Social Meta -->
   <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Scale and Spaces Pvt. Ltd." />
-  <meta property="og:title" content="Scale and Spaces Pvt. Ltd. | Architecture, Engineering &amp; Interior Design" />
-  <meta property="og:description" content="Designing Spaces, Defining Lifestyles! Architectural, structural, and interior design portfolio across Kathmandu and Birgunj, Nepal." />
+  <meta property="og:title" content="Scale and Spaces Pvt. Ltd. | Best Architect &amp; Interior Designer in Nepal" />
+  <meta property="og:description" content="Trusted Architects &amp; Interior Designers in Kathmandu, Birgunj &amp; Nepal. 3D renders, NBC seismic plans &amp; turnkey interiors by Scale and Spaces." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scaleandspaces.com.np/" />
   <meta property="og:image" content="https://scaleandspaces.com.np/assets/projects/cover_studio_tower.jpg" />
   <meta property="og:image:alt" content="Scale and Spaces architectural tower perspective study" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Scale and Spaces Pvt. Ltd. | Design Portfolio" />
-  <meta name="twitter:description" content="Architecture, structural engineering, landscape masterplanning, and interior design in Kathmandu &amp; Birgunj, Nepal." />
+  <meta name="twitter:title" content="Scale and Spaces Pvt. Ltd. | Best Architect &amp; Interior Designer in Nepal" />
+  <meta name="twitter:description" content="Trusted Architects &amp; Interior Designers in Kathmandu, Birgunj &amp; Nepal. 3D renders, seismic design &amp; turnkey interiors." />
   <meta name="twitter:image" content="https://scaleandspaces.com.np/assets/projects/cover_studio_tower.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
@@ -2312,7 +2696,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
   <!-- NAVIGATION BAR + SCROLL PROGRESS LINE -->
   <header class="site-nav flex items-center">
-    <div class="portfolio-container flex items-center justify-between w-full gap-3">
+    <div class="portfolio-container flex items-center justify-between w-full gap-2.5">
       <a href="#home" class="flex items-center gap-2 no-underline shrink min-w-0">
         <img src="assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. geometric emblem" class="nav-logo shrink-0" style="height: 36px; width: auto; max-width: 42px;" onerror="this.src='assets/logo.jpg'" />
         <div class="flex flex-col min-w-0">
@@ -2326,11 +2710,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       </a>
 
       <!-- Semantic Section Navigation w/ Clean Practice Dropdowns -->
-      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-3.5 xl:gap-4.5">
-        <a href="#home" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Home</a>
+      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-2.5 xl:gap-4">
+        <a href="#home" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Home</a>
 
         <div class="nav-dropdown-wrap">
-          <a href="#services" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Services &#9662;</a>
+          <a href="#services" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Services &#9662;</a>
           <div class="nav-dropdown-panel">
             <div class="nav-dropdown-inner">
               <a href="#services" class="nav-dropdown-link">Full Scope &amp; Deliverables</a>
@@ -2343,7 +2727,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </div>
 
         <div class="nav-dropdown-wrap">
-          <a href="#projects" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Projects &#9662;</a>
+          <a href="#projects" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Projects &#9662;</a>
           <div class="nav-dropdown-panel">
             <div class="nav-dropdown-inner">
               <a href="#projects" onclick="selectCategoryFilter('all'); return false;" class="nav-dropdown-link">All Projects (${projectsData.length})</a>
@@ -2358,28 +2742,30 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </div>
 
         <div class="nav-dropdown-wrap">
-          <a href="#about" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">About &#9662;</a>
+          <a href="#about" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">About &#9662;</a>
           <div class="nav-dropdown-panel">
             <div class="nav-dropdown-inner">
               <a href="#about" class="nav-dropdown-link">Studio Overview</a>
               <a href="#team" class="nav-dropdown-link">Our Team</a>
+              <a href="#articles" class="nav-dropdown-link">Articles &amp; Notes</a>
               <a href="#reviews" class="nav-dropdown-link">Client Reviews</a>
               <a href="#faqs" class="nav-dropdown-link">FAQs</a>
               <a href="#partners" class="nav-dropdown-link">Partner Companies</a>
-              <a href="privacy-policy/" class="nav-dropdown-link">Policies &amp; Terms</a>
+              <a href="privacy-policy/index.html" class="nav-dropdown-link">Policies &amp; Terms</a>
             </div>
           </div>
         </div>
 
-        <a href="#team" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Team</a>
-        <a href="#reviews" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Reviews</a>
-        <a href="#faqs" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">FAQs</a>
-        <a href="#partners" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Partners</a>
-        <a href="#contact" class="nav-link-animated text-[12.5px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Contact</a>
+        <a href="#team" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Team</a>
+        <a href="#articles" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Articles</a>
+        <a href="#reviews" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Reviews</a>
+        <a href="#faqs" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">FAQs</a>
+        <a href="#partners" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Partners</a>
+        <a href="#contact" class="nav-link-animated text-[12px] xl:text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-2.5 shrink-0">
-        <a href="https://wa.me/9779703881733?text=Hello%20Scale%20and%20Spaces,%20I%20would%20like%20to%20inquire%20regarding%20a%20project." target="_blank" rel="noopener noreferrer" class="header-cta-desktop hidden sm:inline-flex btn-crimson text-[11px] py-2 px-3.5">
+      <div class="flex items-center gap-2 shrink-0">
+        <a href="https://wa.me/9779703881733?text=Hello%20Scale%20and%20Spaces,%20I%20would%20like%20to%20inquire%20regarding%20a%20project." target="_blank" rel="noopener noreferrer" class="header-cta-desktop hidden sm:inline-flex btn-crimson text-[10.5px] xl:text-[11px] py-2 px-3 xl:px-3.5">
           ${icons.whatsapp}
           <span>Get Quote</span>
         </a>
@@ -2391,10 +2777,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     <div id="navProgress" class="nav-scroll-progress" aria-hidden="true"></div>
   </header>
 
-  <!-- MOBILE NAVIGATION DRAWER (All 8 Sections + Icons + Policies) -->
+  <!-- MOBILE NAVIGATION DRAWER (All Sections + Icons + Policies) -->
   <div id="mobile-backdrop" class="mobile-backdrop"></div>
-  <aside id="mobile-menu" aria-label="Mobile Navigation" class="mobile-menu">
-    <div class="flex justify-between items-center mb-5 pb-3 border-b border-[#DDD8CE]">
+  <aside id="mobile-menu" aria-label="Mobile Navigation" class="mobile-menu" data-lenis-prevent>
+    <div class="flex justify-between items-center mb-5 pb-3 border-b border-[#DDD8CE] shrink-0">
       <div class="flex items-center gap-2">
         <img src="assets/logo.svg" alt="Scale and Spaces logo" style="height: 30px; width: auto; max-width: 36px;" onerror="this.src='assets/logo.jpg'" />
         <span class="font-bold text-sm tracking-wide text-[#111]">SCALE AND SPACES</span>
@@ -2403,21 +2789,22 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         ${icons.close}
       </button>
     </div>
-    <nav class="flex flex-col gap-3 text-sm font-bold text-[#111] overflow-y-auto pb-4">
+    <nav class="flex flex-col gap-3 text-sm font-bold text-[#111] overflow-y-auto overscroll-contain pb-4" data-lenis-prevent>
       <a href="#home" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.home} <span>Home</span></a>
       <a href="#services" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.compass} <span>Services</span></a>
       <a href="#projects" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.grid} <span>Projects (${projectsData.length})</span></a>
       <a href="#about" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.info} <span>About Studio</span></a>
       <a href="#team" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.users} <span>Our Team</span></a>
+      <a href="#articles" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.article} <span>Articles</span></a>
       <a href="#reviews" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.quote} <span>Reviews</span></a>
       <a href="#faqs" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.help} <span>FAQs</span></a>
       <a href="#partners" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.building} <span>Partners Companies</span></a>
       <a href="#contact" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.phone} <span>Contact Studio</span></a>
       <div class="pt-3 mt-1 border-t border-[#DDD8CE] flex flex-wrap gap-3 text-[11px] font-semibold text-[#767070]">
-        <a href="privacy-policy/" class="no-underline text-[#767070] hover:text-[#8F0000]">Privacy Policy</a>
-        <a href="terms-and-conditions/" class="no-underline text-[#767070] hover:text-[#8F0000]">Terms</a>
-        <a href="cookie-policy/" class="no-underline text-[#767070] hover:text-[#8F0000]">Cookies</a>
-        <a href="disclaimer/" class="no-underline text-[#767070] hover:text-[#8F0000]">Disclaimer</a>
+        <a href="privacy-policy/index.html" class="no-underline text-[#767070] hover:text-[#8F0000]">Privacy Policy</a>
+        <a href="terms-and-conditions/index.html" class="no-underline text-[#767070] hover:text-[#8F0000]">Terms</a>
+        <a href="cookie-policy/index.html" class="no-underline text-[#767070] hover:text-[#8F0000]">Cookies</a>
+        <a href="disclaimer/index.html" class="no-underline text-[#767070] hover:text-[#8F0000]">Disclaimer</a>
       </div>
     </nav>
     <div class="mt-auto pt-4 border-t border-[#DDD8CE] flex flex-col gap-2.5">
@@ -2625,7 +3012,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </div>
 
         <!-- Phone-Swipeable Minimal Underline Filter Strip (Zero Cluttered Boxes) -->
-        <div class="filter-scroll-row" role="tablist" aria-label="Filter projects by discipline">
+        <div class="filter-scroll-row" role="tablist" aria-label="Filter projects by discipline" data-lenis-prevent>
           <button type="button" class="filter-tab active" data-category="all">${icons.grid} All (${projectsData.length})</button>
           <button type="button" class="filter-tab" data-category="Commercial">${icons.building} Commercial</button>
           <button type="button" class="filter-tab" data-category="Residences">${icons.home} Residences</button>
@@ -2838,7 +3225,53 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
 
     <!-- ======================================================================
-         6. REVIEWS (Upgraded Client & Commission Reviews — Synced w/ Google Sheet)
+         6. ARTICLES (Architectural Notes & Practice Insights — Upgradeable via Sheet)
+         ====================================================================== -->
+    <section id="articles" class="py-14 md:py-20 border-b border-[#DDD8CE] relative">
+      <div class="portfolio-container">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
+          <div>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
+              ${icons.article} Studio Journal &amp; Insights
+            </span>
+            <h2 class="portfolio-section-title">ARTICLES_</h2>
+            <p class="text-sm text-[#767070] mt-1">
+              Technical notes on Nepal seismic compliance, climate-responsive architecture, materials, and interior craft.
+            </p>
+          </div>
+          <div id="cms-articles-count" class="text-xs font-bold uppercase tracking-widest text-[#767070]">
+            ${articlesData.length} Published Notes
+          </div>
+        </div>
+
+        <div id="articles-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal-card">
+          ${articlesData.map((a, idx) => `
+            <article class="project-card wc-hover-card cursor-pointer" role="button" tabindex="0" aria-label="Read article: ${a.heading}" onclick="openArticleModal(${idx})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openArticleModal(${idx});}">
+              <div class="aspect-video overflow-hidden bg-[#E2DFD8] relative">
+                <img src="${a.image}" alt="${a.heading}" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+              </div>
+              <div class="p-4 flex flex-col flex-1 justify-between gap-3">
+                <div>
+                  <div class="flex items-center justify-between gap-2 text-[10px] font-mono uppercase tracking-widest text-[#8F0000] font-bold mb-1.5">
+                    <span>${a.category}</span>
+                    <span class="text-[#767070] font-normal">${a.date}</span>
+                  </div>
+                  <h3 class="text-sm font-bold text-[#111111] leading-snug mb-2" style="font-family: var(--font-sans);">${a.heading}</h3>
+                  <p class="text-xs text-[#767070] leading-relaxed" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${a.desc}</p>
+                </div>
+                <div class="pt-2.5 border-t border-[#DDD8CE]/70 flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider text-[#8F0000]">
+                  <span>Read Article &rarr;</span>
+                  ${a.link ? `<a href="${a.link}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="font-mono text-[10px] text-[#767070] hover:text-[#8F0000] no-underline">External &nearr;</a>` : ''}
+                </div>
+              </div>
+            </article>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         7. REVIEWS (Client & Commission Reviews)
          ====================================================================== -->
     <section id="reviews" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
       <span id="testimonials" class="sr-only"></span>
@@ -2938,15 +3371,18 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             </p>
           </div>
           <div id="cms-partners-count" class="text-xs font-bold uppercase tracking-widest text-[#767070]">
-            10 Corporate Marks
+            ${clientLogos.length} Partner Organizations
           </div>
         </div>
 
-        <div id="partners-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 border-t border-l border-[#DDD8CE] reveal-card">
-          ${clientLogos.map(l => `
-            <div class="partner-logo-cell">
-              <img src="${l.img}" alt="${l.alt}" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy" />
-            </div>
+        <div id="partners-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 border-t border-l border-[#DDD8CE] reveal-card">
+          ${clientLogos.map((l, idx) => `
+            <button type="button" class="partner-logo-cell group" aria-label="View details for ${l.name}" onclick="openPartnerModal(${idx})">
+              <div class="partner-logo-stage">
+                <img src="${l.img}" alt="${l.alt}" class="max-h-14 max-w-[164px] w-auto object-contain rounded-[2px]" loading="lazy" />
+              </div>
+              <h3 class="partner-cell-name text-xs font-bold uppercase tracking-wider text-[#111111] leading-snug mb-0 transition-colors" style="font-family: var(--font-sans);">${l.name}</h3>
+            </button>
           `).join('')}
         </div>
 
@@ -3050,7 +3486,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
   </main>
 
-  <!-- FOOTER WITH 8 SECTIONS & POLICIES -->
+  <!-- FOOTER WITH SECTIONS & POLICIES -->
   <footer class="bg-[#1A1A1A] text-[#CCCCCC] py-12 border-t border-[#333333]">
     <div class="portfolio-container">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 pb-8 border-b border-[#333333]">
@@ -3075,15 +3511,15 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <a href="#services" class="text-[#CCCCCC] no-underline hover:text-white">Services &amp; Scope</a>
           <a href="#projects" class="text-[#CCCCCC] no-underline hover:text-white">Projects (${projectsData.length})</a>
           <a href="#about" class="text-[#CCCCCC] no-underline hover:text-white">About Studio</a>
-          <a href="#team" class="text-[#CCCCCC] no-underline hover:text-white">Team &bull; Reviews &bull; FAQs &bull; Partners</a>
+          <a href="#team" class="text-[#CCCCCC] no-underline hover:text-white">Team &bull; Articles &bull; Reviews &bull; Partners</a>
         </div>
 
         <div class="lg:col-span-2 flex flex-col gap-1.5 text-xs">
           <span class="text-white font-bold uppercase tracking-wider mb-1">Legal &amp; Policies</span>
-          <a href="privacy-policy/" class="text-[#CCCCCC] no-underline hover:text-white">Privacy Policy</a>
-          <a href="terms-and-conditions/" class="text-[#CCCCCC] no-underline hover:text-white">Terms &amp; Conditions</a>
-          <a href="cookie-policy/" class="text-[#CCCCCC] no-underline hover:text-white">Cookie Policy</a>
-          <a href="disclaimer/" class="text-[#CCCCCC] no-underline hover:text-white">Studio Disclaimer</a>
+          <a href="privacy-policy/index.html" class="text-[#CCCCCC] no-underline hover:text-white">Privacy Policy</a>
+          <a href="terms-and-conditions/index.html" class="text-[#CCCCCC] no-underline hover:text-white">Terms &amp; Conditions</a>
+          <a href="cookie-policy/index.html" class="text-[#CCCCCC] no-underline hover:text-white">Cookie Policy</a>
+          <a href="disclaimer/index.html" class="text-[#CCCCCC] no-underline hover:text-white">Studio Disclaimer</a>
         </div>
 
         <div class="lg:col-span-3 flex flex-col gap-1.5 text-xs">
@@ -3100,51 +3536,50 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           &copy; <span id="footer-year">2026</span> Scale and Spaces Private Limited. All rights reserved.
         </div>
         <div class="flex flex-wrap items-center gap-4">
-          <a href="privacy-policy/" class="text-[#888888] no-underline hover:text-white">Privacy</a>
-          <a href="terms-and-conditions/" class="text-[#888888] no-underline hover:text-white">Terms</a>
-          <a href="cookie-policy/" class="text-[#888888] no-underline hover:text-white">Cookies</a>
+          <a href="privacy-policy/index.html" class="text-[#888888] no-underline hover:text-white">Privacy</a>
+          <a href="terms-and-conditions/index.html" class="text-[#888888] no-underline hover:text-white">Terms</a>
+          <a href="cookie-policy/index.html" class="text-[#888888] no-underline hover:text-white">Cookies</a>
+          <button type="button" onclick="if(window.openCookiePopup)window.openCookiePopup()" class="bg-transparent border-0 p-0 text-xs text-[#888888] hover:text-white underline cursor-pointer font-sans">Cookie Settings</button>
           <span>scaleandspaces.com.np</span>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- DISCRETE COOKIE NOTICE BAR -->
-  <aside id="cookieConsentBar" class="cookie-consent-bar" role="dialog" aria-label="Cookie Preferences">
-    <p class="text-xs leading-relaxed text-[#E5E3DC]">
-      Scale and Spaces uses essential local storage preferences to deliver smooth navigation and preserve your cookie choice. Read our
-      <a href="cookie-policy/" class="text-[#FF8F8F] underline hover:text-white">Cookie Policy</a> &amp;
-      <a href="privacy-policy/" class="text-[#FF8F8F] underline hover:text-white">Privacy Policy</a>.
-    </p>
-    <div class="flex items-center justify-end gap-2">
-      <button type="button" id="cookieDismissBtn" class="bg-transparent border border-[#55504B] text-[#CCCCCC] hover:text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 cursor-pointer">
-        Dismiss
-      </button>
-      <button type="button" id="cookieAcceptBtn" class="bg-[#8F0000] hover:bg-[#B00000] border-0 text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1.5 cursor-pointer">
-        Accept
-      </button>
-    </div>
-  </aside>
+  ${cookieBannerMarkup(false)}
 
   <!-- LIGHTBOX MODAL -->
-  <div id="lightbox" class="lightbox-modal" onclick="closeLightboxOnBackdrop(event)">
-    <div id="lightboxCard" class="lightbox-content">
-      <div class="p-4 md:p-5 bg-[#E8E6DF] border-b border-[#DDD8CE] flex justify-between items-center">
+  <div id="lightbox" class="lightbox-modal" data-lenis-prevent onclick="closeLightboxOnBackdrop(event)">
+    <div id="lightboxCard" class="lightbox-content" style="max-width: 1120px;" data-lenis-prevent>
+      <div class="shrink-0 p-4 md:p-5 bg-[#E8E6DF] border-b border-[#DDD8CE] flex justify-between items-center">
         <div>
           <span id="modal-category" class="text-xs uppercase tracking-widest text-[#C00000] font-bold block"></span>
           <p id="modal-title" class="text-xl md:text-2xl font-bold text-[#111111]" style="font-family: var(--font-sans);"></p>
         </div>
-        <button type="button" onclick="closeLightbox()" aria-label="Close Project Modal" class="p-2 text-[#111] hover:text-[#8F0000] bg-transparent border-0 cursor-pointer">
-          ${icons.close}
-        </button>
+        <div class="flex items-center gap-2">
+          <button type="button" onclick="openFullscreenImage()" class="btn-outline text-[11px] py-1.5 px-3 hidden sm:inline-flex items-center gap-1.5">
+            ${icons.expand} <span>Full Image</span>
+          </button>
+          <button type="button" onclick="closeLightbox()" aria-label="Close Project Modal" class="p-2 text-[#111] hover:text-[#8F0000] bg-transparent border-0 cursor-pointer">
+            ${icons.close}
+          </button>
+        </div>
       </div>
 
-      <div class="p-5 md:p-7 flex flex-col gap-5">
-        <div class="border border-[#DDD8CE] overflow-hidden bg-black/5 flex items-center justify-center">
-          <img id="modal-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Architectural project detail view" style="max-height: 60vh; width: 100%; object-fit: contain; transition: opacity 0.25s ease;" />
+      <div class="lightbox-scroll-body p-5 md:p-7 flex flex-col gap-5" data-lenis-prevent tabindex="-1">
+        <div class="lightbox-stage">
+          <button type="button" id="modal-prev-btn" onclick="stepLightboxImage(-1)" aria-label="Previous project image" class="lightbox-nav-arrow left-2 hidden">&lsaquo;</button>
+          <img id="modal-image" onclick="openFullscreenImage()" title="Click to view full uncropped screen size" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Architectural project detail view" style="max-height: 62dvh; width: 100%; object-fit: contain; cursor: zoom-in; transition: opacity 0.2s ease;" />
+          <button type="button" id="modal-next-btn" onclick="stepLightboxImage(1)" aria-label="Next project image" class="lightbox-nav-arrow right-2 hidden">&rsaquo;</button>
+          <div class="absolute bottom-2.5 right-2.5 flex items-center gap-2 z-10">
+            <span id="modal-photo-counter" class="bg-[#111111]/80 text-white text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 hidden"></span>
+            <button type="button" onclick="openFullscreenImage()" class="bg-[#8F0000]/90 hover:bg-[#8F0000] text-white border-0 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 cursor-pointer inline-flex items-center gap-1">
+              ${icons.expand} <span>Expand Full Size</span>
+            </button>
+          </div>
         </div>
 
-        <div id="modal-gallery" class="flex items-center gap-2 overflow-x-auto pb-1"></div>
+        <div id="modal-gallery" class="flex items-center gap-2.5 overflow-x-auto pb-1 shrink-0" data-lenis-prevent></div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-4 border-t border-[#DDD8CE]">
           <div class="md:col-span-2">
@@ -3166,10 +3601,29 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </div>
   </div>
 
+  <!-- FULLSCREEN UN-CROPPED ARCHITECTURAL IMAGE VIEWER -->
+  <div id="fullscreenViewer" class="fullscreen-viewer" data-lenis-prevent onclick="if(event.target===this||event.target.id==='fullscreenCanvas')closeFullscreenViewer()">
+    <div class="shrink-0 px-4 py-3 bg-[#1A1A1A] border-b border-[#333333] text-white flex items-center justify-between gap-3">
+      <div class="min-w-0">
+        <span id="fs-title" class="text-xs sm:text-sm font-bold tracking-wide truncate block"></span>
+        <span id="fs-counter" class="text-[10px] font-mono uppercase tracking-widest text-[#AAAAAA]"></span>
+      </div>
+      <div class="flex items-center gap-2 shrink-0">
+        <button type="button" id="fs-prev-btn" onclick="stepLightboxImage(-1)" class="bg-[#2C2C2C] hover:bg-[#8F0000] text-white border border-[#444] text-xs px-2.5 py-1.5 cursor-pointer hidden">&lsaquo; Prev</button>
+        <button type="button" id="fs-next-btn" onclick="stepLightboxImage(1)" class="bg-[#2C2C2C] hover:bg-[#8F0000] text-white border border-[#444] text-xs px-2.5 py-1.5 cursor-pointer hidden">Next &rsaquo;</button>
+        <button type="button" id="fs-zoom-btn" onclick="toggleFullscreenZoom()" class="bg-[#2C2C2C] hover:bg-[#8F0000] text-white border border-[#444] text-xs font-bold uppercase tracking-wider px-3 py-1.5 cursor-pointer">Zoom 100%</button>
+        <button type="button" onclick="closeFullscreenViewer()" aria-label="Close Fullscreen Image" class="bg-[#8F0000] hover:bg-[#B00000] text-white border-0 text-xs font-bold uppercase tracking-wider px-3 py-1.5 cursor-pointer">Close &times;</button>
+      </div>
+    </div>
+    <div id="fullscreenCanvas" class="fullscreen-canvas" data-lenis-prevent>
+      <img id="fs-image" onclick="toggleFullscreenZoom()" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Fullscreen architectural image" />
+    </div>
+  </div>
+
   <!-- TEAM MEMBER PROFILE & CREDENTIALS DOWNLOAD MODAL -->
-  <div id="team-modal" class="lightbox-modal" onclick="closeTeamOnBackdrop(event)">
-    <div id="teamModalCard" class="lightbox-content" style="max-width: 780px;">
-      <div class="p-4 md:p-5 bg-[#E8E6DF] border-b border-[#DDD8CE] flex justify-between items-center">
+  <div id="team-modal" class="lightbox-modal" data-lenis-prevent onclick="closeTeamOnBackdrop(event)">
+    <div id="teamModalCard" class="lightbox-content" style="max-width: 780px;" data-lenis-prevent>
+      <div class="shrink-0 p-4 md:p-5 bg-[#E8E6DF] border-b border-[#DDD8CE] flex justify-between items-center">
         <div>
           <span class="text-xs uppercase tracking-widest text-[#C00000] font-bold block">Practice Specialist Profile</span>
           <p id="team-modal-role" class="text-lg md:text-xl font-bold text-[#111111]" style="font-family: var(--font-sans);"></p>
@@ -3179,7 +3633,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </button>
       </div>
 
-      <div class="p-5 md:p-7 flex flex-col gap-6">
+      <div class="lightbox-scroll-body p-5 md:p-7 flex flex-col gap-6" data-lenis-prevent tabindex="-1">
         <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
           <div class="team-img-wrap shrink-0" style="width: 148px; height: 148px;">
             <img id="team-modal-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Team member portrait" />
@@ -3225,6 +3679,67 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </div>
   </div>
 
+  <!-- PARTNER DETAIL & OFFICIAL WEBSITE MODAL -->
+  <div id="partner-modal" class="lightbox-modal" data-lenis-prevent onclick="closePartnerOnBackdrop(event)">
+    <div id="partnerModalCard" class="lightbox-content" style="max-width: 640px;" data-lenis-prevent>
+      <div class="shrink-0 p-4 md:p-5 bg-[#E8E6DF] border-b border-[#DDD8CE] flex justify-between items-center">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-[#C00000] font-bold block">Partner Organization</span>
+          <p id="partner-modal-name" class="text-lg md:text-xl font-bold text-[#111111]" style="font-family: var(--font-sans);"></p>
+        </div>
+        <button type="button" onclick="closePartnerModal()" aria-label="Close Partner Details" class="p-2 text-[#111] hover:text-[#8F0000] bg-transparent border-0 cursor-pointer">
+          ${icons.close}
+        </button>
+      </div>
+      <div class="lightbox-scroll-body p-5 md:p-7 flex flex-col gap-5" data-lenis-prevent tabindex="-1">
+        <div class="bg-white border border-[#DDD8CE] p-6 flex items-center justify-center min-h-[120px]">
+          <img id="partner-modal-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Partner organization logo" class="max-h-20 max-w-[260px] w-auto object-contain rounded-[2px]" />
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-[#111111] mb-1.5">Collaboration &amp; Practice Overview</h4>
+          <p id="partner-modal-desc" class="text-sm text-[#333333] leading-relaxed"></p>
+        </div>
+        <div class="pt-4 border-t border-[#DDD8CE] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          <a id="partner-modal-site-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-crimson text-xs py-2.5 px-5 text-center no-underline">
+            <span>Visit Official Website &nearr;</span>
+          </a>
+          <a href="#contact" onclick="closePartnerModal()" class="btn-outline text-xs py-2.5 px-5 text-center no-underline">
+            <span>Discuss Partnership</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE FULL VIEWER MODAL -->
+  <div id="article-modal" class="lightbox-modal" data-lenis-prevent onclick="closeArticleOnBackdrop(event)">
+    <div id="articleModalCard" class="lightbox-content" style="max-width: 780px;" data-lenis-prevent>
+      <div class="shrink-0 p-4 md:p-5 bg-[#E8E6DF] border-b border-[#DDD8CE] flex justify-between items-center">
+        <div>
+          <span id="article-modal-meta" class="text-xs uppercase tracking-widest text-[#C00000] font-bold block"></span>
+          <p id="article-modal-title" class="text-lg md:text-xl font-bold text-[#111111]" style="font-family: var(--font-sans);"></p>
+        </div>
+        <button type="button" onclick="closeArticleModal()" aria-label="Close Article Modal" class="p-2 text-[#111] hover:text-[#8F0000] bg-transparent border-0 cursor-pointer">
+          ${icons.close}
+        </button>
+      </div>
+      <div class="lightbox-scroll-body p-5 md:p-7 flex flex-col gap-5" data-lenis-prevent tabindex="-1">
+        <div class="border border-[#DDD8CE] overflow-hidden bg-black/5 flex items-center justify-center">
+          <img id="article-modal-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Article illustration" style="max-height: 46vh; width: 100%; object-fit: cover;" />
+        </div>
+        <div class="text-sm sm:text-base text-[#2A2A2A] leading-relaxed whitespace-pre-line" id="article-modal-body"></div>
+        <div class="pt-4 border-t border-[#DDD8CE] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          <a id="article-modal-link-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-crimson text-xs py-2.5 px-5 text-center no-underline">
+            <span>Read Full External Article &nearr;</span>
+          </a>
+          <a href="#contact" onclick="closeArticleModal()" class="btn-outline text-xs py-2.5 px-5 text-center no-underline">
+            <span>Consult Our Architects</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- BUNDLED MOTION ENGINE (From heron-ai-clone vendor stack: GSAP, ScrollTrigger, SplitText, Lenis) -->
   <script src="vendor/lenis.min.js"></script>
   <script src="vendor/gsap.min.js"></script>
@@ -3234,6 +3749,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
   <script>
     let projects = ${JSON.stringify(projectsData)};
     let teamMembers = ${JSON.stringify(teamData)};
+    let articlesList = ${JSON.stringify(articlesData)};
     let reviewsList = ${JSON.stringify(reviewsData)};
     let faqsList = ${JSON.stringify(faqsData)};
     let partnersList = ${JSON.stringify(clientLogos)};
@@ -3244,21 +3760,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     // Discrete Cookie Consent Preference Persistence
-    (function initCookieBanner() {
-      const cookieBar = document.getElementById('cookieConsentBar');
-      if (!cookieBar) return;
-      let stored = '';
-      try { stored = localStorage.getItem('ss_cookie_consent') || ''; } catch (err) {}
-      if (!stored) cookieBar.classList.add('is-visible');
-      function persistConsent(choice) {
-        try { localStorage.setItem('ss_cookie_consent', choice); } catch (err) {}
-        cookieBar.classList.remove('is-visible');
-      }
-      const acceptBtn = document.getElementById('cookieAcceptBtn');
-      const dismissBtn = document.getElementById('cookieDismissBtn');
-      if (acceptBtn) acceptBtn.addEventListener('click', function() { persistConsent('accepted'); });
-      if (dismissBtn) dismissBtn.addEventListener('click', function() { persistConsent('dismissed'); });
-    })();
+    ${cookieBannerScript}
 
     // Category Filtering with Clean URL Sync & GSAP Staggered Entrance
     const tabs = document.querySelectorAll('.filter-tab');
@@ -3329,7 +3831,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       const sec = document.getElementById('projects');
       if (sec) {
         if (window.lenisInstance) {
-          window.lenisInstance.scrollTo(sec, { offset: -76, duration: 1.0 });
+          window.lenisInstance.scrollTo(sec, { offset: -76, duration: 0.9 });
         } else {
           sec.scrollIntoView({ behavior: 'smooth' });
         }
@@ -3350,14 +3852,113 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     const modalGallery = document.getElementById('modal-gallery');
     const modalInquire = document.getElementById('modal-inquire');
 
+    function openModalOverlay(modalEl, cardEl) {
+      if (!modalEl) return;
+      modalEl.classList.add('active');
+      modalEl.scrollTop = 0;
+      const bodyEl = modalEl.querySelector('.lightbox-scroll-body');
+      if (bodyEl) bodyEl.scrollTop = 0;
+      if (cardEl) cardEl.scrollTop = 0;
+      document.documentElement.classList.add('modal-open');
+      if (window.lenisInstance) window.lenisInstance.stop();
+      if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.fromTo(modalEl, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: 'power2.out' });
+        if (cardEl) gsap.fromTo(cardEl, { opacity: 0, y: 24, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'expo.out', clearProps: 'transform' });
+      }
+      if (bodyEl && typeof bodyEl.focus === 'function') {
+        try { bodyEl.focus({ preventScroll: true }); } catch (err) {}
+      }
+    }
+
+    function closeModalOverlay(modalEl) {
+      if (!modalEl || !modalEl.classList.contains('active')) return;
+      modalEl.classList.remove('active');
+      if (!document.querySelector('.lightbox-modal.active')) {
+        document.documentElement.classList.remove('modal-open');
+        if (window.lenisInstance) window.lenisInstance.start();
+      }
+    }
+
+    let activeProjectImages = [];
+    let activeProjectIndex = 0;
+    let activeProjectTitle = '';
+    const fsViewer = document.getElementById('fullscreenViewer');
+    const fsCanvas = document.getElementById('fullscreenCanvas');
+    const fsImage = document.getElementById('fs-image');
+    const fsTitleEl = document.getElementById('fs-title');
+    const fsCounterEl = document.getElementById('fs-counter');
+    const fsZoomBtn = document.getElementById('fs-zoom-btn');
+
+    function setLightboxImageIndex(idx) {
+      if (!activeProjectImages.length) return;
+      const total = activeProjectImages.length;
+      activeProjectIndex = ((idx % total) + total) % total;
+      const imgUrl = activeProjectImages[activeProjectIndex];
+      modalImage.style.opacity = '0.4';
+      setTimeout(function() {
+        modalImage.src = imgUrl;
+        modalImage.style.opacity = '1';
+      }, 90);
+      if (fsImage) fsImage.src = imgUrl;
+
+      const thumbs = modalGallery.querySelectorAll('img');
+      thumbs.forEach(function(i, tIdx) {
+        i.style.borderColor = tIdx === activeProjectIndex ? '#8F0000' : '#DDD8CE';
+      });
+      const counterEl = document.getElementById('modal-photo-counter');
+      if (counterEl) {
+        if (total > 1) {
+          counterEl.textContent = 'Photo ' + (activeProjectIndex + 1) + ' / ' + total;
+          counterEl.classList.remove('hidden');
+        } else {
+          counterEl.classList.add('hidden');
+        }
+      }
+      if (fsCounterEl) {
+        fsCounterEl.textContent = total > 1 ? ('Photo ' + (activeProjectIndex + 1) + ' of ' + total + ' • Click image to zoom') : 'Click image to zoom 100%';
+      }
+      const prevBtn = document.getElementById('modal-prev-btn');
+      const nextBtn = document.getElementById('modal-next-btn');
+      const fsPrev = document.getElementById('fs-prev-btn');
+      const fsNext = document.getElementById('fs-next-btn');
+      [prevBtn, nextBtn, fsPrev, fsNext].forEach(function(b) {
+        if (b) b.classList.toggle('hidden', total <= 1);
+      });
+    }
+
+    function stepLightboxImage(delta) {
+      setLightboxImageIndex(activeProjectIndex + delta);
+    }
+
+    function openFullscreenImage() {
+      if (!fsViewer || !activeProjectImages.length) return;
+      if (fsTitleEl) fsTitleEl.textContent = activeProjectTitle || '';
+      if (fsImage) fsImage.src = activeProjectImages[activeProjectIndex];
+      if (fsCanvas) fsCanvas.classList.remove('is-zoomed');
+      if (fsZoomBtn) fsZoomBtn.textContent = 'Zoom In';
+      fsViewer.classList.add('active');
+    }
+
+    function closeFullscreenViewer() {
+      if (!fsViewer) return;
+      fsViewer.classList.remove('active');
+      if (fsCanvas) fsCanvas.classList.remove('is-zoomed');
+    }
+
+    function toggleFullscreenZoom() {
+      if (!fsCanvas) return;
+      const zoomed = fsCanvas.classList.toggle('is-zoomed');
+      if (fsZoomBtn) fsZoomBtn.textContent = zoomed ? 'Fit Screen' : 'Zoom In';
+    }
+
     function openLightbox(id) {
       const p = projects.find(function(item) { return item.id === id; });
       if (!p) return;
 
+      activeProjectImages = (p.images && p.images.length) ? p.images.slice() : [p.image];
+      activeProjectTitle = p.title || '';
       modalTitle.textContent = p.title;
       modalCategory.textContent = p.categoryLabel;
-      modalImage.src = p.image;
-      modalImage.alt = p.title + ' architectural render';
       modalDesc.textContent = p.desc;
       modalClient.textContent = p.client;
       modalLocation.textContent = p.location;
@@ -3367,39 +3968,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       modalInquire.href = "https://wa.me/9779703881733?text=" + waMsg;
 
       modalGallery.innerHTML = '';
-      if (p.images && p.images.length > 1) {
-        p.images.forEach(function(imgUrl, idx) {
+      if (activeProjectImages.length > 1) {
+        activeProjectImages.forEach(function(imgUrl, idx) {
           const thumb = document.createElement('img');
           thumb.src = imgUrl;
           thumb.alt = p.title + ' perspective ' + (idx + 1);
-          thumb.style.cssText = 'width:76px;height:50px;object-fit:cover;cursor:pointer;transition:transform 0.2s ease;border:2px solid ' + (imgUrl === p.image ? '#8F0000' : '#DDD8CE') + ';';
-          thumb.onclick = function() {
-            modalImage.style.opacity = '0.35';
-            setTimeout(function() {
-              modalImage.src = imgUrl;
-              modalImage.style.opacity = '1';
-            }, 140);
-            modalGallery.querySelectorAll('img').forEach(function(i) { i.style.borderColor = '#DDD8CE'; });
-            thumb.style.borderColor = '#8F0000';
-          };
+          thumb.style.cssText = 'width:96px;height:64px;object-fit:contain;background:#ECEAE3;cursor:pointer;transition:border-color 0.2s ease;border:2px solid ' + (idx === 0 ? '#8F0000' : '#DDD8CE') + ';';
+          thumb.onclick = function() { setLightboxImageIndex(idx); };
           modalGallery.appendChild(thumb);
         });
       }
 
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      if (window.lenisInstance) window.lenisInstance.stop();
-
-      if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        gsap.fromTo(lightbox, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: 'power2.out' });
-        gsap.fromTo(lightboxCard, { opacity: 0, y: 24, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'expo.out', clearProps: 'transform' });
-      }
+      setLightboxImageIndex(0);
+      openModalOverlay(lightbox, lightboxCard);
     }
 
     function closeLightbox() {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = '';
-      if (window.lenisInstance) window.lenisInstance.start();
+      closeFullscreenViewer();
+      closeModalOverlay(lightbox);
     }
 
     function closeLightboxOnBackdrop(e) {
@@ -3409,11 +3995,25 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     window.openLightbox = openLightbox;
     window.closeLightbox = closeLightbox;
     window.closeLightboxOnBackdrop = closeLightboxOnBackdrop;
+    window.stepLightboxImage = stepLightboxImage;
+    window.openFullscreenImage = openFullscreenImage;
+    window.closeFullscreenViewer = closeFullscreenViewer;
+    window.toggleFullscreenZoom = toggleFullscreenZoom;
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
+        if (fsViewer && fsViewer.classList.contains('active')) {
+          closeFullscreenViewer();
+          return;
+        }
         if (lightbox && lightbox.classList.contains('active')) closeLightbox();
         if (typeof closeTeamModal === 'function') closeTeamModal();
+        if (typeof closePartnerModal === 'function') closePartnerModal();
+        if (typeof closeArticleModal === 'function') closeArticleModal();
+      } else if (e.key === 'ArrowLeft' && ((fsViewer && fsViewer.classList.contains('active')) || (lightbox && lightbox.classList.contains('active')))) {
+        stepLightboxImage(-1);
+      } else if (e.key === 'ArrowRight' && ((fsViewer && fsViewer.classList.contains('active')) || (lightbox && lightbox.classList.contains('active')))) {
+        stepLightboxImage(1);
       }
     });
 
@@ -3444,20 +4044,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       document.getElementById('team-modal-cv-label').textContent = m.cvLabel || (m.name + ' — Profile & CV');
       document.getElementById('team-modal-email-link').href = 'mailto:' + (m.email || 'studio@scaleandspaces.com') + '?subject=' + encodeURIComponent('Profile Inquiry: ' + m.name);
 
-      teamModalEl.classList.add('active');
-      document.body.style.overflow = 'hidden';
-      if (window.lenisInstance) window.lenisInstance.stop();
-      if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        gsap.fromTo(teamModalEl, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: 'power2.out' });
-        gsap.fromTo(teamModalCardEl, { opacity: 0, y: 24, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'expo.out', clearProps: 'transform' });
-      }
+      openModalOverlay(teamModalEl, teamModalCardEl);
     }
 
     function closeTeamModal() {
-      if (!teamModalEl || !teamModalEl.classList.contains('active')) return;
-      teamModalEl.classList.remove('active');
-      document.body.style.overflow = '';
-      if (window.lenisInstance) window.lenisInstance.start();
+      closeModalOverlay(teamModalEl);
     }
 
     function closeTeamOnBackdrop(e) {
@@ -3525,11 +4116,145 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       return raw;
     }
 
+    function normalizeExternalUrl(raw) {
+      const s = String(raw || '').trim();
+      if (!s) return '';
+      if (/^https?:\\/\\//i.test(s)) return s;
+      if (/^(javascript|data|vbscript):/i.test(s)) return '';
+      return 'https://' + s.replace(/^\\/+/, '');
+    }
+
+    function renderPartnersGrid(list) {
+      const ptGrid = document.getElementById('partners-grid');
+      if (!ptGrid || !list || !list.length) return;
+      partnersList = list;
+      ptGrid.innerHTML = list.map(function(l, idx) {
+        const logoUrl = normalizeSheetMediaUrl(l.img || l.Logo_URL);
+        const name = (l.name || l.Name || 'Partner').trim();
+        return '<button type="button" class="partner-logo-cell group" aria-label="View details for ' + escHtml(name) + '" onclick="openPartnerModal(' + idx + ')">' +
+          '<div class="partner-logo-stage">' +
+          (logoUrl ? '<img src="' + escHtml(logoUrl) + '" alt="' + escHtml(l.alt || (name + ' logo')) + '" class="max-h-14 max-w-[164px] w-auto object-contain rounded-[2px]" loading="lazy" />' : '') +
+          '</div>' +
+          '<h3 class="partner-cell-name text-xs font-bold uppercase tracking-wider text-[#111111] leading-snug mb-0 transition-colors" style="font-family: var(--font-sans);">' + escHtml(name) + '</h3>' +
+          '</button>';
+      }).join('');
+      const ptCount = document.getElementById('cms-partners-count');
+      if (ptCount) ptCount.textContent = list.length + ' Partner Organizations';
+    }
+
+    const partnerModalEl = document.getElementById('partner-modal');
+    const partnerModalCardEl = document.getElementById('partnerModalCard');
+    function openPartnerModal(idx) {
+      const p = partnersList[idx];
+      if (!p) return;
+      const name = (p.name || p.Name || 'Partner Organization').trim();
+      const desc = (p.desc || p.Description || '').trim();
+      const logo = normalizeSheetMediaUrl(p.img || p.Logo_URL);
+      const url = normalizeExternalUrl(p.url || p.Website);
+
+      if (!desc && url) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+        return;
+      }
+      if (!partnerModalEl) return;
+
+      document.getElementById('partner-modal-name').textContent = name;
+      const imgEl = document.getElementById('partner-modal-img');
+      if (imgEl) {
+        imgEl.src = logo || '';
+        imgEl.alt = name + ' logo';
+      }
+      document.getElementById('partner-modal-desc').textContent = desc || (name + ' — collaborating partner organization with Scale and Spaces Pvt. Ltd.');
+      const siteBtn = document.getElementById('partner-modal-site-btn');
+      if (siteBtn) {
+        if (url) {
+          siteBtn.href = url;
+          siteBtn.style.display = 'inline-flex';
+        } else {
+          siteBtn.style.display = 'none';
+        }
+      }
+
+      openModalOverlay(partnerModalEl, partnerModalCardEl);
+    }
+    function closePartnerModal() {
+      closeModalOverlay(partnerModalEl);
+    }
+    function closePartnerOnBackdrop(e) {
+      if (e.target === partnerModalEl) closePartnerModal();
+    }
+
+    function renderArticlesGrid(list) {
+      const aGrid = document.getElementById('articles-grid');
+      if (!aGrid || !list || !list.length) return;
+      articlesList = list;
+      aGrid.innerHTML = list.map(function(a, idx) {
+        const imgUrl = normalizeSheetMediaUrl(a.image || a.Image_URL);
+        const linkHref = normalizeExternalUrl(a.link || a.Link);
+        return '<article class="project-card wc-hover-card cursor-pointer" role="button" tabindex="0" aria-label="Read article: ' + escHtml(a.heading) + '" onclick="openArticleModal(' + idx + ')" onkeydown="if(event.key===\\'Enter\\'||event.key===\\' \\'){event.preventDefault();openArticleModal(' + idx + ');}">' +
+          '<div class="aspect-video overflow-hidden bg-[#E2DFD8] relative">' +
+          (imgUrl ? '<img src="' + escHtml(imgUrl) + '" alt="' + escHtml(a.heading) + '" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />' : '') +
+          '</div>' +
+          '<div class="p-4 flex flex-col flex-1 justify-between gap-3"><div>' +
+          '<div class="flex items-center justify-between gap-2 text-[10px] font-mono uppercase tracking-widest text-[#8F0000] font-bold mb-1.5">' +
+          '<span>' + escHtml(a.category || 'Studio Article') + '</span>' +
+          '<span class="text-[#767070] font-normal">' + escHtml(a.date || '') + '</span></div>' +
+          '<h3 class="text-sm font-bold text-[#111111] leading-snug mb-2" style="font-family: var(--font-sans);">' + escHtml(a.heading) + '</h3>' +
+          '<p class="text-xs text-[#767070] leading-relaxed" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">' + escHtml(a.desc) + '</p>' +
+          '</div><div class="pt-2.5 border-t border-[#DDD8CE]/70 flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider text-[#8F0000]">' +
+          '<span>Read Article &rarr;</span>' +
+          (linkHref ? '<a href="' + escHtml(linkHref) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="font-mono text-[10px] text-[#767070] hover:text-[#8F0000] no-underline">External &#8599;</a>' : '') +
+          '</div></div></article>';
+      }).join('');
+      const aCount = document.getElementById('cms-articles-count');
+      if (aCount) aCount.textContent = list.length + ' Published Notes';
+    }
+
+    const articleModalEl = document.getElementById('article-modal');
+    const articleModalCardEl = document.getElementById('articleModalCard');
+    function openArticleModal(idx) {
+      const a = articlesList[idx];
+      if (!a || !articleModalEl) return;
+      const imgUrl = normalizeSheetMediaUrl(a.image || a.Image_URL);
+      const linkHref = normalizeExternalUrl(a.link || a.Link);
+      document.getElementById('article-modal-meta').textContent = (a.category || 'Studio Article') + (a.date ? ' • ' + a.date : '');
+      document.getElementById('article-modal-title').textContent = a.heading || '';
+      const imgEl = document.getElementById('article-modal-img');
+      if (imgEl) {
+        imgEl.src = imgUrl || '';
+        imgEl.style.display = imgUrl ? 'block' : 'none';
+        imgEl.alt = a.heading || 'Article illustration';
+      }
+      document.getElementById('article-modal-body').textContent = a.desc || '';
+      const linkBtn = document.getElementById('article-modal-link-btn');
+      if (linkBtn) {
+        if (linkHref) {
+          linkBtn.href = linkHref;
+          linkBtn.style.display = 'inline-flex';
+        } else {
+          linkBtn.style.display = 'none';
+        }
+      }
+      openModalOverlay(articleModalEl, articleModalCardEl);
+    }
+    function closeArticleModal() {
+      closeModalOverlay(articleModalEl);
+    }
+    function closeArticleOnBackdrop(e) {
+      if (e.target === articleModalEl) closeArticleModal();
+    }
+
     window.openTeamModal = openTeamModal;
     window.closeTeamModal = closeTeamModal;
     window.closeTeamOnBackdrop = closeTeamOnBackdrop;
     window.downloadTeamDossier = downloadTeamDossier;
     window.toggleFaqItem = toggleFaqItem;
+    window.openPartnerModal = openPartnerModal;
+    window.closePartnerModal = closePartnerModal;
+    window.closePartnerOnBackdrop = closePartnerOnBackdrop;
+    window.openArticleModal = openArticleModal;
+    window.closeArticleModal = closeArticleModal;
+    window.closeArticleOnBackdrop = closeArticleOnBackdrop;
 
     // Live Google Sheet CMS Hydration (Upgradable Settings, Hero, About, Services, Projects, Team, Reviews, FAQs, Partners)
     (function initGoogleSheetCms() {
@@ -3597,11 +4322,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
         if (!sheetId) return;
 
-        const tabsToLoad = ['Settings', 'Hero', 'About', 'Services', 'Projects', 'Team', 'Reviews', 'FAQs', 'Partners'];
+        const tabsToLoad = ['Settings', 'Hero', 'About', 'Services', 'Projects', 'Team', 'Articles', 'Reviews', 'FAQs', 'Partners'];
         const results = await Promise.allSettled(tabsToLoad.map(function(name) { return fetchSheetTab(sheetId, name); }));
         const dataByTab = {};
         tabsToLoad.forEach(function(name, i) {
-          dataByTab[name] = results[i].status === 'fulfilled' ? results[i].value : [];
+          dataByTab[name] = (results[i] && results[i].status === 'fulfilled') ? results[i].value : [];
         });
 
         // 1. Settings overrides (Email, Phone, Offices, Website)
@@ -3625,9 +4350,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           if (s.SEO_Title) document.title = s.SEO_Title;
         }
 
-        // 2. Hero overrides
+        // 2. Hero overrides (incl. non-visible SEO meta tags synced from Hero tab)
         if (dataByTab.Hero.length) {
           const h = kvRowsToMap(dataByTab.Hero);
+          if (h.SEO_Meta_Title) {
+            document.title = h.SEO_Meta_Title;
+            const ogT = document.querySelector('meta[property="og:title"]');
+            if (ogT) ogT.setAttribute('content', h.SEO_Meta_Title);
+          }
+          if (h.SEO_Meta_Desc) {
+            const md = document.querySelector('meta[name="description"]');
+            if (md) md.setAttribute('content', h.SEO_Meta_Desc);
+            const ogD = document.querySelector('meta[property="og:description"]');
+            if (ogD) ogD.setAttribute('content', h.SEO_Meta_Desc);
+          }
+          if (h.SEO_Meta_Keywords) {
+            const mk = document.querySelector('meta[name="keywords"]');
+            if (mk) mk.setAttribute('content', h.SEO_Meta_Keywords);
+          }
           if (h.Cover_Color_URL) {
             const hc = document.getElementById('heroBgColor');
             if (hc) hc.src = normalizeSheetMediaUrl(h.Cover_Color_URL);
@@ -3811,17 +4551,40 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           }
         }
 
-        // 9. Partners sync
+        // 9. Partners sync (Shows Logo + Name in grid; full details & website redirect on click)
         if (dataByTab.Partners.length) {
-          const ptRows = dataByTab.Partners.filter(function(r) { return r.Logo_URL; });
-          const ptGrid = document.getElementById('partners-grid');
-          if (ptGrid && ptRows.length) {
+          const ptRows = dataByTab.Partners.filter(function(r) { return r.Logo_URL || r.Name; });
+          if (ptRows.length) {
             ptRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
-            ptGrid.innerHTML = ptRows.map(function(l) {
-              return '<div class="partner-logo-cell"><img src="' + escHtml(normalizeSheetMediaUrl(l.Logo_URL)) + '" alt="' + escHtml(l.Name || 'Partner Logo') + '" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy" /></div>';
-            }).join('');
-            const ptCount = document.getElementById('cms-partners-count');
-            if (ptCount) ptCount.textContent = ptRows.length + ' Corporate Marks';
+            const mappedPartners = ptRows.map(function(l) {
+              return {
+                img: normalizeSheetMediaUrl(l.Logo_URL),
+                name: (l.Name || 'Partner').trim(),
+                alt: (l.Name || 'Partner').trim() + ' logo',
+                desc: (l.Description || '').trim(),
+                url: normalizeExternalUrl(l.Website || '')
+              };
+            });
+            renderPartnersGrid(mappedPartners);
+          }
+        }
+
+        // 10. Articles sync
+        if (dataByTab.Articles && dataByTab.Articles.length) {
+          const artRows = dataByTab.Articles.filter(function(r) { return r.Heading; });
+          if (artRows.length) {
+            artRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            const mappedArticles = artRows.map(function(a) {
+              return {
+                heading: (a.Heading || '').trim(),
+                image: normalizeSheetMediaUrl(a.Image_URL || a.Image || ''),
+                desc: (a.Description || a.Summary || '').trim(),
+                link: normalizeExternalUrl(a.Link || a.URL || ''),
+                category: (a.Category || 'Studio Article').trim(),
+                date: (a.Date || '').trim()
+              };
+            });
+            renderArticlesGrid(mappedArticles);
           }
         }
 
@@ -4165,26 +4928,32 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         return;
       }
 
-      if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+      if (window.ScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.config({ ignoreMobileResize: true });
+      }
       if (window.SplitText) gsap.registerPlugin(SplitText);
 
-      // 1. Initialize Lenis Smooth Inertia Scrolling
+      // 1. Initialize Lenis Smooth Inertia Scrolling (never hijacks modal/sub-scroller wheel events)
       if (window.Lenis) {
         const lenis = new Lenis({
-          duration: 1.15,
+          duration: 1.05,
           easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
           smoothWheel: true,
-          wheelMultiplier: 0.95
+          wheelMultiplier: 1.0,
+          prevent: function(node) {
+            return !!(node && node.closest && node.closest('.lightbox-modal, .lightbox-content, .lightbox-scroll-body, #mobile-menu, [data-lenis-prevent]'));
+          }
         });
         window.lenisInstance = lenis;
 
-        if (window.ScrollTrigger) {
-          lenis.on('scroll', ScrollTrigger.update);
-          gsap.ticker.add(function(time) {
-            lenis.raf(time * 1000);
-          });
-          gsap.ticker.lagSmoothing(0);
-        }
+        lenis.on('scroll', function() {
+          if (window.ScrollTrigger) ScrollTrigger.update();
+        });
+        gsap.ticker.add(function(time) {
+          lenis.raf(time * 1000);
+        });
+        gsap.ticker.lagSmoothing(0);
 
         // Anchor smooth scrolling via Lenis
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
@@ -4194,11 +4963,20 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               const target = document.querySelector(href);
               if (target) {
                 e.preventDefault();
-                lenis.scrollTo(target, { offset: -76, duration: 1.1 });
+                lenis.scrollTo(target, { offset: -76, duration: 0.9 });
               }
             }
           });
         });
+      }
+
+      if (window.ScrollTrigger && typeof ResizeObserver === 'function') {
+        let refreshTimer = null;
+        const ro = new ResizeObserver(function() {
+          clearTimeout(refreshTimer);
+          refreshTimer = setTimeout(function() { ScrollTrigger.refresh(); }, 180);
+        });
+        ro.observe(document.body);
       }
 
       // 2. Scroll Progress Line under Sticky Navbar
@@ -4294,21 +5072,21 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           gsap.from(el, {
             y: 24,
             opacity: 0,
-            duration: 0.7,
+            duration: 0.65,
             ease: 'power3.out',
             clearProps: 'transform,opacity',
-            scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+            scrollTrigger: { trigger: el, start: 'top 95%', once: true }
           });
         });
 
         gsap.utils.toArray('.reveal-card').forEach(function(el) {
           gsap.from(el, {
-            y: 28,
+            y: 24,
             opacity: 0,
-            duration: 0.75,
+            duration: 0.7,
             ease: 'power3.out',
             clearProps: 'transform,opacity',
-            scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+            scrollTrigger: { trigger: el, start: 'top 95%', once: true }
           });
         });
 
@@ -4319,34 +5097,36 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           stagger: 0.05,
           ease: 'power2.out',
           clearProps: 'transform,opacity',
-          scrollTrigger: { trigger: '.scope-grid', start: 'top 85%', once: true }
+          scrollTrigger: { trigger: '.scope-grid', start: 'top 92%', once: true }
         });
 
         gsap.from('.team-grid .team-card', {
-          y: 28,
-          scale: 0.96,
+          y: 24,
+          scale: 0.97,
           opacity: 0,
-          duration: 0.65,
-          stagger: 0.055,
+          duration: 0.6,
+          stagger: 0.05,
           ease: 'expo.out',
           clearProps: 'transform,opacity',
-          scrollTrigger: { trigger: '.team-grid', start: 'top 85%', once: true }
+          scrollTrigger: { trigger: '.team-grid', start: 'top 92%', once: true }
         });
 
         ScrollTrigger.batch('.project-card', {
-          start: 'top 90%',
+          start: 'top 95%',
           once: true,
           onEnter: function(batch) {
             gsap.from(batch, {
-              y: 28,
+              y: 24,
               opacity: 0,
-              duration: 0.65,
-              stagger: 0.07,
+              duration: 0.6,
+              stagger: 0.06,
               ease: 'power3.out',
               clearProps: 'transform,opacity'
             });
           }
         });
+
+        window.addEventListener('load', function() { ScrollTrigger.refresh(); }, { once: true });
       }
     })();
   </script>
@@ -4494,6 +5274,25 @@ const legalPages = [
 ];
 
 function buildLegalPage(page, compiledCss) {
+  const cookieControlsSection = page.slug === 'cookie-policy' ? `
+      <section class="mt-8 p-5 bg-white border border-[#DDD8CE]">
+        <h2 style="margin-top:0;">Manage Your Cookie Preferences</h2>
+        <p class="text-sm text-[#444444]">
+          Current preference: <strong id="legalCookieStatus" class="text-[#8F0000]">Checking...</strong>
+        </p>
+        <div class="flex flex-wrap gap-3 mt-3">
+          <button type="button" onclick="if(window.setCookiePreferenceChoice)window.setCookiePreferenceChoice('accepted')" class="btn-crimson text-xs py-2 px-4">
+            Accept All Cookies
+          </button>
+          <button type="button" onclick="if(window.setCookiePreferenceChoice)window.setCookiePreferenceChoice('essential')" class="btn-outline text-xs py-2 px-4">
+            Essential Only
+          </button>
+          <button type="button" onclick="if(window.openCookiePopup)window.openCookiePopup()" class="btn-outline text-xs py-2 px-4">
+            Open Cookie Notice Popup
+          </button>
+        </div>
+      </section>` : '';
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -4524,7 +5323,7 @@ function buildLegalPage(page, compiledCss) {
 
   <header class="site-nav flex items-center">
     <div class="portfolio-container flex items-center justify-between w-full gap-2">
-      <a href="../#home" class="flex items-center gap-2 no-underline shrink min-w-0">
+      <a href="../index.html#home" class="flex items-center gap-2 no-underline shrink min-w-0">
         <img src="../assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. emblem" class="shrink-0" style="height: 34px; width: auto; max-width: 40px;" onerror="this.src='../assets/logo.jpg'" />
         <div class="flex flex-col min-w-0">
           <span class="font-bold text-sm sm:text-base tracking-wider text-[#111111] leading-none truncate">
@@ -4534,13 +5333,14 @@ function buildLegalPage(page, compiledCss) {
         </div>
       </a>
       <nav aria-label="Legal navigation" class="hidden md:flex items-center gap-5 text-[13px] font-bold">
-        <a href="../#home" class="text-[#111111] hover:text-[#8F0000] no-underline">Home</a>
-        <a href="../#services" class="text-[#111111] hover:text-[#8F0000] no-underline">Services</a>
-        <a href="../#projects" class="text-[#111111] hover:text-[#8F0000] no-underline">Projects</a>
-        <a href="../#about" class="text-[#111111] hover:text-[#8F0000] no-underline">About</a>
-        <a href="../#contact" class="text-[#111111] hover:text-[#8F0000] no-underline">Contact</a>
+        <a href="../index.html#home" class="text-[#111111] hover:text-[#8F0000] no-underline">Home</a>
+        <a href="../index.html#services" class="text-[#111111] hover:text-[#8F0000] no-underline">Services</a>
+        <a href="../index.html#projects" class="text-[#111111] hover:text-[#8F0000] no-underline">Projects</a>
+        <a href="../index.html#about" class="text-[#111111] hover:text-[#8F0000] no-underline">About</a>
+        <a href="../index.html#articles" class="text-[#111111] hover:text-[#8F0000] no-underline">Articles</a>
+        <a href="../index.html#contact" class="text-[#111111] hover:text-[#8F0000] no-underline">Contact</a>
       </nav>
-      <a href="../#home" class="btn-outline text-[10px] sm:text-[11px] py-1.5 sm:py-2 px-2.5 sm:px-3.5 no-underline shrink-0 whitespace-nowrap">&larr; Home</a>
+      <a href="../index.html#home" class="btn-outline text-[10px] sm:text-[11px] py-1.5 sm:py-2 px-2.5 sm:px-3.5 no-underline shrink-0 whitespace-nowrap">&larr; Home</a>
     </div>
   </header>
 
@@ -4548,7 +5348,7 @@ function buildLegalPage(page, compiledCss) {
     <div class="portfolio-container max-w-4xl">
       <div class="mb-6 pb-6 border-b border-[#DDD8CE]">
         <div class="flex flex-wrap items-center gap-2 text-xs text-[#767070] mb-3">
-          <a href="../#home" class="text-[#8F0000] no-underline hover:underline font-semibold">Home</a>
+          <a href="../index.html#home" class="text-[#8F0000] no-underline hover:underline font-semibold">Home</a>
           <span>/</span>
           <span class="text-[#111111] font-semibold">${page.heading}</span>
         </div>
@@ -4565,16 +5365,18 @@ function buildLegalPage(page, compiledCss) {
             ${sec.bullets ? `<ul>${sec.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
           </section>
         `).join('')}
+        ${cookieControlsSection}
       </article>
 
       <div class="mt-12 pt-6 border-t border-[#DDD8CE] flex flex-wrap items-center justify-between gap-4 text-xs">
-        <div class="flex flex-wrap gap-4 font-semibold">
-          <a href="../privacy-policy/" class="text-[#8F0000] no-underline hover:underline">Privacy Policy</a>
-          <a href="../terms-and-conditions/" class="text-[#8F0000] no-underline hover:underline">Terms &amp; Conditions</a>
-          <a href="../cookie-policy/" class="text-[#8F0000] no-underline hover:underline">Cookie Policy</a>
-          <a href="../disclaimer/" class="text-[#8F0000] no-underline hover:underline">Studio Disclaimer</a>
+        <div class="flex flex-wrap gap-4 font-semibold items-center">
+          <a href="../privacy-policy/index.html" class="text-[#8F0000] no-underline hover:underline">Privacy Policy</a>
+          <a href="../terms-and-conditions/index.html" class="text-[#8F0000] no-underline hover:underline">Terms &amp; Conditions</a>
+          <a href="../cookie-policy/index.html" class="text-[#8F0000] no-underline hover:underline">Cookie Policy</a>
+          <a href="../disclaimer/index.html" class="text-[#8F0000] no-underline hover:underline">Studio Disclaimer</a>
+          <button type="button" onclick="if(window.openCookiePopup)window.openCookiePopup()" class="bg-transparent border-0 p-0 text-xs text-[#767070] hover:text-[#8F0000] underline cursor-pointer font-semibold">Cookie Settings</button>
         </div>
-        <a href="../#contact" class="btn-crimson text-xs py-2 px-4 no-underline">Contact Studio</a>
+        <a href="../index.html#contact" class="btn-crimson text-xs py-2 px-4 no-underline">Contact Studio</a>
       </div>
     </div>
   </main>
@@ -4585,6 +5387,8 @@ function buildLegalPage(page, compiledCss) {
       <div>Head Office: Tokha-6, Dhapasi, Kathmandu &bull; Contact Office: Birgunj-12, Parsa</div>
     </div>
   </footer>
+  ${cookieBannerMarkup(true)}
+  <script>${cookieBannerScript}</script>
 </body>
 </html>`;
 }
@@ -4718,7 +5522,10 @@ async function run() {
       ['Headline_Line2', 'Defining Lifestyles'],
       ['Subtitle', 'Full-service architectural design, seismic engineering, masterplanning & interior studio by Scale and Spaces Pvt. Ltd. across Nepal.'],
       ['Cover_Color_URL', 'assets/projects/cover_studio_tower.jpg'],
-      ['Cover_BW_URL', 'assets/projects/cover_studio_tower_bw.jpg']
+      ['Cover_BW_URL', 'assets/projects/cover_studio_tower_bw.jpg'],
+      ['SEO_Meta_Title', 'Scale and Spaces Pvt. Ltd. | Best Architect & Interior Designer in Nepal'],
+      ['SEO_Meta_Desc', 'Trusted Architects & Interior Designers in Kathmandu, Birgunj & Nepal. 3D renders, NBC seismic plans & turnkey interiors by Scale and Spaces.'],
+      ['SEO_Meta_Keywords', 'Architect in Nepal, Best Architect in Nepal, Architect in Kathmandu, Architect in Birgunj, Interior Designer in Nepal, Best Interior Designer in Nepal, Interior Designer in Kathmandu, Interior Designer in Birgunj, Architecture Firm Nepal, Structural Engineer Nepal, Scale and Spaces']
     ],
     About: [
       ['Key', 'Value'],
@@ -4742,14 +5549,17 @@ async function run() {
     Team: [['Name', 'Role', 'Photo_URL', 'Qualification', 'Experience', 'Specialization', 'Bio', 'Key_Projects', 'Office', 'Email', 'CV_Label', 'CV_URL', 'Order']].concat(
       teamData.map((m, i) => [m.name, m.role, m.image, m.qualification, m.experience, m.specialization, m.bio, m.keyProjects, m.office, m.email, m.cvLabel, m.cvUrl, i + 1])
     ),
+    Articles: [['Heading', 'Image_URL', 'Description', 'Link', 'Category', 'Date', 'Order']].concat(
+      articlesData.map((a, i) => [a.heading, a.image, a.desc, a.link || '', a.category || 'Studio Article', a.date || '2026', i + 1])
+    ),
     Reviews: [['Name', 'Rating', 'City', 'Project_Scope', 'Review_Comment', 'Date']].concat(
       reviewsData.map(r => [r.author, r.rating, r.city, r.scope, r.quote, r.date])
     ),
     FAQs: [['Question', 'Answer', 'Category', 'Order']].concat(
       faqsData.map((f, i) => [f.question, f.answer, f.category, i + 1])
     ),
-    Partners: [['Name', 'Logo_URL', 'Order']].concat(
-      clientLogos.map((l, i) => [l.alt.replace(' logo', ''), l.img, i + 1])
+    Partners: [['Name', 'Logo_URL', 'Description', 'Website', 'Order']].concat(
+      clientLogos.map((l, i) => [l.name, l.img, l.desc, l.url || '', i + 1])
     )
   };
   Object.keys(sheetTabs).forEach(tabName => {

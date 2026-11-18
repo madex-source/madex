@@ -744,7 +744,7 @@ const customCss = `
       z-index: 1;
     }
 
-    /* Architectural Atelier Preloader Curtain with Elevation Line Drawing */
+    /* Architectural Preloader Curtain (Borderless Paper Canvas + Elevation & B&W Cover Reveal) */
     .studio-preloader {
       position: fixed;
       inset: 0;
@@ -757,45 +757,58 @@ const customCss = `
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1.15rem;
       padding: 2rem;
       pointer-events: auto;
     }
-    .preloader-frame {
+    .preloader-center-stage {
       position: relative;
-      max-width: 520px;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(8px);
-      border: 1px solid #D8D1C5;
-      padding: 2rem 1.75rem 1.75rem;
-      box-shadow: 0 24px 60px -18px rgba(80, 18, 12, 0.18), 0 4px 14px rgba(0, 0, 0, 0.04);
+      width: min(680px, 90vw);
+      aspect-ratio: 1280 / 878;
+      max-height: 52vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 0.9rem;
+      justify-content: center;
+    }
+    .preloader-bw-reveal {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0;
+      filter: contrast(1.08);
+      mask-image: radial-gradient(ellipse at center, black 55%, transparent 94%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 94%);
     }
     .preloader-sketch-svg {
+      position: relative;
+      z-index: 2;
       width: 100%;
-      max-width: 340px;
       height: auto;
+      max-height: 46vh;
       display: block;
     }
     .preloader-sketch-path {
       stroke-dasharray: 900;
       stroke-dashoffset: 900;
     }
-    .preloader-line {
-      width: 100%;
-      height: 2px;
-      background: #E2DCD0;
-      overflow: hidden;
-      position: relative;
+    .preloader-hr-track {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(17, 17, 17, 0.08);
+      pointer-events: none;
+      z-index: 3;
     }
-    .preloader-line-fill {
+    .preloader-hr-fill {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, var(--crimson), var(--ochre));
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      background: var(--crimson);
       transform-origin: left center;
       transform: scaleX(0);
     }
@@ -805,38 +818,131 @@ const customCss = `
       bottom: 0;
       left: 50%;
       width: 1px;
-      background: rgba(143, 0, 0, 0.16);
+      background: rgba(17, 17, 17, 0.08);
       pointer-events: none;
     }
-    .preloader-ruler-h {
+    .preloader-pct-tag {
       position: fixed;
-      left: 0;
-      right: 0;
-      top: 50%;
-      height: 1px;
-      background: rgba(143, 0, 0, 0.16);
-      pointer-events: none;
-    }
-    .preloader-coord-readout {
-      position: fixed;
-      bottom: 18px;
-      right: 22px;
+      top: calc(50% - 22px);
+      left: 1.5rem;
       font-family: monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--crimson);
+      font-weight: 700;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .preloader-colophon-bottom {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      font-size: 11px;
+      letter-spacing: 0.08em;
       color: var(--text-muted);
       pointer-events: none;
     }
 
-    /* Interactive Image After-Effect Stage (Heron Explore Kinetic Plate Trail) */
+    /* Architectural Marquee Ticker (matching Heron AI thin hairline ribbon) */
+    .studio-marquee-wrap {
+      overflow: hidden;
+      border-top: 1px solid var(--border-line);
+      border-bottom: 1px solid var(--border-line);
+      background: rgba(240, 239, 234, 0.86);
+      padding: 0.65rem 0;
+      white-space: nowrap;
+      position: relative;
+      z-index: 3;
+    }
+    .studio-marquee-track {
+      display: inline-flex;
+      gap: 2.5rem;
+      font-family: monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      animation: studioMarquee 32s linear infinite;
+    }
+    @keyframes studioMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Full-Page Hero Architectural Cover Background (B&W Sketch -> Color Transition) */
+    .hero-full-section {
+      position: relative;
+      overflow: hidden;
+      min-height: calc(100vh - 76px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-line);
+    }
+    .hero-bg-stage {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-bg-bw,
+    .hero-bg-color {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 72% center;
+    }
+    .hero-bg-bw {
+      opacity: 0.42;
+      filter: contrast(1.06);
+    }
+    .hero-bg-color {
+      opacity: 0.78;
+      clip-path: circle(56% at 74% 48%);
+      transition: clip-path 1.15s var(--ease-expo), opacity 0.9s var(--ease-expo);
+      will-change: clip-path, transform;
+    }
+    .hero-bg-scrim {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(240, 239, 234, 0.96) 0%, rgba(240, 239, 234, 0.88) 42%, rgba(240, 239, 234, 0.25) 78%, rgba(240, 239, 234, 0.35) 100%),
+        linear-gradient(180deg, rgba(240, 239, 234, 0.72) 0%, rgba(240, 239, 234, 0.08) 38%, rgba(240, 239, 234, 0.85) 100%);
+    }
+    .hero-sun-halo {
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      border-radius: 9999px;
+      background: radial-gradient(circle, rgba(143, 0, 0, 0.22) 0%, rgba(236, 124, 48, 0.14) 55%, transparent 72%);
+      right: 12%;
+      top: 14%;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+    @media (max-width: 767px) {
+      .hero-bg-bw { opacity: 0.28; object-position: center center; }
+      .hero-bg-color { opacity: 0.55; clip-path: circle(62% at 50% 42%); }
+      .hero-sun-halo { width: 220px; height: 220px; right: 5%; top: 8%; }
+    }
+
+    /* Interactive Studio Monograph Stage */
     .atelier-trail-stage {
       position: relative;
       overflow: hidden;
-      min-height: 290px;
+      min-height: 280px;
       background-color: #EFECE5;
       background-image:
-        radial-gradient(circle at 20% 25%, rgba(143, 0, 0, 0.055), transparent 55%),
-        radial-gradient(circle at 80% 75%, rgba(236, 124, 48, 0.07), transparent 55%),
+        radial-gradient(circle at 20% 25%, rgba(143, 0, 0, 0.045), transparent 55%),
+        radial-gradient(circle at 80% 75%, rgba(236, 124, 48, 0.06), transparent 55%),
         url('assets/art/watercolor-paper-wash.jpg');
       background-size: cover;
       background-position: center;
@@ -844,7 +950,6 @@ const customCss = `
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: crosshair;
       user-select: none;
     }
     .atelier-trail-clone {
@@ -852,9 +957,8 @@ const customCss = `
       width: 170px;
       height: 118px;
       object-fit: cover;
-      border: 4px solid #FFFFFF;
-      outline: 1px solid #DDD8CE;
-      box-shadow: 0 22px 44px -10px rgba(74, 18, 12, 0.28), 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: 3px solid #FFFFFF;
+      box-shadow: 0 20px 42px -12px rgba(74, 18, 12, 0.24);
       pointer-events: none;
       will-change: transform, opacity;
     }
@@ -865,7 +969,7 @@ const customCss = `
       }
     }
 
-    /* 2D Canvas Pen Velocity Trail + Magnetic Architectural Cursor (Desktop) */
+    /* 2D Canvas Pen Velocity Trail + Subtle Drafting Cursor Nib (No Cluttering Text Stamps) */
     .atelier-trail-layer {
       position: absolute;
       inset: 0;
@@ -904,16 +1008,13 @@ const customCss = `
       position: fixed;
       top: 0;
       left: 0;
-      width: 34px;
-      height: 34px;
-      margin-left: -17px;
-      margin-top: -17px;
+      width: 24px;
+      height: 24px;
+      margin-left: -12px;
+      margin-top: -12px;
       border-radius: 9999px;
-      border: 1.25px solid rgba(143, 0, 0, 0.55);
-      background: rgba(143, 0, 0, 0.03);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border: 1px solid rgba(143, 0, 0, 0.45);
+      background: transparent;
       transition: width 0.28s var(--ease-expo), height 0.28s var(--ease-expo), margin 0.28s var(--ease-expo), border-color 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
       opacity: 0;
     }
@@ -928,7 +1029,6 @@ const customCss = `
       height: 6px;
       margin-left: -3px;
       margin-top: -3px;
-      border-radius: 9999px;
       background-color: var(--crimson);
       opacity: 0;
       transition: transform 0.2s var(--ease-expo), opacity 0.2s ease, background-color 0.2s ease;
@@ -936,98 +1036,111 @@ const customCss = `
     .studio-cursor-dot.is-visible {
       opacity: 1;
     }
-    .studio-cursor-label {
-      font-family: var(--font-sans);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #FFFFFF;
-      opacity: 0;
-      transform: scale(0.85);
-      transition: opacity 0.2s ease, transform 0.2s var(--ease-expo);
-      white-space: nowrap;
-    }
     .studio-cursor-ring.is-card-hover {
-      width: 76px;
-      height: 76px;
-      margin-left: -38px;
-      margin-top: -38px;
-      background: rgba(143, 0, 0, 0.88);
-      border-color: #FFFFFF;
-      box-shadow: 0 10px 26px rgba(143, 0, 0, 0.32);
-      backdrop-filter: blur(2px);
-    }
-    .studio-cursor-ring.is-card-hover .studio-cursor-label {
-      opacity: 1;
-      transform: scale(1);
+      width: 44px;
+      height: 44px;
+      margin-left: -22px;
+      margin-top: -22px;
+      border-color: rgba(143, 0, 0, 0.65);
+      background: rgba(143, 0, 0, 0.06);
     }
     .studio-cursor-ring.is-interactive-hover {
-      width: 48px;
-      height: 48px;
-      margin-left: -24px;
-      margin-top: -24px;
+      width: 36px;
+      height: 36px;
+      margin-left: -18px;
+      margin-top: -18px;
       border-color: var(--ochre);
-      background: rgba(236, 124, 48, 0.1);
+      background: rgba(236, 124, 48, 0.08);
     }
 
-    /* Interactive Watercolor Spotlight Wash on Cards & Tiles */
+    /* Interactive Watercolor Spotlight Wash on Hover Elements */
     .wc-hover-card {
       position: relative;
-      box-shadow: var(--shadow-paper);
-      transition: transform 0.45s var(--ease-expo), border-color 0.3s ease, box-shadow 0.45s var(--ease-expo);
+      transition: transform 0.45s var(--ease-expo), box-shadow 0.45s var(--ease-expo), border-color 0.3s ease;
     }
     .wc-hover-card::after {
       content: '';
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(143, 0, 0, 0.085), rgba(236, 124, 48, 0.045) 45%, transparent 72%);
+      background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), rgba(143, 0, 0, 0.065), rgba(236, 124, 48, 0.035) 45%, transparent 72%);
       opacity: 0;
       transition: opacity 0.35s ease;
       z-index: 2;
-    }
-    .wc-hover-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--crimson);
-      box-shadow: var(--shadow-elevated);
     }
     .wc-hover-card:hover::after {
       opacity: 1;
     }
 
-    /* Full-Service Architectural Atelier Medallions */
-    .service-pillar-card {
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid var(--border-line);
-      padding: 1rem 0.95rem;
+    /* Full Architectural Services Hairline Grid (Boxless Open Drafting Grid like Heron AI) */
+    .service-hairline-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-top: 1px solid var(--border-line);
+    }
+    @media (min-width: 640px) {
+      .service-hairline-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    @media (min-width: 1024px) {
+      .service-hairline-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+    }
+    .service-pillar-cell {
+      padding: 1.5rem 1.15rem;
+      border-bottom: 1px solid var(--border-line);
+      border-right: 1px solid var(--border-line);
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 0.45rem;
-      box-shadow: var(--shadow-paper);
-      transition: transform 0.4s var(--ease-expo), border-color 0.25s ease, box-shadow 0.4s var(--ease-expo);
+      gap: 0.5rem;
+      transition: background-color 0.3s ease;
       position: relative;
-      overflow: hidden;
     }
-    .service-pillar-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--crimson);
-      box-shadow: var(--shadow-elevated);
+    .service-pillar-cell:last-child {
+      border-right: none;
+    }
+    .service-pillar-cell:hover {
+      background-color: rgba(255, 255, 255, 0.55);
     }
     .service-pillar-icon {
-      width: 34px;
-      height: 34px;
-      color: var(--crimson);
-      transition: transform 0.4s var(--ease-expo);
+      width: 30px;
+      height: 30px;
+      color: var(--text-main);
+      transition: transform 0.4s var(--ease-expo), color 0.3s ease;
     }
-    .service-pillar-card:hover .service-pillar-icon {
-      transform: scale(1.1) rotate(-3deg);
+    .service-pillar-cell:hover .service-pillar-icon {
+      color: var(--crimson);
+      transform: scale(1.08);
+    }
+
+    /* Footer Display Wordmark Ink-Fill */
+    .footer-wordmark-ink {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: clamp(2.8rem, 8.2vw, 7.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255, 255, 255, 0.25);
+      background-image: linear-gradient(90deg, #FFFFFF 0%, #C00000 50%, rgba(255, 255, 255, 0.14) 50%);
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      transition: background-position 1.1s var(--ease-expo);
+      user-select: none;
+    }
+    .footer-wordmark-ink.is-filled,
+    .footer-wordmark-ink:hover {
+      background-position: 0% 0;
     }
 
     /* Watercolor Ink Reveal Frame */
     .wc-ink-plate {
-      filter: drop-shadow(0 18px 34px rgba(74, 24, 16, 0.14));
+      filter: drop-shadow(0 18px 34px rgba(74, 24, 16, 0.12));
       will-change: transform, opacity;
     }
 
@@ -1305,34 +1418,32 @@ const customCss = `
       box-shadow: 0 10px 22px -6px rgba(17, 17, 17, 0.22);
     }
 
-    /* Page 4 Category Discipline Cards */
+    /* Page 4 Category Discipline Index (Clean Borderless Hairline Grid) */
     .discipline-card {
-      background: #FFFFFF;
-      border: 1px solid var(--border-line);
-      padding: 1.35rem 1.25rem;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border-line);
+      padding: 0.95rem 0.35rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.9rem;
       cursor: pointer;
-      box-shadow: var(--shadow-paper);
-      transition: transform 0.38s var(--ease-expo), border-color 0.25s ease, box-shadow 0.38s var(--ease-expo);
+      transition: transform 0.35s var(--ease-expo), border-color 0.25s ease;
       text-align: left;
       position: relative;
-      overflow: hidden;
     }
     .discipline-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-2px);
       border-color: var(--crimson);
-      box-shadow: var(--shadow-elevated);
     }
     .discipline-monogram {
-      width: 44px;
-      height: 44px;
-      background: #555555;
+      width: 40px;
+      height: 40px;
+      background: #444444;
       color: #FFFFFF;
       font-family: var(--font-sans);
       font-weight: 700;
-      font-size: 1.75rem;
+      font-size: 1.55rem;
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
@@ -1346,39 +1457,35 @@ const customCss = `
       transform: scale(1.06);
     }
 
-    /* Filter Tabs */
+    /* Filter Tabs (Minimal Underline Architecture Index — No Heavy Box Chrome) */
     .filter-tab {
-      background: #FFFFFF;
-      border: 1px solid var(--border-line);
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
       color: var(--text-muted);
       font-family: var(--font-sans);
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       font-weight: 700;
-      padding: 0.5rem 1rem;
+      padding: 0.45rem 0.35rem;
+      margin-right: 0.75rem;
       cursor: pointer;
-      box-shadow: 0 2px 6px rgba(34, 24, 18, 0.04);
-      transition: all 0.28s var(--ease-expo);
+      transition: color 0.25s ease, border-color 0.25s ease;
       white-space: nowrap;
     }
     .filter-tab:hover {
       color: var(--text-main);
-      border-color: var(--text-main);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(34, 24, 18, 0.08);
     }
     .filter-tab.active {
-      background-color: var(--crimson);
-      color: #FFFFFF;
-      border-color: var(--crimson);
-      box-shadow: 0 8px 18px -4px rgba(143, 0, 0, 0.28);
+      color: var(--crimson);
+      border-bottom-color: var(--crimson);
     }
 
-    /* Project Cards with Watercolor Depth Shadows */
+    /* Project Cards (Airy Edge, Soft Hover Elevation, Zero Double Boxes) */
     .project-card {
       background-color: var(--bg-card);
-      border: 1px solid var(--border-line);
-      box-shadow: var(--shadow-paper);
-      transition: transform 0.45s var(--ease-expo), border-color 0.3s ease, box-shadow 0.45s var(--ease-expo);
+      border: 1px solid rgba(17, 17, 17, 0.06);
+      box-shadow: 0 4px 18px -6px rgba(40, 24, 18, 0.08);
+      transition: transform 0.45s var(--ease-expo), box-shadow 0.45s var(--ease-expo);
       display: flex;
       flex-direction: column;
       position: relative;
@@ -1386,7 +1493,6 @@ const customCss = `
     }
     .project-card:hover {
       transform: translateY(-6px);
-      border-color: var(--crimson);
       box-shadow: var(--shadow-elevated);
     }
     .project-image-box {
@@ -1404,13 +1510,13 @@ const customCss = `
       display: block;
     }
     .project-card:hover .project-image-box img {
-      transform: scale(1.07);
+      transform: scale(1.06);
     }
     .project-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(143, 0, 0, 0.72), rgba(28, 12, 10, 0.78));
-      backdrop-filter: blur(2px);
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(143, 0, 0, 0.56), rgba(20, 10, 8, 0.68));
+      backdrop-filter: blur(1.5px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1421,25 +1527,23 @@ const customCss = `
       opacity: 1;
     }
 
-    /* Team Card exact replica of Page 3 PDF + Layered Elevation */
+    /* Team Card matching Page 3 PDF Identity cleanly without Heavy Outer Borders */
     .team-card {
       background: #FFFFFF;
-      border: 1px solid var(--border-line);
-      box-shadow: var(--shadow-paper);
+      border: 1px solid rgba(17, 17, 17, 0.06);
+      box-shadow: 0 4px 18px -6px rgba(40, 24, 18, 0.07);
       display: flex;
       flex-direction: column;
       position: relative;
       overflow: hidden;
-      transition: transform 0.45s var(--ease-expo), box-shadow 0.45s var(--ease-expo), border-color 0.3s ease;
+      transition: transform 0.45s var(--ease-expo), box-shadow 0.45s var(--ease-expo);
     }
     .team-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--crimson);
+      transform: translateY(-5px);
       box-shadow: var(--shadow-elevated);
     }
     .team-circle-stage {
       background-color: #F7F6F2;
-      background-image: radial-gradient(circle at 50% 45%, rgba(236, 124, 48, 0.08), transparent 72%);
       padding: 1.25rem 1rem 0.75rem;
       display: flex;
       justify-content: center;
@@ -1451,14 +1555,14 @@ const customCss = `
       border-radius: 9999px;
       overflow: hidden;
       background-color: #F2F0EB;
-      border: 1.5px solid #BDB7AB;
-      box-shadow: 0 8px 20px rgba(72, 24, 16, 0.1);
+      border: 1px solid #C8C2B6;
+      box-shadow: 0 8px 20px rgba(72, 24, 16, 0.08);
       transition: border-color 0.3s ease, transform 0.55s var(--ease-expo), box-shadow 0.45s var(--ease-expo);
     }
     .team-card:hover .team-img-wrap {
       border-color: var(--crimson);
-      transform: scale(1.04);
-      box-shadow: 0 14px 28px rgba(143, 0, 0, 0.18);
+      transform: scale(1.035);
+      box-shadow: 0 14px 26px rgba(143, 0, 0, 0.16);
     }
     .team-img-wrap img {
       width: 100%;
@@ -1475,7 +1579,6 @@ const customCss = `
       letter-spacing: 0.03em;
       color: #EC7C30;
       font-weight: 400;
-      border-top: 1px solid var(--border-line);
     }
     .team-name-box b {
       color: #EC7C30;
@@ -1485,39 +1588,35 @@ const customCss = `
       background-color: #F1F1F1;
       padding: 0.45rem 0.5rem;
       text-align: center;
-      border-top: 1px solid var(--border-line);
       font-size: 0.825rem;
       color: #111111;
       font-weight: 400;
     }
 
-    /* Scope of Works Bullet with Tactile Paper Shadow */
+    /* Scope of Works Open Hairline Row (Zero Rectangular Boxes) */
     .scope-list-item {
       display: flex;
       align-items: center;
       gap: 0.9rem;
-      padding: 0.9rem 1.25rem;
-      background: #FFFFFF;
-      border: 1px solid var(--border-line);
-      box-shadow: var(--shadow-paper);
-      transition: border-color 0.25s ease, transform 0.35s var(--ease-expo), box-shadow 0.35s var(--ease-expo);
+      padding: 0.82rem 0.25rem;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border-line);
+      transition: border-color 0.25s ease, transform 0.35s var(--ease-expo);
     }
     .scope-list-item:hover {
-      border-color: var(--crimson);
+      border-bottom-color: var(--crimson);
       transform: translateX(6px);
-      box-shadow: var(--shadow-elevated);
     }
     .scope-square {
-      width: 10px;
-      height: 10px;
+      width: 9px;
+      height: 9px;
       background-color: #111111;
-      border: 1px solid #111111;
       flex-shrink: 0;
-      transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.35s var(--ease-expo);
+      transition: background-color 0.25s ease, transform 0.35s var(--ease-expo);
     }
     .scope-list-item:hover .scope-square {
       background-color: var(--crimson);
-      border-color: var(--crimson);
       transform: rotate(45deg);
     }
 
@@ -1649,19 +1748,14 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </defs>
   </svg>
 
-  <!-- ARCHITECTURAL ATELIER PRELOADER CURTAIN (Drafting Ruler + Elevation Wireframe Draw) -->
+  <!-- BORDERLESS ARCHITECTURAL PRELOADER CURTAIN (Elevation Draw -> Monochrome Cover -> Aperture) -->
   <div id="studioPreloader" class="studio-preloader" aria-hidden="true">
     <div id="preRulerV" class="preloader-ruler-v"></div>
-    <div id="preRulerH" class="preloader-ruler-h"></div>
-    <div id="preCoordReadout" class="preloader-coord-readout">DATUM 0.00M // X: 0640 | Y: 0400</div>
+    <div class="preloader-hr-track"><div id="preHrFill" class="preloader-hr-fill"></div></div>
+    <span id="preloaderPct" class="preloader-pct-tag">0%</span>
 
-    <div class="preloader-frame">
-      <div class="flex items-center justify-between w-full text-[10px] font-mono uppercase tracking-widest text-[#767070] border-b border-[#E4DDD1] pb-2">
-        <span>SCALE &amp; SPACES // ATELIER</span>
-        <span>DESIGNING SPACES &bull; NEPAL</span>
-      </div>
-
-      <!-- Animated Architectural Elevation Wireframe SVG (Scope: Architecture, Structure, Interiors, Turnkey) -->
+    <div class="preloader-center-stage">
+      <img id="preBwCover" src="assets/projects/cover_studio_tower_bw.jpg" alt="" class="preloader-bw-reveal" />
       <svg class="preloader-sketch-svg" viewBox="0 0 380 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <line class="preloader-sketch-path" x1="12" y1="82" x2="368" y2="82" stroke="#111111" stroke-width="1.2" />
         <path class="preloader-sketch-path" d="M44 82V42H136V22L198 14V82" stroke="#111111" stroke-width="1.4" />
@@ -1671,27 +1765,27 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <path class="preloader-sketch-path" d="M294 54A28 28 0 1 1 322 82" stroke="#8F0000" stroke-width="1.4" />
         <circle cx="294" cy="82" r="2.5" fill="#8F0000" />
       </svg>
+    </div>
 
-      <div class="flex items-center justify-between w-full gap-3">
-        <div class="flex items-center gap-2.5">
-          <img src="assets/logo.svg" alt="" style="height: 30px; width: auto; max-width: 34px;" onerror="this.src='assets/logo.jpg'" />
-          <span class="text-xs font-bold tracking-widest uppercase text-[#111111]">Scale and Spaces Pvt. Ltd.</span>
+    <div class="preloader-colophon-bottom">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.svg" alt="" style="height: 28px; width: auto; max-width: 32px;" onerror="this.src='assets/logo.jpg'" />
+        <div>
+          <div class="font-bold tracking-widest uppercase text-[#111111]">Scale and Spaces Pvt. Ltd.</div>
+          <div class="text-[10px] tracking-wider uppercase text-[#767070]">Architecture &bull; Engineering &bull; Interior Design</div>
         </div>
-        <span id="preloaderPct" class="text-xs font-mono font-bold text-[#8F0000]">0%</span>
       </div>
-
-      <div class="preloader-line">
-        <div id="preloaderFill" class="preloader-line-fill"></div>
+      <div class="hidden sm:block text-right font-mono text-[10px] leading-relaxed uppercase text-[#767070]">
+        <div>01 Survey &amp; Masterplan &bull; 02 Concept &amp; 3D</div>
+        <div>03 Structural &amp; MEP &bull; 04 Turnkey Execution</div>
       </div>
     </div>
   </div>
 
-  <!-- 2D CANVAS VELOCITY INK TRAIL + MAGNETIC ARCHITECTURAL POINTER FOLLOWER -->
+  <!-- 2D CANVAS INK RIBBON TRAIL + SUBTLE ARCHITECTURAL NIB POINTER -->
   <canvas id="studioCursorCanvas" class="studio-cursor-canvas" aria-hidden="true"></canvas>
   <div id="studioCursor" class="studio-cursor" aria-hidden="true">
-    <div id="cursorRing" class="studio-cursor-ring">
-      <span id="cursorLabel" class="studio-cursor-label">VIEW</span>
-    </div>
+    <div id="cursorRing" class="studio-cursor-ring"></div>
     <div id="cursorDot" class="studio-cursor-dot"></div>
   </div>
 
@@ -1777,11 +1871,19 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
   <main id="top">
     <!-- ======================================================================
-         COVER / HERO SECTION (Page 1 of Portfolio PDF + Drafting & Watercolor Atelier)
+         COVER / HERO SECTION (Full-Page Cover Photo Background: B&W Sketch -> Color)
          ====================================================================== -->
-    <section class="pt-6 pb-10 md:pt-8 md:pb-14 border-b border-[#DDD8CE] wc-section-wash">
-      <div class="portfolio-container">
-        <div class="hero-stagger flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-3">
+    <section id="heroSection" class="hero-full-section">
+      <!-- Atmospheric Full-Page Background Showcase (Monochrome Sketch + Color Render Reveal) -->
+      <div id="heroBgStage" class="hero-bg-stage" aria-hidden="true">
+        <img src="assets/projects/cover_studio_tower_bw.jpg" alt="" class="hero-bg-bw" />
+        <img id="heroBgColor" src="assets/projects/cover_studio_tower.jpg" alt="Scale and Spaces architectural tower study — monochrome sketch to color perspective" class="hero-bg-color" />
+        <div id="heroSunHalo" class="hero-sun-halo"></div>
+        <div class="hero-bg-scrim"></div>
+      </div>
+
+      <div class="portfolio-container relative z-[2] pt-8 pb-6 md:pt-12 md:pb-8 flex-1 flex flex-col justify-between">
+        <div class="hero-stagger flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
           <p class="text-sm md:text-base text-[#111111] tracking-wide">
             Architecture | Engineering | Construction
           </p>
@@ -1790,71 +1892,75 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </p>
         </div>
 
-        <!-- Single Semantic H1 with GSAP SplitText reveal -->
-        <div class="my-3 md:my-4">
+        <div class="my-auto py-6 md:py-10 max-w-3xl">
+          <!-- Single Semantic H1 with GSAP SplitText reveal -->
           <h1 id="heroHeadline" class="portfolio-crimson-quote">
-            <span class="block text-xl sm:text-2xl md:text-3xl font-bold mb-0.5" style="font-family: Georgia, 'EB Garamond', serif;">Designing Spaces,</span>
-            <span class="block text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight" style="font-family: 'EB Garamond', Georgia, serif;">
+            <span class="block text-2xl sm:text-3xl md:text-4xl font-bold mb-1" style="font-family: Georgia, 'EB Garamond', serif;">Designing Spaces,</span>
+            <span class="block text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight" style="font-family: 'EB Garamond', Georgia, serif;">
               Defining Lifestyles<span style="font-size: 1.15em;">!</span>
             </span>
           </h1>
-          <p class="hero-stagger text-xs sm:text-sm text-[#767070] mt-2 max-w-3xl">
-            Official architectural, civil engineering, landscape masterplanning, and interior design portfolio of <strong class="text-[#111111]">Scale and Spaces Private Limited</strong>.
+          <p class="hero-stagger text-sm sm:text-base text-[#333333] mt-4 max-w-xl leading-relaxed">
+            Architectural design, structural engineering, landscape masterplanning, and interior studio by <strong class="text-[#111111]">Scale and Spaces Private Limited</strong> across Kathmandu and Birgunj.
           </p>
+
+          <div class="hero-stagger flex flex-wrap items-center gap-4 mt-7">
+            <a href="#our-works" class="btn-crimson text-xs py-2.5 px-5">Explore Architectural Works &darr;</a>
+            <a href="#contact" class="btn-outline text-xs py-2.5 px-5">Request Studio Consultation</a>
+          </div>
         </div>
 
-        <!-- Studio Offices Line (Page 1 Bottom Strip) -->
-        <div class="hero-stagger bg-[#E8E6DF] border border-[#DDD8CE] px-4 py-2.5 flex flex-col md:flex-row justify-between items-start md:items-center text-xs sm:text-sm text-[#111111] gap-2 mb-5">
-          <div><strong class="text-[#8F0000]">Head Office:</strong> Tokha-6, Kathmandu</div>
-          <div class="hidden md:block text-[#B8B3A8]">|</div>
-          <div><strong class="text-[#8F0000]">Contact Office:</strong> Birgunj-12, Parsa</div>
-          <div class="hidden md:block text-[#B8B3A8]">|</div>
-          <div><strong class="text-[#8F0000]">Email:</strong> studio@scaleandspaces.com</div>
+        <!-- Clean Hairline Studio Locations Strip + Featured Project Selector (Zero Heavy Boxes) -->
+        <div class="hero-stagger mt-6">
+          <div class="py-3 border-t border-b border-[#111111]/15 flex flex-col md:flex-row justify-between items-start md:items-center text-xs sm:text-sm text-[#111111] gap-2 mb-4">
+            <div><strong class="text-[#8F0000]">Head Office:</strong> Tokha-6, Kathmandu</div>
+            <div class="hidden md:block text-[#767070]">|</div>
+            <div><strong class="text-[#8F0000]">Contact Office:</strong> Birgunj-12, Parsa</div>
+            <div class="hidden md:block text-[#767070]">|</div>
+            <div><strong class="text-[#8F0000]">Email:</strong> studio@scaleandspaces.com</div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex flex-wrap items-center gap-2">
+              <button type="button" class="hero-slide-tab is-active" onclick="setHeroSlide(0, event)">01 Studio Cover</button>
+              <button type="button" class="hero-slide-tab" onclick="setHeroSlide(1, event)">02 Mithila Tower</button>
+              <button type="button" class="hero-slide-tab" onclick="setHeroSlide(2, event)">03 Hyatt Hospital</button>
+              <button type="button" class="hero-slide-tab" onclick="setHeroSlide(3, event)">04 Tulsi Villa</button>
+            </div>
+            <p id="heroSlideTitle" class="text-sm sm:text-base font-bold serif-heading text-[#111111]">
+              Studio Cover &mdash; <span class="font-normal text-[#767070]">Conceptual Timber &amp; Steel Study</span>
+            </p>
+          </div>
         </div>
+      </div>
 
-        <!-- Interactive Architectural Cover Frame with Crosshair Telemetry & Slide Switcher -->
-        <div class="hero-stagger bg-white border border-[#DDD8CE] overflow-hidden relative" style="box-shadow: var(--shadow-elevated);">
-          <span class="arch-crosshair" style="top:8px;left:8px;z-index:5;" aria-hidden="true">${icons.crosshair}</span>
-          <span class="arch-crosshair" style="top:8px;right:8px;z-index:5;" aria-hidden="true">${icons.crosshair}</span>
-
-          <div id="heroViewport" class="hero-viewport-frame bg-[#E2DFD8]" onclick="openLightbox(currentHeroId)">
-            <img src="assets/projects/cover_studio_tower.jpg" data-hero-slide="0" data-project-id="mithila-tower" alt="Scale and Spaces conceptual steel-and-timber tower sketch to build render" class="hero-slide-img is-active" />
-            <img src="assets/projects/mithila_tower.jpg" data-hero-slide="1" data-project-id="mithila-tower" alt="Mithila Tower commercial building in Jiwisa Chowk, Malangwa by Scale and Spaces Pvt. Ltd." class="hero-slide-img" />
-            <img src="assets/projects/hyatt_hospital_1.jpg" data-hero-slide="2" data-project-id="hyatt-community-hospital" alt="Hyatt Community Hospital architectural facade in Barhathwa, Sarlahi" class="hero-slide-img" />
-            <img src="assets/projects/tulsi_gupta_residence_1.jpg" data-hero-slide="3" data-project-id="tulsi-gupta-residence" alt="Neoclassical residence of Mr. Tulsi Gupta in Birgunj, Parsa" class="hero-slide-img" />
-
-            <!-- CAD Crosshair lines tracking pointer -->
-            <div id="cadCrossV" class="cad-crosshair-v" aria-hidden="true"></div>
-            <div id="cadCrossH" class="cad-crosshair-h" aria-hidden="true"></div>
-            <div id="cadCoords" class="cad-coord-pill">X: 00000 mm | Y: 0000 mm | SCALE 1:100</div>
-          </div>
-
-          <div class="p-4 sm:p-6 bg-white border-t border-[#DDD8CE] flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
-            <div>
-              <div class="flex flex-wrap items-center gap-2 mb-2">
-                <button type="button" class="hero-slide-tab is-active" onclick="setHeroSlide(0, event)">01 Studio Cover</button>
-                <button type="button" class="hero-slide-tab" onclick="setHeroSlide(1, event)">02 Mithila Tower</button>
-                <button type="button" class="hero-slide-tab" onclick="setHeroSlide(2, event)">03 Hyatt Hospital</button>
-                <button type="button" class="hero-slide-tab" onclick="setHeroSlide(3, event)">04 Tulsi Villa</button>
-              </div>
-              <p id="heroSlideTitle" class="text-xl md:text-2xl font-bold serif-heading text-[#111111]">
-                Studio Cover Monograph &mdash; <span class="font-normal text-[#767070]">Tokha-6, Kathmandu &amp; Birgunj-12, Parsa</span>
-              </p>
-              <p id="heroSlideSub" class="text-xs sm:text-sm text-[#767070]">SCALE AND SPACES Pvt. Ltd. &bull; Architecture, Structural Engineering &amp; Interior Practice</p>
-            </div>
-            <div class="flex flex-wrap items-center gap-3 shrink-0">
-              <a href="#our-works" class="btn-outline text-xs py-2 px-4">Explore Architectural Works &darr;</a>
-              <a href="#contact" class="btn-crimson text-xs py-2 px-4">Request Studio Consultation</a>
-            </div>
-          </div>
+      <!-- Thin Architectural Practice Marquee Strip -->
+      <div class="studio-marquee-wrap" aria-hidden="true">
+        <div class="studio-marquee-track">
+          <span>TOPOGRAPHICAL SURVEY</span><span>&bull;</span>
+          <span>ARCHITECTURAL DESIGN</span><span>&bull;</span>
+          <span>3D VISUALIZATION</span><span>&bull;</span>
+          <span>STRUCTURAL SEISMIC ENGINEERING</span><span>&bull;</span>
+          <span>ELECTRICAL &amp; SANITARY MEP</span><span>&bull;</span>
+          <span>LANDSCAPE MASTERPLANNING</span><span>&bull;</span>
+          <span>INTERIOR JOINERY</span><span>&bull;</span>
+          <span>BOQ &amp; TURNKEY SUPERVISION</span><span>&bull;</span>
+          <span>TOPOGRAPHICAL SURVEY</span><span>&bull;</span>
+          <span>ARCHITECTURAL DESIGN</span><span>&bull;</span>
+          <span>3D VISUALIZATION</span><span>&bull;</span>
+          <span>STRUCTURAL SEISMIC ENGINEERING</span><span>&bull;</span>
+          <span>ELECTRICAL &amp; SANITARY MEP</span><span>&bull;</span>
+          <span>LANDSCAPE MASTERPLANNING</span><span>&bull;</span>
+          <span>INTERIOR JOINERY</span><span>&bull;</span>
+          <span>BOQ &amp; TURNKEY SUPERVISION</span><span>&bull;</span>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         SCOPE OF WORKS_ (Page 2 of Portfolio PDF + Watercolor Ink Atelier Plate)
+         SCOPE OF WORKS_ (Clean Open Hairlines + Watercolor Ink Atelier Plate)
          ====================================================================== -->
-    <section id="scope-of-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
+    <section id="scope-of-works" class="py-16 md:py-22 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
       <div class="portfolio-container">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-head">
           <div>
@@ -1868,70 +1974,62 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <!-- 10 Deliverables List matching Page 2 -->
-          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5 scope-grid">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <!-- 10 Deliverables Clean Hairline List (Zero Card Boxes) -->
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-x-8 scope-grid">
             ${scopeItems.map(item => `
-              <div class="scope-list-item wc-hover-card">
+              <div class="scope-list-item">
                 <span class="scope-square"></span>
                 <span class="text-base font-normal text-[#111111]">${item}</span>
               </div>
             `).join('')}
           </div>
 
-          <!-- Signature Watercolor Architectural Ink-Masked Plate (Heron Ink-Mask Reveal) -->
-          <div id="atelierInkStage" class="lg:col-span-5 bg-white border border-[#DDD8CE] p-4 wc-hover-card reveal-card relative" style="cursor: pointer;" title="Hover or click to replay watercolor ink wash">
-            <span class="arch-crosshair" style="top:6px;left:6px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
-            <span class="arch-crosshair" style="top:6px;right:6px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
-            <div class="overflow-hidden border border-[#DDD8CE] bg-[#F0EFEA] relative wc-ink-plate">
-              <svg viewBox="0 0 1200 896" width="100%" class="block w-full h-auto" role="img" aria-label="Bespoke architectural watercolor rendering, orthographic section elevation, and crimson compass arcs by Scale and Spaces">
-                <defs>
-                  <mask id="atelierWatercolorMask" maskContentUnits="userSpaceOnUse">
-                    <rect x="0" y="0" width="1200" height="896" fill="#181818" opacity="0.18" />
-                    <circle id="atelierInkCircle" cx="560" cy="430" r="820" fill="white" style="filter: url(#studioInkDisplace);" />
-                  </mask>
-                </defs>
-                <rect x="0" y="0" width="1200" height="896" fill="#F0EFEA" />
-                <image href="assets/art/atelier-architecture-art.jpg" x="0" y="0" width="1200" height="896" preserveAspectRatio="xMidYMid slice" mask="url(#atelierWatercolorMask)" />
-              </svg>
-            </div>
-            <div class="pt-3 flex justify-between items-center text-xs text-[#767070]">
-              <span class="font-bold text-[#111111]">ATELIER CONCEPT &amp; ORTHOGRAPHIC ELEVATIONS</span>
-              <span class="text-[#8F0000] font-semibold">Full Architectural Practice</span>
-            </div>
+          <!-- Borderless Watercolor Architectural Plate -->
+          <div id="atelierInkStage" class="lg:col-span-6 reveal-card relative wc-ink-plate">
+            <svg viewBox="0 0 1200 896" width="100%" class="block w-full h-auto" role="img" aria-label="Architectural watercolor elevation and perspective by Scale and Spaces Pvt. Ltd.">
+              <defs>
+                <mask id="atelierWatercolorMask" maskContentUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="1200" height="896" fill="#181818" opacity="0.14" />
+                  <circle id="atelierInkCircle" cx="560" cy="430" r="880" fill="white" style="filter: url(#studioInkDisplace);" />
+                </mask>
+              </defs>
+              <rect x="0" y="0" width="1200" height="896" fill="#F7F6F2" />
+              <image href="assets/art/atelier-architecture-art.jpg" x="0" y="0" width="1200" height="896" preserveAspectRatio="xMidYMid slice" mask="url(#atelierWatercolorMask)" />
+            </svg>
           </div>
         </div>
 
-        <!-- Full Architectural Services Workflow Pillars (Minimal SVG Drafting Icons) -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 mt-10 reveal-head">
-          <div class="service-pillar-card wc-hover-card">
+        <!-- Open 6-Column Architectural Practice Lifecycle Hairline Grid (Zero Card Boxes) -->
+        <div class="service-hairline-grid mt-14 reveal-head">
+          <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="16" cy="11" r="4"/><path d="M16 15V28M9 28H23M6 9C11 5 21 5 26 9"/></svg>
-            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">01 // Survey</span>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">01</span>
             <p class="text-xs font-bold text-[#111111] leading-snug">Site Analysis &amp; Topographical Survey</p>
           </div>
-          <div class="service-pillar-card wc-hover-card">
+          <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 26L16 6L28 26H4Z"/><path d="M16 6V26M10 16H22"/></svg>
-            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">02 // Architecture</span>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">02</span>
             <p class="text-xs font-bold text-[#111111] leading-snug">Concept Forms &amp; 3D Visualization</p>
           </div>
-          <div class="service-pillar-card wc-hover-card">
+          <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="6" y="6" width="20" height="20"/><path d="M6 16H26M16 6V26M6 6L26 26"/></svg>
-            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">03 // Structure</span>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">03</span>
             <p class="text-xs font-bold text-[#111111] leading-snug">Seismic Analysis &amp; Structural Engineering</p>
           </div>
-          <div class="service-pillar-card wc-hover-card">
+          <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 26V10C8 7 12 5 16 5C20 5 24 7 24 10V26"/><path d="M4 26H28M12 14H20M12 20H20"/></svg>
-            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">04 // Interiors &amp; MEP</span>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">04</span>
             <p class="text-xs font-bold text-[#111111] leading-snug">Interior Joinery, Electrical &amp; Sanitary</p>
           </div>
-          <div class="service-pillar-card wc-hover-card">
+          <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="6" y="5" width="16" height="22"/><path d="M22 9H26V27H10M10 11H18M10 16H18M10 21H15"/></svg>
-            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">05 // Working Set</span>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">05</span>
             <p class="text-xs font-bold text-[#111111] leading-snug">Municipal Permit &amp; Tender BOQ Docs</p>
           </div>
-          <div class="service-pillar-card wc-hover-card">
+          <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="16" cy="16" r="10"/><path d="M16 10V16L21 19M4 16H7M25 16H28"/></svg>
-            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">06 // Execution</span>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">06</span>
             <p class="text-xs font-bold text-[#111111] leading-snug">Site Supervision &amp; Turnkey Delivery</p>
           </div>
         </div>
@@ -1939,29 +2037,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
 
     <!-- ======================================================================
-         INTERACTIVE IMAGE AFTER-EFFECT STAGE (Heron Explore Kinetic Plate Trail)
+         ARCHITECTURAL PRACTICE MONOGRAPH STATEMENT
          ====================================================================== -->
-    <section id="atelierTrailStage" class="atelier-trail-stage py-14 md:py-16" aria-label="Interactive Architectural Plate Trail Showcase">
-      <span class="arch-crosshair" style="top:14px;left:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
-      <span class="arch-crosshair" style="top:14px;right:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
-      <span class="arch-crosshair" style="bottom:14px;left:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
-      <span class="arch-crosshair" style="bottom:14px;right:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
-
+    <section id="atelierTrailStage" class="atelier-trail-stage py-16 md:py-20">
       <div id="atelierTrailLayer" class="atelier-trail-layer" aria-hidden="true"></div>
 
-      <div class="portfolio-container text-center relative z-[4] pointer-events-none select-none" style="background: radial-gradient(ellipse at center, rgba(239, 236, 229, 0.72) 0%, transparent 72%); padding-top: 1.5rem; padding-bottom: 1.5rem;">
+      <div class="portfolio-container text-center relative z-[4] pointer-events-none select-none">
         <span class="inline-block text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-2">
-          ATELIER IMAGE AFTER-EFFECT // MOVE POINTER OR CLICK STAGE
+          SCALE AND SPACES PVT. LTD. &bull; NEPAL
         </span>
         <p class="text-2xl sm:text-3xl md:text-4xl font-bold serif-heading text-[#111111] max-w-2xl mx-auto leading-tight">
           From Sketch &amp; Concept Massing to Built Architectural Realities
         </p>
-        <p class="text-xs sm:text-sm text-[#767070] mt-2 max-w-xl mx-auto">
-          Sweep your pointer across the drawing table to stream live renders across residential, commercial, institutional, and interior works.
+        <p class="text-xs sm:text-sm text-[#555555] mt-2 max-w-xl mx-auto">
+          Residential villas, commercial landmarks, hospitals, temples, and bespoke interiors crafted across Kathmandu Valley and Terai.
         </p>
-        <button id="atelierCascadeBtn" type="button" class="btn-outline text-xs py-1.5 px-4 mt-4 pointer-events-auto">
-          Cascade Studio Plates
-        </button>
+        <a href="#our-works" class="btn-outline text-xs py-2 px-5 mt-5 pointer-events-auto no-underline">
+          Browse Studio Archive &darr;
+        </a>
       </div>
     </section>
 
@@ -2108,24 +2201,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <p class="text-base font-bold text-[#111111] mt-1">And the Masterplan &mdash; Ranighat, Birgunj (2021 A.D.)</p>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div class="lg:col-span-7 flex flex-col gap-4 reveal-card">
-            <div class="border border-[#DDD8CE] bg-white overflow-hidden cursor-pointer wc-hover-card wc-ink-plate" onclick="openLightbox('shavdaahgriham-crematorium')">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          <div class="lg:col-span-7 flex flex-col gap-5 reveal-card">
+            <div class="overflow-hidden cursor-pointer wc-hover-card wc-ink-plate shadow-sm" onclick="openLightbox('shavdaahgriham-crematorium')">
               <img src="assets/projects/shavdaahgriham_crematorium.jpg" alt="The Shavdaahgriham electrical crematorium architecture at Ranighat, Birgunj" class="w-full h-auto object-cover block" loading="lazy" />
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="border border-[#DDD8CE] bg-white overflow-hidden wc-hover-card">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div class="overflow-hidden wc-hover-card">
                 <img src="assets/projects/shavdaahgriham_roof.jpg" alt="Waterfront cremation platform and riverfront steps at Ranighat Samshanghat" class="w-full h-48 object-cover block" loading="lazy" />
-                <p class="p-2.5 text-xs text-[#767070] bg-white border-t border-[#DDD8CE]">Riverfront ghats &amp; ceremonial platform</p>
+                <p class="pt-2 text-xs text-[#767070]">Riverfront ghats &amp; ceremonial platform</p>
               </div>
-              <div class="border border-[#DDD8CE] bg-white overflow-hidden wc-hover-card">
+              <div class="overflow-hidden wc-hover-card">
                 <img src="assets/projects/shavdaahgriham_ranighat_1.jpg" alt="Ranighat riverfront crematorium park masterplan and scattering gardens" class="w-full h-48 object-cover block" loading="lazy" />
-                <p class="p-2.5 text-xs text-[#767070] bg-white border-t border-[#DDD8CE]">Landscape masterplan &amp; scattering gardens</p>
+                <p class="pt-2 text-xs text-[#767070]">Landscape masterplan &amp; scattering gardens</p>
               </div>
             </div>
           </div>
 
-          <div class="lg:col-span-5 bg-white border border-[#DDD8CE] p-6 md:p-8 flex flex-col gap-5 reveal-card wc-hover-card">
+          <div class="lg:col-span-5 flex flex-col gap-5 reveal-card pt-2 border-t lg:border-t-0 lg:border-l border-[#DDD8CE] lg:pl-8">
             <div>
               <h3 class="text-xl font-bold text-[#111111] mb-1" style="font-family: var(--font-sans);">REDEVELOPMENT OF RANIGHAT SAMSHANGHAT</h3>
               <p class="text-sm font-bold text-[#C00000]">of Birgunj Metropolitan City Office</p>
@@ -2134,8 +2227,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
             <div class="arch-line"></div>
 
-            <div class="border border-[#DDD8CE] bg-[#F7F6F2] p-3">
-              <img src="assets/projects/tent_form_diagram.jpg" alt="Hand-drawn tent form concept diagram for Ranighat Crematorium" class="w-full max-h-40 object-contain mx-auto" loading="lazy" />
+            <div class="py-2">
+              <img src="assets/projects/tent_form_diagram.jpg" alt="Hand-drawn tent form concept diagram for Ranighat Crematorium" class="w-full max-h-40 object-contain mx-auto mix-blend-multiply" loading="lazy" />
             </div>
 
             <div>
@@ -2176,17 +2269,17 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <span class="text-xs font-bold uppercase tracking-widest" style="color:#FF0000;">Logo Design Competition Winning Entry</span>
         </div>
 
-        <!-- 10 Corporate Logo Marks Grid (Page 69) -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10 reveal-card">
+        <!-- 10 Corporate Logo Marks Grid (Page 69 — Clean Hairline Matrix) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 border-t border-l border-[#DDD8CE] mb-12 reveal-card">
           ${clientLogos.map(l => `
-            <div class="bg-white border border-[#DDD8CE] p-4 flex items-center justify-center h-28 hover:border-[#8F0000] transition-colors">
+            <div class="bg-white/60 border-r border-b border-[#DDD8CE] p-4 flex items-center justify-center h-28 hover:bg-white transition-colors">
               <img src="${l.img}" alt="${l.alt}" class="max-h-20 w-auto object-contain" loading="lazy" />
             </div>
           `).join('')}
         </div>
 
         <!-- Competition Winning Entry Spread (Page 70) -->
-        <div class="bg-white border border-[#DDD8CE] p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center reveal-card">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4 reveal-card">
           <div class="lg:col-span-4 flex flex-col gap-3">
             <div class="text-sm font-bold tracking-widest leading-relaxed text-[#111111]">
               L O G O<br/>
@@ -2200,11 +2293,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               View Competition Boards &rarr;
             </button>
           </div>
-          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="border border-[#DDD8CE] overflow-hidden cursor-pointer" onclick="openLightbox('logo-competition-winner')">
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div class="overflow-hidden cursor-pointer wc-hover-card shadow-sm" onclick="openLightbox('logo-competition-winner')">
               <img src="assets/projects/logo_competition_winner.jpg" alt="Jeetpur Simara Sub-Metropolitan City Winning Emblem Design Board 1" class="w-full h-56 object-cover block" loading="lazy" />
             </div>
-            <div class="border border-[#DDD8CE] overflow-hidden cursor-pointer" onclick="openLightbox('logo-competition-winner')">
+            <div class="overflow-hidden cursor-pointer wc-hover-card shadow-sm" onclick="openLightbox('logo-competition-winner')">
               <img src="assets/projects/logo_competition_sheet2.jpg" alt="Jeetpur Simara Sub-Metropolitan City Winning Emblem Design Board 2" class="w-full h-56 object-cover block" loading="lazy" />
             </div>
           </div>
@@ -2215,9 +2308,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     <!-- ======================================================================
          CONTACT & OFFICES (Matching Page 71 Back Cover of Portfolio PDF)
          ====================================================================== -->
-    <section id="contact" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-white relative">
+    <section id="contact" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] relative">
       <div class="portfolio-container">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           <div class="lg:col-span-5 flex flex-col gap-6 reveal-card">
             <div>
               <span class="text-xs font-bold uppercase tracking-widest text-[#8F0000] block mb-1">Practice Locations &amp; Inquiries</span>
@@ -2227,7 +2320,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               </p>
             </div>
 
-            <div class="bg-[#F0EFEA] border border-[#DDD8CE] p-5 flex flex-col gap-4 text-sm">
+            <div class="border-t border-b border-[#DDD8CE] py-5 flex flex-col gap-4 text-sm">
               <div>
                 <h3 class="text-xs font-bold uppercase tracking-wider text-[#8F0000]" style="font-family: var(--font-sans);">Head Office</h3>
                 <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} Tokha-6, Dhapasi, Kathmandu</p>
@@ -2251,7 +2344,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             </a>
           </div>
 
-          <div class="lg:col-span-7 bg-[#F7F6F2] border border-[#DDD8CE] p-6 md:p-8 reveal-card">
+          <div class="lg:col-span-7 border-t lg:border-t-0 lg:border-l border-[#DDD8CE] pt-6 lg:pt-0 lg:pl-10 reveal-card">
             <h3 class="text-xl font-bold serif-heading text-[#111111] mb-1">Studio Project Inquiry</h3>
             <p class="text-xs text-[#767070] mb-6">
               Submit your brief details for architectural design, interior work, structural engineering, or construction supervision.
@@ -2339,11 +2432,15 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </div>
       </div>
 
-      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-[#888888] gap-2">
+      <div class="pt-6 pb-8 flex flex-col sm:flex-row justify-between items-center text-xs text-[#888888] gap-2">
         <div>
           &copy; <span id="footer-year">2026</span> Scale and Spaces Private Limited. All rights reserved.
         </div>
         <div>www.scaleandspaces.com</div>
+      </div>
+
+      <div id="footerWordmarkInk" class="footer-wordmark-ink text-center pt-4 pb-2" aria-hidden="true">
+        SCALE &amp; SPACES
       </div>
     </div>
   </footer>
@@ -2401,27 +2498,27 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     const yearEl = document.getElementById('footer-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Hero Showcase Switcher State
+    // Hero Showcase Switcher State (Full-Page Atmospheric Cover Photo + Selected Highlights)
     const heroSlidesData = [
       {
         id: 'mithila-tower',
-        title: 'Studio Cover Monograph — <span class="font-normal text-[#767070]">Tokha-6, Kathmandu &amp; Birgunj-12, Parsa</span>',
-        sub: 'SCALE AND SPACES Pvt. Ltd. &bull; Architecture, Structural Engineering &amp; Interior Practice'
+        img: 'assets/projects/cover_studio_tower.jpg',
+        title: 'Studio Cover &mdash; <span class="font-normal text-[#767070]">Conceptual Timber &amp; Steel Study</span>'
       },
       {
         id: 'mithila-tower',
-        title: 'Mithila Tower — <span class="font-normal text-[#767070]">Jiwisa Chowk, Malangwa (2024 A.D.)</span>',
-        sub: 'for Dr. Manoj Ray &bull; SCALE AND SPACES Pvt. Ltd.'
+        img: 'assets/projects/mithila_tower.jpg',
+        title: 'Mithila Tower &mdash; <span class="font-normal text-[#767070]">Jiwisa Chowk, Malangwa (2024 A.D.)</span>'
       },
       {
         id: 'hyatt-community-hospital',
-        title: 'Hyatt Community Hospital — <span class="font-normal text-[#767070]">Barhathwa, Sarlahi (2025 A.D.)</span>',
-        sub: 'Community Healthcare Facility &bull; SCALE AND SPACES Pvt. Ltd.'
+        img: 'assets/projects/hyatt_hospital_1.jpg',
+        title: 'Hyatt Community Hospital &mdash; <span class="font-normal text-[#767070]">Barhathwa, Sarlahi (2025 A.D.)</span>'
       },
       {
         id: 'tulsi-gupta-residence',
-        title: 'Residence of Mr. Tulsi Gupta — <span class="font-normal text-[#767070]">Birgunj, Parsa (2024 A.D.)</span>',
-        sub: 'Private Villa Architecture &bull; SCALE AND SPACES Pvt. Ltd.'
+        img: 'assets/projects/tulsi_gupta_residence_1.jpg',
+        title: 'Residence of Mr. Tulsi Gupta &mdash; <span class="font-normal text-[#767070]">Birgunj, Parsa (2024 A.D.)</span>'
       }
     ];
     let currentHeroIdx = 0;
@@ -2435,27 +2532,38 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       currentHeroId = slideData.id;
       window.currentHeroId = currentHeroId;
 
-      document.querySelectorAll('.hero-slide-img').forEach(function(img, i) {
-        img.classList.toggle('is-active', i === index);
-      });
+      const bgColor = document.getElementById('heroBgColor');
+      if (bgColor) {
+        if (window.gsap) {
+          gsap.to(bgColor, {
+            opacity: 0.15,
+            duration: 0.28,
+            onComplete: function() {
+              bgColor.src = slideData.img;
+              gsap.to(bgColor, { opacity: 0.78, duration: 0.65, ease: 'power2.out' });
+            }
+          });
+        } else {
+          bgColor.src = slideData.img;
+        }
+      }
+
       document.querySelectorAll('.hero-slide-tab').forEach(function(btn, i) {
         btn.classList.toggle('is-active', i === index);
       });
 
       const titleEl = document.getElementById('heroSlideTitle');
-      const subEl = document.getElementById('heroSlideSub');
       if (titleEl) titleEl.innerHTML = slideData.title;
-      if (subEl) subEl.innerHTML = slideData.sub;
     }
     window.setHeroSlide = setHeroSlide;
 
-    // Gentle Hero Slide Cycle
+    // Gentle Hero Background Showcase Cycle
     let heroAutoTimer = setInterval(function() {
       setHeroSlide((currentHeroIdx + 1) % heroSlidesData.length);
-    }, 5200);
-    const heroVp = document.getElementById('heroViewport');
-    if (heroVp) {
-      heroVp.addEventListener('mouseenter', function() { clearInterval(heroAutoTimer); });
+    }, 5600);
+    const heroSec = document.getElementById('heroSection');
+    if (heroSec) {
+      heroSec.addEventListener('mouseenter', function() { clearInterval(heroAutoTimer); });
     }
 
     // Category Filtering with GSAP staggered entrance
@@ -2638,26 +2746,17 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     }
     window.handleInquirySubmit = handleInquirySubmit;
 
-    // Interactive CAD Crosshair & Coordinate Readout (Always enabled, GSAP smoothed if available)
-    (function initHeroCrosshair() {
-      const crossV = document.getElementById('cadCrossV');
-      const crossH = document.getElementById('cadCrossH');
-      const coordPill = document.getElementById('cadCoords');
-      if (!heroVp || !crossV || !crossH || !coordPill) return;
-
-      const quickV = window.gsap ? gsap.quickTo(crossV, 'left', { duration: 0.15, ease: 'power2.out' }) : function(v) { crossV.style.left = v + 'px'; };
-      const quickH = window.gsap ? gsap.quickTo(crossH, 'top', { duration: 0.15, ease: 'power2.out' }) : function(v) { crossH.style.top = v + 'px'; };
-
-      heroVp.addEventListener('mousemove', function(e) {
-        const rect = heroVp.getBoundingClientRect();
+    // Subtle interactive monochrome-to-color aperture reveal over Hero cover backdrop
+    (function initHeroCoverMotion() {
+      const heroSec = document.getElementById('heroSection');
+      const bgColor = document.getElementById('heroBgColor');
+      if (!heroSec || !bgColor) return;
+      heroSec.addEventListener('mousemove', function(e) {
+        const rect = heroSec.getBoundingClientRect();
         if (!rect.width || !rect.height) return;
-        const rx = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
-        const ry = Math.max(0, Math.min(rect.height, e.clientY - rect.top));
-        quickV(rx);
-        quickH(ry);
-        const mmX = Math.round((rx / rect.width) * 12800).toString().padStart(5, '0');
-        const mmY = Math.round((ry / rect.height) * 5400).toString().padStart(4, '0');
-        coordPill.textContent = 'X: ' + mmX + ' mm | Y: ' + mmY + ' mm | SCALE 1:100';
+        const pctX = Math.max(25, Math.min(92, ((e.clientX - rect.left) / rect.width) * 100));
+        const pctY = Math.max(20, Math.min(80, ((e.clientY - rect.top) / rect.height) * 100));
+        bgColor.style.clipPath = 'circle(54% at ' + pctX.toFixed(1) + '% ' + pctY.toFixed(1) + '%)';
       });
     })();
 
@@ -2695,15 +2794,15 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         });
       }
 
-      // 3. Interactive Kinetic Image After-Effect Trail (Heron Explore Adapted)
+      // 3. Kinetic Architectural Plate Stream (Silent Ambient Gallery)
       (function initAtelierImageTrail() {
         const trailStage = document.getElementById('atelierTrailStage');
         const trailLayer = document.getElementById('atelierTrailLayer');
-        const cascadeBtn = document.getElementById('atelierCascadeBtn');
         if (!trailStage || !trailLayer) return;
 
         const plateUrls = [
           'assets/projects/cover_studio_tower.jpg',
+          'assets/projects/cover_studio_tower_bw.jpg',
           'assets/projects/mithila_tower.jpg',
           'assets/art/atelier-architecture-art.jpg',
           'assets/projects/hyatt_hospital_1.jpg',
@@ -2744,7 +2843,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             })
               .fromTo(img,
                 { opacity: 0, scale: 0.72, xPercent: -50, yPercent: -50, x: 0, y: 0, rotation: rot * 0.4 },
-                { opacity: 0.98, scale: 1, x: throwX, y: throwY, rotation: rot, duration: 0.36, ease: 'expo.out' }
+                { opacity: 0.96, scale: 1, x: throwX, y: throwY, rotation: rot, duration: 0.36, ease: 'expo.out' }
               )
               .to(img, {
                 opacity: 0,
@@ -2752,13 +2851,13 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 scale: 0.88,
                 duration: 0.75,
                 ease: 'power2.in'
-              }, 1.25);
+              }, 1.15);
           } else {
             img.style.transform = 'translate(-50%, -50%) rotate(' + rot + 'deg)';
             setTimeout(function() {
               img.remove();
               activeClones = Math.max(0, activeClones - 1);
-            }, 1400);
+            }, 1300);
           }
         }
 
@@ -2774,37 +2873,13 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             lastSpawnY = y;
           }
         });
-
-        function playPlateCascade() {
-          const rect = trailStage.getBoundingClientRect();
-          const anchors = [0.12, 0.26, 0.4, 0.6, 0.74, 0.88];
-          anchors.forEach(function(pct, k) {
-            setTimeout(function() {
-              const cx = rect.width * pct;
-              const cy = rect.height * (k % 2 === 0 ? 0.32 : 0.68);
-              spawnTrailPlate(cx, cy, (k - 2.5) * 16, k % 2 === 0 ? -16 : 16);
-            }, k * 45);
-          });
-        }
-
-        if (cascadeBtn) {
-          cascadeBtn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            playPlateCascade();
-          });
-        }
-        trailStage.addEventListener('click', function(e) {
-          const rect = trailStage.getBoundingClientRect();
-          spawnTrailPlate(e.clientX - rect.left, e.clientY - rect.top, 0, -18);
-        });
       })();
 
-      // 4. Desktop 2D Canvas Pen Velocity Ink Trail + Magnetic Context Badge
+      // 4. Desktop 2D Canvas Pen Velocity Ink Trail + Subtle Nib Follower
       const ring = document.getElementById('cursorRing');
       const dot = document.getElementById('cursorDot');
-      const label = document.getElementById('cursorLabel');
       const cursorCanvas = document.getElementById('studioCursorCanvas');
-      if (!ring || !dot || !label) return;
+      if (!ring || !dot) return;
 
       const moveRingX = window.gsap ? gsap.quickTo(ring, 'x', { duration: 0.28, ease: 'power3.out' }) : function(v) { ring.style.left = v + 'px'; };
       const moveRingY = window.gsap ? gsap.quickTo(ring, 'y', { duration: 0.28, ease: 'power3.out' }) : function(v) { ring.style.top = v + 'px'; };
@@ -2869,21 +2944,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         ring.classList.remove('is-card-hover', 'is-interactive-hover');
         if (!target || !target.closest) return;
 
-        if (target.closest('#heroViewport')) {
+        if (target.closest('.project-card, .team-card, #atelierInkStage')) {
           ring.classList.add('is-card-hover');
-          label.textContent = '1:100 VIEW';
-        } else if (target.closest('#atelierInkStage')) {
-          ring.classList.add('is-card-hover');
-          label.textContent = 'INK WASH';
-        } else if (target.closest('#atelierTrailStage')) {
-          ring.classList.add('is-card-hover');
-          label.textContent = 'SKETCH TRAIL';
-        } else if (target.closest('.project-card')) {
-          ring.classList.add('is-card-hover');
-          label.textContent = 'VIEW PLATE';
-        } else if (target.closest('.team-card')) {
-          ring.classList.add('is-card-hover');
-          label.textContent = 'TEAM';
         } else if (target.closest('a, button, .discipline-card, .filter-tab')) {
           ring.classList.add('is-interactive-hover');
         }
@@ -2897,50 +2959,48 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     })();
 
     // =========================================================================
-    // HERON-INSPIRED GSAP + LENIS + SPLITTEXT + WATERCOLOR MOTION ENGINE
+    // ARCHITECTURAL GSAP + LENIS + SPLITTEXT + WATERCOLOR MOTION ENGINE
     // =========================================================================
     (function initStudioMotion() {
       const preloader = document.getElementById('studioPreloader');
-      const preloaderFill = document.getElementById('preloaderFill');
+      const preHrFill = document.getElementById('preHrFill');
       const preloaderPct = document.getElementById('preloaderPct');
+      const preBwCover = document.getElementById('preBwCover');
       const preRulerV = document.getElementById('preRulerV');
-      const preRulerH = document.getElementById('preRulerH');
-      const preCoord = document.getElementById('preCoordReadout');
       const mainEl = document.querySelector('main');
       let preloaderDismissed = false;
 
-      if (preloader && preRulerV && preRulerH) {
+      if (preloader && preRulerV) {
         preloader.addEventListener('mousemove', function(e) {
           preRulerV.style.left = e.clientX + 'px';
-          preRulerH.style.top = e.clientY + 'px';
-          if (preCoord) {
-            preCoord.textContent = 'DATUM 0.00M // X: ' + String(Math.round(e.clientX)).padStart(4, '0') + ' | Y: ' + String(Math.round(e.clientY)).padStart(4, '0');
-          }
         });
       }
 
-      // Animate Architectural Wireframe Paths during boot preloader
+      // Draw Architectural Wireframe Paths -> Fade into B&W Monochrome Studio Cover
       if (window.gsap) {
         const sketchPaths = document.querySelectorAll('.preloader-sketch-path');
         if (sketchPaths.length) {
           gsap.to(sketchPaths, {
             strokeDashoffset: 0,
             duration: 0.72,
-            stagger: 0.05,
+            stagger: 0.045,
             ease: 'power2.inOut'
           });
+        }
+        if (preBwCover) {
+          gsap.to(preBwCover, { opacity: 0.9, duration: 0.45, delay: 0.48, ease: 'power2.out' });
         }
         const pctCounter = { val: 0 };
         gsap.to(pctCounter, {
           val: 100,
-          duration: 0.78,
+          duration: 0.85,
           ease: 'power2.out',
           onUpdate: function() {
             if (preloaderPct) preloaderPct.textContent = Math.round(pctCounter.val) + '%';
           }
         });
-        if (preloaderFill) {
-          gsap.to(preloaderFill, { scaleX: 1, duration: 0.78, ease: 'power2.out' });
+        if (preHrFill) {
+          gsap.to(preHrFill, { scaleX: 1, duration: 0.85, ease: 'power2.out' });
         }
       }
 
@@ -2949,11 +3009,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         preloaderDismissed = true;
         if (preloaderPct) preloaderPct.textContent = '100%';
         if (window.gsap) {
-          gsap.to(preloaderFill, { scaleX: 1, duration: 0.25, ease: 'power2.out' });
+          gsap.to(preHrFill, { scaleX: 1, duration: 0.25, ease: 'power2.out' });
           gsap.to(preloader, {
             yPercent: -100,
-            duration: 0.65,
-            delay: 0.25,
+            duration: 0.72,
+            delay: 0.35,
             ease: 'expo.inOut',
             onComplete: function() {
               preloader.style.display = 'none';
@@ -2961,8 +3021,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           });
           if (mainEl) {
             gsap.fromTo(mainEl,
-              { clipPath: 'inset(3% 2% 3% 2%)' },
-              { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.8, delay: 0.35, ease: 'expo.out', clearProps: 'clipPath' }
+              { clipPath: 'inset(4% 2.5% 4% 2.5%)' },
+              { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.85, delay: 0.42, ease: 'expo.out', clearProps: 'clipPath' }
             );
           }
         } else {
@@ -3060,8 +3120,38 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         clearProps: 'transform,opacity'
       });
 
-      // 4. Watercolor Ink-Mask Reveal on Atelier Plate + Scroll Parallax & Batch Stagger
+      // 4. Hero B&W-to-Color Scroll Transition + Watercolor Ink Reveal & Footer Wordmark
       if (window.ScrollTrigger) {
+        const bgColor = document.getElementById('heroBgColor');
+        const sunHalo = document.getElementById('heroSunHalo');
+        if (bgColor) {
+          gsap.to(bgColor, {
+            yPercent: 12,
+            scale: 1.08,
+            opacity: 0.2,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '#heroSection',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 0.35
+            }
+          });
+        }
+        if (sunHalo) {
+          gsap.to(sunHalo, {
+            yPercent: 55,
+            scale: 1.35,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: '#heroSection',
+              start: 'top top',
+              end: 'bottom top',
+              scrub: 0.45
+            }
+          });
+        }
+
         const inkCircle = document.getElementById('atelierInkCircle');
         if (inkCircle) {
           gsap.fromTo(
@@ -3152,6 +3242,18 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             });
           }
         });
+
+        const footerMark = document.getElementById('footerWordmarkInk');
+        if (footerMark) {
+          ScrollTrigger.create({
+            trigger: footerMark,
+            start: 'top 92%',
+            once: true,
+            onEnter: function() {
+              footerMark.classList.add('is-filled');
+            }
+          });
+        }
       }
     })();
   </script>

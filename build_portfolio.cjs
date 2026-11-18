@@ -916,7 +916,7 @@ const articlesData = [
     heading: 'Seismic-Resilient Residence Design Under Nepal National Building Code',
     image: 'assets/projects/prakash_amatya_residence.jpg',
     desc: 'How integrated architectural grid planning, balanced shear stiffness, and NBC ductile detailing safeguard modern reinforced-concrete homes across Kathmandu Valley and the Terai belt while streamlining municipal building permit approvals.',
-    link: '',
+    link: '#services',
     category: 'Structural & NBC',
     date: 'Studio Note · 2026'
   },
@@ -924,7 +924,7 @@ const articlesData = [
     heading: 'Passive Cooling & Solar Orientation for Terai Homes in Birgunj',
     image: 'assets/projects/ashok_shah_residence.jpg',
     desc: 'Designing deep cantilevered verandas, shaded recessed fenestration, stack-effect stairwells, and high-albedo terrace roofing to reduce peak summer heat gain across Parsa, Bara, and Madhesh Province residences.',
-    link: '',
+    link: '?category=Residences#projects',
     category: 'Climate Architecture',
     date: 'Studio Note · 2026'
   },
@@ -932,7 +932,7 @@ const articlesData = [
     heading: 'Mixed-Use Commercial Facade Economics: From 3D Concept to BOQ',
     image: 'assets/projects/adarsh_city_center_1.jpg',
     desc: 'Aligning street-facing curtain glazing, ACP cladding modules, clear structural column bays, and itemized Bills of Quantities before tendering so commercial developments stay visually sharp and financially predictable.',
-    link: '',
+    link: '?category=Commercial#projects',
     category: 'Commercial Practice',
     date: 'Studio Note · 2026'
   },
@@ -940,9 +940,36 @@ const articlesData = [
     heading: 'Specifying Durable Vitrified Tiles, Laminates & Joinery Finishes',
     image: 'assets/projects/interior_modern_luxury_living.jpg',
     desc: 'A practical material specification guide comparing water-absorption grades in full-body vitrified tiles, high-pressure architectural laminates, acoustic ceilings, and warm layered LED coves for timeless interior spaces.',
-    link: '',
+    link: '?category=Interior#projects',
     category: 'Interior Materials',
     date: 'Studio Note · 2026'
+  }
+];
+
+const officeLocations = [
+  {
+    id: 'kathmandu',
+    label: 'Head Office · Kathmandu',
+    name: 'Scale and Spaces Pvt. Ltd.',
+    address: 'Dhapasi, Tokha, Kathmandu 44600, Nepal',
+    plusCode: 'P8XH+53 Tokha, Bagmati Province',
+    rating: '5.0',
+    reviews: '14 Google reviews',
+    mapsUrl: 'https://www.google.com/maps/place/Scale+and+Spaces+Pvt.+Ltd./@27.7479239,85.3277453,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb19db5ebfeb59:0xf9aa29c9f7a522d1!8m2!3d27.7479239!4d85.3277453!16s%2Fg%2F11n42vm0g1',
+    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=27.7479239,85.3277453',
+    embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.007200889597!2d85.32774529999999!3d27.7479239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19db5ebfeb59%3A0xf9aa29c9f7a522d1!2sScale%20and%20Spaces%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1795012377222!5m2!1sen!2snp'
+  },
+  {
+    id: 'birgunj',
+    label: 'Branch Office · Birgunj',
+    name: 'Scale and Spaces Pvt. Ltd., Birgunj Branch',
+    address: 'Main Road, In front of Consulate General of India, Birgunj 44300',
+    plusCode: '2V9J+MQ Birgunj, Madhesh Province',
+    rating: '5.0',
+    reviews: '1 Google review',
+    mapsUrl: 'https://www.google.com/maps/place/Scale+and+Spaces+Pvt.+Ltd.,+Birgunj+Branch/@27.0192172,84.8819668,17z/data=!3m1!4b1!4m6!3m5!1s0x39935559a04e77ab:0xa2012fb3b7b03a56!8m2!3d27.0192172!4d84.8819668!16s%2Fg%2F11zy90tk02',
+    directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=27.0192172,84.8819668',
+    embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3554.346424316962!2d84.88196680000001!3d27.0192172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39935559a04e77ab%3A0xa2012fb3b7b03a56!2sScale%20and%20Spaces%20Pvt.%20Ltd.%2C%20Birgunj%20Branch!5e0!3m2!1sen!2snp!4v1795012555091!5m2!1sen!2snp'
   }
 ];
 
@@ -966,18 +993,25 @@ const jsonLdSchema = {
     {
       "@type": "PostalAddress",
       "name": "Head Office - Kathmandu",
-      "streetAddress": "Tokha-6, Dhapasi",
+      "streetAddress": "Dhapasi, Tokha-6",
       "addressLocality": "Kathmandu",
+      "addressRegion": "Bagmati Province",
+      "postalCode": "44600",
       "addressCountry": "NP"
     },
     {
       "@type": "PostalAddress",
-      "name": "Contact Office - Birgunj",
-      "streetAddress": "Birgunj-12",
+      "name": "Branch Office - Birgunj",
+      "streetAddress": "Main Road, In front of Consulate General of India",
       "addressLocality": "Birgunj",
-      "addressRegion": "Parsa",
+      "addressRegion": "Madhesh Province",
+      "postalCode": "44300",
       "addressCountry": "NP"
     }
+  ],
+  "hasMap": [
+    "https://www.google.com/maps/place/Scale+and+Spaces+Pvt.+Ltd./@27.7479239,85.3277453,17z/data=!3m1!4b1!4m6!3m5!1s0x39eb19db5ebfeb59:0xf9aa29c9f7a522d1!8m2!3d27.7479239!4d85.3277453!16s%2Fg%2F11n42vm0g1",
+    "https://www.google.com/maps/place/Scale+and+Spaces+Pvt.+Ltd.,+Birgunj+Branch/@27.0192172,84.8819668,17z/data=!3m1!4b1!4m6!3m5!1s0x39935559a04e77ab:0xa2012fb3b7b03a56!8m2!3d27.0192172!4d84.8819668!16s%2Fg%2F11zy90tk02"
   ],
   "areaServed": ["Nepal", "Kathmandu", "Birgunj", "Parsa", "Sarlahi", "Bara"],
   "knowsAbout": [
@@ -3259,9 +3293,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                   <h3 class="text-sm font-bold text-[#111111] leading-snug mb-2" style="font-family: var(--font-sans);">${a.heading}</h3>
                   <p class="text-xs text-[#767070] leading-relaxed" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">${a.desc}</p>
                 </div>
-                <div class="pt-2.5 border-t border-[#DDD8CE]/70 flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider text-[#8F0000]">
-                  <span>Read Article &rarr;</span>
-                  ${a.link ? `<a href="${a.link}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="font-mono text-[10px] text-[#767070] hover:text-[#8F0000] no-underline">External &nearr;</a>` : ''}
+                <div class="pt-2.5 border-t border-[#DDD8CE]/70 flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider">
+                  <span class="text-[#767070] text-[10px] font-mono">Read Preview</span>
+                  ${a.link
+                    ? `<a href="${a.link}" ${/^https?:\/\//i.test(a.link) ? 'target="_blank" rel="noopener noreferrer"' : ''} onclick="event.stopPropagation();" class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] no-underline transition-colors text-[10px]">For More Details &rarr;</a>`
+                    : `<button type="button" onclick="event.stopPropagation(); openArticleModal(${idx});" class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] border-0 cursor-pointer transition-colors text-[10px] font-bold uppercase tracking-wider">For More Details &rarr;</button>`}
                 </div>
               </div>
             </article>
@@ -3413,12 +3449,12 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             <div class="border-t border-b border-[#DDD8CE] py-4 flex flex-col gap-3.5 text-sm">
               <div>
                 <h3 class="text-xs font-bold uppercase tracking-wider text-[#8F0000]" style="font-family: var(--font-sans);">Head Office</h3>
-                <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} Tokha-6, Dhapasi, Kathmandu</p>
+                <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} Dhapasi, Tokha-6, Kathmandu 44600</p>
               </div>
               <div class="arch-line"></div>
               <div>
-                <h3 class="text-xs font-bold uppercase tracking-wider text-[#8F0000]" style="font-family: var(--font-sans);">Contact Office</h3>
-                <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} Birgunj-12, Parsa</p>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-[#8F0000]" style="font-family: var(--font-sans);">Branch Office</h3>
+                <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} Main Road (In front of Consulate General of India), Birgunj 44300</p>
               </div>
               <div class="arch-line"></div>
               <div class="flex flex-col gap-2 text-xs sm:text-sm">
@@ -3482,6 +3518,55 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             </form>
           </div>
         </div>
+
+        <!-- FIND US ON GOOGLE (Verified Studio Locations & Interactive Maps) -->
+        <div id="studio-locations" class="mt-12 pt-10 border-t border-[#DDD8CE] reveal-card">
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
+            <div>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
+                ${icons.pin} Find Us On Google
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold serif-heading text-[#111111]">FIND US ON GOOGLE_</h3>
+            </div>
+            <p class="text-xs text-[#767070] m-0">
+              Verified Google Business Profiles in Kathmandu &amp; Birgunj
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            ${officeLocations.map(loc => `
+              <div class="bg-white border border-[#DDD8CE] shadow-sm flex flex-col overflow-hidden">
+                <div class="p-4 border-b border-[#DDD8CE] bg-[#FBFBF9] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div class="min-w-0">
+                    <div class="flex flex-wrap items-center gap-2 mb-1">
+                      <span class="text-[10px] font-mono uppercase tracking-widest text-[#8F0000] font-bold">${loc.label}</span>
+                      <span class="inline-flex items-center gap-1 text-[10px] font-bold text-[#111111] bg-[#E8E6DF] px-2 py-0.5">${loc.rating} &#9733; (${loc.reviews})</span>
+                    </div>
+                    <h4 class="text-sm sm:text-base font-bold text-[#111111] truncate" style="font-family: var(--font-sans);">${loc.name}</h4>
+                    <p class="text-xs text-[#767070] mt-0.5 m-0">${loc.address} &bull; <span class="font-mono text-[11px]">${loc.plusCode}</span></p>
+                  </div>
+                  <div class="flex items-center gap-2 shrink-0">
+                    <a href="${loc.mapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-crimson text-[11px] py-2 px-3 no-underline whitespace-nowrap">
+                      Open in Maps &nearr;
+                    </a>
+                    <a href="${loc.directionsUrl}" target="_blank" rel="noopener noreferrer" class="btn-outline text-[11px] py-2 px-3 no-underline whitespace-nowrap">
+                      Directions
+                    </a>
+                  </div>
+                </div>
+                <div class="relative w-full h-[320px] sm:h-[360px] bg-[#E8E6DF]">
+                  <iframe
+                    src="${loc.embedUrl}"
+                    title="Google Map for ${loc.name}"
+                    class="w-full h-full border-0 block"
+                    loading="lazy"
+                    allowfullscreen=""
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -3524,8 +3609,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
         <div class="lg:col-span-3 flex flex-col gap-1.5 text-xs">
           <span class="text-white font-bold uppercase tracking-wider mb-1">Offices</span>
-          <p><strong class="text-white">Head Office:</strong> Tokha-6, Dhapasi, Kathmandu</p>
-          <p><strong class="text-white">Contact Office:</strong> Birgunj-12, Parsa</p>
+          <p><strong class="text-white">Head Office:</strong> Dhapasi, Tokha-6, Kathmandu 44600</p>
+          <p><strong class="text-white">Branch Office:</strong> Main Road (In front of Consulate General of India), Birgunj 44300</p>
           <p><strong class="text-white">Email:</strong> <a href="mailto:studio@scaleandspaces.com" class="text-[#CCCCCC] no-underline hover:text-white">studio@scaleandspaces.com</a></p>
           <p><strong class="text-white">Phone:</strong> <a href="tel:+9779703881733" class="text-[#CCCCCC] no-underline hover:text-white">+977-9703881733</a></p>
         </div>
@@ -3730,7 +3815,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div class="text-sm sm:text-base text-[#2A2A2A] leading-relaxed whitespace-pre-line" id="article-modal-body"></div>
         <div class="pt-4 border-t border-[#DDD8CE] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
           <a id="article-modal-link-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-crimson text-xs py-2.5 px-5 text-center no-underline">
-            <span>Read Full External Article &nearr;</span>
+            <span>For More Details &nearr;</span>
           </a>
           <a href="#contact" onclick="closeArticleModal()" class="btn-outline text-xs py-2.5 px-5 text-center no-underline">
             <span>Consult Our Architects</span>
@@ -4119,9 +4204,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     function normalizeExternalUrl(raw) {
       const s = String(raw || '').trim();
       if (!s) return '';
-      if (/^https?:\\/\\//i.test(s)) return s;
       if (/^(javascript|data|vbscript):/i.test(s)) return '';
-      return 'https://' + s.replace(/^\\/+/, '');
+      if (/^(https?:\\/\\/|#|\\?|\\/)/i.test(s)) return s;
+      return 'https://' + s;
     }
 
     function renderPartnersGrid(list) {
@@ -4201,9 +4286,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           '<span class="text-[#767070] font-normal">' + escHtml(a.date || '') + '</span></div>' +
           '<h3 class="text-sm font-bold text-[#111111] leading-snug mb-2" style="font-family: var(--font-sans);">' + escHtml(a.heading) + '</h3>' +
           '<p class="text-xs text-[#767070] leading-relaxed" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">' + escHtml(a.desc) + '</p>' +
-          '</div><div class="pt-2.5 border-t border-[#DDD8CE]/70 flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider text-[#8F0000]">' +
-          '<span>Read Article &rarr;</span>' +
-          (linkHref ? '<a href="' + escHtml(linkHref) + '" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" class="font-mono text-[10px] text-[#767070] hover:text-[#8F0000] no-underline">External &#8599;</a>' : '') +
+          '<div class="pt-2.5 border-t border-[#DDD8CE]/70 flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider">' +
+          '<span class="text-[#767070] text-[10px] font-mono">Read Preview</span>' +
+          (linkHref
+            ? '<a href="' + escHtml(linkHref) + '" ' + (/^https?:\\/\\//i.test(linkHref) ? 'target="_blank" rel="noopener noreferrer" ' : '') + 'onclick="event.stopPropagation();" class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] no-underline transition-colors text-[10px]">For More Details &rarr;</a>'
+            : '<button type="button" onclick="event.stopPropagation(); openArticleModal(' + idx + ');" class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] border-0 cursor-pointer transition-colors text-[10px] font-bold uppercase tracking-wider">For More Details &rarr;</button>') +
           '</div></div></article>';
       }).join('');
       const aCount = document.getElementById('cms-articles-count');
@@ -4230,6 +4317,14 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       if (linkBtn) {
         if (linkHref) {
           linkBtn.href = linkHref;
+          if (/^https?:\\/\\//i.test(linkHref)) {
+            linkBtn.setAttribute('target', '_blank');
+            linkBtn.setAttribute('rel', 'noopener noreferrer');
+          } else {
+            linkBtn.removeAttribute('target');
+            linkBtn.removeAttribute('rel');
+            linkBtn.onclick = function() { closeArticleModal(); };
+          }
           linkBtn.style.display = 'inline-flex';
         } else {
           linkBtn.style.display = 'none';
@@ -5384,7 +5479,7 @@ function buildLegalPage(page, compiledCss) {
   <footer class="bg-[#1A1A1A] text-[#CCCCCC] py-8 border-t border-[#333333]">
     <div class="portfolio-container flex flex-col sm:flex-row justify-between items-center text-xs text-[#999999] gap-3">
       <div>&copy; 2026 Scale and Spaces Private Limited. All rights reserved.</div>
-      <div>Head Office: Tokha-6, Dhapasi, Kathmandu &bull; Contact Office: Birgunj-12, Parsa</div>
+      <div>Head Office: Dhapasi, Tokha-6, Kathmandu 44600 &bull; Branch: Main Road (In front of Consulate General of India), Birgunj 44300</div>
     </div>
   </footer>
   ${cookieBannerMarkup(true)}
@@ -5511,8 +5606,8 @@ async function run() {
       ['Email', 'studio@scaleandspaces.com'],
       ['Phone', '+977-9703881733'],
       ['WhatsApp', '9779703881733'],
-      ['Head_Office', 'Tokha-6, Dhapasi, Kathmandu'],
-      ['Contact_Office', 'Birgunj-12, Parsa'],
+      ['Head_Office', 'Dhapasi, Tokha-6, Kathmandu 44600'],
+      ['Contact_Office', 'Main Road, In front of Consulate General of India, Birgunj 44300'],
       ['Custom_Domain', 'https://scaleandspaces.com.np/']
     ],
     Hero: [

@@ -587,16 +587,34 @@ const teamData = [
 ];
 
 const scopeItems = [
-  'Topographical Map',
-  'Overall Masterplan',
-  'Detailed Architectural Plan',
-  '3D Walkthrough Video',
-  'Structural Details',
-  'Electrical Details',
-  'Sanitary Details',
-  'Detailed Estimate',
-  'Bill of Quantities',
-  'Procurement Consult, etc.'
+  { title: 'Topographical Survey', note: 'Total-station site & contour mapping' },
+  { title: 'Masterplanning', note: 'Land zoning, circulation & solar study' },
+  { title: 'Architectural Plans', note: 'Concept to municipal permit sets' },
+  { title: '3D Visualization', note: 'Photorealistic renders & walkthroughs' },
+  { title: 'Structural Design', note: 'NBC seismic analysis & detailing' },
+  { title: 'Electrical & Lighting', note: 'Load schedules, power & lighting plans' },
+  { title: 'Sanitary & Plumbing', note: 'Water supply, drainage & chambers' },
+  { title: 'Cost Estimation', note: 'Itemized material & civil costing' },
+  { title: 'BOQ & Tendering', note: 'Contractor-ready bill of quantities' },
+  { title: 'Site Supervision', note: 'Procurement & construction oversight' }
+];
+
+const testimonialsData = [
+  {
+    quote: 'Scale and Spaces translated a complex commercial brief into a standout landmark with clear retail flow, crisp elevations, and coordinated structural drawings.',
+    author: 'Commercial Tower Commission',
+    context: 'Mithila Tower • Malangwa, Sarlahi'
+  },
+  {
+    quote: 'From initial floor plans and 3D views to structural detailing and interior joinery, the studio maintained clarity, daylight quality, and budget discipline throughout.',
+    author: 'Private Residence Clients',
+    context: 'Custom Homes • Birgunj & Kathmandu'
+  },
+  {
+    quote: 'Their contextual approach balanced serene public circulation, indigenous Khapada heritage detailing, and seismic safety tailored cleanly to the Terai climate.',
+    author: 'Civic & Institutional Works',
+    context: 'Public & Healthcare Projects • Sarlahi & Parsa'
+  }
 ];
 
 const clientLogos = [
@@ -619,11 +637,15 @@ const jsonLdSchema = {
   "alternateName": "Scale and Spaces Pvt. Ltd.",
   "url": "https://madex-source.github.io/madex/",
   "logo": "https://madex-source.github.io/madex/assets/logo.jpg",
-  "image": "https://madex-source.github.io/madex/assets/projects/mithila_tower.jpg",
-  "description": "Scale and Spaces Pvt. Ltd. is an architectural, engineering, and interior design practice based in Tokha-6, Kathmandu and Birgunj-12, Parsa, Nepal.",
+  "image": [
+    "https://madex-source.github.io/madex/assets/projects/cover_studio_tower.jpg",
+    "https://madex-source.github.io/madex/assets/projects/mithila_tower.jpg"
+  ],
+  "description": "Scale and Spaces Pvt. Ltd. is an architectural, structural engineering, landscape masterplanning, and interior design firm practicing in Tokha-6, Kathmandu and Birgunj-12, Parsa, Nepal.",
   "slogan": "Designing Spaces, Defining Lifestyles!",
   "email": "studio@scaleandspaces.com",
   "telephone": "+977-9703881733",
+  "priceRange": "$$",
   "address": [
     {
       "@type": "PostalAddress",
@@ -647,8 +669,23 @@ const jsonLdSchema = {
     "Civil & Structural Engineering",
     "Interior Design",
     "Landscape Masterplanning",
-    "Construction Supervision"
-  ]
+    "Topographical Survey",
+    "BOQ & Construction Supervision"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Architectural & Engineering Services",
+    "itemListElement": scopeItems.map(function(s) {
+      return {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": s.title,
+          "description": s.note
+        }
+      };
+    })
+  }
 };
 
 const customCss = `
@@ -1424,7 +1461,21 @@ const customCss = `
       transform: scale(1.06);
     }
 
-    /* Filter Tabs (Minimal Underline Architecture Index — No Heavy Box Chrome) */
+    /* Filter Tabs (Minimal Underline Index + Smooth Horizontal Swipe on Phones) */
+    .filter-scroll-row {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding-bottom: 0.75rem;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid var(--border-line);
+    }
+    .filter-scroll-row::-webkit-scrollbar {
+      display: none;
+    }
     .filter-tab {
       background: transparent;
       border: none;
@@ -1433,9 +1484,12 @@ const customCss = `
       font-family: var(--font-sans);
       font-size: 0.86rem;
       font-weight: 700;
-      padding: 0.45rem 0.35rem;
-      margin-right: 0.75rem;
+      padding: 0.5rem 0.25rem;
       cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
       transition: color 0.25s ease, border-color 0.25s ease;
       white-space: nowrap;
     }
@@ -1447,11 +1501,11 @@ const customCss = `
       border-bottom-color: var(--crimson);
     }
 
-    /* Project Cards (Airy Edge, Soft Hover Elevation, Zero Double Boxes) */
+    /* Project Cards (Clean Edge, Light Natural Lift — Zero Extra Box Clutter) */
     .project-card {
       background-color: var(--bg-card);
-      border: 1px solid rgba(17, 17, 17, 0.06);
-      box-shadow: 0 4px 18px -6px rgba(40, 24, 18, 0.08);
+      border: none;
+      box-shadow: 0 2px 14px -4px rgba(40, 24, 18, 0.06);
       transition: transform 0.45s var(--ease-expo), box-shadow 0.45s var(--ease-expo);
       display: flex;
       flex-direction: column;
@@ -1482,7 +1536,7 @@ const customCss = `
     .project-overlay {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(143, 0, 0, 0.56), rgba(20, 10, 8, 0.68));
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(143, 0, 0, 0.52), rgba(20, 10, 8, 0.64));
       backdrop-filter: blur(1.5px);
       display: flex;
       align-items: center;
@@ -1494,37 +1548,40 @@ const customCss = `
       opacity: 1;
     }
 
-    /* Team Card matching Page 3 PDF Identity cleanly without Heavy Outer Borders */
+    /* Team Card matching Page 3 PDF cleanly & compact on mobile phones */
     .team-card {
-      background: #FFFFFF;
-      border: 1px solid rgba(17, 17, 17, 0.06);
-      box-shadow: 0 4px 18px -6px rgba(40, 24, 18, 0.07);
+      background: transparent;
+      border: none;
       display: flex;
       flex-direction: column;
       position: relative;
       overflow: hidden;
-      transition: transform 0.45s var(--ease-expo), box-shadow 0.45s var(--ease-expo);
+      transition: transform 0.4s var(--ease-expo);
     }
     .team-card:hover {
       transform: translateY(-5px);
-      box-shadow: var(--shadow-elevated);
     }
     .team-circle-stage {
-      background-color: #F7F6F2;
-      padding: 1.25rem 1rem 0.75rem;
+      padding: 0.75rem 0.5rem 0.6rem;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .team-img-wrap {
-      width: 164px;
-      height: 164px;
+      width: 118px;
+      height: 118px;
       border-radius: 9999px;
       overflow: hidden;
       background-color: #F2F0EB;
       border: 1px solid #C8C2B6;
       box-shadow: 0 8px 20px rgba(72, 24, 16, 0.08);
       transition: border-color 0.3s ease, transform 0.55s var(--ease-expo), box-shadow 0.45s var(--ease-expo);
+    }
+    @media (min-width: 640px) {
+      .team-img-wrap {
+        width: 158px;
+        height: 158px;
+      }
     }
     .team-card:hover .team-img-wrap {
       border-color: var(--crimson);
@@ -1539,10 +1596,9 @@ const customCss = `
       display: block;
     }
     .team-name-box {
-      background-color: #FFFFFF;
-      padding: 0.65rem 0.5rem 0.35rem;
+      padding: 0.5rem 0.35rem 0.25rem;
       text-align: center;
-      font-size: 0.875rem;
+      font-size: 0.85rem;
       letter-spacing: 0.03em;
       color: #EC7C30;
       font-weight: 400;
@@ -1552,12 +1608,77 @@ const customCss = `
       font-weight: 700;
     }
     .team-role-box {
-      background-color: #F1F1F1;
-      padding: 0.45rem 0.5rem;
+      background-color: #E8E6DF;
+      padding: 0.35rem 0.45rem;
       text-align: center;
-      font-size: 0.825rem;
+      font-size: 0.78rem;
       color: #111111;
       font-weight: 400;
+    }
+
+    /* Hairline Divider Columns (About, Testimonials & Services) */
+    .hairline-matrix-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      border-top: 1px solid var(--border-line);
+    }
+    @media (min-width: 768px) {
+      .hairline-matrix-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    .hairline-matrix-cell {
+      padding: 1.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-line);
+    }
+    @media (min-width: 768px) {
+      .hairline-matrix-cell {
+        border-right: 1px solid var(--border-line);
+      }
+      .hairline-matrix-cell:nth-child(3n) {
+        border-right: none;
+      }
+    }
+    /* Partner Logo Grayscale -> Full Color Micro-interaction */
+    .partner-logo-cell {
+      padding: 1.35rem 1rem;
+      border-bottom: 1px solid var(--border-line);
+      border-right: 1px solid var(--border-line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 108px;
+      background: rgba(255, 255, 255, 0.45);
+      transition: background-color 0.3s ease;
+    }
+    .partner-logo-cell img {
+      filter: grayscale(100%) contrast(1.05);
+      opacity: 0.78;
+      transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s var(--ease-expo);
+    }
+    .partner-logo-cell:hover {
+      background: rgba(255, 255, 255, 0.92);
+    }
+    .partner-logo-cell:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* Mobile Touch & Input Zoom Safeguards */
+    @media (max-width: 640px) {
+      .hero-full-section {
+        min-height: 78svh;
+      }
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+    }
+    @media (pointer: coarse) {
+      .studio-cursor-canvas,
+      .studio-cursor {
+        display: none !important;
+      }
     }
 
     /* Scope of Works Open Hairline Row (Zero Rectangular Boxes) */
@@ -1644,6 +1765,112 @@ const customCss = `
       display: block;
     }
 
+    /* Navigation Dropdown Menus (Adapted cleanly from nsinghinteriors.com structure) */
+    .nav-dropdown-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav-dropdown-panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 225px;
+      padding-top: 0.75rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(6px);
+      transition: opacity 0.22s ease, transform 0.25s var(--ease-expo), visibility 0.22s ease;
+      z-index: 65;
+    }
+    .nav-dropdown-wrap:hover .nav-dropdown-panel,
+    .nav-dropdown-wrap:focus-within .nav-dropdown-panel {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-dropdown-inner {
+      background: rgba(247, 246, 242, 0.98);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-line);
+      box-shadow: var(--shadow-elevated);
+      padding: 0.45rem 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-dropdown-link {
+      padding: 0.52rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(221, 216, 206, 0.45);
+      transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.22s ease;
+    }
+    .nav-dropdown-link:last-child {
+      border-bottom: none;
+    }
+    .nav-dropdown-link:hover {
+      background-color: rgba(143, 0, 0, 0.06);
+      color: var(--crimson);
+      padding-left: 1.2rem;
+    }
+
+    /* Discrete Cookie Notice Toast */
+    .cookie-consent-bar {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      left: 1rem;
+      max-width: 460px;
+      margin-left: auto;
+      z-index: 80;
+      background: rgba(26, 26, 26, 0.96);
+      color: #F0EFEA;
+      border: 1px solid #3A3632;
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
+      padding: 0.95rem 1.15rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.7rem;
+      backdrop-filter: blur(8px);
+    }
+    .cookie-consent-bar.is-visible {
+      display: flex;
+    }
+
+    /* Legal & Policy Pages Editorial Typography */
+    .legal-prose h2 {
+      font-family: var(--font-serif);
+      color: var(--crimson);
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-top: 2rem;
+      margin-bottom: 0.6rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border-line);
+    }
+    .legal-prose p {
+      font-size: 0.96rem;
+      line-height: 1.72;
+      color: #2A2A2A;
+      margin-bottom: 0.9rem;
+    }
+    .legal-prose ul {
+      list-style: disc;
+      padding-left: 1.35rem;
+      margin-bottom: 1rem;
+    }
+    .legal-prose li {
+      font-size: 0.94rem;
+      line-height: 1.68;
+      color: #2A2A2A;
+      margin-bottom: 0.4rem;
+    }
+
     /* Accessibility Fallback (preserve interactive user-triggered hovers) */
     @media (prefers-reduced-motion: reduce) {
       .vellum-drafting-grid { opacity: 0.4; }
@@ -1659,7 +1886,16 @@ const icons = {
   close: '<svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>',
   expand: '<svg class="inline-block w-3.5 h-3.5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>',
   send: '<svg class="inline-block w-4 h-4" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/></svg>',
-  crosshair: '<svg viewBox="0 0 12 12" fill="none" width="11" height="11"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1"/></svg>'
+  crosshair: '<svg viewBox="0 0 12 12" fill="none" width="11" height="11"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1"/></svg>',
+  home: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5z"/></svg>',
+  compass: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5 15.5 8.5"/></svg>',
+  grid: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>',
+  info: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M12 11v5M12 8h.01"/></svg>',
+  users: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  quote: '<svg class="inline-block w-5 h-5 text-[#8F0000]/65 shrink-0" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M10 7H6C4.9 7 4 7.9 4 9v4c0 1.1.9 2 2 2h2v2H5v2h3c1.66 0 3-1.34 3-3V9c0-1.1-.9-2-2-2zm10 0h-4c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h2v2h-3v2h3c1.66 0 3-1.34 3-3V9c0-1.1-.9-2-2-2z"/></svg>',
+  building: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 21h18M5 21V7l7-4 7 4v14M9 10h2M13 10h2M9 14h2M13 14h2M10 21v-4h4v4"/></svg>',
+  award: '<svg class="inline-block w-4 h-4 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path stroke-linecap="round" stroke-linejoin="round" d="M8.21 13.89 7 22l5-3 5 3-1.21-8.12"/></svg>',
+  check: '<svg class="inline-block w-3.5 h-3.5 text-[#8F0000] shrink-0" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>'
 };
 
 const htmlBodyTemplate = `<!DOCTYPE html>
@@ -1667,20 +1903,25 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Scale and Spaces Pvt. Ltd. | Architecture, Engineering &amp; Interior Design in Nepal</title>
-  <meta name="description" content="Scale and Spaces Pvt. Ltd. — Architecture, structural engineering &amp; interior design firm in Tokha-6, Kathmandu and Birgunj-12, Parsa, Nepal." />
-  <meta name="robots" content="index, follow" />
+  <title>Scale and Spaces Pvt. Ltd. | Architecture, Structural Engineering &amp; Interior Design in Nepal</title>
+  <meta name="description" content="Scale and Spaces Pvt. Ltd. — Leading architecture, structural engineering, landscape masterplanning, and interior design practice in Tokha-6, Kathmandu and Birgunj-12, Parsa, Nepal." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#8F0000" />
   <link rel="canonical" href="https://madex-source.github.io/madex/" />
 
   <!-- Open Graph & Social Meta -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Scale and Spaces Pvt. Ltd." />
   <meta property="og:title" content="Scale and Spaces Pvt. Ltd. | Architecture, Engineering &amp; Interior Design" />
-  <meta property="og:description" content="Designing Spaces, Defining Lifestyles! Architectural, structural, and interior design portfolio by Scale and Spaces Pvt. Ltd. (Kathmandu &amp; Birgunj)." />
+  <meta property="og:description" content="Designing Spaces, Defining Lifestyles! Architectural, structural, and interior design portfolio across Kathmandu and Birgunj, Nepal." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://madex-source.github.io/madex/" />
-  <meta property="og:image" content="https://madex-source.github.io/madex/assets/projects/mithila_tower.jpg" />
+  <meta property="og:image" content="https://madex-source.github.io/madex/assets/projects/cover_studio_tower.jpg" />
+  <meta property="og:image:alt" content="Scale and Spaces architectural tower perspective study" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Scale and Spaces Pvt. Ltd. | Design Portfolio" />
-  <meta name="twitter:description" content="Architecture, engineering, and interior design firm in Kathmandu &amp; Birgunj, Nepal." />
+  <meta name="twitter:description" content="Architecture, structural engineering, landscape masterplanning, and interior design in Kathmandu &amp; Birgunj, Nepal." />
+  <meta name="twitter:image" content="https://madex-source.github.io/madex/assets/projects/cover_studio_tower.jpg" />
 
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
   <link rel="apple-touch-icon" href="assets/logo.jpg" />
@@ -1794,43 +2035,86 @@ const htmlBodyTemplate = `<!DOCTYPE html>
   <div class="bg-[#E8E6DF] border-b border-[#DDD8CE] text-xs py-2 text-[#767070] hidden sm:block">
     <div class="portfolio-container flex flex-wrap justify-between items-center gap-2">
       <div>
-        <strong class="text-[#111111]">SCALE AND SPACES Pvt. Ltd.</strong> &bull; Architecture &bull; Engineering &bull; Interior Design
+        <strong class="text-[#111111]">SCALE AND SPACES Pvt. Ltd.</strong> &bull; Architecture &bull; Engineering &bull; Interiors
       </div>
-      <div class="flex items-center gap-4">
-        <span class="inline-flex items-center gap-1">${icons.pin} Tokha-6, Kathmandu &nbsp;|&nbsp; Birgunj-12, Parsa</span>
-        <span class="inline-flex items-center gap-1">${icons.mail} studio@scaleandspaces.com</span>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="tel:+9779703881733" class="inline-flex items-center gap-1 text-[#111111] no-underline hover:text-[#8F0000]">${icons.phone} +977-9703881733</a>
+        <a href="mailto:studio@scaleandspaces.com" class="inline-flex items-center gap-1 text-[#767070] no-underline hover:text-[#8F0000]">${icons.mail} studio@scaleandspaces.com</a>
+        <span class="hidden md:inline-flex items-center gap-1">${icons.pin} Kathmandu &bull; Birgunj</span>
       </div>
     </div>
   </div>
 
   <!-- NAVIGATION BAR + SCROLL PROGRESS LINE -->
   <header class="site-nav flex items-center">
-    <div class="portfolio-container flex items-center justify-between w-full">
-      <a href="#top" class="flex items-center gap-3 no-underline">
-        <img src="assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. geometric emblem" class="nav-logo" style="height: 40px; width: auto; max-width: 48px;" onerror="this.src='assets/logo.jpg'" />
+    <div class="portfolio-container flex items-center justify-between w-full gap-3">
+      <a href="#home" class="flex items-center gap-2.5 no-underline shrink-0">
+        <img src="assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. geometric emblem" class="nav-logo" style="height: 38px; width: auto; max-width: 44px;" onerror="this.src='assets/logo.jpg'" />
         <div class="flex flex-col">
-          <span class="font-bold text-base sm:text-lg tracking-wider text-[#111111] leading-none">
+          <span class="font-bold text-sm sm:text-base tracking-wider text-[#111111] leading-none">
             SCALE <span class="font-normal text-[#8F0000]">AND</span> SPACES
           </span>
-          <span class="text-[0.68rem] uppercase tracking-widest text-[#767070] font-semibold mt-1">
+          <span class="text-[0.65rem] uppercase tracking-widest text-[#767070] font-semibold mt-1">
             Pvt. Ltd. &bull; Architects &bull; Engineers
           </span>
         </div>
       </a>
 
-      <!-- Semantic Crawlable Anchor Navigation -->
-      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-7">
-        <a href="#scope-of-works" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Scope of Works_</a>
-        <a href="#the-full-team" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">The Full Team</a>
-        <a href="#our-works" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Our Works_</a>
-        <a href="#ranighat-masterplan" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Ranighat Masterplan</a>
-        <a href="#contact" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Contact Offices</a>
+      <!-- Semantic 8-Section Navigation w/ Clean Practice Dropdowns -->
+      <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-4 xl:gap-5">
+        <a href="#home" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Home</a>
+
+        <div class="nav-dropdown-wrap">
+          <a href="#services" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Services &#9662;</a>
+          <div class="nav-dropdown-panel">
+            <div class="nav-dropdown-inner">
+              <a href="#services" class="nav-dropdown-link">Full Scope &amp; Deliverables</a>
+              <a href="#services" class="nav-dropdown-link">Architecture &amp; 3D Design</a>
+              <a href="#services" class="nav-dropdown-link">Structural &amp; Seismic Detailing</a>
+              <a href="#services" class="nav-dropdown-link">Interior Design &amp; MEP</a>
+              <a href="#services" class="nav-dropdown-link">BOQ &amp; Turnkey Supervision</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-dropdown-wrap">
+          <a href="#projects" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Projects &#9662;</a>
+          <div class="nav-dropdown-panel">
+            <div class="nav-dropdown-inner">
+              <a href="#projects" onclick="selectCategoryFilter('all'); return false;" class="nav-dropdown-link">All Projects (${projectsData.length})</a>
+              <a href="#projects" onclick="selectCategoryFilter('Commercial'); return false;" class="nav-dropdown-link">Commercial Towers</a>
+              <a href="#projects" onclick="selectCategoryFilter('Residences'); return false;" class="nav-dropdown-link">Private Residences</a>
+              <a href="#projects" onclick="selectCategoryFilter('Landscape'); return false;" class="nav-dropdown-link">Landscape Masterplans</a>
+              <a href="#projects" onclick="selectCategoryFilter('Interior'); return false;" class="nav-dropdown-link">Interior Design</a>
+              <a href="#projects" onclick="selectCategoryFilter('Institutional'); return false;" class="nav-dropdown-link">Institutional &amp; Civic</a>
+              <a href="#projects" onclick="selectCategoryFilter('Religious'); return false;" class="nav-dropdown-link">Religious Architecture</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav-dropdown-wrap">
+          <a href="#about" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">About &#9662;</a>
+          <div class="nav-dropdown-panel">
+            <div class="nav-dropdown-inner">
+              <a href="#about" class="nav-dropdown-link">Studio Overview</a>
+              <a href="#team" class="nav-dropdown-link">Our Team</a>
+              <a href="#testimonials" class="nav-dropdown-link">Testimonials</a>
+              <a href="#partners" class="nav-dropdown-link">Partner Companies</a>
+              <a href="privacy-policy/" class="nav-dropdown-link">Policies &amp; Terms</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="#team" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Team</a>
+        <a href="#testimonials" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Testimonials</a>
+        <a href="#partners" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Partners</a>
+        <a href="#contact" class="nav-link-animated text-[13px] font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors whitespace-nowrap">Contact</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/9779703881733?text=Hello%20Scale%20and%20Spaces,%20I%20would%20like%20to%20inquire%20regarding%20a%20project." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex btn-crimson text-xs py-2 px-4">
+      <div class="flex items-center gap-2.5 shrink-0">
+        <a href="https://wa.me/9779703881733?text=Hello%20Scale%20and%20Spaces,%20I%20would%20like%20to%20inquire%20regarding%20a%20project." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex btn-crimson text-[11px] py-2 px-3.5">
           ${icons.whatsapp}
-          <span>Contact Studio</span>
+          <span>Get Quote</span>
         </a>
         <button id="mobile-toggle" type="button" aria-label="Open Navigation Menu" class="lg:hidden p-2 text-[#111111] hover:text-[#8F0000] bg-transparent border-0 cursor-pointer">
           ${icons.bars}
@@ -1840,26 +2124,35 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     <div id="navProgress" class="nav-scroll-progress" aria-hidden="true"></div>
   </header>
 
-  <!-- MOBILE NAVIGATION DRAWER -->
+  <!-- MOBILE NAVIGATION DRAWER (All 8 Sections + Icons + Policies) -->
   <div id="mobile-backdrop" class="mobile-backdrop"></div>
   <aside id="mobile-menu" aria-label="Mobile Navigation" class="mobile-menu">
-    <div class="flex justify-between items-center mb-8 pb-4 border-b border-[#DDD8CE]">
+    <div class="flex justify-between items-center mb-5 pb-3 border-b border-[#DDD8CE]">
       <div class="flex items-center gap-2">
-        <img src="assets/logo.svg" alt="Scale and Spaces logo" style="height: 32px; width: auto; max-width: 38px;" onerror="this.src='assets/logo.jpg'" />
+        <img src="assets/logo.svg" alt="Scale and Spaces logo" style="height: 30px; width: auto; max-width: 36px;" onerror="this.src='assets/logo.jpg'" />
         <span class="font-bold text-sm tracking-wide text-[#111]">SCALE AND SPACES</span>
       </div>
       <button id="mobile-close" type="button" aria-label="Close Navigation Menu" class="text-[#111] hover:text-[#8F0000] bg-transparent border-0 cursor-pointer p-1">
         ${icons.close}
       </button>
     </div>
-    <nav class="flex flex-col gap-5 text-base font-bold text-[#111]">
-      <a href="#scope-of-works" class="mobile-link hover:text-[#8F0000] no-underline text-[#111]">Scope of Works_</a>
-      <a href="#the-full-team" class="mobile-link hover:text-[#8F0000] no-underline text-[#111]">The Full Team</a>
-      <a href="#our-works" class="mobile-link hover:text-[#8F0000] no-underline text-[#111]">Our Works_</a>
-      <a href="#ranighat-masterplan" class="mobile-link hover:text-[#8F0000] no-underline text-[#111]">Ranighat Masterplan</a>
-      <a href="#contact" class="mobile-link hover:text-[#8F0000] no-underline text-[#111]">Contact Studio Offices</a>
+    <nav class="flex flex-col gap-3 text-sm font-bold text-[#111] overflow-y-auto pb-4">
+      <a href="#home" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.home} <span>Home</span></a>
+      <a href="#services" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.compass} <span>Services</span></a>
+      <a href="#projects" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.grid} <span>Projects (${projectsData.length})</span></a>
+      <a href="#about" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.info} <span>About Studio</span></a>
+      <a href="#team" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.users} <span>Our Team</span></a>
+      <a href="#testimonials" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.quote} <span>Testimonials</span></a>
+      <a href="#partners" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.building} <span>Partners Companies</span></a>
+      <a href="#contact" class="mobile-link flex items-center gap-3 py-1.5 hover:text-[#8F0000] no-underline text-[#111]">${icons.phone} <span>Contact Studio</span></a>
+      <div class="pt-3 mt-1 border-t border-[#DDD8CE] flex flex-wrap gap-3 text-[11px] font-semibold text-[#767070]">
+        <a href="privacy-policy/" class="no-underline text-[#767070] hover:text-[#8F0000]">Privacy Policy</a>
+        <a href="terms-and-conditions/" class="no-underline text-[#767070] hover:text-[#8F0000]">Terms</a>
+        <a href="cookie-policy/" class="no-underline text-[#767070] hover:text-[#8F0000]">Cookies</a>
+        <a href="disclaimer/" class="no-underline text-[#767070] hover:text-[#8F0000]">Disclaimer</a>
+      </div>
     </nav>
-    <div class="mt-auto pt-6 border-t border-[#DDD8CE] flex flex-col gap-3">
+    <div class="mt-auto pt-4 border-t border-[#DDD8CE] flex flex-col gap-2.5">
       <a href="https://wa.me/9779703881733" target="_blank" rel="noopener noreferrer" class="btn-crimson w-full text-xs">
         ${icons.whatsapp}
         <span>+977-9703881733</span>
@@ -1870,9 +2163,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </div>
   </aside>
 
-  <main id="top">
+  <main id="home">
     <!-- ======================================================================
-         COVER / HERO SECTION (Full-Page Cover Photo Background: B&W Sketch -> Color)
+         1. HOME / HERO COVER (Monochrome-to-Color Tower Backdrop, Clean Typography)
          ====================================================================== -->
     <section id="heroSection" class="hero-full-section">
       <!-- Atmospheric Full-Page Background Showcase (Monochrome Sketch + Color Render Reveal) -->
@@ -1886,51 +2179,42 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       <div class="portfolio-container relative z-[2] pt-8 pb-6 md:pt-12 md:pb-8 flex-1 flex flex-col justify-between">
         <div class="hero-stagger flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
           <p class="text-sm md:text-base text-[#111111] tracking-wide">
-            Architecture | Engineering | Construction
+            Architecture | Engineering | Interiors
           </p>
           <p class="text-lg md:text-2xl tracking-wider text-[#111111]">
             <span style="color:#FF0000;">|</span> DESIGN <strong>PORTFOLIO</strong>
           </p>
         </div>
 
-        <div class="my-auto py-6 md:py-10 max-w-3xl">
+        <div class="my-auto py-8 md:py-12 max-w-3xl">
           <!-- Single Semantic H1 with GSAP SplitText reveal -->
           <h1 id="heroHeadline" class="portfolio-crimson-quote">
             <span class="block text-2xl sm:text-3xl md:text-4xl font-bold mb-1" style="font-family: Georgia, 'EB Garamond', serif;">Designing Spaces,</span>
-            <span class="block text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight" style="font-family: 'EB Garamond', Georgia, serif;">
+            <span class="block text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight" style="font-family: 'EB Garamond', Georgia, serif;">
               Defining Lifestyles<span style="font-size: 1.15em;">!</span>
             </span>
           </h1>
-          <p class="hero-stagger text-sm sm:text-base text-[#333333] mt-4 max-w-xl leading-relaxed">
-            Architectural design, structural engineering, landscape masterplanning, and interior studio by <strong class="text-[#111111]">Scale and Spaces Private Limited</strong> across Kathmandu and Birgunj.
+          <p class="hero-stagger text-sm sm:text-base text-[#2E2E2E] mt-4 max-w-xl leading-relaxed">
+            Full-service architectural design, seismic engineering, masterplanning &amp; interior studio by <strong class="text-[#111111]">Scale and Spaces Pvt. Ltd.</strong> across Nepal.
           </p>
 
-          <div class="hero-stagger flex flex-wrap items-center gap-4 mt-7">
-            <a href="#our-works" class="btn-crimson text-xs py-2.5 px-5">Explore Architectural Works &darr;</a>
-            <a href="#contact" class="btn-outline text-xs py-2.5 px-5">Request Studio Consultation</a>
+          <div class="hero-stagger flex flex-wrap items-center gap-3 sm:gap-4 mt-7">
+            <a href="#projects" class="btn-crimson text-xs py-2.5 px-5">
+              ${icons.grid} <span>Explore Projects</span>
+            </a>
+            <a href="#contact" class="btn-outline text-xs py-2.5 px-5">
+              ${icons.phone} <span>Consult Studio</span>
+            </a>
           </div>
         </div>
 
-        <!-- Clean Hairline Studio Locations Strip + Featured Project Selector (Zero Heavy Boxes) -->
+        <!-- Clean Hairline Studio Locations Strip (No Extra Buttons/Caption) -->
         <div class="hero-stagger mt-6">
-          <div class="py-3 border-t border-b border-[#111111]/15 flex flex-col md:flex-row justify-between items-start md:items-center text-xs sm:text-sm text-[#111111] gap-2 mb-4">
-            <div><strong class="text-[#8F0000]">Head Office:</strong> Tokha-6, Kathmandu</div>
-            <div class="hidden md:block text-[#767070]">|</div>
-            <div><strong class="text-[#8F0000]">Contact Office:</strong> Birgunj-12, Parsa</div>
-            <div class="hidden md:block text-[#767070]">|</div>
-            <div><strong class="text-[#8F0000]">Email:</strong> studio@scaleandspaces.com</div>
-          </div>
-
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div class="flex flex-wrap items-center gap-2">
-              <button type="button" class="hero-slide-tab is-active" onclick="setHeroSlide(0, event)">01 Studio Cover</button>
-              <button type="button" class="hero-slide-tab" onclick="setHeroSlide(1, event)">02 Mithila Tower</button>
-              <button type="button" class="hero-slide-tab" onclick="setHeroSlide(2, event)">03 Hyatt Hospital</button>
-              <button type="button" class="hero-slide-tab" onclick="setHeroSlide(3, event)">04 Tulsi Villa</button>
-            </div>
-            <p id="heroSlideTitle" class="text-sm sm:text-base font-bold serif-heading text-[#111111]">
-              Studio Cover &mdash; <span class="font-normal text-[#767070]">Conceptual Timber &amp; Steel Study</span>
-            </p>
+          <div class="py-3 border-t border-b border-[#111111]/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs text-[#111111]">
+            <div class="flex items-center gap-1.5">${icons.pin} <span><strong class="text-[#8F0000]">Head Office:</strong> Tokha-6, Kathmandu</span></div>
+            <div class="flex items-center gap-1.5">${icons.pin} <span><strong class="text-[#8F0000]">Contact:</strong> Birgunj-12, Parsa</span></div>
+            <div class="flex items-center gap-1.5">${icons.mail} <a href="mailto:studio@scaleandspaces.com" class="text-[#111111] no-underline hover:text-[#8F0000]">studio@scaleandspaces.com</a></div>
+            <div class="flex items-center gap-1.5">${icons.phone} <a href="tel:+9779703881733" class="text-[#111111] no-underline hover:text-[#8F0000]">+977-9703881733</a></div>
           </div>
         </div>
       </div>
@@ -1941,33 +2225,36 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <span>TOPOGRAPHICAL SURVEY</span><span>&bull;</span>
           <span>ARCHITECTURAL DESIGN</span><span>&bull;</span>
           <span>3D VISUALIZATION</span><span>&bull;</span>
-          <span>STRUCTURAL SEISMIC ENGINEERING</span><span>&bull;</span>
+          <span>STRUCTURAL ENGINEERING</span><span>&bull;</span>
           <span>ELECTRICAL &amp; SANITARY MEP</span><span>&bull;</span>
           <span>LANDSCAPE MASTERPLANNING</span><span>&bull;</span>
           <span>INTERIOR JOINERY</span><span>&bull;</span>
-          <span>BOQ &amp; TURNKEY SUPERVISION</span><span>&bull;</span>
+          <span>BOQ &amp; SITE SUPERVISION</span><span>&bull;</span>
           <span>TOPOGRAPHICAL SURVEY</span><span>&bull;</span>
           <span>ARCHITECTURAL DESIGN</span><span>&bull;</span>
           <span>3D VISUALIZATION</span><span>&bull;</span>
-          <span>STRUCTURAL SEISMIC ENGINEERING</span><span>&bull;</span>
+          <span>STRUCTURAL ENGINEERING</span><span>&bull;</span>
           <span>ELECTRICAL &amp; SANITARY MEP</span><span>&bull;</span>
           <span>LANDSCAPE MASTERPLANNING</span><span>&bull;</span>
           <span>INTERIOR JOINERY</span><span>&bull;</span>
-          <span>BOQ &amp; TURNKEY SUPERVISION</span><span>&bull;</span>
+          <span>BOQ &amp; SITE SUPERVISION</span><span>&bull;</span>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         SCOPE OF WORKS_ (Clean Open Hairlines + Watercolor Ink Atelier Plate)
+         2. SERVICES (Full Scope of Works_ & Practice Lifecycle)
          ====================================================================== -->
-    <section id="scope-of-works" class="py-16 md:py-22 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
+    <section id="services" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
       <div class="portfolio-container">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-head">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
-            <h2 class="portfolio-section-title">SCOPE OF WORKS_</h2>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
+              ${icons.compass} Practice Scope
+            </span>
+            <h2 class="portfolio-section-title">SERVICES_</h2>
             <p class="text-sm text-[#767070] mt-2 max-w-2xl">
-              Comprehensive architectural, structural engineering, MEP, cost estimation, and procurement supervision services delivered end-to-end across Nepal.
+              End-to-end architectural, structural, MEP, costing, and supervision deliverables across Nepal.
             </p>
           </div>
           <div class="text-xs font-bold uppercase tracking-widest text-[#767070]">
@@ -1975,88 +2262,268 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </div>
         </div>
 
-        <!-- 10 Deliverables Full-Width Hairline Grid matching Page 2 -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-14 scope-grid">
+        <!-- 10 Deliverables Open Hairline Grid (No Boxes) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 scope-grid">
           ${scopeItems.map(item => `
-            <div class="scope-list-item">
-              <span class="scope-square"></span>
-              <span class="text-base font-normal text-[#111111]">${item}</span>
+            <div class="scope-list-item justify-between">
+              <div class="flex items-center gap-3 min-w-0">
+                ${icons.check}
+                <span class="text-sm sm:text-base font-bold text-[#111111]">${item.title}</span>
+              </div>
+              <span class="text-xs text-[#767070] text-right shrink-0 ml-2">${item.note}</span>
             </div>
           `).join('')}
         </div>
 
-        <!-- Open 6-Column Architectural Practice Lifecycle Hairline Grid (Zero Card Boxes) -->
-        <div class="service-hairline-grid mt-14 reveal-head">
+        <!-- Open 6-Column Architectural Workflow Strip -->
+        <div class="service-hairline-grid mt-12 reveal-head">
           <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="16" cy="11" r="4"/><path d="M16 15V28M9 28H23M6 9C11 5 21 5 26 9"/></svg>
             <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">01</span>
-            <p class="text-xs font-bold text-[#111111] leading-snug">Site Analysis &amp; Topographical Survey</p>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Survey &amp; Site Analysis</p>
           </div>
           <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 26L16 6L28 26H4Z"/><path d="M16 6V26M10 16H22"/></svg>
             <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">02</span>
-            <p class="text-xs font-bold text-[#111111] leading-snug">Concept Forms &amp; 3D Visualization</p>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Concept &amp; 3D Renders</p>
           </div>
           <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="6" y="6" width="20" height="20"/><path d="M6 16H26M16 6V26M6 6L26 26"/></svg>
             <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">03</span>
-            <p class="text-xs font-bold text-[#111111] leading-snug">Seismic Analysis &amp; Structural Engineering</p>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Seismic &amp; Structure</p>
           </div>
           <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 26V10C8 7 12 5 16 5C20 5 24 7 24 10V26"/><path d="M4 26H28M12 14H20M12 20H20"/></svg>
             <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">04</span>
-            <p class="text-xs font-bold text-[#111111] leading-snug">Interior Joinery, Electrical &amp; Sanitary</p>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Interiors &amp; MEP Systems</p>
           </div>
           <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="6" y="5" width="16" height="22"/><path d="M22 9H26V27H10M10 11H18M10 16H18M10 21H15"/></svg>
             <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">05</span>
-            <p class="text-xs font-bold text-[#111111] leading-snug">Municipal Permit &amp; Tender BOQ Docs</p>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Permits &amp; Tender BOQ</p>
           </div>
           <div class="service-pillar-cell">
             <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="16" cy="16" r="10"/><path d="M16 10V16L21 19M4 16H7M25 16H28"/></svg>
             <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">06</span>
-            <p class="text-xs font-bold text-[#111111] leading-snug">Site Supervision &amp; Turnkey Delivery</p>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Turnkey Supervision</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         ARCHITECTURAL PRACTICE MONOGRAPH STATEMENT
+         3. PROJECTS (Clean Filter Bar + 44 Portfolio Entries + Civic Spotlights)
          ====================================================================== -->
-    <section id="atelierTrailStage" class="atelier-trail-stage py-16 md:py-20">
-      <div id="atelierTrailLayer" class="atelier-trail-layer" aria-hidden="true"></div>
+    <section id="projects" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] wc-section-wash">
+      <div class="portfolio-container">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-3 reveal-head">
+          <div>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
+              ${icons.grid} Portfolio Archive
+            </span>
+            <h2 class="portfolio-section-title">PROJECTS_</h2>
+            <p class="text-sm text-[#767070] mt-1">
+              Commercial towers, private residences, landscapes, interiors, hospitals &amp; civic masterplans across Nepal.
+            </p>
+          </div>
+          <div class="text-xs font-semibold text-[#767070]">
+            Showing <span id="project-count" class="font-bold text-[#111111]">${projectsData.length}</span> works
+          </div>
+        </div>
 
-      <div class="portfolio-container text-center relative z-[4] pointer-events-none select-none">
-        <span class="inline-block text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-2">
-          SCALE AND SPACES PVT. LTD. &bull; NEPAL
-        </span>
-        <p class="text-2xl sm:text-3xl md:text-4xl font-bold serif-heading text-[#111111] max-w-2xl mx-auto leading-tight">
-          From Sketch &amp; Concept Massing to Built Architectural Realities
-        </p>
-        <p class="text-xs sm:text-sm text-[#555555] mt-2 max-w-xl mx-auto">
-          Residential villas, commercial landmarks, hospitals, temples, and bespoke interiors crafted across Kathmandu Valley and Terai.
-        </p>
-        <a href="#our-works" class="btn-outline text-xs py-2 px-5 mt-5 pointer-events-auto no-underline">
-          Browse Studio Archive &darr;
-        </a>
+        <!-- Phone-Swipeable Minimal Underline Filter Strip (Zero Cluttered Boxes) -->
+        <div class="filter-scroll-row" role="tablist" aria-label="Filter projects by discipline">
+          <button type="button" class="filter-tab active" data-category="all">${icons.grid} All (${projectsData.length})</button>
+          <button type="button" class="filter-tab" data-category="Commercial">${icons.building} Commercial</button>
+          <button type="button" class="filter-tab" data-category="Residences">${icons.home} Residences</button>
+          <button type="button" class="filter-tab" data-category="Landscape">${icons.compass} Landscape</button>
+          <button type="button" class="filter-tab" data-category="Interior">Interiors</button>
+          <button type="button" class="filter-tab" data-category="Institutional">Institutional</button>
+          <button type="button" class="filter-tab" data-category="Religious">Religious</button>
+          <button type="button" class="filter-tab" data-category="Branding">${icons.award} Logos</button>
+        </div>
+
+        <!-- Borderless Project Gallery Grid -->
+        <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          ${projectsData.map(p => `
+            <article class="project-card wc-hover-card" data-category="${p.category}" data-id="${p.id}">
+              <div class="project-image-box" onclick="openLightbox('${p.id}')">
+                <img src="${p.image}" alt="${p.title} ${p.client} architectural design in ${p.location} (${p.year}) by Scale and Spaces Pvt. Ltd." loading="lazy" />
+                <div class="project-overlay">
+                  <span class="btn-crimson text-xs py-2 px-4 shadow-lg">
+                    ${icons.expand} <span>View Project (${p.images.length})</span>
+                  </span>
+                </div>
+              </div>
+              <div class="p-4 sm:p-5 flex flex-col flex-1 justify-between bg-white">
+                <div>
+                  <div class="flex justify-between items-center text-xs text-[#767070] mb-1.5">
+                    <span class="font-semibold">${p.location}</span>
+                    <span class="font-bold text-[#111111]">${p.year}</span>
+                  </div>
+                  <h3 class="text-base sm:text-lg font-bold text-[#C00000] mb-0.5 leading-snug cursor-pointer hover:underline" style="font-family: var(--font-sans);" onclick="openLightbox('${p.id}')">
+                    ${p.title}
+                  </h3>
+                  <p class="text-sm font-bold text-[#111111] mb-1.5">${p.client}</p>
+                  <p class="text-xs text-[#767070] leading-relaxed mb-3">${p.desc}</p>
+                </div>
+                <div class="pt-3 border-t border-[#DDD8CE] flex justify-between items-center text-xs">
+                  <span class="text-[#767070] font-semibold">${p.categoryLabel}</span>
+                  <button type="button" onclick="openLightbox('${p.id}')" class="text-[#8F0000] font-bold bg-transparent border-0 cursor-pointer hover:underline p-0">
+                    Inspect &rarr;
+                  </button>
+                </div>
+              </div>
+            </article>
+          `).join('')}
+        </div>
+
+        <!-- Featured Masterplan Spotlight (Clean Borderless Split inside #projects) -->
+        <div id="ranighat-masterplan" class="mt-16 pt-12 border-t border-[#DDD8CE]">
+          <div class="mb-8 reveal-head">
+            <span class="text-xs font-bold uppercase tracking-widest text-[#C00000] block mb-1">Featured Landscape Masterplan</span>
+            <h3 class="portfolio-section-title">The Shavdaahgriham</h3>
+            <p class="text-sm sm:text-base font-bold text-[#111111] mt-1">Ranighat Samshanghat Redevelopment &mdash; Birgunj Metropolitan City Office (2021 A.D.)</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7 flex flex-col gap-4 reveal-card">
+              <div class="overflow-hidden cursor-pointer wc-hover-card wc-ink-plate" onclick="openLightbox('shavdaahgriham-crematorium')">
+                <img src="assets/projects/shavdaahgriham_crematorium.jpg" alt="The Shavdaahgriham electrical crematorium architecture at Ranighat, Birgunj" class="w-full h-auto object-cover block" loading="lazy" />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="overflow-hidden wc-hover-card">
+                  <img src="assets/projects/shavdaahgriham_roof.jpg" alt="Waterfront cremation platform and riverfront steps at Ranighat Samshanghat" class="w-full h-44 object-cover block" loading="lazy" />
+                  <p class="pt-2 text-xs text-[#767070]">Riverfront ghats &amp; ceremonial platform</p>
+                </div>
+                <div class="overflow-hidden wc-hover-card">
+                  <img src="assets/projects/shavdaahgriham_ranighat_1.jpg" alt="Ranighat riverfront crematorium park masterplan and scattering gardens" class="w-full h-44 object-cover block" loading="lazy" />
+                  <p class="pt-2 text-xs text-[#767070]">Landscape masterplan &amp; scattering gardens</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="lg:col-span-5 flex flex-col gap-4 reveal-card pt-2 border-t lg:border-t-0 lg:border-l border-[#DDD8CE] lg:pl-8">
+              <img src="assets/projects/tent_form_diagram.jpg" alt="Hand-drawn tent form concept diagram for Ranighat Crematorium" class="w-full max-h-36 object-contain mx-auto mix-blend-multiply" loading="lazy" />
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-[#8F0000] mb-1">Form &amp; Material</h4>
+                <p class="text-xs sm:text-sm text-[#333333] leading-relaxed">
+                  Minimalist tent geometry creates a serene environment for final rites while Traditional Khapada roofing honors Birgunj heritage.
+                </p>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold uppercase tracking-wider text-[#8F0000] mb-1">Scattering Gardens</h4>
+                <p class="text-xs sm:text-sm text-[#333333] leading-relaxed">
+                  Native Terai planting, evergreen shade canopies, water courts, and peaceful riverfront circulation paths.
+                </p>
+              </div>
+              <button type="button" onclick="openLightbox('shavdaahgriham-crematorium')" class="btn-outline text-xs py-2 px-4 self-start mt-1">
+                Inspect Masterplan Plates &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Competition Winning Emblem Spotlight -->
+        <div id="logo-designs" class="mt-14 pt-10 border-t border-[#DDD8CE] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center reveal-card">
+          <div class="lg:col-span-4 flex flex-col gap-2.5">
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#8F0000]">${icons.award} 1st Prize Competition Winner</span>
+            <h3 class="text-2xl font-normal text-[#111111]" style="font-family: var(--font-sans);">Jeetpur Simara Civic Emblem</h3>
+            <p class="text-xs sm:text-sm text-[#767070] leading-relaxed">
+              Official Sub-Metropolitan Emblem created by <strong class="text-[#111111]">Ar. Yateendra Kishore Labh</strong> (2022).
+            </p>
+            <button type="button" onclick="openLightbox('logo-competition-winner')" class="btn-outline text-xs py-2 px-4 self-start mt-1">
+              View Competition Boards &rarr;
+            </button>
+          </div>
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="overflow-hidden cursor-pointer wc-hover-card" onclick="openLightbox('logo-competition-winner')">
+              <img src="assets/projects/logo_competition_winner.jpg" alt="Jeetpur Simara Sub-Metropolitan City Winning Emblem Design Board 1" class="w-full h-52 object-cover block" loading="lazy" />
+            </div>
+            <div class="overflow-hidden cursor-pointer wc-hover-card" onclick="openLightbox('logo-competition-winner')">
+              <img src="assets/projects/logo_competition_sheet2.jpg" alt="Jeetpur Simara Sub-Metropolitan City Winning Emblem Design Board 2" class="w-full h-52 object-cover block" loading="lazy" />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         THE FULL TEAM (Page 3 of Portfolio PDF — All 10 Verified Members)
+         4. ABOUT STUDIO (Practice Profile + Hairline Metrics + Kinetic Plates)
          ====================================================================== -->
-    <section id="the-full-team" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] wc-section-wash">
+    <section id="about" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
       <div class="portfolio-container">
-        <div class="text-center mb-12 reveal-head">
-          <h2 class="portfolio-section-title">THE FULL TEAM</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start reveal-head">
+          <div class="lg:col-span-6">
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
+              ${icons.info} About Practice
+            </span>
+            <h2 class="portfolio-section-title">ABOUT STUDIO_</h2>
+            <p class="text-xl sm:text-2xl font-bold serif-heading text-[#111111] mt-3 leading-snug">
+              Architecture Rooted in Context, Climate &amp; Engineering Precision
+            </p>
+          </div>
+          <div class="lg:col-span-6 flex flex-col gap-3 text-sm text-[#333333] leading-relaxed">
+            <p>
+              <strong class="text-[#111111]">Scale and Spaces Private Limited</strong> is a multidisciplinary design and engineering firm practicing from Kathmandu Valley and Birgunj. We unite architectural aesthetics, NBC seismic safety, bioclimatic light, and transparent costing under one roof.
+            </p>
+            <p class="text-[#767070]">
+              From bespoke family residences and commercial high-rises to community hospitals, civic ghats, and corporate interiors, every drawing transitions seamlessly from sketch to site execution.
+            </p>
+          </div>
+        </div>
+
+        <!-- Clean Open 4-Metric Hairline Strip -->
+        <div class="grid grid-cols-2 md:grid-cols-4 border-t border-b border-[#DDD8CE] mt-10 reveal-card">
+          <div class="py-5 px-4 border-r border-b md:border-b-0 border-[#DDD8CE]">
+            <div class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">44+</div>
+            <div class="text-xs font-bold text-[#111111] mt-0.5">Portfolio Works</div>
+          </div>
+          <div class="py-5 px-4 md:border-r border-b md:border-b-0 border-[#DDD8CE]">
+            <div class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">10</div>
+            <div class="text-xs font-bold text-[#111111] mt-0.5">Core Specialists</div>
+          </div>
+          <div class="py-5 px-4 border-r border-[#DDD8CE]">
+            <div class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">2</div>
+            <div class="text-xs font-bold text-[#111111] mt-0.5">Nepal Offices</div>
+          </div>
+          <div class="py-5 px-4">
+            <div class="text-2xl sm:text-3xl font-bold serif-heading text-[#8F0000]">1st</div>
+            <div class="text-xs font-bold text-[#111111] mt-0.5">Civic Emblem Prize</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kinetic Architectural Plate Stage (Borderless) -->
+      <div id="atelierTrailStage" class="atelier-trail-stage py-14 md:py-16 mt-10">
+        <div id="atelierTrailLayer" class="atelier-trail-layer" aria-hidden="true"></div>
+        <div class="portfolio-container text-center relative z-[4] pointer-events-none select-none">
+          <p class="text-xl sm:text-3xl font-bold serif-heading text-[#111111] max-w-2xl mx-auto leading-tight">
+            From Concept Massing to Built Architectural Realities
+          </p>
+          <a href="#projects" class="btn-outline text-xs py-2 px-5 mt-5 pointer-events-auto no-underline">
+            Browse Studio Archive &darr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. TEAM (Mobile-First 2-Col -> 5-Col Circular Portraits)
+         ====================================================================== -->
+    <section id="team" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] wc-section-wash">
+      <div class="portfolio-container">
+        <div class="text-center mb-10 reveal-head">
+          <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
+            ${icons.users} Multidisciplinary Practice
+          </span>
+          <h2 class="portfolio-section-title">OUR TEAM_</h2>
           <p class="text-sm text-[#767070] mt-2">
-            Scale and Spaces Pvt. Ltd. &bull; Multidisciplinary Architects, Engineers &amp; Interior Specialists
+            Architects, Structural &amp; Civil Engineers, Interior Designers &amp; Project Managers
           </p>
         </div>
 
-        <!-- 5x2 Team Grid matching Page 3 of portfolio_67fe3a57.pdf -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 team-grid">
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 team-grid">
           ${teamData.map(m => {
             const parts = m.name.split(' ');
             const first = parts.slice(0, -1).join(' ');
@@ -2074,238 +2541,99 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             `;
           }).join('')}
         </div>
-
-        <div class="mt-10 pt-4 text-center">
-          <span class="font-serif italic text-base text-[#8F0000]">Scale and Spaces Pvt. Ltd.</span>
-        </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         OUR WORKS_ DISCIPLINE INDEX & GALLERY (Pages 4-68 of Portfolio PDF)
+         6. TESTIMONIALS (Open 3-Column Hairline Grid — Commission Feedback)
          ====================================================================== -->
-    <section id="our-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
+    <section id="testimonials" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
       <div class="portfolio-container">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4 reveal-head">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
-            <h2 class="portfolio-section-title">Our works_</h2>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
+              ${icons.quote} Client Endorsements
+            </span>
+            <h2 class="portfolio-section-title">TESTIMONIALS_</h2>
             <p class="text-sm text-[#767070] mt-1">
-              Selected architectural, commercial, landscape, residential, institutional, religious &amp; interior projects across Nepal.
+              Project feedback across commercial, residential, and civic commissions.
             </p>
           </div>
-          <div class="text-xs font-semibold text-[#767070]">
-            Showing <span id="project-count" class="font-bold text-[#111111]">${projectsData.length}</span> portfolio works
-          </div>
+          <a href="#contact" class="text-xs font-bold uppercase tracking-wider text-[#8F0000] no-underline hover:underline">
+            Discuss Your Brief &rarr;
+          </a>
         </div>
 
-        <!-- Page 4 Architectural Category Quick Index -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8 reveal-head">
-          <button type="button" onclick="selectCategoryFilter('Residences')" class="discipline-card wc-hover-card">
-            <span class="discipline-monogram">R</span>
-            <span class="text-xs sm:text-sm font-bold text-[#111111]">Residences</span>
-          </button>
-          <button type="button" onclick="selectCategoryFilter('Commercial')" class="discipline-card wc-hover-card">
-            <span class="discipline-monogram">C</span>
-            <span class="text-xs sm:text-sm font-bold text-[#111111]">Commercial</span>
-          </button>
-          <button type="button" onclick="selectCategoryFilter('Landscape')" class="discipline-card wc-hover-card">
-            <span class="discipline-monogram">L</span>
-            <span class="text-xs sm:text-sm font-bold text-[#111111]">Landscape Development</span>
-          </button>
-          <button type="button" onclick="selectCategoryFilter('Interior')" class="discipline-card wc-hover-card">
-            <span class="discipline-monogram">I</span>
-            <span class="text-xs sm:text-sm font-bold text-[#111111]">Interior Design</span>
-          </button>
-          <button type="button" onclick="selectCategoryFilter('Institutional')" class="discipline-card wc-hover-card">
-            <span class="discipline-monogram">O</span>
-            <span class="text-xs sm:text-sm font-bold text-[#111111]">Office Building</span>
-          </button>
-          <button type="button" onclick="selectCategoryFilter('Religious')" class="discipline-card wc-hover-card">
-            <span class="discipline-monogram">R</span>
-            <span class="text-xs sm:text-sm font-bold text-[#111111]">Religious Complexes</span>
-          </button>
-        </div>
-
-        <!-- Category Filters -->
-        <div class="flex flex-wrap items-center gap-2 pb-6 mb-6 border-b border-[#DDD8CE]" role="tablist" aria-label="Filter projects by category">
-          <button type="button" class="filter-tab active" data-category="all">All Works (${projectsData.length})</button>
-          <button type="button" class="filter-tab" data-category="Commercial">Commercial Buildings</button>
-          <button type="button" class="filter-tab" data-category="Landscape">Landscape Development</button>
-          <button type="button" class="filter-tab" data-category="Residences">Residences</button>
-          <button type="button" class="filter-tab" data-category="Institutional">Office / Institutional</button>
-          <button type="button" class="filter-tab" data-category="Religious">Religious Complexes</button>
-          <button type="button" class="filter-tab" data-category="Interior">Interior Design</button>
-          <button type="button" class="filter-tab" data-category="Branding">Logo Designs</button>
-        </div>
-
-        <!-- Project Gallery Grid -->
-        <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          ${projectsData.map(p => `
-            <article class="project-card wc-hover-card" data-category="${p.category}" data-id="${p.id}">
-              <div class="project-image-box" onclick="openLightbox('${p.id}')">
-                <img src="${p.image}" alt="${p.title} ${p.client} architectural design in ${p.location} (${p.year}) by Scale and Spaces Pvt. Ltd." loading="lazy" />
-                <div class="project-overlay">
-                  <span class="btn-crimson text-xs py-2 px-4 shadow-lg">
-                    ${icons.expand} <span>Inspect Project (${p.images.length} View${p.images.length > 1 ? 's' : ''})</span>
-                  </span>
-                </div>
+        <div class="hairline-matrix-3 reveal-card">
+          ${testimonialsData.map(t => `
+            <div class="hairline-matrix-cell flex flex-col justify-between gap-4">
+              <div>
+                <div class="mb-3">${icons.quote}</div>
+                <p class="text-sm text-[#2A2A2A] leading-relaxed italic font-serif">&ldquo;${t.quote}&rdquo;</p>
               </div>
-              <div class="p-5 flex flex-col flex-1 justify-between bg-white">
-                <div>
-                  <div class="flex justify-between items-center text-xs text-[#767070] mb-2">
-                    <span class="font-semibold">${p.location}</span>
-                    <span class="font-bold text-[#111111]">${p.year}</span>
-                  </div>
-                  <h3 class="text-lg font-bold text-[#C00000] mb-0.5 leading-snug cursor-pointer hover:underline" style="font-family: var(--font-sans);" onclick="openLightbox('${p.id}')">
-                    ${p.title}
-                  </h3>
-                  <p class="text-sm font-bold text-[#111111] mb-2">${p.client}</p>
-                  <p class="text-xs text-[#767070] leading-relaxed mb-3">${p.desc}</p>
-                </div>
-                <div class="pt-3 border-t border-[#DDD8CE] flex justify-between items-center text-xs">
-                  <span class="text-[#767070] font-semibold">SCALE AND SPACES Pvt. Ltd.</span>
-                  <button type="button" onclick="openLightbox('${p.id}')" class="text-[#8F0000] font-bold bg-transparent border-0 cursor-pointer hover:underline p-0">
-                    View Details &rarr;
-                  </button>
-                </div>
+              <div class="pt-3 border-t border-[#DDD8CE]/70">
+                <div class="text-xs font-bold text-[#111111]">${t.author}</div>
+                <div class="text-[11px] text-[#767070] mt-0.5">${t.context}</div>
               </div>
-            </article>
+            </div>
           `).join('')}
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         FEATURED CIVIC MASTERPLAN: THE SHAVDAAHGRIHAM (Pages 18-19)
+         7. PARTNER COMPANIES (Clean Hairline Logo Matrix & Civic Partners)
          ====================================================================== -->
-    <section id="ranighat-masterplan" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] wc-section-wash">
+    <section id="partners" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] relative">
       <div class="portfolio-container">
-        <div class="mb-8 reveal-head">
-          <span class="text-xs font-bold uppercase tracking-widest text-[#C00000] block mb-1">Landscape Development Feature</span>
-          <h2 class="portfolio-section-title">The Shavdaahgriham</h2>
-          <p class="text-base font-bold text-[#111111] mt-1">And the Masterplan &mdash; Ranighat, Birgunj (2021 A.D.)</p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          <div class="lg:col-span-7 flex flex-col gap-5 reveal-card">
-            <div class="overflow-hidden cursor-pointer wc-hover-card wc-ink-plate shadow-sm" onclick="openLightbox('shavdaahgriham-crematorium')">
-              <img src="assets/projects/shavdaahgriham_crematorium.jpg" alt="The Shavdaahgriham electrical crematorium architecture at Ranighat, Birgunj" class="w-full h-auto object-cover block" loading="lazy" />
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div class="overflow-hidden wc-hover-card">
-                <img src="assets/projects/shavdaahgriham_roof.jpg" alt="Waterfront cremation platform and riverfront steps at Ranighat Samshanghat" class="w-full h-48 object-cover block" loading="lazy" />
-                <p class="pt-2 text-xs text-[#767070]">Riverfront ghats &amp; ceremonial platform</p>
-              </div>
-              <div class="overflow-hidden wc-hover-card">
-                <img src="assets/projects/shavdaahgriham_ranighat_1.jpg" alt="Ranighat riverfront crematorium park masterplan and scattering gardens" class="w-full h-48 object-cover block" loading="lazy" />
-                <p class="pt-2 text-xs text-[#767070]">Landscape masterplan &amp; scattering gardens</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="lg:col-span-5 flex flex-col gap-5 reveal-card pt-2 border-t lg:border-t-0 lg:border-l border-[#DDD8CE] lg:pl-8">
-            <div>
-              <h3 class="text-xl font-bold text-[#111111] mb-1" style="font-family: var(--font-sans);">REDEVELOPMENT OF RANIGHAT SAMSHANGHAT</h3>
-              <p class="text-sm font-bold text-[#C00000]">of Birgunj Metropolitan City Office</p>
-              <p class="text-xs text-[#767070] mt-0.5">Ranighat, Birgunj &bull; 2021 A.D.</p>
-            </div>
-
-            <div class="arch-line"></div>
-
-            <div class="py-2">
-              <img src="assets/projects/tent_form_diagram.jpg" alt="Hand-drawn tent form concept diagram for Ranighat Crematorium" class="w-full max-h-40 object-contain mx-auto mix-blend-multiply" loading="lazy" />
-            </div>
-
-            <div>
-              <h4 class="text-xs font-bold uppercase tracking-wider text-[#111111] mb-1">Form Development</h4>
-              <p class="text-xs sm:text-sm text-[#333333] leading-relaxed">
-                The space enclosed by a piece of cloth covering is very often used as a place for kriya karma. The basic form of tent inspired the overall form development. Over ornamentation and decorativeness would rather amplify anger; a minimalist approach in form creates a calming environment.
-              </p>
-            </div>
-
-            <div>
-              <h4 class="text-xs font-bold uppercase tracking-wider text-[#111111] mb-1">Material</h4>
-              <p class="text-xs sm:text-sm text-[#333333] leading-relaxed">
-                Use of Traditional Khapada in the roof is an approach for preservation of heritage carried by the indigenous people of Birgunj.
-              </p>
-            </div>
-
-            <div>
-              <h4 class="text-xs font-bold uppercase tracking-wider text-[#111111] mb-1">Landscaping &amp; Scattering Gardens</h4>
-              <p class="text-xs sm:text-sm text-[#333333] leading-relaxed">
-                Carefully selected plant species thriving in the local Terai climate provide year-round serenity with seasonal flowers, evergreen trees, manicured lawns, water features, and secluded scattering gardens.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ======================================================================
-         BRAND IDENTITY & LOGO DESIGNS (Pages 69-70 of Portfolio PDF)
-         ====================================================================== -->
-    <section id="logo-designs" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] relative">
-      <div class="portfolio-container">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-head">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-3 reveal-head">
           <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-[#888888] block mb-1">2022 &bull; Graphic &amp; Civic Identity</span>
-            <h2 class="portfolio-section-title">OUR PROJECTS_ <span class="font-normal text-xl md:text-2xl text-[#111111]">Logo Designs</span></h2>
+            <span class="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-1">
+              ${icons.building} Brand &amp; Civic Collaborations
+            </span>
+            <h2 class="portfolio-section-title">PARTNERS COMPANIES_</h2>
+            <p class="text-sm text-[#767070] mt-1">
+              Corporate partners, engineering labs, energy ventures, and municipalities we serve.
+            </p>
           </div>
-          <span class="text-xs font-bold uppercase tracking-widest" style="color:#FF0000;">Logo Design Competition Winning Entry</span>
+          <div class="text-xs font-bold uppercase tracking-widest text-[#767070]">
+            10 Corporate Marks
+          </div>
         </div>
 
-        <!-- 10 Corporate Logo Marks Grid (Page 69 — Clean Hairline Matrix) -->
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 border-t border-l border-[#DDD8CE] mb-12 reveal-card">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 border-t border-l border-[#DDD8CE] reveal-card">
           ${clientLogos.map(l => `
-            <div class="bg-white/60 border-r border-b border-[#DDD8CE] p-4 flex items-center justify-center h-28 hover:bg-white transition-colors">
-              <img src="${l.img}" alt="${l.alt}" class="max-h-20 w-auto object-contain" loading="lazy" />
+            <div class="partner-logo-cell">
+              <img src="${l.img}" alt="${l.alt}" class="max-h-16 sm:max-h-20 w-auto object-contain" loading="lazy" />
             </div>
           `).join('')}
         </div>
 
-        <!-- Competition Winning Entry Spread (Page 70) -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-4 reveal-card">
-          <div class="lg:col-span-4 flex flex-col gap-3">
-            <div class="text-sm font-bold tracking-widest leading-relaxed text-[#111111]">
-              L O G O<br/>
-              D E S I G N<br/>
-              C O M P E T I T I O N<br/>
-              <span style="color:#FF0000;">W I N N I N G &nbsp; E N T R Y</span>
-            </div>
-            <h3 class="text-2xl font-normal text-[#111111]" style="font-family: var(--font-sans);">Competition Winner</h3>
-            <p class="text-xs text-[#767070]">Official Emblem of Jeetpur Simara Sub-Metropolitan City designed by Ar. Yateendra Kishore Labh (2022).</p>
-            <button type="button" onclick="openLightbox('logo-competition-winner')" class="btn-outline text-xs py-2 px-4 self-start mt-2">
-              View Competition Boards &rarr;
-            </button>
-          </div>
-          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div class="overflow-hidden cursor-pointer wc-hover-card shadow-sm" onclick="openLightbox('logo-competition-winner')">
-              <img src="assets/projects/logo_competition_winner.jpg" alt="Jeetpur Simara Sub-Metropolitan City Winning Emblem Design Board 1" class="w-full h-56 object-cover block" loading="lazy" />
-            </div>
-            <div class="overflow-hidden cursor-pointer wc-hover-card shadow-sm" onclick="openLightbox('logo-competition-winner')">
-              <img src="assets/projects/logo_competition_sheet2.jpg" alt="Jeetpur Simara Sub-Metropolitan City Winning Emblem Design Board 2" class="w-full h-56 object-cover block" loading="lazy" />
-            </div>
-          </div>
+        <div class="mt-6 flex flex-wrap items-center justify-between gap-3 text-xs text-[#767070]">
+          <span><strong class="text-[#111111]">Civic Partners:</strong> Birgunj Metropolitan City Office &bull; Jeetpur Simara Sub-Metropolitan City</span>
+          <span>Kathmandu &bull; Sarlahi &bull; Parsa &bull; Bara</span>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         CONTACT & OFFICES (Matching Page 71 Back Cover of Portfolio PDF)
+         8. CONTACT (Phone-Optimized Inquiries & Studio Offices)
          ====================================================================== -->
-    <section id="contact" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] relative">
+    <section id="contact" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] relative">
       <div class="portfolio-container">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-          <div class="lg:col-span-5 flex flex-col gap-6 reveal-card">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div class="lg:col-span-5 flex flex-col gap-5 reveal-card">
             <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-[#8F0000] block mb-1">Practice Locations &amp; Inquiries</span>
-              <h2 class="portfolio-section-title">Scale and Spaces Pvt. Ltd.</h2>
+              <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[#8F0000] mb-1">
+                ${icons.phone} Studio Offices
+              </span>
+              <h2 class="portfolio-section-title">CONTACT_</h2>
               <p class="text-sm text-[#767070] mt-2">
-                Architects, Structural Engineers &amp; Interior Designers practicing across Kathmandu Valley and Terai Nepal.
+                Reach out to start residential, commercial, institutional, or interior commissions.
               </p>
             </div>
 
-            <div class="border-t border-b border-[#DDD8CE] py-5 flex flex-col gap-4 text-sm">
+            <div class="border-t border-b border-[#DDD8CE] py-4 flex flex-col gap-3.5 text-sm">
               <div>
                 <h3 class="text-xs font-bold uppercase tracking-wider text-[#8F0000]" style="font-family: var(--font-sans);">Head Office</h3>
                 <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} Tokha-6, Dhapasi, Kathmandu</p>
@@ -2316,58 +2644,58 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} Birgunj-12, Parsa</p>
               </div>
               <div class="arch-line"></div>
-              <div class="flex flex-col gap-1.5 text-xs sm:text-sm">
+              <div class="flex flex-col gap-2 text-xs sm:text-sm">
                 <p class="flex items-center gap-2">${icons.mail} <strong>Email:</strong> <a href="mailto:studio@scaleandspaces.com" class="text-[#8F0000] underline">studio@scaleandspaces.com</a></p>
-                <p class="flex items-center gap-2">${icons.phone} <strong>Contact:</strong> <a href="tel:+9779703881733" class="text-[#111111] no-underline hover:underline">+977-9703881733</a></p>
-                <p><strong>Official Website:</strong> www.scaleandspaces.com</p>
+                <p class="flex items-center gap-2">${icons.phone} <strong>Phone:</strong> <a href="tel:+9779703881733" class="text-[#111111] no-underline hover:underline">+977-9703881733</a></p>
+                <p><strong>Website:</strong> www.scaleandspaces.com</p>
               </div>
             </div>
 
             <a href="https://wa.me/9779703881733?text=Hello%20Scale%20and%20Spaces,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="btn-crimson w-full text-xs py-3">
               ${icons.whatsapp}
-              <span>Message Studio on WhatsApp (+977-9703881733)</span>
+              <span>WhatsApp (+977-9703881733)</span>
             </a>
           </div>
 
           <div class="lg:col-span-7 border-t lg:border-t-0 lg:border-l border-[#DDD8CE] pt-6 lg:pt-0 lg:pl-10 reveal-card">
-            <h3 class="text-xl font-bold serif-heading text-[#111111] mb-1">Studio Project Inquiry</h3>
-            <p class="text-xs text-[#767070] mb-6">
-              Submit your brief details for architectural design, interior work, structural engineering, or construction supervision.
+            <h3 class="text-xl font-bold serif-heading text-[#111111] mb-1">Start a Project Inquiry</h3>
+            <p class="text-xs text-[#767070] mb-5">
+              Share your site details directly via WhatsApp for architecture, structural design, or interiors.
             </p>
 
             <form id="consultation-form" onsubmit="handleInquirySubmit(event)" class="flex flex-col gap-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label for="client-name" class="block text-xs font-bold text-[#111111] mb-1">Full Name *</label>
-                  <input id="client-name" type="text" required placeholder="Client Name" class="w-full text-sm p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none" />
+                  <input id="client-name" type="text" required placeholder="Your Name" class="w-full text-base p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none" />
                 </div>
                 <div>
                   <label for="client-phone" class="block text-xs font-bold text-[#111111] mb-1">Phone / WhatsApp *</label>
-                  <input id="client-phone" type="tel" required placeholder="+977 98XXXXXXXX" class="w-full text-sm p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none" />
+                  <input id="client-phone" type="tel" required placeholder="+977 98XXXXXXXX" class="w-full text-base p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none" />
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label for="project-type" class="block text-xs font-bold text-[#111111] mb-1">Project Typology *</label>
-                  <select id="project-type" class="w-full text-sm p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none">
-                    <option value="Residence">Residence</option>
-                    <option value="Commercial Building">Commercial Building</option>
-                    <option value="Office / Institutional Building">Office / Institutional Building</option>
-                    <option value="Landscape Development">Landscape Development</option>
+                  <label for="project-type" class="block text-xs font-bold text-[#111111] mb-1">Typology *</label>
+                  <select id="project-type" class="w-full text-base p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none">
+                    <option value="Residence">Private Residence</option>
+                    <option value="Commercial Building">Commercial Tower / Retail</option>
+                    <option value="Office / Institutional Building">Institutional / Hospital</option>
+                    <option value="Landscape Development">Landscape Masterplan</option>
                     <option value="Interior Design">Interior Design</option>
-                    <option value="Religious Complex">Religious Complex</option>
+                    <option value="Religious Complex">Religious Architecture</option>
                   </select>
                 </div>
                 <div>
-                  <label for="project-location" class="block text-xs font-bold text-[#111111] mb-1">Site Location *</label>
-                  <input id="project-location" type="text" required placeholder="e.g. Kathmandu / Birgunj" class="w-full text-sm p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none" />
+                  <label for="project-location" class="block text-xs font-bold text-[#111111] mb-1">Site City / Location *</label>
+                  <input id="project-location" type="text" required placeholder="e.g. Kathmandu / Birgunj" class="w-full text-base p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none" />
                 </div>
               </div>
 
               <div>
-                <label for="client-message" class="block text-xs font-bold text-[#111111] mb-1">Project Brief</label>
-                <textarea id="client-message" rows="3" placeholder="Outline your site area, floors, and scope of works required..." class="w-full text-sm p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none"></textarea>
+                <label for="client-message" class="block text-xs font-bold text-[#111111] mb-1">Brief &amp; Scope</label>
+                <textarea id="client-message" rows="3" placeholder="Site area, number of floors, or scope needed..." class="w-full text-base p-2.5 border border-[#DDD8CE] bg-white focus:border-[#8F0000] outline-none"></textarea>
               </div>
 
               <button type="submit" class="btn-crimson w-full text-xs py-3 mt-1">
@@ -2381,11 +2709,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
   </main>
 
-  <!-- FOOTER -->
+  <!-- FOOTER WITH 8 SECTIONS & POLICIES -->
   <footer class="bg-[#1A1A1A] text-[#CCCCCC] py-12 border-t border-[#333333]">
     <div class="portfolio-container">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-8 border-b border-[#333333]">
-        <div class="md:col-span-5 flex flex-col gap-2">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 pb-8 border-b border-[#333333]">
+        <div class="lg:col-span-4 flex flex-col gap-2">
           <div class="flex items-center gap-3">
             <img src="assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. mark" style="height: 36px; width: auto; max-width: 44px; filter: invert(1) brightness(2);" onerror="this.src='assets/logo.jpg'" />
             <span class="font-bold text-lg text-white tracking-wide">
@@ -2393,38 +2721,69 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             </span>
           </div>
           <span class="text-xs uppercase tracking-widest text-[#888888] font-semibold">
-            Pvt. Ltd. &bull; Architects &bull; Engineers &bull; Interior Designers
+            Pvt. Ltd. &bull; Architects &bull; Engineers &bull; Interiors
           </span>
           <p class="text-xs text-[#999999] max-w-sm mt-2">
-            "Designing Spaces, Defining Lifestyles!"
+            &ldquo;Designing Spaces, Defining Lifestyles!&rdquo;
           </p>
         </div>
 
-        <div class="md:col-span-3 flex flex-col gap-2 text-xs">
-          <span class="text-white font-bold uppercase tracking-wider mb-1">Portfolio Sections</span>
-          <a href="#scope-of-works" class="text-[#CCCCCC] no-underline hover:text-white">Scope of Works_</a>
-          <a href="#the-full-team" class="text-[#CCCCCC] no-underline hover:text-white">The Full Team (10 Specialists)</a>
-          <a href="#our-works" class="text-[#CCCCCC] no-underline hover:text-white">Our Works (${projectsData.length} Entries)</a>
-          <a href="#ranighat-masterplan" class="text-[#CCCCCC] no-underline hover:text-white">Ranighat Masterplan</a>
+        <div class="lg:col-span-3 flex flex-col gap-1.5 text-xs">
+          <span class="text-white font-bold uppercase tracking-wider mb-1">Explore</span>
+          <a href="#home" class="text-[#CCCCCC] no-underline hover:text-white">Home</a>
+          <a href="#services" class="text-[#CCCCCC] no-underline hover:text-white">Services &amp; Scope</a>
+          <a href="#projects" class="text-[#CCCCCC] no-underline hover:text-white">Projects (${projectsData.length})</a>
+          <a href="#about" class="text-[#CCCCCC] no-underline hover:text-white">About Studio</a>
+          <a href="#team" class="text-[#CCCCCC] no-underline hover:text-white">Team &bull; Testimonials &bull; Partners</a>
         </div>
 
-        <div class="md:col-span-4 flex flex-col gap-1.5 text-xs">
+        <div class="lg:col-span-2 flex flex-col gap-1.5 text-xs">
+          <span class="text-white font-bold uppercase tracking-wider mb-1">Legal &amp; Policies</span>
+          <a href="privacy-policy/" class="text-[#CCCCCC] no-underline hover:text-white">Privacy Policy</a>
+          <a href="terms-and-conditions/" class="text-[#CCCCCC] no-underline hover:text-white">Terms &amp; Conditions</a>
+          <a href="cookie-policy/" class="text-[#CCCCCC] no-underline hover:text-white">Cookie Policy</a>
+          <a href="disclaimer/" class="text-[#CCCCCC] no-underline hover:text-white">Studio Disclaimer</a>
+        </div>
+
+        <div class="lg:col-span-3 flex flex-col gap-1.5 text-xs">
           <span class="text-white font-bold uppercase tracking-wider mb-1">Offices</span>
           <p><strong class="text-white">Head Office:</strong> Tokha-6, Dhapasi, Kathmandu</p>
           <p><strong class="text-white">Contact Office:</strong> Birgunj-12, Parsa</p>
-          <p><strong class="text-white">Email:</strong> studio@scaleandspaces.com</p>
-          <p><strong class="text-white">Contact:</strong> +977-9703881733</p>
+          <p><strong class="text-white">Email:</strong> <a href="mailto:studio@scaleandspaces.com" class="text-[#CCCCCC] no-underline hover:text-white">studio@scaleandspaces.com</a></p>
+          <p><strong class="text-white">Phone:</strong> <a href="tel:+9779703881733" class="text-[#CCCCCC] no-underline hover:text-white">+977-9703881733</a></p>
         </div>
       </div>
 
-      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-[#888888] gap-2">
+      <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-[#888888] gap-3">
         <div>
           &copy; <span id="footer-year">2026</span> Scale and Spaces Private Limited. All rights reserved.
         </div>
-        <div>www.scaleandspaces.com</div>
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="privacy-policy/" class="text-[#888888] no-underline hover:text-white">Privacy</a>
+          <a href="terms-and-conditions/" class="text-[#888888] no-underline hover:text-white">Terms</a>
+          <a href="cookie-policy/" class="text-[#888888] no-underline hover:text-white">Cookies</a>
+          <span>www.scaleandspaces.com</span>
+        </div>
       </div>
     </div>
   </footer>
+
+  <!-- DISCRETE COOKIE NOTICE BAR -->
+  <aside id="cookieConsentBar" class="cookie-consent-bar" role="dialog" aria-label="Cookie Preferences">
+    <p class="text-xs leading-relaxed text-[#E5E3DC]">
+      Scale and Spaces uses essential local storage preferences to deliver smooth navigation and preserve your cookie choice. Read our
+      <a href="cookie-policy/" class="text-[#FF8F8F] underline hover:text-white">Cookie Policy</a> &amp;
+      <a href="privacy-policy/" class="text-[#FF8F8F] underline hover:text-white">Privacy Policy</a>.
+    </p>
+    <div class="flex items-center justify-end gap-2">
+      <button type="button" id="cookieDismissBtn" class="bg-transparent border border-[#55504B] text-[#CCCCCC] hover:text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 cursor-pointer">
+        Dismiss
+      </button>
+      <button type="button" id="cookieAcceptBtn" class="bg-[#8F0000] hover:bg-[#B00000] border-0 text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1.5 cursor-pointer">
+        Accept
+      </button>
+    </div>
+  </aside>
 
   <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="lightbox-modal" onclick="closeLightboxOnBackdrop(event)">
@@ -2479,88 +2838,39 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     const yearEl = document.getElementById('footer-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    // Hero Showcase Switcher State (Full-Page Atmospheric Cover Photo + Selected Highlights)
-    const heroSlidesData = [
-      {
-        id: 'mithila-tower',
-        img: 'assets/projects/cover_studio_tower.jpg',
-        title: 'Studio Cover &mdash; <span class="font-normal text-[#767070]">Conceptual Timber &amp; Steel Study</span>'
-      },
-      {
-        id: 'mithila-tower',
-        img: 'assets/projects/mithila_tower.jpg',
-        title: 'Mithila Tower &mdash; <span class="font-normal text-[#767070]">Jiwisa Chowk, Malangwa (2024 A.D.)</span>'
-      },
-      {
-        id: 'hyatt-community-hospital',
-        img: 'assets/projects/hyatt_hospital_1.jpg',
-        title: 'Hyatt Community Hospital &mdash; <span class="font-normal text-[#767070]">Barhathwa, Sarlahi (2025 A.D.)</span>'
-      },
-      {
-        id: 'tulsi-gupta-residence',
-        img: 'assets/projects/tulsi_gupta_residence_1.jpg',
-        title: 'Residence of Mr. Tulsi Gupta &mdash; <span class="font-normal text-[#767070]">Birgunj, Parsa (2024 A.D.)</span>'
+    // Discrete Cookie Consent Preference Persistence
+    (function initCookieBanner() {
+      const cookieBar = document.getElementById('cookieConsentBar');
+      if (!cookieBar) return;
+      let stored = '';
+      try { stored = localStorage.getItem('ss_cookie_consent') || ''; } catch (err) {}
+      if (!stored) cookieBar.classList.add('is-visible');
+      function persistConsent(choice) {
+        try { localStorage.setItem('ss_cookie_consent', choice); } catch (err) {}
+        cookieBar.classList.remove('is-visible');
       }
-    ];
-    let currentHeroIdx = 0;
-    let currentHeroId = 'mithila-tower';
-    window.currentHeroId = currentHeroId;
+      const acceptBtn = document.getElementById('cookieAcceptBtn');
+      const dismissBtn = document.getElementById('cookieDismissBtn');
+      if (acceptBtn) acceptBtn.addEventListener('click', function() { persistConsent('accepted'); });
+      if (dismissBtn) dismissBtn.addEventListener('click', function() { persistConsent('dismissed'); });
+    })();
 
-    function setHeroSlide(index, ev) {
-      if (ev) ev.stopPropagation();
-      currentHeroIdx = index;
-      const slideData = heroSlidesData[index];
-      currentHeroId = slideData.id;
-      window.currentHeroId = currentHeroId;
-
-      const bgColor = document.getElementById('heroBgColor');
-      if (bgColor) {
-        if (window.gsap) {
-          gsap.to(bgColor, {
-            opacity: 0.15,
-            duration: 0.28,
-            onComplete: function() {
-              bgColor.src = slideData.img;
-              gsap.to(bgColor, { opacity: 0.78, duration: 0.65, ease: 'power2.out' });
-            }
-          });
-        } else {
-          bgColor.src = slideData.img;
-        }
-      }
-
-      document.querySelectorAll('.hero-slide-tab').forEach(function(btn, i) {
-        btn.classList.toggle('is-active', i === index);
-      });
-
-      const titleEl = document.getElementById('heroSlideTitle');
-      if (titleEl) titleEl.innerHTML = slideData.title;
-    }
-    window.setHeroSlide = setHeroSlide;
-
-    // Gentle Hero Background Showcase Cycle
-    let heroAutoTimer = setInterval(function() {
-      setHeroSlide((currentHeroIdx + 1) % heroSlidesData.length);
-    }, 5600);
-    const heroSec = document.getElementById('heroSection');
-    if (heroSec) {
-      heroSec.addEventListener('mouseenter', function() { clearInterval(heroAutoTimer); });
-    }
-
-    // Category Filtering with GSAP staggered entrance
+    // Category Filtering with Clean URL Sync & GSAP Staggered Entrance
     const tabs = document.querySelectorAll('.filter-tab');
     const projectCards = document.querySelectorAll('.project-card');
     const projectCountEl = document.getElementById('project-count');
+    const validCategories = ['all', 'Commercial', 'Landscape', 'Residences', 'Institutional', 'Religious', 'Interior', 'Branding'];
 
-    function applyFilter(cat) {
+    function applyFilter(cat, updateUrl) {
+      const targetCat = validCategories.indexOf(cat) !== -1 ? cat : 'all';
       tabs.forEach(function(t) {
-        t.classList.toggle('active', t.getAttribute('data-category') === cat);
+        t.classList.toggle('active', t.getAttribute('data-category') === targetCat);
       });
 
       const shown = [];
       projectCards.forEach(function(card) {
         const cardCat = card.getAttribute('data-category');
-        if (cat === 'all' || cardCat === cat) {
+        if (targetCat === 'all' || cardCat === targetCat) {
           card.style.display = 'flex';
           shown.push(card);
         } else {
@@ -2569,6 +2879,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       });
 
       if (projectCountEl) projectCountEl.textContent = shown.length;
+
+      if (updateUrl && window.history && window.history.replaceState) {
+        const nextUrl = targetCat === 'all' ? '#projects' : '?category=' + encodeURIComponent(targetCat) + '#projects';
+        try { window.history.replaceState(null, '', nextUrl); } catch (err) {}
+      }
 
       if (window.gsap && shown.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         gsap.fromTo(
@@ -2582,13 +2897,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
     tabs.forEach(function(tab) {
       tab.addEventListener('click', function() {
-        applyFilter(tab.getAttribute('data-category'));
+        applyFilter(tab.getAttribute('data-category'), true);
       });
     });
 
+    // Apply ?category= URL filter cleanly on initial load if supplied
+    (function syncInitialUrlFilter() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const cat = params.get('category');
+        if (cat && validCategories.indexOf(cat) !== -1 && cat !== 'all') {
+          applyFilter(cat, false);
+        }
+      } catch (err) {}
+    })();
+
     function selectCategoryFilter(cat) {
-      applyFilter(cat);
-      const sec = document.getElementById('our-works');
+      applyFilter(cat, true);
+      const sec = document.getElementById('projects');
       if (sec) {
         if (window.lenisInstance) {
           window.lenisInstance.scrollTo(sec, { offset: -76, duration: 1.0 });
@@ -3197,6 +3523,240 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 </html>
 `;
 
+const legalPages = [
+  {
+    slug: 'privacy-policy',
+    title: 'Privacy Policy | Scale and Spaces Pvt. Ltd.',
+    description: 'Privacy policy describing how Scale and Spaces Private Limited handles consultation inquiries, contact records, and visitor data privacy in Nepal.',
+    heading: 'Privacy Policy',
+    updated: 'Effective Date: November 18, 2026',
+    summary: 'Scale and Spaces Private Limited respects the confidentiality of your residential, commercial, and institutional project briefs submitted through our website, email, or WhatsApp.',
+    sections: [
+      {
+        title: '1. Information We Collect',
+        paragraphs: [
+          'This portfolio website does not require user registration, accounts, or online payment submissions. Information is collected only when you voluntarily contact our Kathmandu or Birgunj studio via email (studio@scaleandspaces.com), phone (+977-9703881733), or the consultation form that opens a WhatsApp message from your device.'
+        ],
+        bullets: [
+          'Contact name, phone number, and preferred communication handle you enter.',
+          'Site location, project typology, plot dimensions, and architectural brief summary.',
+          'Essential technical server access logs processed by GitHub Pages hosting infrastructure.'
+        ]
+      },
+      {
+        title: '2. How Your Inquiry Information Is Used',
+        paragraphs: [
+          'Submitted project briefs are reviewed strictly by our architects, engineers, and project coordinators to prepare fee proposals, site survey schedules, architectural feasibility feedback, and design consultations.'
+        ],
+        bullets: [
+          'We do not sell, rent, or distribute client contact records to third-party brokers or marketing lists.',
+          'Drawings, soil reports, land ownership documents, and floor plans shared during consultation remain strictly confidential.'
+        ]
+      },
+      {
+        title: '3. Local Storage & Communication Channels',
+        paragraphs: [
+          'When you use the WhatsApp consultation form, your browser redirects to WhatsApp (Meta Platforms) according to your device privacy settings. We store only your cookie notice choice locally in browser storage (`ss_cookie_consent`).'
+        ]
+      },
+      {
+        title: '4. Your Rights & Studio Contact',
+        paragraphs: [
+          'You may request review, correction, or deletion of prior email correspondence at any time by contacting our Head Office (Tokha-6, Dhapasi, Kathmandu) or Contact Office (Birgunj-12, Parsa) at studio@scaleandspaces.com.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'terms-and-conditions',
+    title: 'Terms & Conditions | Scale and Spaces Pvt. Ltd.',
+    description: 'Terms and conditions governing access to portfolio renders, architectural intellectual property, and consultancy engagement with Scale and Spaces Pvt. Ltd.',
+    heading: 'Terms & Conditions',
+    updated: 'Effective Date: November 18, 2026',
+    summary: 'By accessing or browsing the Scale and Spaces Private Limited website, you agree to the intellectual property notices, consultancy scope boundaries, and governing terms below.',
+    sections: [
+      {
+        title: '1. Architectural Intellectual Property & Copyright',
+        paragraphs: [
+          'All architectural renderings, floor layouts, structural concepts, civic competition boards, brand identity marks, and photographs published in this portfolio remain the intellectual property of Scale and Spaces Private Limited and respective commissioning clients unless governed otherwise by written contract.'
+        ],
+        bullets: [
+          'No 3D image, elevation, emblem, or concept drawing may be copied, redistributed, or constructed without written authorization from Scale and Spaces Pvt. Ltd.',
+          'Team portraits, client brand marks, and civic competition boards are presented solely to document completed or commissioned works.'
+        ]
+      },
+      {
+        title: '2. Consultancy & Scope Agreements',
+        paragraphs: [
+          'Browsing this website or submitting a WhatsApp project inquiry does not establish a formal architect-client contract. Formal architectural, structural, MEP, costing, and site supervision engagements begin only upon signing an official Scope of Works agreement with defined fee schedules and deliverables.'
+        ]
+      },
+      {
+        title: '3. Portfolio Presentation & Revisions',
+        paragraphs: [
+          'Scale and Spaces Pvt. Ltd. reserves the right to update, expand, or reorganize portfolio projects, team directories, and technical descriptions without prior notice.'
+        ]
+      },
+      {
+        title: '4. Governing Law',
+        paragraphs: [
+          'These terms are governed by the applicable laws of Nepal, including statutory municipal building bylaws and Nepal National Building Code standards where applicable.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'cookie-policy',
+    title: 'Cookie Policy | Scale and Spaces Pvt. Ltd.',
+    description: 'Cookie and browser storage policy explaining strictly essential functional storage on Scale and Spaces Pvt. Ltd. portfolio pages.',
+    heading: 'Cookie Policy',
+    updated: 'Effective Date: November 18, 2026',
+    summary: 'Scale and Spaces Private Limited keeps browser storage minimal and transparent, avoiding invasive third-party advertising trackers.',
+    sections: [
+      {
+        title: '1. What Cookies & Storage We Use',
+        paragraphs: [
+          'Our static portfolio uses zero advertising pixels, behavioral profiling cookies, or cross-site ad trackers. We use only lightweight browser storage so interface preferences remain consistent across visits.'
+        ],
+        bullets: [
+          'ss_cookie_consent (Local Storage): remembers whether you accepted or dismissed the bottom privacy notice bar.',
+          'Typography Delivery: Google Fonts (`EB Garamond` and `Carlito`) stylesheet delivery subject to Google privacy standards.',
+          'Static Hosting: GitHub Pages serves static HTML/CSS/JS bundles without user tracking cookies.'
+        ]
+      },
+      {
+        title: '2. Managing Your Browser Storage',
+        paragraphs: [
+          'You may clear browser site storage or disable cookies at any time through your web browser settings (Chrome, Safari, Edge, Firefox) without losing access to portfolio works or contact details.'
+        ]
+      }
+    ]
+  },
+  {
+    slug: 'disclaimer',
+    title: 'Architectural Disclaimer | Scale and Spaces Pvt. Ltd.',
+    description: 'Professional disclaimer regarding 3D architectural perspectives, site engineering verification, and construction drawings by Scale and Spaces Pvt. Ltd.',
+    heading: 'Studio Disclaimer',
+    updated: 'Effective Date: November 18, 2026',
+    summary: 'Architectural visualizations displayed on this website illustrate conceptual and built studio commissions and do not replace site-specific engineering or municipal working drawings.',
+    sections: [
+      {
+        title: '1. Conceptual Visualizations vs. Construction Drawings',
+        paragraphs: [
+          '3D perspectives, walkthrough stills, exterior elevations, and landscape visuals reflect design intent at the time of presentation. Executed field finishes, landscaping maturity, lighting fixtures, and site boundary adjustments may vary during construction or municipal approval stages.'
+        ]
+      },
+      {
+        title: '2. Site Engineering & Geotechnical Verification',
+        paragraphs: [
+          'Actual construction must proceed strictly from stamped structural, sanitary, electrical, and municipal permit drawings issued after site-specific topographical surveying, soil bearing capacity testing, and seismic code compliance under the Nepal National Building Code.'
+        ]
+      },
+      {
+        title: '3. Inquiries & Clarifications',
+        paragraphs: [
+          'For official stamped documentation or clarification on any project showcase, contact our studio directly via studio@scaleandspaces.com or +977-9703881733.'
+        ]
+      }
+    ]
+  }
+];
+
+function buildLegalPage(page, compiledCss) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>${page.title}</title>
+  <meta name="description" content="${page.description}" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#8F0000" />
+  <link rel="canonical" href="https://madex-source.github.io/madex/${page.slug}/" />
+  <link rel="icon" type="image/svg+xml" href="../assets/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Carlito:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>${compiledCss}</style>
+</head>
+<body class="bg-[#F0EFEA] text-[#111111]">
+  <div class="bg-[#E8E6DF] border-b border-[#DDD8CE] text-xs py-2 text-[#767070] hidden sm:block">
+    <div class="portfolio-container flex justify-between items-center gap-2">
+      <div><strong class="text-[#111111]">SCALE AND SPACES Pvt. Ltd.</strong> &bull; Architecture &bull; Engineering &bull; Interiors</div>
+      <div class="flex items-center gap-4">
+        <a href="tel:+9779703881733" class="text-[#111111] no-underline hover:text-[#8F0000]">+977-9703881733</a>
+        <a href="mailto:studio@scaleandspaces.com" class="text-[#767070] no-underline hover:text-[#8F0000]">studio@scaleandspaces.com</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-nav flex items-center">
+    <div class="portfolio-container flex items-center justify-between w-full gap-3">
+      <a href="../#home" class="flex items-center gap-2.5 no-underline shrink-0">
+        <img src="../assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. emblem" style="height: 36px; width: auto; max-width: 42px;" onerror="this.src='../assets/logo.jpg'" />
+        <div class="flex flex-col">
+          <span class="font-bold text-sm sm:text-base tracking-wider text-[#111111] leading-none">
+            SCALE <span class="font-normal text-[#8F0000]">AND</span> SPACES
+          </span>
+          <span class="text-[0.62rem] uppercase tracking-widest text-[#767070] font-semibold mt-1">Pvt. Ltd. &bull; Policy &amp; Legal</span>
+        </div>
+      </a>
+      <nav aria-label="Legal navigation" class="hidden md:flex items-center gap-5 text-[13px] font-bold">
+        <a href="../#home" class="text-[#111111] hover:text-[#8F0000] no-underline">Home</a>
+        <a href="../#services" class="text-[#111111] hover:text-[#8F0000] no-underline">Services</a>
+        <a href="../#projects" class="text-[#111111] hover:text-[#8F0000] no-underline">Projects</a>
+        <a href="../#about" class="text-[#111111] hover:text-[#8F0000] no-underline">About</a>
+        <a href="../#contact" class="text-[#111111] hover:text-[#8F0000] no-underline">Contact</a>
+      </nav>
+      <a href="../#home" class="btn-outline text-[11px] py-2 px-3.5 no-underline">&larr; Portfolio Home</a>
+    </div>
+  </header>
+
+  <main class="py-12 md:py-16 min-h-[70vh]">
+    <div class="portfolio-container max-w-4xl">
+      <div class="mb-6 pb-6 border-b border-[#DDD8CE]">
+        <div class="flex flex-wrap items-center gap-2 text-xs text-[#767070] mb-3">
+          <a href="../#home" class="text-[#8F0000] no-underline hover:underline font-semibold">Home</a>
+          <span>/</span>
+          <span class="text-[#111111] font-semibold">${page.heading}</span>
+        </div>
+        <h1 class="portfolio-section-title text-3xl md:text-4xl">${page.heading}</h1>
+        <p class="text-xs font-mono uppercase tracking-widest text-[#767070] mt-2">${page.updated}</p>
+        <p class="text-sm sm:text-base text-[#333333] leading-relaxed mt-4">${page.summary}</p>
+      </div>
+
+      <article class="legal-prose">
+        ${page.sections.map(sec => `
+          <section>
+            <h2>${sec.title}</h2>
+            ${sec.paragraphs.map(p => `<p>${p}</p>`).join('')}
+            ${sec.bullets ? `<ul>${sec.bullets.map(b => `<li>${b}</li>`).join('')}</ul>` : ''}
+          </section>
+        `).join('')}
+      </article>
+
+      <div class="mt-12 pt-6 border-t border-[#DDD8CE] flex flex-wrap items-center justify-between gap-4 text-xs">
+        <div class="flex flex-wrap gap-4 font-semibold">
+          <a href="../privacy-policy/" class="text-[#8F0000] no-underline hover:underline">Privacy Policy</a>
+          <a href="../terms-and-conditions/" class="text-[#8F0000] no-underline hover:underline">Terms &amp; Conditions</a>
+          <a href="../cookie-policy/" class="text-[#8F0000] no-underline hover:underline">Cookie Policy</a>
+          <a href="../disclaimer/" class="text-[#8F0000] no-underline hover:underline">Studio Disclaimer</a>
+        </div>
+        <a href="../#contact" class="btn-crimson text-xs py-2 px-4 no-underline">Contact Studio</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-[#1A1A1A] text-[#CCCCCC] py-8 border-t border-[#333333]">
+    <div class="portfolio-container flex flex-col sm:flex-row justify-between items-center text-xs text-[#999999] gap-3">
+      <div>&copy; 2026 Scale and Spaces Private Limited. All rights reserved.</div>
+      <div>Head Office: Tokha-6, Dhapasi, Kathmandu &bull; Contact Office: Birgunj-12, Parsa</div>
+    </div>
+  </footer>
+</body>
+</html>`;
+}
+
 const notFoundHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -3231,6 +3791,30 @@ const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://madex-source.github.io/madex/privacy-policy/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://madex-source.github.io/madex/terms-and-conditions/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://madex-source.github.io/madex/cookie-policy/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://madex-source.github.io/madex/disclaimer/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
 </urlset>
 `;
 
@@ -3252,9 +3836,10 @@ async function run() {
     onDependency: () => {}
   });
 
+  const sampleLegalMarkup = legalPages.map(p => buildLegalPage(p, '')).join('\n');
   const tempDir = fs.mkdtempSync(path.join(require('os').tmpdir(), 'twscan-'));
   const tempHtml = path.join(tempDir, 'scan.html');
-  fs.writeFileSync(tempHtml, htmlBodyTemplate, 'utf8');
+  fs.writeFileSync(tempHtml, htmlBodyTemplate + '\n' + sampleLegalMarkup, 'utf8');
 
   const scanner = new Scanner({
     sources: [{ base: tempDir, pattern: '*.html', negated: false }]
@@ -3266,6 +3851,10 @@ async function run() {
   fs.rmSync(tempDir, { recursive: true, force: true });
 
   const finalHtml = htmlBodyTemplate.replace('/*__COMPILED_CSS__*/', optimized.code);
+  const renderedLegalPages = legalPages.map(p => ({
+    slug: p.slug,
+    html: buildLegalPage(p, optimized.code)
+  }));
 
   const baseDirs = [
     __dirname,
@@ -3281,14 +3870,25 @@ async function run() {
     fs.writeFileSync(path.join(dir, 'sitemap.xml'), sitemapXml, 'utf8');
     fs.writeFileSync(path.join(dir, 'robots.txt'), robotsTxt, 'utf8');
 
+    renderedLegalPages.forEach(lp => {
+      const targetSub = path.join(dir, lp.slug);
+      fs.mkdirSync(targetSub, { recursive: true });
+      fs.writeFileSync(path.join(targetSub, 'index.html'), lp.html, 'utf8');
+    });
+
     const pubDir = path.join(dir, 'public');
     if (fs.existsSync(pubDir)) {
       fs.writeFileSync(path.join(pubDir, '404.html'), notFoundHtml, 'utf8');
       fs.writeFileSync(path.join(pubDir, 'sitemap.xml'), sitemapXml, 'utf8');
       fs.writeFileSync(path.join(pubDir, 'robots.txt'), robotsTxt, 'utf8');
+      renderedLegalPages.forEach(lp => {
+        const pubSub = path.join(pubDir, lp.slug);
+        fs.mkdirSync(pubSub, { recursive: true });
+        fs.writeFileSync(path.join(pubSub, 'index.html'), lp.html, 'utf8');
+      });
     }
 
-    console.log('Successfully updated directory (' + finalHtml.length + ' bytes, CSS: ' + optimized.code.length + ' bytes): ' + dir);
+    console.log('Successfully updated directory (' + finalHtml.length + ' bytes, CSS: ' + optimized.code.length + ' bytes + 4 legal pages): ' + dir);
   });
 }
 

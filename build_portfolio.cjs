@@ -1819,23 +1819,30 @@ const customCss = `
       padding-left: 1.2rem;
     }
 
+    /* Header CTA Responsive Hide (prevents .btn-crimson inline-flex overriding Tailwind .hidden on phones) */
+    @media (max-width: 639px) {
+      .header-cta-desktop {
+        display: none !important;
+      }
+    }
+
     /* Discrete Cookie Notice Toast */
     .cookie-consent-bar {
       position: fixed;
-      bottom: 1rem;
-      right: 1rem;
-      left: 1rem;
-      max-width: 460px;
+      bottom: 0.75rem;
+      right: 0.75rem;
+      left: 0.75rem;
+      max-width: 390px;
       margin-left: auto;
       z-index: 80;
-      background: rgba(26, 26, 26, 0.96);
+      background: rgba(26, 26, 26, 0.94);
       color: #F0EFEA;
       border: 1px solid #3A3632;
-      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.28);
-      padding: 0.95rem 1.15rem;
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.24);
+      padding: 0.8rem 1rem;
       display: none;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.55rem;
       backdrop-filter: blur(8px);
     }
     .cookie-consent-bar.is-visible {
@@ -2048,13 +2055,13 @@ const htmlBodyTemplate = `<!DOCTYPE html>
   <!-- NAVIGATION BAR + SCROLL PROGRESS LINE -->
   <header class="site-nav flex items-center">
     <div class="portfolio-container flex items-center justify-between w-full gap-3">
-      <a href="#home" class="flex items-center gap-2.5 no-underline shrink-0">
-        <img src="assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. geometric emblem" class="nav-logo" style="height: 38px; width: auto; max-width: 44px;" onerror="this.src='assets/logo.jpg'" />
-        <div class="flex flex-col">
-          <span class="font-bold text-sm sm:text-base tracking-wider text-[#111111] leading-none">
+      <a href="#home" class="flex items-center gap-2 no-underline shrink min-w-0">
+        <img src="assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. geometric emblem" class="nav-logo shrink-0" style="height: 36px; width: auto; max-width: 42px;" onerror="this.src='assets/logo.jpg'" />
+        <div class="flex flex-col min-w-0">
+          <span class="font-bold text-sm sm:text-base tracking-wider text-[#111111] leading-none truncate">
             SCALE <span class="font-normal text-[#8F0000]">AND</span> SPACES
           </span>
-          <span class="text-[0.65rem] uppercase tracking-widest text-[#767070] font-semibold mt-1">
+          <span class="text-[0.58rem] sm:text-[0.65rem] uppercase tracking-wider sm:tracking-widest text-[#767070] font-semibold mt-1 truncate">
             Pvt. Ltd. &bull; Architects &bull; Engineers
           </span>
         </div>
@@ -2112,7 +2119,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       </nav>
 
       <div class="flex items-center gap-2.5 shrink-0">
-        <a href="https://wa.me/9779703881733?text=Hello%20Scale%20and%20Spaces,%20I%20would%20like%20to%20inquire%20regarding%20a%20project." target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex btn-crimson text-[11px] py-2 px-3.5">
+        <a href="https://wa.me/9779703881733?text=Hello%20Scale%20and%20Spaces,%20I%20would%20like%20to%20inquire%20regarding%20a%20project." target="_blank" rel="noopener noreferrer" class="header-cta-desktop hidden sm:inline-flex btn-crimson text-[11px] py-2 px-3.5">
           ${icons.whatsapp}
           <span>Get Quote</span>
         </a>
@@ -2881,7 +2888,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       if (projectCountEl) projectCountEl.textContent = shown.length;
 
       if (updateUrl && window.history && window.history.replaceState) {
-        const nextUrl = targetCat === 'all' ? '#projects' : '?category=' + encodeURIComponent(targetCat) + '#projects';
+        const nextUrl = targetCat === 'all'
+          ? window.location.pathname + '#projects'
+          : window.location.pathname + '?category=' + encodeURIComponent(targetCat) + '#projects';
         try { window.history.replaceState(null, '', nextUrl); } catch (err) {}
       }
 
@@ -3691,14 +3700,14 @@ function buildLegalPage(page, compiledCss) {
   </div>
 
   <header class="site-nav flex items-center">
-    <div class="portfolio-container flex items-center justify-between w-full gap-3">
-      <a href="../#home" class="flex items-center gap-2.5 no-underline shrink-0">
-        <img src="../assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. emblem" style="height: 36px; width: auto; max-width: 42px;" onerror="this.src='../assets/logo.jpg'" />
-        <div class="flex flex-col">
-          <span class="font-bold text-sm sm:text-base tracking-wider text-[#111111] leading-none">
+    <div class="portfolio-container flex items-center justify-between w-full gap-2">
+      <a href="../#home" class="flex items-center gap-2 no-underline shrink min-w-0">
+        <img src="../assets/logo.svg" alt="Scale and Spaces Pvt. Ltd. emblem" class="shrink-0" style="height: 34px; width: auto; max-width: 40px;" onerror="this.src='../assets/logo.jpg'" />
+        <div class="flex flex-col min-w-0">
+          <span class="font-bold text-sm sm:text-base tracking-wider text-[#111111] leading-none truncate">
             SCALE <span class="font-normal text-[#8F0000]">AND</span> SPACES
           </span>
-          <span class="text-[0.62rem] uppercase tracking-widest text-[#767070] font-semibold mt-1">Pvt. Ltd. &bull; Policy &amp; Legal</span>
+          <span class="text-[0.58rem] sm:text-[0.62rem] uppercase tracking-wider sm:tracking-widest text-[#767070] font-semibold mt-1 truncate">Pvt. Ltd. &bull; Policy &amp; Legal</span>
         </div>
       </a>
       <nav aria-label="Legal navigation" class="hidden md:flex items-center gap-5 text-[13px] font-bold">
@@ -3708,7 +3717,7 @@ function buildLegalPage(page, compiledCss) {
         <a href="../#about" class="text-[#111111] hover:text-[#8F0000] no-underline">About</a>
         <a href="../#contact" class="text-[#111111] hover:text-[#8F0000] no-underline">Contact</a>
       </nav>
-      <a href="../#home" class="btn-outline text-[11px] py-2 px-3.5 no-underline">&larr; Portfolio Home</a>
+      <a href="../#home" class="btn-outline text-[10px] sm:text-[11px] py-1.5 sm:py-2 px-2.5 sm:px-3.5 no-underline shrink-0 whitespace-nowrap">&larr; Home</a>
     </div>
   </header>
 

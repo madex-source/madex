@@ -2844,7 +2844,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     <div class="mt-auto pt-4 border-t border-[#DDD8CE] flex flex-col gap-2.5">
       <a href="https://wa.me/9779703881733" target="_blank" rel="noopener noreferrer" class="btn-crimson w-full text-xs">
         ${icons.whatsapp}
-        <span>+977-9703881733</span>
+        <span id="cms-mobile-wa-label">+977-9703881733</span>
       </a>
       <a href="mailto:studio@scaleandspaces.com" class="text-xs text-center text-[#767070] no-underline hover:text-[#8F0000]">
         studio@scaleandspaces.com
@@ -2867,7 +2867,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
       <div class="portfolio-container relative z-[2] pt-8 pb-6 md:pt-12 md:pb-8 flex-1 flex flex-col justify-between">
         <div class="hero-stagger mb-6">
-          <p class="text-sm md:text-base text-[#111111] tracking-wide">
+          <p id="cms-hero-badge" class="text-sm md:text-base text-[#111111] tracking-wide">
             Architecture | Engineering | Interiors
           </p>
         </div>
@@ -2880,7 +2880,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               Defining Lifestyles<span style="font-size: 1.15em;">!</span>
             </span>
           </h1>
-          <p class="hero-stagger text-sm sm:text-base text-[#2E2E2E] mt-4 max-w-xl leading-relaxed">
+          <p id="cms-hero-subtitle" class="hero-stagger text-sm sm:text-base text-[#2E2E2E] mt-4 max-w-xl leading-relaxed">
             Full-service architectural design, seismic engineering, masterplanning &amp; interior studio by <strong class="text-[#111111]">Scale and Spaces Pvt. Ltd.</strong> across Nepal.
           </p>
 
@@ -2897,8 +2897,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <!-- Clean Hairline Studio Locations Strip (No Extra Buttons/Caption) -->
         <div class="hero-stagger mt-6">
           <div class="py-3 border-t border-b border-[#111111]/15 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2 text-xs text-[#111111]">
-            <div class="flex items-center gap-1.5">${icons.pin} <span><strong class="text-[#8F0000]">Head Office:</strong> Tokha-6, Kathmandu</span></div>
-            <div class="flex items-center gap-1.5">${icons.pin} <span><strong class="text-[#8F0000]">Contact:</strong> Birgunj-12, Parsa</span></div>
+            <div class="flex items-center gap-1.5">${icons.pin} <span><strong class="text-[#8F0000]">Head Office:</strong> <span id="cms-hero-head-office">Tokha-6, Kathmandu</span></span></div>
+            <div class="flex items-center gap-1.5">${icons.pin} <span><strong class="text-[#8F0000]">Contact:</strong> <span id="cms-hero-branch-office">Birgunj-12, Parsa</span></span></div>
             <div class="flex items-center gap-1.5">${icons.mail} <a href="mailto:studio@scaleandspaces.com" class="text-[#111111] no-underline hover:text-[#8F0000]">studio@scaleandspaces.com</a></div>
             <div class="flex items-center gap-1.5">${icons.phone} <a href="tel:+9779703881733" class="text-[#111111] no-underline hover:text-[#8F0000]">+977-9703881733</a></div>
           </div>
@@ -3449,24 +3449,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             <div class="border-t border-b border-[#DDD8CE] py-4 flex flex-col gap-3.5 text-sm">
               <div>
                 <h3 class="text-xs font-bold uppercase tracking-wider text-[#8F0000]" style="font-family: var(--font-sans);">Head Office</h3>
-                <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} Dhapasi, Tokha-6, Kathmandu 44600</p>
+                <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} <span id="cms-contact-head-office">Dhapasi, Tokha-6, Kathmandu 44600</span></p>
               </div>
               <div class="arch-line"></div>
               <div>
                 <h3 class="text-xs font-bold uppercase tracking-wider text-[#8F0000]" style="font-family: var(--font-sans);">Branch Office</h3>
-                <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} Main Road (In front of Consulate General of India), Birgunj 44300</p>
+                <p class="font-bold text-[#111111] flex items-center gap-2 mt-0.5">${icons.pin} <span id="cms-contact-branch-office">Main Road (In front of Consulate General of India), Birgunj 44300</span></p>
               </div>
               <div class="arch-line"></div>
               <div class="flex flex-col gap-2 text-xs sm:text-sm">
                 <p class="flex items-center gap-2">${icons.mail} <strong>Email:</strong> <a href="mailto:studio@scaleandspaces.com" class="text-[#8F0000] underline">studio@scaleandspaces.com</a></p>
                 <p class="flex items-center gap-2">${icons.phone} <strong>Phone:</strong> <a href="tel:+9779703881733" class="text-[#111111] no-underline hover:underline">+977-9703881733</a></p>
-                <p><strong>Website:</strong> <a href="https://scaleandspaces.com.np" class="text-[#111111] no-underline hover:text-[#8F0000]">scaleandspaces.com.np</a></p>
+                <p><strong>Website:</strong> <a id="cms-contact-website" href="https://scaleandspaces.com.np" class="text-[#111111] no-underline hover:text-[#8F0000]">scaleandspaces.com.np</a></p>
               </div>
             </div>
 
             <a href="https://wa.me/9779703881733?text=Hello%20Scale%20and%20Spaces,%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener noreferrer" class="btn-crimson w-full text-xs py-3">
               ${icons.whatsapp}
-              <span>WhatsApp (+977-9703881733)</span>
+              <span id="cms-contact-wa-label">WhatsApp (+977-9703881733)</span>
             </a>
           </div>
 
@@ -3585,7 +3585,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <span class="text-xs uppercase tracking-widest text-[#888888] font-semibold">
             Pvt. Ltd. &bull; Architects &bull; Engineers &bull; Interiors
           </span>
-          <p class="text-xs text-[#999999] max-w-sm mt-2">
+          <p id="cms-footer-tagline" class="text-xs text-[#999999] max-w-sm mt-2">
             &ldquo;Designing Spaces, Defining Lifestyles!&rdquo;
           </p>
         </div>
@@ -3609,8 +3609,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
         <div class="lg:col-span-3 flex flex-col gap-1.5 text-xs">
           <span class="text-white font-bold uppercase tracking-wider mb-1">Offices</span>
-          <p><strong class="text-white">Head Office:</strong> Dhapasi, Tokha-6, Kathmandu 44600</p>
-          <p><strong class="text-white">Branch Office:</strong> Main Road (In front of Consulate General of India), Birgunj 44300</p>
+          <p><strong class="text-white">Head Office:</strong> <span id="cms-footer-head-office">Dhapasi, Tokha-6, Kathmandu 44600</span></p>
+          <p><strong class="text-white">Branch Office:</strong> <span id="cms-footer-branch-office">Main Road (In front of Consulate General of India), Birgunj 44300</span></p>
           <p><strong class="text-white">Email:</strong> <a href="mailto:studio@scaleandspaces.com" class="text-[#CCCCCC] no-underline hover:text-white">studio@scaleandspaces.com</a></p>
           <p><strong class="text-white">Phone:</strong> <a href="tel:+9779703881733" class="text-[#CCCCCC] no-underline hover:text-white">+977-9703881733</a></p>
         </div>
@@ -3625,7 +3625,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <a href="terms-and-conditions/index.html" class="text-[#888888] no-underline hover:text-white">Terms</a>
           <a href="cookie-policy/index.html" class="text-[#888888] no-underline hover:text-white">Cookies</a>
           <button type="button" onclick="if(window.openCookiePopup)window.openCookiePopup()" class="bg-transparent border-0 p-0 text-xs text-[#888888] hover:text-white underline cursor-pointer font-sans">Cookie Settings</button>
-          <span>scaleandspaces.com.np</span>
+          <span id="cms-footer-domain">scaleandspaces.com.np</span>
         </div>
       </div>
     </div>
@@ -4050,7 +4050,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       modalYear.textContent = p.year;
 
       const waMsg = encodeURIComponent("Hello Scale and Spaces, I would like to inquire regarding your project: " + p.title + " (" + p.location + ").");
-      modalInquire.href = "https://wa.me/9779703881733?text=" + waMsg;
+      modalInquire.href = "https://wa.me/" + (window.__ssWhatsappNumber || "9779703881733") + "?text=" + waMsg;
 
       modalGallery.innerHTML = '';
       if (activeProjectImages.length > 1) {
@@ -4285,7 +4285,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           '<span>' + escHtml(a.category || 'Studio Article') + '</span>' +
           '<span class="text-[#767070] font-normal">' + escHtml(a.date || '') + '</span></div>' +
           '<h3 class="text-sm font-bold text-[#111111] leading-snug mb-2" style="font-family: var(--font-sans);">' + escHtml(a.heading) + '</h3>' +
-          '<p class="text-xs text-[#767070] leading-relaxed" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">' + escHtml(a.desc) + '</p>' +
+          '<p class="text-xs text-[#767070] leading-relaxed" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;">' + escHtml(a.desc) + '</p></div>' +
           '<div class="pt-2.5 border-t border-[#DDD8CE]/70 flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider">' +
           '<span class="text-[#767070] text-[10px] font-mono">Read Preview</span>' +
           (linkHref
@@ -4320,6 +4320,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           if (/^https?:\\/\\//i.test(linkHref)) {
             linkBtn.setAttribute('target', '_blank');
             linkBtn.setAttribute('rel', 'noopener noreferrer');
+            linkBtn.onclick = null;
           } else {
             linkBtn.removeAttribute('target');
             linkBtn.removeAttribute('rel');
@@ -4351,10 +4352,23 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     window.closeArticleModal = closeArticleModal;
     window.closeArticleOnBackdrop = closeArticleOnBackdrop;
 
-    // Live Google Sheet CMS Hydration (Upgradable Settings, Hero, About, Services, Projects, Team, Reviews, FAQs, Partners)
+    // Live Google Sheet CMS Hydration (Upgradable Real-Time Sync: Settings, Hero, About, Services, Projects, Team, Articles, Reviews, FAQs, Partners)
     (function initGoogleSheetCms() {
       const DEFAULT_SHEET_ID = '1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts';
+      window.__ssWhatsappNumber = window.__ssWhatsappNumber || '9779703881733';
       let jsonpCounter = 0;
+      let lastTabSigs = {};
+      let syncInFlight = false;
+      let lastSyncAt = 0;
+      let lastHeroMetaTitle = '';
+
+      function isTabChanged(tabKey, rows) {
+        if (!rows || !rows.length) return false;
+        const sig = JSON.stringify(rows);
+        if (sig === lastTabSigs[tabKey]) return false;
+        lastTabSigs[tabKey] = sig;
+        return true;
+      }
 
       function parseGvizTable(json) {
         const table = json && json.table;
@@ -4427,7 +4441,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           };
           script.src = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) +
             '/gviz/tq?tqx=' + encodeURIComponent('responseHandler:' + cbName) +
-            '&headers=1&sheet=' + encodeURIComponent(tabName);
+            '&headers=1&sheet=' + encodeURIComponent(tabName) + '&_ts=' + Date.now();
           document.head.appendChild(script);
         });
       }
@@ -4437,12 +4451,14 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           return fetchSheetTabJsonp(sheetId, tabName);
         }
         try {
-          const url = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) + '/gviz/tq?tqx=out:json&headers=1&sheet=' + encodeURIComponent(tabName);
+          const url = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) +
+            '/gviz/tq?tqx=out:json&headers=1&sheet=' + encodeURIComponent(tabName) + '&_ts=' + Date.now();
           const res = await fetch(url, { mode: 'cors', cache: 'no-store' });
           if (res.ok) {
             const txt = await res.text();
-            const parsed = parseGvizResponse(txt);
-            if (parsed.length) return parsed;
+            if (txt.indexOf('"status":"error"') === -1 && txt.indexOf('google.visualization.Query.setResponse') !== -1) {
+              return parseGvizResponse(txt);
+            }
           }
         } catch (err) {}
         return fetchSheetTabJsonp(sheetId, tabName);
@@ -4487,8 +4503,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           dataByTab[name] = (results[i] && results[i].status === 'fulfilled') ? results[i].value : [];
         });
 
-        // 1. Settings overrides (Email, Phone, Offices, Website)
-        if (dataByTab.Settings.length) {
+        let anyTabChanged = false;
+
+        // 1. Settings overrides (Email, Phone, WhatsApp, Offices, Tagline, Domain)
+        if (isTabChanged('Settings', dataByTab.Settings)) {
+          anyTabChanged = true;
           const s = kvRowsToMap(dataByTab.Settings);
           if (s.Email) {
             document.querySelectorAll('a[href^="mailto:"]').forEach(function(a) {
@@ -4502,16 +4521,59 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             const telDigits = s.Phone.replace(/[^+0-9]/g, '');
             document.querySelectorAll('a[href^="tel:"]').forEach(function(a) {
               a.href = 'tel:' + telDigits;
-              if (a.textContent.includes('97')) a.textContent = s.Phone;
+              a.textContent = s.Phone;
             });
           }
-          if (s.SEO_Title) document.title = s.SEO_Title;
+          const waRaw = s.WhatsApp || s.Phone || '';
+          const waDigits = String(waRaw).replace(/[^0-9]/g, '');
+          if (!/^-/.test(String(waRaw)) && waDigits.length >= 7) {
+            window.__ssWhatsappNumber = waDigits;
+            document.querySelectorAll('a[href*="wa.me/"]').forEach(function(a) {
+              const cur = a.getAttribute('href') || '';
+              const qIdx = cur.indexOf('?');
+              a.setAttribute('href', 'https://wa.me/' + waDigits + (qIdx !== -1 ? cur.slice(qIdx) : ''));
+            });
+            const displayPhone = (s.Phone && !/^-/.test(s.Phone)) ? s.Phone : ('+' + waDigits);
+            const waMob = document.getElementById('cms-mobile-wa-label');
+            if (waMob) waMob.textContent = displayPhone;
+            const waCta = document.getElementById('cms-contact-wa-label');
+            if (waCta) waCta.textContent = 'WhatsApp (' + displayPhone + ')';
+          }
+          if (s.Head_Office) {
+            ['cms-hero-head-office', 'cms-contact-head-office', 'cms-footer-head-office'].forEach(function(id) {
+              const el = document.getElementById(id);
+              if (el) el.textContent = s.Head_Office;
+            });
+          }
+          if (s.Contact_Office) {
+            ['cms-hero-branch-office', 'cms-contact-branch-office', 'cms-footer-branch-office'].forEach(function(id) {
+              const el = document.getElementById(id);
+              if (el) el.textContent = s.Contact_Office;
+            });
+          }
+          if (s.Tagline) {
+            const tagEl = document.getElementById('cms-footer-tagline');
+            if (tagEl) tagEl.textContent = '\u201C' + s.Tagline + '\u201D';
+          }
+          if (s.Custom_Domain) {
+            const domUrl = normalizeExternalUrl(s.Custom_Domain);
+            const domLabel = domUrl.replace(/^https?:\\/\\//i, '').replace(/\\/+$/, '');
+            const cw = document.getElementById('cms-contact-website');
+            if (cw && domUrl) { cw.href = domUrl; cw.textContent = domLabel; }
+            const fd = document.getElementById('cms-footer-domain');
+            if (fd && domLabel) fd.textContent = domLabel;
+          }
+          if (!lastHeroMetaTitle && (s.Site_Title || s.SEO_Title)) {
+            document.title = s.Site_Title || s.SEO_Title;
+          }
         }
 
-        // 2. Hero overrides (incl. non-visible SEO meta tags synced from Hero tab)
-        if (dataByTab.Hero.length) {
+        // 2. Hero overrides (Badge, Headline, Subtitle, Cover Photos, SEO Meta)
+        if (isTabChanged('Hero', dataByTab.Hero)) {
+          anyTabChanged = true;
           const h = kvRowsToMap(dataByTab.Hero);
           if (h.SEO_Meta_Title) {
+            lastHeroMetaTitle = h.SEO_Meta_Title;
             document.title = h.SEO_Meta_Title;
             const ogT = document.querySelector('meta[property="og:title"]');
             if (ogT) ogT.setAttribute('content', h.SEO_Meta_Title);
@@ -4526,6 +4588,24 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             const mk = document.querySelector('meta[name="keywords"]');
             if (mk) mk.setAttribute('content', h.SEO_Meta_Keywords);
           }
+          if (h.Badge) {
+            const badgeEl = document.getElementById('cms-hero-badge');
+            if (badgeEl) badgeEl.textContent = h.Badge;
+          }
+          if (h.Subtitle) {
+            const subEl = document.getElementById('cms-hero-subtitle');
+            if (subEl) {
+              const marker = 'Scale and Spaces Pvt. Ltd.';
+              const mIdx = h.Subtitle.indexOf(marker);
+              if (mIdx !== -1) {
+                subEl.innerHTML = escHtml(h.Subtitle.slice(0, mIdx)) +
+                  '<strong class="text-[#111111]">' + marker + '</strong>' +
+                  escHtml(h.Subtitle.slice(mIdx + marker.length));
+              } else {
+                subEl.textContent = h.Subtitle;
+              }
+            }
+          }
           if (h.Cover_Color_URL) {
             const hc = document.getElementById('heroBgColor');
             if (hc) hc.src = normalizeSheetMediaUrl(h.Cover_Color_URL);
@@ -4537,16 +4617,23 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           if (h.Headline_Line1 || h.Headline_Line2) {
             const h1 = document.getElementById('heroHeadline');
             if (h1) {
-              h1.innerHTML = '<span class="block text-2xl sm:text-3xl md:text-4xl font-bold mb-1" style="font-family: Georgia, \\'EB Garamond\\', serif;">' +
-                escHtml(h.Headline_Line1 || 'Designing Spaces,') + '</span>' +
-                '<span class="block text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight" style="font-family: \\'EB Garamond\\', Georgia, serif;">' +
-                escHtml(h.Headline_Line2 || 'Defining Lifestyles') + '<span style="font-size: 1.15em;">!</span></span>';
+              const nextL1 = (h.Headline_Line1 || 'Designing Spaces,').trim();
+              const nextL2 = (h.Headline_Line2 || 'Defining Lifestyles').replace(/!+$/, '').trim();
+              const normNext = (nextL1 + ' ' + nextL2 + '!').replace(/\\s+/g, ' ').trim();
+              const normCur = (h1.textContent || '').replace(/\\s+/g, ' ').trim();
+              if (normNext !== normCur) {
+                h1.innerHTML = '<span class="block text-2xl sm:text-3xl md:text-4xl font-bold mb-1" style="font-family: Georgia, \\'EB Garamond\\', serif;">' +
+                  escHtml(nextL1) + '</span>' +
+                  '<span class="block text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight" style="font-family: \\'EB Garamond\\', Georgia, serif;">' +
+                  escHtml(nextL2) + '<span style="font-size: 1.15em;">!</span></span>';
+              }
             }
           }
         }
 
         // 3. About overrides
-        if (dataByTab.About.length) {
+        if (isTabChanged('About', dataByTab.About)) {
+          anyTabChanged = true;
           const ab = kvRowsToMap(dataByTab.About);
           const mapEls = {
             'cms-about-title': ab.Title,
@@ -4571,7 +4658,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
 
         // 4. Services sync
-        if (dataByTab.Services.length) {
+        if (isTabChanged('Services', dataByTab.Services)) {
+          anyTabChanged = true;
           const svcRows = dataByTab.Services.filter(function(r) { return r.Title; });
           const svcGrid = document.getElementById('services-grid');
           if (svcGrid && svcRows.length) {
@@ -4586,7 +4674,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
 
         // 5. Projects sync
-        if (dataByTab.Projects.length) {
+        if (isTabChanged('Projects', dataByTab.Projects)) {
+          anyTabChanged = true;
           const pRows = dataByTab.Projects.filter(function(r) { return r.Title && r.Image_URL; });
           const pGrid = document.getElementById('projects-grid');
           if (pGrid && pRows.length) {
@@ -4627,7 +4716,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
 
         // 6. Team sync
-        if (dataByTab.Team.length) {
+        if (isTabChanged('Team', dataByTab.Team)) {
+          anyTabChanged = true;
           const tRows = dataByTab.Team.filter(function(r) { return r.Name; });
           const tGrid = document.getElementById('team-grid');
           if (tGrid && tRows.length) {
@@ -4661,7 +4751,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
 
         // 7. Reviews sync
-        if (dataByTab.Reviews.length) {
+        if (isTabChanged('Reviews', dataByTab.Reviews)) {
+          anyTabChanged = true;
           const rRows = dataByTab.Reviews.filter(function(r) { return r.Name && r.Review_Comment; });
           const rGrid = document.getElementById('reviews-grid');
           if (rGrid && rRows.length) {
@@ -4690,7 +4781,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
 
         // 8. FAQs sync
-        if (dataByTab.FAQs.length) {
+        if (isTabChanged('FAQs', dataByTab.FAQs)) {
+          anyTabChanged = true;
           const fRows = dataByTab.FAQs.filter(function(r) { return r.Question && r.Answer; });
           const fList = document.getElementById('faqs-list');
           if (fList && fRows.length) {
@@ -4710,7 +4802,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
 
         // 9. Partners sync (Shows Logo + Name in grid; full details & website redirect on click)
-        if (dataByTab.Partners.length) {
+        if (isTabChanged('Partners', dataByTab.Partners)) {
+          anyTabChanged = true;
           const ptRows = dataByTab.Partners.filter(function(r) { return r.Logo_URL || r.Name; });
           if (ptRows.length) {
             ptRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
@@ -4728,7 +4821,8 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         }
 
         // 10. Articles sync
-        if (dataByTab.Articles && dataByTab.Articles.length) {
+        if (isTabChanged('Articles', dataByTab.Articles)) {
+          anyTabChanged = true;
           const artRows = dataByTab.Articles.filter(function(r) { return r.Heading; });
           if (artRows.length) {
             artRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
@@ -4746,12 +4840,30 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           }
         }
 
-        if (window.ScrollTrigger) ScrollTrigger.refresh();
+        if (anyTabChanged && window.ScrollTrigger) ScrollTrigger.refresh();
       }
 
-      if (typeof fetch === 'function') {
-        runSheetSync().catch(function() {});
+      function triggerSheetSync(force) {
+        const now = Date.now();
+        if (syncInFlight) return;
+        if (!force && (now - lastSyncAt) < 4000) return;
+        syncInFlight = true;
+        lastSyncAt = now;
+        runSheetSync().catch(function() {}).finally(function() {
+          syncInFlight = false;
+        });
       }
+
+      triggerSheetSync(true);
+      document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) triggerSheetSync(false);
+      });
+      window.addEventListener('focus', function() {
+        triggerSheetSync(false);
+      });
+      setInterval(function() {
+        if (!document.hidden) triggerSheetSync(false);
+      }, 20000);
     })();
 
     // Mobile Drawer
@@ -4794,7 +4906,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         "- Location: " + encodeURIComponent(loc) + "%0A" +
         "- Brief: " + encodeURIComponent(msg || "None provided");
 
-      const waUrl = "https://wa.me/9779703881733?text=" + fullMsg;
+      const waUrl = "https://wa.me/" + (window.__ssWhatsappNumber || "9779703881733") + "?text=" + fullMsg;
       const feedback = document.getElementById('form-feedback');
       feedback.textContent = "Opening WhatsApp to connect directly with Scale and Spaces...";
       feedback.classList.remove('hidden');

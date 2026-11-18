@@ -1436,18 +1436,19 @@ const customCss = `
       text-align: left;
       position: relative;
     }
-    .discipline-card:hover {
+    .discipline-card:hover,
+    .discipline-card.is-active {
       transform: translateY(-2px);
       border-color: var(--crimson);
     }
     .discipline-monogram {
-      width: 40px;
-      height: 40px;
+      width: 34px;
+      height: 34px;
       background: #444444;
       color: #FFFFFF;
       font-family: var(--font-sans);
       font-weight: 700;
-      font-size: 1.55rem;
+      font-size: 1.35rem;
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
@@ -1456,7 +1457,15 @@ const customCss = `
       flex-shrink: 0;
       transition: background-color 0.3s ease, transform 0.4s var(--ease-expo);
     }
-    .discipline-card:hover .discipline-monogram {
+    @media (min-width: 640px) {
+      .discipline-monogram {
+        width: 40px;
+        height: 40px;
+        font-size: 1.55rem;
+      }
+    }
+    .discipline-card:hover .discipline-monogram,
+    .discipline-card.is-active .discipline-monogram {
       background: var(--crimson);
       transform: scale(1.06);
     }
@@ -2338,6 +2347,34 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </div>
         </div>
 
+        <!-- Classic Page 4 Architectural Category Quick Index (Residences, Commercial, Landscape, Interior, Office, Religious) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 mb-7 reveal-head">
+          <button type="button" data-cat="Residences" onclick="selectCategoryFilter('Residences')" class="discipline-card wc-hover-card">
+            <span class="discipline-monogram">R</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Residences</span>
+          </button>
+          <button type="button" data-cat="Commercial" onclick="selectCategoryFilter('Commercial')" class="discipline-card wc-hover-card">
+            <span class="discipline-monogram">C</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Commercial</span>
+          </button>
+          <button type="button" data-cat="Landscape" onclick="selectCategoryFilter('Landscape')" class="discipline-card wc-hover-card">
+            <span class="discipline-monogram">L</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Landscape Development</span>
+          </button>
+          <button type="button" data-cat="Interior" onclick="selectCategoryFilter('Interior')" class="discipline-card wc-hover-card">
+            <span class="discipline-monogram">I</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Interior Design</span>
+          </button>
+          <button type="button" data-cat="Institutional" onclick="selectCategoryFilter('Institutional')" class="discipline-card wc-hover-card">
+            <span class="discipline-monogram">O</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Office Building</span>
+          </button>
+          <button type="button" data-cat="Religious" onclick="selectCategoryFilter('Religious')" class="discipline-card wc-hover-card">
+            <span class="discipline-monogram">R</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Religious Complexes</span>
+          </button>
+        </div>
+
         <!-- Phone-Swipeable Minimal Underline Filter Strip (Zero Cluttered Boxes) -->
         <div class="filter-scroll-row" role="tablist" aria-label="Filter projects by discipline">
           <button type="button" class="filter-tab active" data-category="all">${icons.grid} All (${projectsData.length})</button>
@@ -2872,6 +2909,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       const targetCat = validCategories.indexOf(cat) !== -1 ? cat : 'all';
       tabs.forEach(function(t) {
         t.classList.toggle('active', t.getAttribute('data-category') === targetCat);
+      });
+      document.querySelectorAll('.discipline-card').forEach(function(dc) {
+        dc.classList.toggle('is-active', dc.getAttribute('data-cat') === targetCat);
       });
 
       const shown = [];

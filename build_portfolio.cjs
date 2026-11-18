@@ -572,7 +572,7 @@ const projectsData = [
   }
 ];
 
-// ALL 10 Team Members with starter profile credentials & downloadable dossier metadata (fully editable via Team Sheet tab)
+// ALL 10 Team Members with profile credentials & downloadable dossier metadata
 const teamData = [
   {
     name: 'YATEENDRA K LABH',
@@ -580,12 +580,12 @@ const teamData = [
     image: 'assets/team/team-yateendra.jpg',
     office: 'Kathmandu & Birgunj Studios',
     experience: 'Practice Leadership',
-    qualification: 'Architect & Studio Director (Editable Template)',
+    qualification: 'Architect & Studio Director',
     specialization: 'Masterplanning, Commercial Complexes, Civic Identity & Conceptual Architecture',
     bio: 'Leads architectural vision, urban masterplanning, civic competitions, and multidisciplinary studio oversight across Kathmandu Valley and Terai Nepal.',
     keyProjects: 'Mithila Tower (Malangwa), Jeetpur Simara Civic Emblem (1st Prize Winner), Shavdaahgriham Ranighat Masterplan',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Architect Profile & Dossier (Template)',
+    cvLabel: 'Architect Profile & Dossier',
     cvUrl: ''
   },
   {
@@ -594,12 +594,12 @@ const teamData = [
     image: 'assets/team/team-supriya.jpg',
     office: 'Tokha-6, Kathmandu',
     experience: 'Principal Lead',
-    qualification: 'Principal Architect (Editable Template)',
+    qualification: 'Principal Architect',
     specialization: 'Residential Villas, Healthcare Facilities, Daylight Modeling & Hospitality Interiors',
     bio: 'Directs architectural design development, human-centric residential zoning, hospital layouts, and permit-ready architectural documentation.',
     keyProjects: 'Hyatt Community Hospital (Sarlahi), Residence of Mr. Tulsi Gupta, Residence of Mrs. Uma Shah',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Principal Architect Profile (Template)',
+    cvLabel: 'Principal Architect Profile',
     cvUrl: ''
   },
   {
@@ -608,12 +608,12 @@ const teamData = [
     image: 'assets/team/team-sheetal.jpg',
     office: 'Birgunj & Kathmandu Studios',
     experience: 'Architectural Design',
-    qualification: 'Registered Practice Architect (Editable Template)',
+    qualification: 'Registered Practice Architect',
     specialization: 'Residential Elevation Design, Working Drawings & Spatial Planning',
     bio: 'Translates client lifestyle briefs into clear functional plans, facade compositions, and coordinated municipal working drawings.',
     keyProjects: 'Private Residences & Institutional Campuses across Parsa, Chitwan, and Kathmandu',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Architect Portfolio Sheet (Template)',
+    cvLabel: 'Architect Portfolio Sheet',
     cvUrl: ''
   },
   {
@@ -622,12 +622,12 @@ const teamData = [
     image: 'assets/team/team-ashmin.jpg',
     office: 'Tokha-6, Kathmandu',
     experience: 'Architectural Design & 3D',
-    qualification: 'Project Architect (Editable Template)',
+    qualification: 'Project Architect',
     specialization: 'Institutional Buildings, Religious Complexes & 3D Visualization',
     bio: 'Specializes in cultural and institutional architecture, 3D massing studies, and exterior contextual rendering.',
     keyProjects: 'ISKCON Temple Complex (Birgunj), Kalikamai Temple Complex, Educational & Civic Works',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Architect Bio & Works (Template)',
+    cvLabel: 'Architect Bio & Works',
     cvUrl: ''
   },
   {
@@ -636,12 +636,12 @@ const teamData = [
     image: 'assets/team/team-sunil.jpg',
     office: 'Birgunj & Kathmandu Studios',
     experience: 'Structural Engineering',
-    qualification: 'Structural Engineer (Editable Template)',
+    qualification: 'Structural Engineer',
     specialization: 'NBC Seismic Analysis, RCC/Steel Framing & Foundation Detailing',
     bio: 'Leads structural finite-element modeling, Nepal National Building Code seismic design checks, and bar-bending reinforcement details.',
     keyProjects: 'Multi-Story Commercial Complexes, Hyatt Hospital Framing & Residential Seismic Detailing',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Structural Engineering Profile (Template)',
+    cvLabel: 'Structural Engineering Profile',
     cvUrl: ''
   },
   {
@@ -650,12 +650,12 @@ const teamData = [
     image: 'assets/team/team-chetan.jpg',
     office: 'Birgunj-12, Parsa',
     experience: 'Interior Architecture & BOQ',
-    qualification: 'Civil & Interior Design Lead (Editable Template)',
+    qualification: 'Civil & Interior Design Lead',
     specialization: 'Bespoke Residential & Executive Interiors, Custom Joinery & 3D Renders',
     bio: 'Combines civil engineering precision with warm materiality, lighting hierarchies, modular joinery detailing, and budget-aligned BOQ estimation.',
     keyProjects: 'Corporate & Residence Interiors in Birgunj & Kathmandu (Modern Luxury Living, Bidur Khatiwada Residence)',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Interior Design Dossier (Template)',
+    cvLabel: 'Interior Design Dossier',
     cvUrl: ''
   },
   {
@@ -664,12 +664,12 @@ const teamData = [
     image: 'assets/team/team-rohan.jpg',
     office: 'Birgunj & Kathmandu Studios',
     experience: 'Plumbing & Sanitary MEP',
-    qualification: 'Sanitary Systems Designer (Editable Template)',
+    qualification: 'Sanitary Systems Designer',
     specialization: 'Water Supply Risers, Storm Drainage, Septic & Healthcare MEP',
     bio: 'Designs reliable domestic water supply networks, rainwater harvesting, waste routing, and chamber inspection schedules.',
     keyProjects: 'Commercial Towers, Residential Utilities & Healthcare Sanitary Infrastructures',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Sanitary Designer Profile (Template)',
+    cvLabel: 'Sanitary Designer Profile',
     cvUrl: ''
   },
   {
@@ -678,12 +678,12 @@ const teamData = [
     image: 'assets/team/team-bishal.jpg',
     office: 'Tokha-6, Kathmandu',
     experience: 'Electrical & Lighting Systems',
-    qualification: 'Electrical Engineer (Editable Template)',
+    qualification: 'Electrical Engineer',
     specialization: 'Power Distribution, Load Calculations, Panel Schedules & Earthing',
     bio: 'Prepares safe residential and commercial electrical schematics, lighting circuit layouts, backup power zoning, and safety grounding details.',
     keyProjects: 'BYD Showroom Illumination, Commercial Hubs, Hospitals & Apartments',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Electrical Engineer Profile (Template)',
+    cvLabel: 'Electrical Engineer Profile',
     cvUrl: ''
   },
   {
@@ -692,12 +692,12 @@ const teamData = [
     image: 'assets/team/team-megnath.jpg',
     office: 'Kathmandu & Birgunj Studios',
     experience: 'Project Scheduling & Procurement',
-    qualification: 'Project Management Lead (Editable Template)',
+    qualification: 'Project Management Lead',
     specialization: 'Milestone Scheduling, Tendering, Contractor Coordination & Cost Control',
     bio: 'Coordinates multi-team consultant schedules, BOQ tender packaging, client approvals, and phased construction timelines.',
     keyProjects: 'Turnkey Commercial, Institutional & Mixed-Use Deliveries across Nepal',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Project Manager Resume (Template)',
+    cvLabel: 'Project Manager Resume',
     cvUrl: ''
   },
   {
@@ -706,12 +706,12 @@ const teamData = [
     image: 'assets/team/team-wasim.jpg',
     office: 'Birgunj-12, Parsa',
     experience: 'Site Supervision & QA',
-    qualification: 'Site Engineer (Editable Template)',
+    qualification: 'Site Engineer',
     specialization: 'Layout Execution, Rebar Checking, Quality Assurance & Site Billing',
     bio: 'Oversees daily site layout verification, concrete pouring inspections, bar-bending compliance, and measurement billing on active sites.',
     keyProjects: 'Field Supervision across Birgunj, Parsa, Sarlahi, and Kathmandu Valley',
     email: 'studio@scaleandspaces.com',
-    cvLabel: 'Site Engineer Profile (Template)',
+    cvLabel: 'Site Engineer Profile',
     cvUrl: ''
   }
 ];
@@ -2812,7 +2812,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </span>
           <h2 class="portfolio-section-title">OUR TEAM_</h2>
           <p class="text-sm text-[#767070] mt-2">
-            Click any team specialist below to inspect full credentials &amp; download studio profile sheet
+            Architects, Structural &amp; Civil Engineers, Interior Designers &amp; Project Managers
           </p>
         </div>
 
@@ -2822,7 +2822,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             const first = parts.slice(0, -1).join(' ');
             const last = parts[parts.length - 1];
             return `
-              <div class="team-card wc-hover-card" role="button" tabindex="0" aria-label="View profile and downloads for ${m.name}" onclick="openTeamModal(${idx})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamModal(${idx});}">
+              <div class="team-card wc-hover-card" role="button" tabindex="0" aria-label="View profile for ${m.name}" onclick="openTeamModal(${idx})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openTeamModal(${idx});}">
                 <div class="team-circle-stage">
                   <div class="team-img-wrap">
                     <img src="${m.image}" alt="${m.name} — ${m.role} at Scale and Spaces Pvt. Ltd." loading="lazy" />
@@ -2830,7 +2830,6 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 </div>
                 <div class="team-name-box">${first} <b>${last}</b></div>
                 <div class="team-role-box">${m.role}</div>
-                <div class="team-detail-hint">Profile &amp; CV &rarr;</div>
               </div>
             `;
           }).join('')}
@@ -3209,7 +3208,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               <span class="text-[11px] font-mono uppercase tracking-widest text-[#8F0000] font-bold block mb-1">Downloads &amp; Credentials</span>
               <p id="team-modal-cv-label" class="text-sm font-bold text-[#111111] mb-1"></p>
               <p class="text-[11px] text-[#767070] leading-relaxed">
-                Download printable profile &amp; role dossier (automatically linked to official CV PDF when updated via Google Sheets).
+                Download official studio profile, credentials summary, and project involvement brief.
               </p>
             </div>
             <div class="flex flex-col gap-2">
@@ -3758,8 +3757,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               return '<div class="team-card wc-hover-card" role="button" tabindex="0" onclick="openTeamModal(' + idx + ')">' +
                 '<div class="team-circle-stage"><div class="team-img-wrap"><img src="' + escHtml(m.image) + '" alt="' + escHtml(m.name) + '" loading="lazy" /></div></div>' +
                 '<div class="team-name-box">' + escHtml(first) + ' <b>' + escHtml(last) + '</b></div>' +
-                '<div class="team-role-box">' + escHtml(m.role) + '</div>' +
-                '<div class="team-detail-hint">Profile &amp; CV &rarr;</div></div>';
+                '<div class="team-role-box">' + escHtml(m.role) + '</div></div>';
             }).join('');
           }
         }

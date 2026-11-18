@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://madex-source.github.io/madex/sitemap.xml

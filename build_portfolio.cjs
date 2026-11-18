@@ -14,21 +14,19 @@ const projectsData = [
     categoryLabel: 'Commercial Buildings',
     image: 'assets/projects/mithila_tower.jpg',
     images: ['assets/projects/mithila_tower.jpg'],
-    desc: 'Contemporary multi-storey commercial tower featuring vertical louvers, deep cantilever balconies, and integrated retail floors tailored for the urban hub of Malangwa.',
-    featured: true
+    desc: 'Contemporary commercial landmark featuring terracotta perforated jali screen geometry, deep cantilever terraces, curved glazed archways, and integrated retail frontages tailored for Malangwa.'
   },
   {
     id: 'hyatt-community-hospital',
     title: 'Hyatt Community Hospital',
-    client: 'Community Healthcare Facility',
+    client: 'Barhathwa 06 Healthcare Center',
     location: 'Barhathwa, Sarlahi',
     year: '2025 A.D.',
     category: 'Commercial',
     categoryLabel: 'Commercial Buildings',
     image: 'assets/projects/hyatt_hospital_1.jpg',
     images: ['assets/projects/hyatt_hospital_1.jpg', 'assets/projects/hyatt_hospital_2.jpg'],
-    desc: 'Regional healthcare institution engineered for efficient medical zoning, cross-ventilation, emergency ramp accessibility, and resilient structural safety in Sarlahi.',
-    featured: true
+    desc: 'Multi-storey community hospital designed for clear emergency ambulance access, hygienic ward zoning, vertical louvered daylighting, and seismic safety.'
   },
   {
     id: 'aashiq-ansari-complex',
@@ -40,7 +38,7 @@ const projectsData = [
     categoryLabel: 'Commercial Buildings',
     image: 'assets/projects/aashiq_ansari_commercial.jpg',
     images: ['assets/projects/aashiq_ansari_commercial.jpg'],
-    desc: 'High-density mixed retail and commercial complex with glass curtain walls, wide circulation corridors, and energy-efficient shading along the Gandak arterial corridor.'
+    desc: 'Mixed retail and commercial complex featuring expressive angular concrete canopies, glass balustrades, double-glazed ground storefronts, and generous arterial visibility.'
   },
   {
     id: 'umashankar-commercial',
@@ -52,7 +50,7 @@ const projectsData = [
     categoryLabel: 'Commercial Buildings',
     image: 'assets/projects/umashankar_commercial.jpg',
     images: ['assets/projects/umashankar_commercial.jpg'],
-    desc: 'Corporate retail landmark designed with balanced massing, distinctive fenestrations, and a pedestrian-friendly front arcade.'
+    desc: 'Contemporary urban retail & banking building uniting classical arched glazing, brick accents, curved concrete soffits, and active street-level hospitality spaces.'
   },
   {
     id: 'anand-chaudhary-commercial',
@@ -64,7 +62,7 @@ const projectsData = [
     categoryLabel: 'Commercial Buildings',
     image: 'assets/projects/anand_chaudhary_commercial.jpg',
     images: ['assets/projects/anand_chaudhary_commercial.jpg'],
-    desc: 'Urban commercial center planned with modular floor plates, expansive retail frontages, and optimized rooftop utility zones.'
+    desc: 'Sculpted commercial development highlighted by dramatic evening architectural illumination, vertical metal grilles, textured stone cladding, and organized forecourt parking.'
   },
   {
     id: 'kamlesh-agrawal-commercial',
@@ -76,7 +74,7 @@ const projectsData = [
     categoryLabel: 'Commercial Buildings',
     image: 'assets/projects/kamlesh_agrawal_commercial.jpg',
     images: ['assets/projects/kamlesh_agrawal_commercial.jpg'],
-    desc: 'Mixed-use development pairing streetfront commercial spaces with private residential quarters above in prime Adarshnagar.'
+    desc: 'Mixed-use commercial cum residence building combining warm earthy composite panels, continuous balcony bands, and private upper living suites in prime Adarshnagar.'
   },
   {
     id: 'byd-showroom',
@@ -88,7 +86,7 @@ const projectsData = [
     categoryLabel: 'Commercial Buildings',
     image: 'assets/projects/byd_showroom_1.jpg',
     images: ['assets/projects/byd_showroom_1.jpg', 'assets/projects/byd_showroom_2.jpg'],
-    desc: 'Electric vehicle showroom adhering to global brand guidelines, featuring seamless glazed facades, custom lighting tracks, and an expansive display lounge.'
+    desc: 'Flagship electric vehicle showroom adhering to international brand guidelines with double-height structural glazing, sweeping aluminum fascia, delivery bay, and customer lounge.'
   },
   {
     id: 'adarsh-city-center',
@@ -100,7 +98,7 @@ const projectsData = [
     categoryLabel: 'Commercial Buildings',
     image: 'assets/projects/adarsh_city_center_1.jpg',
     images: ['assets/projects/adarsh_city_center_1.jpg', 'assets/projects/adarsh_city_center_2.jpg'],
-    desc: 'Highway hospitality and commercial transit hub incorporating convenience retail, dining terrace, landscaped rest plaza, and refuelling forecourt.'
+    desc: 'Integrated highway commercial hub pairing a modernized refuelling forecourt with an open-air festive shopping promenade, timber-louvered atrium tower, and cinema retail frontage.'
   },
 
   // Landscape Development
@@ -113,9 +111,13 @@ const projectsData = [
     category: 'Landscape',
     categoryLabel: 'Landscape Development',
     image: 'assets/projects/shavdaahgriham_crematorium.jpg',
-    images: ['assets/projects/shavdaahgriham_crematorium.jpg', 'assets/projects/shavdaahgriham_roof.jpg', 'assets/projects/shavdaahgriham_ranighat_1.jpg'],
-    desc: 'Redevelopment of Ranighat Samshanghat. Tent-cloth form inspires peaceful minimalist geometry, while traditional Khapada clay roofing preserves indigenous Birgunj heritage.',
-    featured: true
+    images: [
+      'assets/projects/shavdaahgriham_crematorium.jpg',
+      'assets/projects/shavdaahgriham_ranighat_1.jpg',
+      'assets/projects/shavdaahgriham_roof.jpg',
+      'assets/projects/shavdaahgriham_pavilion.jpg'
+    ],
+    desc: 'Redevelopment of Ranighat Samshanghat. Tent-cloth form inspires peaceful minimalist geometry, while traditional Khapada roofing preserves indigenous Birgunj heritage alongside calm scattering gardens.'
   },
   {
     id: 'recreational-mato-park',
@@ -126,8 +128,14 @@ const projectsData = [
     category: 'Landscape',
     categoryLabel: 'Landscape Development',
     image: 'assets/projects/recreational_mato_park_1.jpg',
-    images: ['assets/projects/recreational_mato_park_1.jpg', 'assets/projects/recreational_mato_park_2.jpg'],
-    desc: 'Civic recreational park featuring eco-sensitive earthworks, native Terai flora pathways, community gazebos, water retention ponds, and leisure promenades.'
+    images: [
+      'assets/projects/recreational_mato_park_1.jpg',
+      'assets/projects/recreational_mato_park_2.jpg',
+      'assets/projects/recreational_mato_park_3.jpg',
+      'assets/projects/recreational_mato_park_4.jpg',
+      'assets/projects/recreational_mato_park_5.jpg'
+    ],
+    desc: 'Large civic park development welcoming visitors through an iconic bamboo-and-masonry entry portal into landscaped garden rings, gazebos, water fountains, and multipurpose community pavilions.'
   },
   {
     id: 'iro-birgunj-landscape',
@@ -139,7 +147,7 @@ const projectsData = [
     categoryLabel: 'Landscape Development',
     image: 'assets/projects/iro_birgunj_landscape.jpg',
     images: ['assets/projects/iro_birgunj_landscape.jpg'],
-    desc: 'Public institutional landscape revitalization introducing manicured greenery, permeable paving, stone curbs, and pedestrian-friendly arrival squares.'
+    desc: 'Public institutional plaza transformation introducing curvilinear brick planter beds, wheelchair-accessible paved walkways, native shade trees, and bamboo privacy screening.'
   },
 
   // Residences
@@ -153,8 +161,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/tulsi_gupta_residence_1.jpg',
     images: ['assets/projects/tulsi_gupta_residence_1.jpg', 'assets/projects/tulsi_gupta_residence_2.jpg'],
-    desc: 'Modern tropical residence boasting vertical wood-finish louvers, generous overhangs for Terai heat mitigation, and seamless indoor-outdoor courtyards.',
-    featured: true
+    desc: 'Neoclassical family villa with grand double-height fluted columns, semicircular balconies, arched fenestrations, and lush landscaped arrival motor court.'
   },
   {
     id: 'shahid-alam-residence',
@@ -166,7 +173,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/shahid_alam_residence.jpg',
     images: ['assets/projects/shahid_alam_residence.jpg'],
-    desc: 'Private residence combining contemporary rectilinear volumes, stone-clad feature walls, and cantilevered viewing decks.'
+    desc: 'Contemporary private residence combining crisp rectilinear geometry, stacked natural stone accents, and cantilevered viewing decks.'
   },
   {
     id: 'rohan-yadav-residence',
@@ -178,7 +185,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/rohan_yadav_residence.jpg',
     images: ['assets/projects/rohan_yadav_residence.jpg'],
-    desc: 'Clean geometric residential architecture with integrated planters, expansive corner glazing, and climate-responsive sunshades.'
+    desc: 'Urban residential design balancing exposed brick planes, symmetrical balcony slabs, and clean vehicular entry shelter.'
   },
   {
     id: 'sumit-singh-residence',
@@ -190,7 +197,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/sumit_singh_residence.jpg',
     images: ['assets/projects/sumit_singh_residence.jpg'],
-    desc: 'Contemporary urban villa featuring textured exterior finishes, concealed drainage engineering, and open-plan family gathering zones.'
+    desc: 'Modern corner villa defined by a vertical glazed stairwell tower, brick veneer accents, and wraparound rooftop terrace railings.'
   },
   {
     id: 'ashok-shah-residence',
@@ -202,7 +209,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/ashok_shah_residence.jpg',
     images: ['assets/projects/ashok_shah_residence.jpg'],
-    desc: 'Multi-level residence integrating private medical consultation chambers with expansive upper-floor family living quarters.'
+    desc: 'Multi-level mixed typology pairing commercial ground bays with private clinical chambers and family living suites above.'
   },
   {
     id: 'rajeshwar-tiwari-residence',
@@ -214,7 +221,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/rajeshwar_tiwari_residence.jpg',
     images: ['assets/projects/rajeshwar_tiwari_residence.jpg'],
-    desc: 'Suburban family home with classical proportions, generous verandas, and lush perimeter garden framing.'
+    desc: 'Suburban residence dressed in natural dressed stone blocks, timber pergola terrace crowning, and warm C-frame accent bands.'
   },
   {
     id: 'tikaram-dhakal-residence',
@@ -226,7 +233,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/tikaram_dhakal_residence.jpg',
     images: ['assets/projects/tikaram_dhakal_residence.jpg'],
-    desc: 'Valley foothill modern residence in Budhanilkantha designed to capture southern mountain sunlight, with terrace gardens and seismic framing.'
+    desc: 'Budhanilkantha residence uniting traditional Nepali brick masonry with modern cantilevered grey boxes and shingled pitched overhang eaves.'
   },
   {
     id: 'samir-ojha-residence',
@@ -238,7 +245,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/samir_ojha_residence.jpg',
     images: ['assets/projects/samir_ojha_residence.jpg'],
-    desc: 'Kathmandu urban home featuring efficient daylight wells, acoustic envelope insulation, and refined spatial planning.'
+    desc: 'Expressive Kathmandu facade sculpting sweeping curved brick balconies alongside crisp cantilevered slate framing.'
   },
   {
     id: 'prakash-amatya-residence',
@@ -250,7 +257,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/prakash_amatya_residence.jpg',
     images: ['assets/projects/prakash_amatya_residence.jpg'],
-    desc: 'Hillside residence tailored for sloping topography in Chandragiri, maximizing panoramic valley views.'
+    desc: 'Intimate Chandragiri residence set within illuminated perimeter walls, pairing warm cove lighting with vertical louver screens.'
   },
   {
     id: 'yagya-raj-upreti-residence',
@@ -262,7 +269,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/yagya_raj_upreti_residence.jpg',
     images: ['assets/projects/yagya_raj_upreti_residence.jpg'],
-    desc: 'Step-back hillside architecture celebrating natural sunlight and warm brick-accented styling.'
+    desc: 'Multi-storey family home combining warm exposed brick masonry with grey texture render and glass balconies.'
   },
   {
     id: 'bidur-khatiwada-residence',
@@ -274,7 +281,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/bidur_khatiwada_residence.jpg',
     images: ['assets/projects/bidur_khatiwada_residence.jpg'],
-    desc: 'Serene Lalitpur family home pairing minimalist white volumes with warm timber trims and rear lawns.'
+    desc: 'Lalitpur residential dwelling pairing clean rectilinear frames with exposed brick piers and horizontal metal railings.'
   },
   {
     id: 'uma-shah-residence',
@@ -286,7 +293,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/uma_shah_residence.jpg',
     images: ['assets/projects/uma_shah_residence.jpg'],
-    desc: 'Modern suburban residence with cantilevered entry porch and functional floor plan layout.'
+    desc: 'Distinctive Tokha home distinguished by a signature circular porthole window, pitched tile caps, and red-brick volumes.'
   },
   {
     id: 'laxmi-poudel-residence',
@@ -298,7 +305,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/laxmi_poudel_residence.jpg',
     images: ['assets/projects/laxmi_poudel_residence.jpg'],
-    desc: 'Contextual suburban dwelling in Bhaktapur harmonizing traditional brick tones with modern living.'
+    desc: 'Illustrative architectural residence elevation designed for functional urban living in Bhaktapur.'
   },
   {
     id: 'narayan-baral-residence',
@@ -310,7 +317,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/narayan_baral_residence.jpg',
     images: ['assets/projects/narayan_baral_residence.jpg'],
-    desc: 'Expansive Eastern Nepal villa boasting deep wraparound balconies, high ceilings, and perimeter garden landscaping.'
+    desc: 'Dynamic curved roof silhouettes framing shaded carport, wraparound terraces, and lush Jhapa gardens.'
   },
   {
     id: 'bhim-baral-residence',
@@ -322,7 +329,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/bhim_baral_residence.jpg',
     images: ['assets/projects/bhim_baral_residence.jpg'],
-    desc: 'Contemporary family home designed for multi-generational comfort, spacious vehicle porch, and cross ventilation.'
+    desc: 'Contemporary Birtamod home featuring perforated brick jaali screen towers, recessed circular glazing, and shaded verandas.'
   },
   {
     id: 'chiran-khatiwada-residence',
@@ -334,7 +341,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/chiran_khatiwada_residence.jpg',
     images: ['assets/projects/chiran_khatiwada_residence.jpg'],
-    desc: 'Modernist country residence with horizontal roof planes, generous window openings, and serene landscape views.'
+    desc: 'Serene two-storey tropical pavilion surrounded by palm trees, stone pillars, and intimate outdoor patio seating.'
   },
   {
     id: 'jagdish-mahato-residence',
@@ -346,7 +353,7 @@ const projectsData = [
     categoryLabel: 'Residence',
     image: 'assets/projects/jagdish_mahato_residence.jpg',
     images: ['assets/projects/jagdish_mahato_residence.jpg'],
-    desc: 'Janakpur residence balancing regional Mithila aesthetic sensibilities with modern structural resilience.'
+    desc: 'Classical Janakpur bungalow uniting ornamental pediments, ionic columns, and bespoke lattice boundary screens.'
   },
 
   // Office / Institutional Buildings
@@ -360,8 +367,7 @@ const projectsData = [
     categoryLabel: 'Office / Institutional Buildings',
     image: 'assets/projects/birgunj_customs_apartment.jpg',
     images: ['assets/projects/birgunj_customs_apartment.jpg'],
-    desc: 'Low-rise staff residential apartment complex for government customs officers, providing comfortable quarters at Nepal’s key trade gateway.',
-    featured: true
+    desc: 'Staff residential apartment complex featuring brick facade articulation, circular balustrade cutouts, terracotta pitched roofs, and garden terraces.'
   },
   {
     id: 'alpine-high-school',
@@ -373,7 +379,7 @@ const projectsData = [
     categoryLabel: 'Office / Institutional Buildings',
     image: 'assets/projects/alpine_high_school.jpg',
     images: ['assets/projects/alpine_high_school.jpg'],
-    desc: 'Institutional administration building designed with acoustic control, wide circulation staircases, and direct oversight over academic courtyards.'
+    desc: 'School administration building defined by bold institutional branding, angled curtain glazing, and clear entrance legibility.'
   },
   {
     id: 'aria-institute',
@@ -385,7 +391,7 @@ const projectsData = [
     categoryLabel: 'Office / Institutional Buildings',
     image: 'assets/projects/aria_institute.jpg',
     images: ['assets/projects/aria_institute.jpg'],
-    desc: 'Educational institution planned for flexible laboratory configurations, multimedia lecture halls, and climate-buffered verandas.'
+    desc: 'Academic institute combining full-height stairwell glazing, angular horizontal sun-shading louvers, and student plaza paving.'
   },
   {
     id: 'standards-metrology-hetauda',
@@ -397,7 +403,7 @@ const projectsData = [
     categoryLabel: 'Office / Institutional Buildings',
     image: 'assets/projects/standards_metrology_hetauda.jpg',
     images: ['assets/projects/standards_metrology_hetauda.jpg'],
-    desc: 'Governmental calibration testing facility with vibration-isolated foundations, laboratory specifications, and secure administrative suites.'
+    desc: 'Governmental calibration testing facility engineered with clean brick tower cores, slanted canopies, and technical laboratory suites.'
   },
   {
     id: 'arun-rural-municipality',
@@ -407,9 +413,9 @@ const projectsData = [
     year: '2023 A.D.',
     category: 'Institutional',
     categoryLabel: 'Office / Institutional Buildings',
-    image: 'assets/projects/arun_rural_municipality_1.jpg',
-    images: ['assets/projects/arun_rural_municipality_1.jpg', 'assets/projects/arun_rural_municipality_2.jpg'],
-    desc: 'Local government civic complex in Bhojpur accommodating council chambers, citizen service counters, and municipal operations.'
+    image: 'assets/projects/arun_rural_municipality_2.jpg',
+    images: ['assets/projects/arun_rural_municipality_2.jpg', 'assets/projects/arun_rural_municipality_1.jpg'],
+    desc: 'Civic administrative headquarters in Bhojpur crowned by a sculptural arched portico welcoming citizens into public council chambers.'
   },
   {
     id: 'blood-transfusion-center',
@@ -421,7 +427,7 @@ const projectsData = [
     categoryLabel: 'Office / Institutional Buildings',
     image: 'assets/projects/blood_transfusion_center.jpg',
     images: ['assets/projects/blood_transfusion_center.jpg'],
-    desc: 'Eastern Himalayan healthcare facility built to stringent hygiene protocols, cold-storage infrastructure, and emergency power reliability.'
+    desc: 'Himalayan healthcare service center blending traditional arched dormer detailing with sterile laboratory zoning.'
   },
   {
     id: 'himalaya-kiran-campus',
@@ -433,7 +439,7 @@ const projectsData = [
     categoryLabel: 'Office / Institutional Buildings',
     image: 'assets/projects/himalaya_kiran_campus.jpg',
     images: ['assets/projects/himalaya_kiran_campus.jpg'],
-    desc: 'Academic multipurpose block housing an auditorium, seminar rooms, and scenic student library.'
+    desc: 'Academic multipurpose campus block pairing crisp crimson portal framing with accessible student walkways.'
   },
   {
     id: 'animal-quarantine-jhapa',
@@ -445,7 +451,7 @@ const projectsData = [
     categoryLabel: 'Office / Institutional Buildings',
     image: 'assets/projects/animal_quarantine_jhapa.jpg',
     images: ['assets/projects/animal_quarantine_jhapa.jpg'],
-    desc: 'Cross-border veterinary inspection and quarantine office at the eastern transit corridor.'
+    desc: 'Symmetrical brick-and-concrete border inspection headquarters designed for Eastern Nepal transit administration.'
   },
 
   // Religious Complexes
@@ -459,8 +465,7 @@ const projectsData = [
     categoryLabel: 'Religious Complexes',
     image: 'assets/projects/isckon_temple_birgunj.jpg',
     images: ['assets/projects/isckon_temple_birgunj.jpg'],
-    desc: 'Sacred architecture incorporating classical Shikhar elements, circumambulatory pradakshina pathways, and resonant prayer hall.',
-    featured: true
+    desc: 'Contemporary sacred temple harmonizing traditional shikhara spire with exposed brick geometry, grand processional stairs, and serene carved mandapa.'
   },
   {
     id: 'kalikamai-temple-complex',
@@ -472,7 +477,7 @@ const projectsData = [
     categoryLabel: 'Religious Complexes',
     image: 'assets/projects/kalikamai_temple_complex.jpg',
     images: ['assets/projects/kalikamai_temple_complex.jpg'],
-    desc: 'Sacred community pilgrimage complex featuring traditional brick arches, ceremonial gateways, and sheltered gathering pavilions.'
+    desc: 'Sacred pilgrimage complex crowned by ribbed domes and golden finials, guarded by stone lion sculptures around an open ceremonial courtyard.'
   },
   {
     id: 'arun-adhyatmik-temple',
@@ -484,7 +489,7 @@ const projectsData = [
     categoryLabel: 'Religious Complexes',
     image: 'assets/projects/arun_adhyatmik_temple.jpg',
     images: ['assets/projects/arun_adhyatmik_temple.jpg'],
-    desc: 'Spiritual meditation and temple center nested in the hills of Bhojpur, emphasizing natural stone and peaceful proportions.'
+    desc: 'Traditional Nepali multi-tiered pagoda temple crafted with intricate timber struts, brass-toned roof slopes, and carved red brick walls.'
   },
 
   // Interior Design
@@ -497,9 +502,12 @@ const projectsData = [
     category: 'Interior',
     categoryLabel: 'Interior Design',
     image: 'assets/projects/interior_bidur_khatiwada_1.jpg',
-    images: ['assets/projects/interior_bidur_khatiwada_1.jpg', 'assets/projects/interior_bidur_khatiwada_2.jpg', 'assets/projects/interior_bidur_khatiwada_kitchen.jpg'],
-    desc: 'Warm contemporary residential interior detailing custom walnut joinery, concealed warm LED coves, and a modular ergonomic kitchen.',
-    featured: true
+    images: [
+      'assets/projects/interior_bidur_khatiwada_1.jpg',
+      'assets/projects/interior_bidur_khatiwada_2.jpg',
+      'assets/projects/interior_bidur_khatiwada_kitchen.jpg'
+    ],
+    desc: 'Bespoke study window-seat nook, warm timber ceiling slats, master suite cabinetry, and slate-toned minimalist modular kitchen.'
   },
   {
     id: 'interior-narayan-baral',
@@ -510,8 +518,12 @@ const projectsData = [
     category: 'Interior',
     categoryLabel: 'Interior Design',
     image: 'assets/projects/interior_narayan_baral_1.jpg',
-    images: ['assets/projects/interior_narayan_baral_1.jpg', 'assets/projects/interior_narayan_baral_bedroom.jpg', 'assets/projects/interior_narayan_baral_dining.jpg'],
-    desc: 'Bespoke residential interiors featuring stone accent paneling, sculpted ceilings, and integrated private dining lighting.'
+    images: [
+      'assets/projects/interior_narayan_baral_1.jpg',
+      'assets/projects/interior_narayan_baral_bedroom.jpg',
+      'assets/projects/interior_narayan_baral_dining.jpg'
+    ],
+    desc: 'Warm timber flooring, exposed rustic brick accent wall, under-stair reading nook, and layered pendant ceiling coves.'
   },
   {
     id: 'interior-nitesh-singh',
@@ -522,12 +534,19 @@ const projectsData = [
     category: 'Interior',
     categoryLabel: 'Interior Design',
     image: 'assets/projects/interior_nitesh_singh_living.jpg',
-    images: ['assets/projects/interior_nitesh_singh_living.jpg', 'assets/projects/interior_nitesh_singh_master.jpg', 'assets/projects/interior_nitesh_singh_tv.jpg'],
-    desc: 'Contemporary interior styling incorporating fluted wooden wall panels, custom wardrobes, and layered ambiance illumination.'
+    images: [
+      'assets/projects/interior_nitesh_singh_living.jpg',
+      'assets/projects/interior_nitesh_singh_dining.jpg',
+      'assets/projects/interior_nitesh_singh_master.jpg',
+      'assets/projects/interior_nitesh_singh_bed2.jpg',
+      'assets/projects/interior_nitesh_singh_tv.jpg',
+      'assets/projects/interior_nitesh_singh_study.jpg'
+    ],
+    desc: 'Complete 6-room interior architecture encompassing marble media walls, geometric-tiled kitchen & dining suite, upholstered master bedrooms, and warm oak study.'
   },
   {
     id: 'interior-modern-luxury',
-    title: 'Modern Living Suite Interior',
+    title: 'Modern Living Lounge Interior',
     client: 'Residential Interior Study',
     location: 'Kathmandu',
     year: '2024 A.D.',
@@ -535,34 +554,35 @@ const projectsData = [
     categoryLabel: 'Interior Design',
     image: 'assets/projects/interior_modern_luxury_living.jpg',
     images: ['assets/projects/interior_modern_luxury_living.jpg'],
-    desc: 'Residential lounge interior with tailored upholstery, textured acoustic backdrops, and warm accent illumination.'
+    desc: 'High-contrast modern living room pairing sculptural pendant lights with plush neutral seating and architectural shelving.'
   },
 
-  // Competitions & Identity
+  // Logo Design Competition Winning Entry (Page 70)
   {
     id: 'logo-competition-winner',
     title: 'Logo Design Competition Winning Entry',
-    client: 'Competition Winner',
-    location: 'National Competition',
+    client: 'Jeetpur Simara Sub-Metropolitan City (Competition Winner)',
+    location: 'Jeetpur Simara, Bara',
     year: '2022 A.D.',
     category: 'Branding',
     categoryLabel: 'Logo Designs',
     image: 'assets/projects/logo_competition_winner.jpg',
-    images: ['assets/projects/logo_competition_winner.jpg'],
-    desc: 'Competition-winning visual identity and logo design mark uniting architectural geometry, proportion, and structural clarity.',
-    featured: true
+    images: ['assets/projects/logo_competition_winner.jpg', 'assets/projects/logo_competition_sheet2.jpg'],
+    desc: 'Official winning emblem designed by Ar. Yateendra Kishore Labh synthesizing Churia hills, Terai biodiversity, Karma Kumari Dhara heritage, agricultural wealth, and national transit corridors.'
   }
 ];
 
+// ALL 10 Team Members matching Page 3 of portfolio_67fe3a57.pdf exact grid order!
 const teamData = [
-  { name: 'SHEETAL GUPTA', role: 'Architect', image: 'assets/team/team-sheetal.jpg' },
+  { name: 'YATEENDRA K LABH', role: 'Director/Architect', image: 'assets/team/team-yateendra.jpg' },
   { name: 'SUPRIYA THAPA', role: 'Principal Architect', image: 'assets/team/team-supriya.jpg' },
-  { name: 'YATEENDRA K LABH', role: 'Director / Architect', image: 'assets/team/team-yateendra.jpg' },
-  { name: 'SUNIL CHAURASIYA', role: 'Structural Engineer', image: 'assets/team/team-sunil.jpg' },
-  { name: 'MEGNATH GUPTA', role: 'Project Manager', image: 'assets/team/team-megnath.jpg' },
+  { name: 'SHEETAL GUPTA', role: 'Architect', image: 'assets/team/team-sheetal.jpg' },
   { name: 'ASHMIN R BHATTARAI', role: 'Architect', image: 'assets/team/team-ashmin.jpg' },
+  { name: 'SUNIL CHAURASIYA', role: 'Structural Engineer', image: 'assets/team/team-sunil.jpg' },
   { name: 'CHETAN K SARRAF', role: 'Interior Designer', image: 'assets/team/team-chetan.jpg' },
+  { name: 'ROHAN K PASWAN', role: 'Sanitary Designer', image: 'assets/team/team-rohan.jpg' },
   { name: 'BISHAL MANANDAR', role: 'Electrical Engineer', image: 'assets/team/team-bishal.jpg' },
+  { name: 'MEGNATH GUPTA', role: 'Project Manager', image: 'assets/team/team-megnath.jpg' },
   { name: 'WASIM ALAM', role: 'Site Engineer', image: 'assets/team/team-wasim.jpg' }
 ];
 
@@ -577,6 +597,19 @@ const scopeItems = [
   'Detailed Estimate',
   'Bill of Quantities',
   'Procurement Consult, etc.'
+];
+
+const clientLogos = [
+  { img: 'assets/logos/client-logo-1.jpg', alt: 'Amico Books & Stationery logo' },
+  { img: 'assets/logos/client-logo-2.jpg', alt: 'Aarnav Nirman Sewa logo' },
+  { img: 'assets/logos/client-logo-3.jpg', alt: 'NITCO Construction Laboratory logo' },
+  { img: 'assets/logos/client-logo-4.jpg', alt: 'Planetably Energy Pvt. Ltd. logo' },
+  { img: 'assets/logos/client-logo-5.jpg', alt: 'Jupiter Power logo' },
+  { img: 'assets/logos/client-logo-6.jpg', alt: 'Lions Club of Kathmandu Sarang logo' },
+  { img: 'assets/logos/client-logo-7.jpg', alt: 'Global Career Care Pvt. Ltd. logo' },
+  { img: 'assets/logos/client-logo-8.jpg', alt: 'Viewport logo' },
+  { img: 'assets/logos/client-logo-9.jpg', alt: 'Shristi Engineering Consultancy logo' },
+  { img: 'assets/logos/client-logo-10.jpg', alt: 'Abhiyanta Multipurpose Cooperative logo' }
 ];
 
 const jsonLdSchema = {
@@ -620,16 +653,10 @@ const jsonLdSchema = {
 
 const customCss = `
     /* ==========================================================================
-       SCALE AND SPACES PORTFOLIO DESIGN SYSTEM
-       Exact match to portfolio_d5c2edf0.htm:
-       - Canvas: #F0EFEA (Warm architectural paper cream)
-       - Primary Crimson: #8F0000 / #C00000
-       - Highlight Mark: #FF0000
-       - Team Surname Highlight: #EC7C30
-       - Team Role Strip: #F1F1F1
-       - Muted Grey: #767070
-       - Serif Display: 'EB Garamond', Garamond, Georgia, serif
-       - Sans Body: 'Calibri', 'Carlito', -apple-system, BlinkMacSystemFont, sans-serif
+       SCALE AND SPACES ARCHITECTURAL PORTFOLIO DESIGN + HERON MOTION SYSTEM
+       Canvas: #F0EFEA | Crimson: #8F0000 / #C00000 | Serif: EB Garamond | Sans: Calibri
+       Enhanced with Architectural Hairline Blueprint Grid, Registration Marks,
+       Lenis Kinetic Inertia, GSAP ScrollTrigger & SplitText Editorial Motion.
        ========================================================================== */
     :root {
       --bg-canvas: #F0EFEA;
@@ -644,12 +671,13 @@ const customCss = `
       --text-main: #111111;
       --text-muted: #767070;
       --border-line: #DDD8CE;
+      --border-drafting: rgba(17, 17, 17, 0.055);
+      --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --font-serif: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
       --font-sans: 'Calibri', 'Carlito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
 
     html {
-      scroll-behavior: smooth;
       scroll-padding-top: 84px;
     }
 
@@ -661,6 +689,54 @@ const customCss = `
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Architectural Blueprint Hairline Grid Background (inspired by Heron AI Vellum Grid) */
+    .vellum-drafting-grid {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image:
+        linear-gradient(to right, var(--border-drafting) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--border-drafting) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(circle at 50% 35%, black 35%, transparent 90%);
+      -webkit-mask-image: radial-gradient(circle at 50% 35%, black 35%, transparent 90%);
+    }
+
+    main, header, footer, aside {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Editorial Preloader Curtain (Subtle architectural paper curtain) */
+    .studio-preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: #F0EFEA;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      pointer-events: auto;
+    }
+    .preloader-line {
+      width: 140px;
+      height: 2px;
+      background: #DDD8CE;
+      overflow: hidden;
+      position: relative;
+    }
+    .preloader-line-fill {
+      position: absolute;
+      inset: 0;
+      background: var(--crimson);
+      transform-origin: left center;
+      transform: scaleX(0);
     }
 
     h1, h2, h3, .font-serif, .serif-heading {
@@ -687,7 +763,7 @@ const customCss = `
       color: var(--crimson);
       font-family: 'EB Garamond', Georgia, serif;
       font-weight: 700;
-      line-height: 1.1;
+      line-height: 1.08;
     }
 
     .portfolio-container {
@@ -697,6 +773,7 @@ const customCss = `
       margin-right: auto;
       padding-left: 1.25rem;
       padding-right: 1.25rem;
+      position: relative;
     }
     @media (min-width: 768px) {
       .portfolio-container {
@@ -711,14 +788,36 @@ const customCss = `
       width: 100%;
     }
 
+    /* Section Corner Crosshairs (matching Heron AI drafting markers) */
+    .arch-crosshair {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      color: #8F0000;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    /* Sticky Header with defensive sizing & scroll progress bar */
     .site-nav {
       position: sticky;
       top: 0;
       z-index: 50;
       height: 76px;
-      background-color: rgba(240, 239, 234, 0.96);
-      backdrop-filter: blur(8px);
+      background-color: rgba(240, 239, 234, 0.94);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border-line);
+    }
+    .nav-scroll-progress {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      height: 2px;
+      width: 100%;
+      background-color: var(--crimson);
+      transform-origin: left center;
+      transform: scaleX(0);
     }
     .nav-logo {
       height: 40px;
@@ -727,6 +826,107 @@ const customCss = `
       object-fit: contain;
     }
 
+    /* Animated Nav Underline */
+    .nav-link-animated {
+      position: relative;
+      padding-bottom: 3px;
+    }
+    .nav-link-animated::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: var(--crimson);
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition: transform 0.35s var(--ease-expo);
+    }
+    .nav-link-animated:hover::after {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+
+    /* Hero Interactive Architectural Viewport & CAD Crosshair */
+    .hero-viewport-frame {
+      position: relative;
+      overflow: hidden;
+      cursor: crosshair;
+    }
+    .cad-crosshair-v {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.35);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .cad-crosshair-h {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.35);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+    .cad-coord-pill {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(17, 17, 17, 0.72);
+      backdrop-filter: blur(6px);
+      color: #F0EFEA;
+      font-family: monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.06em;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      pointer-events: none;
+    }
+    .hero-viewport-frame:hover .cad-crosshair-v,
+    .hero-viewport-frame:hover .cad-crosshair-h {
+      opacity: 1;
+    }
+
+    /* Hero Showcase Slideshow Crossfade */
+    .hero-slide-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.8s var(--ease-expo), transform 1.2s var(--ease-expo);
+      transform: scale(1.03);
+    }
+    .hero-slide-img.is-active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .hero-slide-tab {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border-line);
+      background: #F7F6F2;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.25s var(--ease-expo);
+    }
+    .hero-slide-tab.is-active {
+      background: var(--crimson);
+      border-color: var(--crimson);
+      color: #FFFFFF;
+    }
+
+    /* Buttons */
     .btn-crimson {
       display: inline-flex;
       align-items: center;
@@ -742,13 +942,14 @@ const customCss = `
       padding: 0.65rem 1.5rem;
       border: 1px solid var(--crimson);
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: transform 0.3s var(--ease-expo), background-color 0.25s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
     .btn-crimson:hover {
       background-color: var(--crimson-hover);
       border-color: var(--crimson-hover);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(143, 0, 0, 0.22);
     }
 
     .btn-outline {
@@ -766,14 +967,53 @@ const customCss = `
       padding: 0.65rem 1.5rem;
       border: 1px solid var(--text-main);
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: transform 0.3s var(--ease-expo), background-color 0.25s ease, color 0.25s ease;
       cursor: pointer;
     }
     .btn-outline:hover {
       background-color: var(--text-main);
       color: #FFFFFF;
+      transform: translateY(-2px);
     }
 
+    /* Page 4 Category Discipline Cards */
+    .discipline-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-line);
+      padding: 1.35rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      cursor: pointer;
+      transition: transform 0.35s var(--ease-expo), border-color 0.25s ease, box-shadow 0.35s var(--ease-expo);
+      text-align: left;
+    }
+    .discipline-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--crimson);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+    }
+    .discipline-monogram {
+      width: 44px;
+      height: 44px;
+      background: #555555;
+      color: #FFFFFF;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 1.75rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 0 4px 1px 0;
+      line-height: 0.85;
+      flex-shrink: 0;
+      transition: background-color 0.3s ease;
+    }
+    .discipline-card:hover .discipline-monogram {
+      background: var(--crimson);
+    }
+
+    /* Filter Tabs */
     .filter-tab {
       background: #FFFFFF;
       border: 1px solid var(--border-line);
@@ -783,12 +1023,13 @@ const customCss = `
       font-weight: 700;
       padding: 0.5rem 1rem;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.25s var(--ease-expo);
       white-space: nowrap;
     }
     .filter-tab:hover {
       color: var(--text-main);
       border-color: var(--text-main);
+      transform: translateY(-1px);
     }
     .filter-tab.active {
       background-color: var(--crimson);
@@ -796,18 +1037,20 @@ const customCss = `
       border-color: var(--crimson);
     }
 
+    /* Project Cards */
     .project-card {
       background-color: var(--bg-card);
       border: 1px solid var(--border-line);
-      transition: all 0.25s ease;
+      transition: transform 0.45s var(--ease-expo), border-color 0.3s ease, box-shadow 0.45s var(--ease-expo);
       display: flex;
       flex-direction: column;
       position: relative;
+      will-change: transform;
     }
     .project-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-5px);
       border-color: var(--crimson);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
     }
     .project-image-box {
       position: relative;
@@ -820,42 +1063,60 @@ const customCss = `
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.7s var(--ease-expo);
       display: block;
     }
     .project-card:hover .project-image-box img {
-      transform: scale(1.04);
+      transform: scale(1.06);
     }
     .project-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(143, 0, 0, 0.65);
+      background: rgba(143, 0, 0, 0.62);
+      backdrop-filter: blur(2px);
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity 0.25s ease;
+      transition: opacity 0.3s ease;
     }
     .project-card:hover .project-overlay {
       opacity: 1;
     }
 
+    /* Team Card exact replica of Page 3 PDF */
     .team-card {
       background: #FFFFFF;
       border: 1px solid var(--border-line);
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.4s var(--ease-expo), box-shadow 0.4s var(--ease-expo), border-color 0.3s ease;
     }
     .team-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-5px);
       border-color: var(--crimson);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
+    }
+    .team-circle-stage {
+      background-color: #F7F6F2;
+      padding: 1.25rem 1rem 0.75rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .team-img-wrap {
-      aspect-ratio: 1 / 1.12;
+      width: 164px;
+      height: 164px;
+      border-radius: 9999px;
       overflow: hidden;
-      background-color: #EAE8E1;
+      background-color: #F2F0EB;
+      border: 1.5px solid #BDB7AB;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      transition: border-color 0.3s ease, transform 0.5s var(--ease-expo);
+    }
+    .team-card:hover .team-img-wrap {
+      border-color: var(--crimson);
+      transform: scale(1.03);
     }
     .team-img-wrap img {
       width: 100%;
@@ -864,42 +1125,44 @@ const customCss = `
       object-position: top center;
       display: block;
     }
-    .team-role-box {
-      background-color: #F1F1F1;
-      padding: 0.45rem 0.75rem;
-      text-align: center;
-      border-top: 1px solid var(--border-line);
-      border-bottom: 1px solid var(--border-line);
-      font-size: 0.875rem;
-      color: #111111;
-      font-weight: 400;
-    }
     .team-name-box {
       background-color: #FFFFFF;
-      padding: 0.6rem 0.75rem 0.7rem;
+      padding: 0.65rem 0.5rem 0.35rem;
       text-align: center;
-      font-size: 0.925rem;
-      letter-spacing: 0.04em;
+      font-size: 0.875rem;
+      letter-spacing: 0.03em;
       color: #EC7C30;
       font-weight: 400;
+      border-top: 1px solid var(--border-line);
     }
     .team-name-box b {
       color: #EC7C30;
       font-weight: 700;
     }
+    .team-role-box {
+      background-color: #F1F1F1;
+      padding: 0.45rem 0.5rem;
+      text-align: center;
+      border-top: 1px solid var(--border-line);
+      font-size: 0.825rem;
+      color: #111111;
+      font-weight: 400;
+    }
 
+    /* Scope of Works Bullet */
     .scope-list-item {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
-      padding: 0.85rem 1.25rem;
+      gap: 0.9rem;
+      padding: 0.9rem 1.25rem;
       background: #FFFFFF;
       border: 1px solid var(--border-line);
-      transition: border-color 0.2s ease, transform 0.2s ease;
+      transition: border-color 0.25s ease, transform 0.35s var(--ease-expo), box-shadow 0.35s var(--ease-expo);
     }
     .scope-list-item:hover {
       border-color: var(--crimson);
-      transform: translateX(3px);
+      transform: translateX(6px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
     }
     .scope-square {
       width: 10px;
@@ -907,18 +1170,21 @@ const customCss = `
       background-color: #111111;
       border: 1px solid #111111;
       flex-shrink: 0;
+      transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.3s var(--ease-expo);
     }
     .scope-list-item:hover .scope-square {
       background-color: var(--crimson);
       border-color: var(--crimson);
+      transform: rotate(45deg);
     }
 
+    /* Lightbox Modal */
     .lightbox-modal {
       position: fixed;
       inset: 0;
       z-index: 100;
       background: rgba(17, 17, 17, 0.9);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
       display: none;
       align-items: center;
       justify-content: center;
@@ -938,6 +1204,7 @@ const customCss = `
       box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
 
+    /* Mobile menu drawer */
     .mobile-menu {
       position: fixed;
       top: 0;
@@ -949,7 +1216,7 @@ const customCss = `
       z-index: 90;
       border-left: 1px solid var(--border-line);
       box-shadow: -10px 0 30px rgba(0,0,0,0.18);
-      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: right 0.35s var(--ease-expo);
       padding: 2rem 1.5rem;
       display: flex;
       flex-direction: column;
@@ -967,6 +1234,15 @@ const customCss = `
     .mobile-backdrop.open {
       display: block;
     }
+
+    /* Reduced Motion Support */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .studio-preloader { display: none !important; }
+    }
 `;
 
 const icons = {
@@ -977,7 +1253,8 @@ const icons = {
   bars: '<svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>',
   close: '<svg class="w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>',
   expand: '<svg class="inline-block w-3.5 h-3.5" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>',
-  send: '<svg class="inline-block w-4 h-4" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/></svg>'
+  send: '<svg class="inline-block w-4 h-4" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21 23 12 2.01 3 2 10l15 2-15 2z"/></svg>',
+  crosshair: '<svg viewBox="0 0 12 12" fill="none" width="11" height="11"><path d="M6 0V12M0 6H12" stroke="currentColor" stroke-width="1"/></svg>'
 };
 
 const htmlBodyTemplate = `<!DOCTYPE html>
@@ -1015,6 +1292,18 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 </head>
 <body>
 
+  <!-- ARCHITECTURAL VELLUM GRID OVERLAY (Heron Inspired) -->
+  <div class="vellum-drafting-grid" aria-hidden="true"></div>
+
+  <!-- EDITORIAL CURTAIN PRELOADER (Ultra-fast, <0.75s) -->
+  <div id="studioPreloader" class="studio-preloader" aria-hidden="true">
+    <img src="assets/logo.svg" alt="" style="height: 52px; width: auto;" onerror="this.src='assets/logo.jpg'" />
+    <span class="text-xs font-bold tracking-widest uppercase text-[#111111]">Scale and Spaces Pvt. Ltd.</span>
+    <div class="preloader-line">
+      <div id="preloaderFill" class="preloader-line-fill"></div>
+    </div>
+  </div>
+
   <!-- TOP EDITORIAL STUDIO BAR -->
   <div class="bg-[#E8E6DF] border-b border-[#DDD8CE] text-xs py-2 text-[#767070] hidden sm:block">
     <div class="portfolio-container flex flex-wrap justify-between items-center gap-2">
@@ -1028,7 +1317,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </div>
   </div>
 
-  <!-- NAVIGATION BAR -->
+  <!-- NAVIGATION BAR + SCROLL PROGRESS LINE -->
   <header class="site-nav flex items-center">
     <div class="portfolio-container flex items-center justify-between w-full">
       <a href="#top" class="flex items-center gap-3 no-underline">
@@ -1045,11 +1334,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
       <!-- Semantic Crawlable Anchor Navigation -->
       <nav aria-label="Main navigation" class="hidden lg:flex items-center gap-7">
-        <a href="#scope-of-works" class="text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Scope of Works_</a>
-        <a href="#the-full-team" class="text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">The Full Team</a>
-        <a href="#our-works" class="text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Our Works_</a>
-        <a href="#ranighat-masterplan" class="text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Ranighat Masterplan</a>
-        <a href="#contact" class="text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Contact Offices</a>
+        <a href="#scope-of-works" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Scope of Works_</a>
+        <a href="#the-full-team" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">The Full Team</a>
+        <a href="#our-works" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Our Works_</a>
+        <a href="#ranighat-masterplan" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Ranighat Masterplan</a>
+        <a href="#contact" class="nav-link-animated text-sm font-bold text-[#111111] hover:text-[#8F0000] no-underline transition-colors">Contact Offices</a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -1062,6 +1351,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </button>
       </div>
     </div>
+    <div id="navProgress" class="nav-scroll-progress" aria-hidden="true"></div>
   </header>
 
   <!-- MOBILE NAVIGATION DRAWER -->
@@ -1096,11 +1386,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
   <main id="top">
     <!-- ======================================================================
-         COVER / HERO SECTION (Page 1 of Portfolio PDF)
+         COVER / HERO SECTION (Page 1 of Portfolio PDF + Heron Drafting Viewport)
          ====================================================================== -->
-    <section class="pt-10 pb-14 md:pt-14 md:pb-20 border-b border-[#DDD8CE]">
+    <section class="pt-10 pb-14 md:pt-14 md:pb-20 border-b border-[#DDD8CE] relative">
       <div class="portfolio-container">
-        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
+        <div class="hero-stagger flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
           <p class="text-sm md:text-base text-[#111111] tracking-wide">
             Architecture | Engineering | Construction
           </p>
@@ -1109,21 +1399,21 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </p>
         </div>
 
-        <!-- Single Semantic H1 per SEO Starter Guide -->
+        <!-- Single Semantic H1 with GSAP SplitText reveal -->
         <div class="my-6 md:my-8">
-          <h1 class="portfolio-crimson-quote">
+          <h1 id="heroHeadline" class="portfolio-crimson-quote">
             <span class="block text-2xl sm:text-3xl md:text-4xl font-bold mb-1" style="font-family: Georgia, 'EB Garamond', serif;">Designing Spaces,</span>
             <span class="block text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight" style="font-family: 'EB Garamond', Georgia, serif;">
               Defining Lifestyles<span style="font-size: 1.15em;">!</span>
             </span>
           </h1>
-          <p class="text-sm md:text-base text-[#767070] mt-4 max-w-3xl">
+          <p class="hero-stagger text-sm md:text-base text-[#767070] mt-4 max-w-3xl">
             Official architectural, civil engineering, landscape masterplanning, and interior design portfolio of <strong class="text-[#111111]">Scale and Spaces Private Limited</strong>.
           </p>
         </div>
 
         <!-- Studio Offices Line (Page 1 Bottom Strip) -->
-        <div class="bg-[#E8E6DF] border border-[#DDD8CE] px-4 py-3 flex flex-col md:flex-row justify-between items-start md:items-center text-xs sm:text-sm text-[#111111] gap-2 mb-8">
+        <div class="hero-stagger bg-[#E8E6DF] border border-[#DDD8CE] px-4 py-3 flex flex-col md:flex-row justify-between items-start md:items-center text-xs sm:text-sm text-[#111111] gap-2 mb-8">
           <div><strong class="text-[#8F0000]">Head Office:</strong> Tokha-6, Kathmandu</div>
           <div class="hidden md:block text-[#B8B3A8]">|</div>
           <div><strong class="text-[#8F0000]">Contact Office:</strong> Birgunj-12, Parsa</div>
@@ -1131,18 +1421,35 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <div><strong class="text-[#8F0000]">Email:</strong> studio@scaleandspaces.com</div>
         </div>
 
-        <!-- Featured Cover Render Frame -->
-        <div class="bg-white border border-[#DDD8CE] overflow-hidden shadow-sm">
-          <div class="aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-[#E2DFD8] cursor-pointer" onclick="openLightbox('mithila-tower')">
-            <img src="assets/projects/mithila_tower.jpg" alt="Mithila Tower commercial building architectural render in Jiwisa Chowk, Malangwa by Scale and Spaces Pvt. Ltd." class="w-full h-full object-cover" />
+        <!-- Interactive Architectural Cover Frame with Crosshair Telemetry & Slide Switcher -->
+        <div class="hero-stagger bg-white border border-[#DDD8CE] overflow-hidden shadow-sm relative">
+          <span class="arch-crosshair" style="top:8px;left:8px;z-index:5;" aria-hidden="true">${icons.crosshair}</span>
+          <span class="arch-crosshair" style="top:8px;right:8px;z-index:5;" aria-hidden="true">${icons.crosshair}</span>
+
+          <div id="heroViewport" class="hero-viewport-frame aspect-[16/9] md:aspect-[21/9] bg-[#E2DFD8]" onclick="openLightbox(currentHeroId)">
+            <img src="assets/projects/cover_studio_tower.jpg" data-hero-slide="0" data-project-id="mithila-tower" alt="Scale and Spaces conceptual steel-and-timber tower sketch to build render" class="hero-slide-img is-active" />
+            <img src="assets/projects/mithila_tower.jpg" data-hero-slide="1" data-project-id="mithila-tower" alt="Mithila Tower commercial building in Jiwisa Chowk, Malangwa by Scale and Spaces Pvt. Ltd." class="hero-slide-img" />
+            <img src="assets/projects/hyatt_hospital_1.jpg" data-hero-slide="2" data-project-id="hyatt-community-hospital" alt="Hyatt Community Hospital architectural facade in Barhathwa, Sarlahi" class="hero-slide-img" />
+            <img src="assets/projects/tulsi_gupta_residence_1.jpg" data-hero-slide="3" data-project-id="tulsi-gupta-residence" alt="Neoclassical residence of Mr. Tulsi Gupta in Birgunj, Parsa" class="hero-slide-img" />
+
+            <!-- CAD Crosshair lines tracking pointer -->
+            <div id="cadCrossV" class="cad-crosshair-v" aria-hidden="true"></div>
+            <div id="cadCrossH" class="cad-crosshair-h" aria-hidden="true"></div>
+            <div id="cadCoords" class="cad-coord-pill" aria-hidden="true">X: 0000 mm | Y: 0000 mm | SCALE 1:100</div>
           </div>
-          <div class="p-4 sm:p-6 bg-white border-t border-[#DDD8CE] flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+
+          <div class="p-4 sm:p-6 bg-white border-t border-[#DDD8CE] flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
             <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-[#C00000] block mb-0.5">Featured Commercial Architecture</span>
-              <p class="text-xl md:text-2xl font-bold serif-heading text-[#111111]">
-                Mithila Tower <span class="font-normal text-[#767070]">&mdash; Jiwisa Chowk, Malangwa (2024 A.D.)</span>
+              <div class="flex flex-wrap items-center gap-2 mb-2">
+                <button type="button" class="hero-slide-tab is-active" onclick="setHeroSlide(0, event)">01 Studio Cover</button>
+                <button type="button" class="hero-slide-tab" onclick="setHeroSlide(1, event)">02 Mithila Tower</button>
+                <button type="button" class="hero-slide-tab" onclick="setHeroSlide(2, event)">03 Hyatt Hospital</button>
+                <button type="button" class="hero-slide-tab" onclick="setHeroSlide(3, event)">04 Tulsi Villa</button>
+              </div>
+              <p id="heroSlideTitle" class="text-xl md:text-2xl font-bold serif-heading text-[#111111]">
+                Studio Cover Monograph &mdash; <span class="font-normal text-[#767070]">Tokha-6, Kathmandu &amp; Birgunj-12, Parsa</span>
               </p>
-              <p class="text-xs sm:text-sm text-[#767070]">for Dr. Manoj Ray &bull; SCALE AND SPACES Pvt. Ltd., Tokha-6, Kathmandu</p>
+              <p id="heroSlideSub" class="text-xs sm:text-sm text-[#767070]">SCALE AND SPACES Pvt. Ltd. &bull; Architecture, Structural Engineering &amp; Interior Practice</p>
             </div>
             <div class="flex flex-wrap items-center gap-3 shrink-0">
               <a href="#our-works" class="btn-outline text-xs py-2 px-4">Explore Architectural Works &darr;</a>
@@ -1154,11 +1461,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
 
     <!-- ======================================================================
-         SCOPE OF WORKS_ (Page 2 of Portfolio PDF)
+         SCOPE OF WORKS_ (Page 2 of Portfolio PDF + Sticky Studio Sketch)
          ====================================================================== -->
-    <section id="scope-of-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2]">
+    <section id="scope-of-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] relative">
       <div class="portfolio-container">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-head">
           <div>
             <h2 class="portfolio-section-title">SCOPE OF WORKS_</h2>
             <p class="text-sm text-[#767070] mt-2 max-w-2xl">
@@ -1170,68 +1477,112 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-3.5 md:gap-4">
-          ${scopeItems.map(item => `
-            <div class="scope-list-item">
-              <span class="scope-square"></span>
-              <span class="text-base md:text-lg font-normal text-[#111111]">${item}</span>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- 10 Deliverables List matching Page 2 -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5 scope-grid">
+            ${scopeItems.map(item => `
+              <div class="scope-list-item">
+                <span class="scope-square"></span>
+                <span class="text-base font-normal text-[#111111]">${item}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <!-- Architectural Wireframe Drawing Plate from Page 2 -->
+          <div class="lg:col-span-5 bg-white border border-[#DDD8CE] p-4 shadow-sm reveal-card">
+            <div class="overflow-hidden border border-[#DDD8CE] bg-[#F0EFEA]">
+              <img src="assets/projects/cover_studio_tower.jpg" alt="Architectural concept wireframe and volumetric structural framing model by Scale and Spaces" class="w-full h-auto object-cover block" loading="lazy" />
             </div>
-          `).join('')}
+            <div class="pt-3 flex justify-between items-center text-xs text-[#767070]">
+              <span class="font-bold text-[#111111]">CONCEPT TO TURNKEY WORKFLOW</span>
+              <span>Page 02 &bull; Portfolio</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         THE FULL TEAM (Pages 3-5 of Portfolio PDF)
+         THE FULL TEAM (Page 3 of Portfolio PDF — All 10 Verified Members)
          ====================================================================== -->
-    <section id="the-full-team" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA]">
+    <section id="the-full-team" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] relative">
       <div class="portfolio-container">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12 reveal-head">
           <h2 class="portfolio-section-title">THE FULL TEAM</h2>
           <p class="text-sm text-[#767070] mt-2">
-            Scale and Spaces Pvt. Ltd. &bull; Multidisciplinary Architects, Structural Engineers &amp; Interior Specialists
+            Scale and Spaces Pvt. Ltd. &bull; Multidisciplinary Architects, Engineers &amp; Interior Specialists
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+        <!-- 5x2 Team Grid matching Page 3 of portfolio_67fe3a57.pdf -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 team-grid">
           ${teamData.map(m => {
             const parts = m.name.split(' ');
             const first = parts.slice(0, -1).join(' ');
             const last = parts[parts.length - 1];
             return `
               <div class="team-card">
-                <div class="team-img-wrap">
-                  <img src="${m.image}" alt="${m.name} — ${m.role} at Scale and Spaces Pvt. Ltd." loading="lazy" />
+                <div class="team-circle-stage">
+                  <div class="team-img-wrap">
+                    <img src="${m.image}" alt="${m.name} — ${m.role} at Scale and Spaces Pvt. Ltd." loading="lazy" />
+                  </div>
                 </div>
-                <div class="team-role-box">${m.role}</div>
                 <div class="team-name-box">${first} <b>${last}</b></div>
+                <div class="team-role-box">${m.role}</div>
               </div>
             `;
           }).join('')}
         </div>
 
-        <div class="mt-10 pt-6 border-t border-[#DDD8CE] flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-[#767070]">
-          <span>Sanitary Design Department: <strong class="text-[#111111]">Rohan K Paswan</strong> (Sanitary Designer)</span>
+        <div class="mt-10 pt-4 text-center">
           <span class="font-serif italic text-base text-[#8F0000]">Scale and Spaces Pvt. Ltd.</span>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
-         OUR WORKS_ (Pages 6-53 of Portfolio PDF)
+         OUR WORKS_ DISCIPLINE INDEX & GALLERY (Pages 4-68 of Portfolio PDF)
          ====================================================================== -->
-    <section id="our-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2]">
+    <section id="our-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] relative">
       <div class="portfolio-container">
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4 reveal-head">
           <div>
             <h2 class="portfolio-section-title">Our works_</h2>
             <p class="text-sm text-[#767070] mt-1">
-              Selected architectural, residential, commercial, institutional, religious, landscape &amp; interior projects across Nepal.
+              Selected architectural, commercial, landscape, residential, institutional, religious &amp; interior projects across Nepal.
             </p>
           </div>
           <div class="text-xs font-semibold text-[#767070]">
             Showing <span id="project-count" class="font-bold text-[#111111]">${projectsData.length}</span> portfolio works
           </div>
+        </div>
+
+        <!-- Page 4 Architectural Category Quick Index -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8 reveal-head">
+          <button type="button" onclick="selectCategoryFilter('Residences')" class="discipline-card">
+            <span class="discipline-monogram">R</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Residences</span>
+          </button>
+          <button type="button" onclick="selectCategoryFilter('Commercial')" class="discipline-card">
+            <span class="discipline-monogram">C</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Commercial</span>
+          </button>
+          <button type="button" onclick="selectCategoryFilter('Landscape')" class="discipline-card">
+            <span class="discipline-monogram">L</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Landscape Development</span>
+          </button>
+          <button type="button" onclick="selectCategoryFilter('Interior')" class="discipline-card">
+            <span class="discipline-monogram">I</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Interior Design</span>
+          </button>
+          <button type="button" onclick="selectCategoryFilter('Institutional')" class="discipline-card">
+            <span class="discipline-monogram">O</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Office Building</span>
+          </button>
+          <button type="button" onclick="selectCategoryFilter('Religious')" class="discipline-card">
+            <span class="discipline-monogram">R</span>
+            <span class="text-xs sm:text-sm font-bold text-[#111111]">Religious Complexes</span>
+          </button>
         </div>
 
         <!-- Category Filters -->
@@ -1254,7 +1605,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 <img src="${p.image}" alt="${p.title} ${p.client} architectural design in ${p.location} (${p.year}) by Scale and Spaces Pvt. Ltd." loading="lazy" />
                 <div class="project-overlay">
                   <span class="btn-crimson text-xs py-2 px-4 shadow-lg">
-                    ${icons.expand} <span>Inspect Project Render</span>
+                    ${icons.expand} <span>Inspect Project (${p.images.length} View${p.images.length > 1 ? 's' : ''})</span>
                   </span>
                 </div>
               </div>
@@ -1273,7 +1624,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 <div class="pt-3 border-t border-[#DDD8CE] flex justify-between items-center text-xs">
                   <span class="text-[#767070] font-semibold">SCALE AND SPACES Pvt. Ltd.</span>
                   <button type="button" onclick="openLightbox('${p.id}')" class="text-[#8F0000] font-bold bg-transparent border-0 cursor-pointer hover:underline p-0">
-                    View ${p.title} Details &rarr;
+                    View Details &rarr;
                   </button>
                 </div>
               </div>
@@ -1284,34 +1635,34 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
 
     <!-- ======================================================================
-         FEATURED CIVIC MASTERPLAN: THE SHAVDAAHGRIHAM (Pages 10-12)
+         FEATURED CIVIC MASTERPLAN: THE SHAVDAAHGRIHAM (Pages 18-19)
          ====================================================================== -->
-    <section id="ranighat-masterplan" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA]">
+    <section id="ranighat-masterplan" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] relative">
       <div class="portfolio-container">
-        <div class="mb-8">
+        <div class="mb-8 reveal-head">
           <span class="text-xs font-bold uppercase tracking-widest text-[#C00000] block mb-1">Landscape Development Feature</span>
           <h2 class="portfolio-section-title">The Shavdaahgriham</h2>
           <p class="text-base font-bold text-[#111111] mt-1">And the Masterplan &mdash; Ranighat, Birgunj (2021 A.D.)</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div class="lg:col-span-7 flex flex-col gap-4">
+          <div class="lg:col-span-7 flex flex-col gap-4 reveal-card">
             <div class="border border-[#DDD8CE] bg-white overflow-hidden cursor-pointer" onclick="openLightbox('shavdaahgriham-crematorium')">
-              <img src="assets/projects/shavdaahgriham_crematorium.jpg" alt="The Shavdaahgriham electrical crematorium architecture at Ranighat, Birgunj designed by Scale and Spaces Pvt. Ltd." class="w-full h-auto object-cover block" />
+              <img src="assets/projects/shavdaahgriham_crematorium.jpg" alt="The Shavdaahgriham electrical crematorium architecture at Ranighat, Birgunj" class="w-full h-auto object-cover block" loading="lazy" />
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div class="border border-[#DDD8CE] bg-white overflow-hidden">
-                <img src="assets/projects/shavdaahgriham_roof.jpg" alt="Traditional Khapada clay tile roof preserving indigenous Birgunj heritage" class="w-full h-48 object-cover block" />
-                <p class="p-2.5 text-xs text-[#767070] bg-white border-t border-[#DDD8CE]">Traditional Khapada tile roof craftsmanship</p>
+                <img src="assets/projects/shavdaahgriham_roof.jpg" alt="Waterfront cremation platform and riverfront steps at Ranighat Samshanghat" class="w-full h-48 object-cover block" loading="lazy" />
+                <p class="p-2.5 text-xs text-[#767070] bg-white border-t border-[#DDD8CE]">Riverfront ghats &amp; ceremonial platform</p>
               </div>
               <div class="border border-[#DDD8CE] bg-white overflow-hidden">
-                <img src="assets/projects/shavdaahgriham_ranighat_1.jpg" alt="Ranighat riverfront crematorium park masterplan and scattering gardens in Birgunj" class="w-full h-48 object-cover block" />
+                <img src="assets/projects/shavdaahgriham_ranighat_1.jpg" alt="Ranighat riverfront crematorium park masterplan and scattering gardens" class="w-full h-48 object-cover block" loading="lazy" />
                 <p class="p-2.5 text-xs text-[#767070] bg-white border-t border-[#DDD8CE]">Landscape masterplan &amp; scattering gardens</p>
               </div>
             </div>
           </div>
 
-          <div class="lg:col-span-5 bg-white border border-[#DDD8CE] p-6 md:p-8 flex flex-col gap-5">
+          <div class="lg:col-span-5 bg-white border border-[#DDD8CE] p-6 md:p-8 flex flex-col gap-5 reveal-card">
             <div>
               <h3 class="text-xl font-bold text-[#111111] mb-1" style="font-family: var(--font-sans);">REDEVELOPMENT OF RANIGHAT SAMSHANGHAT</h3>
               <p class="text-sm font-bold text-[#C00000]">of Birgunj Metropolitan City Office</p>
@@ -1319,6 +1670,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             </div>
 
             <div class="arch-line"></div>
+
+            <div class="border border-[#DDD8CE] bg-[#F7F6F2] p-3">
+              <img src="assets/projects/tent_form_diagram.jpg" alt="Hand-drawn tent form concept diagram for Ranighat Crematorium" class="w-full max-h-40 object-contain mx-auto" loading="lazy" />
+            </div>
 
             <div>
               <h4 class="text-xs font-bold uppercase tracking-wider text-[#111111] mb-1">Form Development</h4>
@@ -1346,12 +1701,61 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
 
     <!-- ======================================================================
-         CONTACT & OFFICES (Matching Back Cover of Portfolio PDF)
+         BRAND IDENTITY & LOGO DESIGNS (Pages 69-70 of Portfolio PDF)
          ====================================================================== -->
-    <section id="contact" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-white">
+    <section id="logo-designs" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] relative">
+      <div class="portfolio-container">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-head">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#888888] block mb-1">2022 &bull; Graphic &amp; Civic Identity</span>
+            <h2 class="portfolio-section-title">OUR PROJECTS_ <span class="font-normal text-xl md:text-2xl text-[#111111]">Logo Designs</span></h2>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest" style="color:#FF0000;">Logo Design Competition Winning Entry</span>
+        </div>
+
+        <!-- 10 Corporate Logo Marks Grid (Page 69) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10 reveal-card">
+          ${clientLogos.map(l => `
+            <div class="bg-white border border-[#DDD8CE] p-4 flex items-center justify-center h-28 hover:border-[#8F0000] transition-colors">
+              <img src="${l.img}" alt="${l.alt}" class="max-h-20 w-auto object-contain" loading="lazy" />
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Competition Winning Entry Spread (Page 70) -->
+        <div class="bg-white border border-[#DDD8CE] p-6 md:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center reveal-card">
+          <div class="lg:col-span-4 flex flex-col gap-3">
+            <div class="text-sm font-bold tracking-widest leading-relaxed text-[#111111]">
+              L O G O<br/>
+              D E S I G N<br/>
+              C O M P E T I T I O N<br/>
+              <span style="color:#FF0000;">W I N N I N G &nbsp; E N T R Y</span>
+            </div>
+            <h3 class="text-2xl font-normal text-[#111111]" style="font-family: var(--font-sans);">Competition Winner</h3>
+            <p class="text-xs text-[#767070]">Official Emblem of Jeetpur Simara Sub-Metropolitan City designed by Ar. Yateendra Kishore Labh (2022).</p>
+            <button type="button" onclick="openLightbox('logo-competition-winner')" class="btn-outline text-xs py-2 px-4 self-start mt-2">
+              View Competition Boards &rarr;
+            </button>
+          </div>
+          <div class="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="border border-[#DDD8CE] overflow-hidden cursor-pointer" onclick="openLightbox('logo-competition-winner')">
+              <img src="assets/projects/logo_competition_winner.jpg" alt="Jeetpur Simara Sub-Metropolitan City Winning Emblem Design Board 1" class="w-full h-56 object-cover block" loading="lazy" />
+            </div>
+            <div class="border border-[#DDD8CE] overflow-hidden cursor-pointer" onclick="openLightbox('logo-competition-winner')">
+              <img src="assets/projects/logo_competition_sheet2.jpg" alt="Jeetpur Simara Sub-Metropolitan City Winning Emblem Design Board 2" class="w-full h-56 object-cover block" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         CONTACT & OFFICES (Matching Page 71 Back Cover of Portfolio PDF)
+         ====================================================================== -->
+    <section id="contact" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-white relative">
       <div class="portfolio-container">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          <div class="lg:col-span-5 flex flex-col gap-6">
+          <div class="lg:col-span-5 flex flex-col gap-6 reveal-card">
             <div>
               <span class="text-xs font-bold uppercase tracking-widest text-[#8F0000] block mb-1">Practice Locations &amp; Inquiries</span>
               <h2 class="portfolio-section-title">Scale and Spaces Pvt. Ltd.</h2>
@@ -1384,7 +1788,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             </a>
           </div>
 
-          <div class="lg:col-span-7 bg-[#F7F6F2] border border-[#DDD8CE] p-6 md:p-8">
+          <div class="lg:col-span-7 bg-[#F7F6F2] border border-[#DDD8CE] p-6 md:p-8 reveal-card">
             <h3 class="text-xl font-bold serif-heading text-[#111111] mb-1">Studio Project Inquiry</h3>
             <p class="text-xs text-[#767070] mb-6">
               Submit your brief details for architectural design, interior work, structural engineering, or construction supervision.
@@ -1458,7 +1862,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div class="md:col-span-3 flex flex-col gap-2 text-xs">
           <span class="text-white font-bold uppercase tracking-wider mb-1">Portfolio Sections</span>
           <a href="#scope-of-works" class="text-[#CCCCCC] no-underline hover:text-white">Scope of Works_</a>
-          <a href="#the-full-team" class="text-[#CCCCCC] no-underline hover:text-white">The Full Team</a>
+          <a href="#the-full-team" class="text-[#CCCCCC] no-underline hover:text-white">The Full Team (10 Specialists)</a>
           <a href="#our-works" class="text-[#CCCCCC] no-underline hover:text-white">Our Works (${projectsData.length} Entries)</a>
           <a href="#ranighat-masterplan" class="text-[#CCCCCC] no-underline hover:text-white">Ranighat Masterplan</a>
         </div>
@@ -1483,7 +1887,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
   <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="lightbox-modal" onclick="closeLightboxOnBackdrop(event)">
-    <div class="lightbox-content">
+    <div id="lightboxCard" class="lightbox-content">
       <div class="p-4 md:p-5 bg-[#E8E6DF] border-b border-[#DDD8CE] flex justify-between items-center">
         <div>
           <span id="modal-category" class="text-xs uppercase tracking-widest text-[#C00000] font-bold block"></span>
@@ -1496,7 +1900,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
       <div class="p-5 md:p-7 flex flex-col gap-5">
         <div class="border border-[#DDD8CE] overflow-hidden bg-black/5 flex items-center justify-center">
-          <img id="modal-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Architectural project detail view" style="max-height: 60vh; width: 100%; object-fit: contain;" />
+          <img id="modal-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Architectural project detail view" style="max-height: 60vh; width: 100%; object-fit: contain; transition: opacity 0.25s ease;" />
         </div>
 
         <div id="modal-gallery" class="flex items-center gap-2 overflow-x-auto pb-1"></div>
@@ -1521,37 +1925,131 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </div>
   </div>
 
+  <!-- BUNDLED MOTION ENGINE (From heron-ai-clone vendor stack: GSAP, ScrollTrigger, SplitText, Lenis) -->
+  <script src="vendor/lenis.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/SplitText.min.js"></script>
+
   <script>
     const projects = ${JSON.stringify(projectsData)};
 
+    // Copyright year
     const yearEl = document.getElementById('footer-year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+    // Hero Showcase Switcher State
+    const heroSlidesData = [
+      {
+        id: 'mithila-tower',
+        title: 'Studio Cover Monograph — <span class="font-normal text-[#767070]">Tokha-6, Kathmandu &amp; Birgunj-12, Parsa</span>',
+        sub: 'SCALE AND SPACES Pvt. Ltd. &bull; Architecture, Structural Engineering &amp; Interior Practice'
+      },
+      {
+        id: 'mithila-tower',
+        title: 'Mithila Tower — <span class="font-normal text-[#767070]">Jiwisa Chowk, Malangwa (2024 A.D.)</span>',
+        sub: 'for Dr. Manoj Ray &bull; SCALE AND SPACES Pvt. Ltd.'
+      },
+      {
+        id: 'hyatt-community-hospital',
+        title: 'Hyatt Community Hospital — <span class="font-normal text-[#767070]">Barhathwa, Sarlahi (2025 A.D.)</span>',
+        sub: 'Community Healthcare Facility &bull; SCALE AND SPACES Pvt. Ltd.'
+      },
+      {
+        id: 'tulsi-gupta-residence',
+        title: 'Residence of Mr. Tulsi Gupta — <span class="font-normal text-[#767070]">Birgunj, Parsa (2024 A.D.)</span>',
+        sub: 'Private Villa Architecture &bull; SCALE AND SPACES Pvt. Ltd.'
+      }
+    ];
+    let currentHeroIdx = 0;
+    let currentHeroId = 'mithila-tower';
+    window.currentHeroId = currentHeroId;
+
+    function setHeroSlide(index, ev) {
+      if (ev) ev.stopPropagation();
+      currentHeroIdx = index;
+      const slideData = heroSlidesData[index];
+      currentHeroId = slideData.id;
+      window.currentHeroId = currentHeroId;
+
+      document.querySelectorAll('.hero-slide-img').forEach(function(img, i) {
+        img.classList.toggle('is-active', i === index);
+      });
+      document.querySelectorAll('.hero-slide-tab').forEach(function(btn, i) {
+        btn.classList.toggle('is-active', i === index);
+      });
+
+      const titleEl = document.getElementById('heroSlideTitle');
+      const subEl = document.getElementById('heroSlideSub');
+      if (titleEl) titleEl.innerHTML = slideData.title;
+      if (subEl) subEl.innerHTML = slideData.sub;
+    }
+    window.setHeroSlide = setHeroSlide;
+
+    // Gentle Hero Slide Cycle
+    let heroAutoTimer = setInterval(function() {
+      setHeroSlide((currentHeroIdx + 1) % heroSlidesData.length);
+    }, 5200);
+    const heroVp = document.getElementById('heroViewport');
+    if (heroVp) {
+      heroVp.addEventListener('mouseenter', function() { clearInterval(heroAutoTimer); });
+    }
+
+    // Category Filtering with GSAP staggered entrance
     const tabs = document.querySelectorAll('.filter-tab');
     const projectCards = document.querySelectorAll('.project-card');
     const projectCountEl = document.getElementById('project-count');
 
+    function applyFilter(cat) {
+      tabs.forEach(function(t) {
+        t.classList.toggle('active', t.getAttribute('data-category') === cat);
+      });
+
+      const shown = [];
+      projectCards.forEach(function(card) {
+        const cardCat = card.getAttribute('data-category');
+        if (cat === 'all' || cardCat === cat) {
+          card.style.display = 'flex';
+          shown.push(card);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if (projectCountEl) projectCountEl.textContent = shown.length;
+
+      if (window.gsap && shown.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.fromTo(
+          shown,
+          { opacity: 0, y: 20, scale: 0.985 },
+          { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.035, ease: 'power3.out', clearProps: 'transform,opacity' }
+        );
+      }
+      if (window.ScrollTrigger) ScrollTrigger.refresh();
+    }
+
     tabs.forEach(function(tab) {
       tab.addEventListener('click', function() {
-        tabs.forEach(function(t) { t.classList.remove('active'); });
-        tab.classList.add('active');
-        const cat = tab.getAttribute('data-category');
-
-        let visibleCount = 0;
-        projectCards.forEach(function(card) {
-          const cardCat = card.getAttribute('data-category');
-          if (cat === 'all' || cardCat === cat) {
-            card.style.display = 'flex';
-            visibleCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-        if (projectCountEl) projectCountEl.textContent = visibleCount;
+        applyFilter(tab.getAttribute('data-category'));
       });
     });
 
+    function selectCategoryFilter(cat) {
+      applyFilter(cat);
+      const sec = document.getElementById('our-works');
+      if (sec) {
+        if (window.lenisInstance) {
+          window.lenisInstance.scrollTo(sec, { offset: -76, duration: 1.0 });
+        } else {
+          sec.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    window.selectCategoryFilter = selectCategoryFilter;
+
+    // Lightbox Modal with GSAP smooth transition
     const lightbox = document.getElementById('lightbox');
+    const lightboxCard = document.getElementById('lightboxCard');
     const modalTitle = document.getElementById('modal-title');
     const modalCategory = document.getElementById('modal-category');
     const modalImage = document.getElementById('modal-image');
@@ -1584,9 +2082,13 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           const thumb = document.createElement('img');
           thumb.src = imgUrl;
           thumb.alt = p.title + ' perspective ' + (idx + 1);
-          thumb.style.cssText = 'width:72px;height:48px;object-fit:cover;cursor:pointer;border:2px solid ' + (imgUrl === p.image ? '#8F0000' : '#DDD8CE') + ';';
+          thumb.style.cssText = 'width:76px;height:50px;object-fit:cover;cursor:pointer;transition:transform 0.2s ease;border:2px solid ' + (imgUrl === p.image ? '#8F0000' : '#DDD8CE') + ';';
           thumb.onclick = function() {
-            modalImage.src = imgUrl;
+            modalImage.style.opacity = '0.35';
+            setTimeout(function() {
+              modalImage.src = imgUrl;
+              modalImage.style.opacity = '1';
+            }, 140);
             modalGallery.querySelectorAll('img').forEach(function(i) { i.style.borderColor = '#DDD8CE'; });
             thumb.style.borderColor = '#8F0000';
           };
@@ -1596,17 +2098,22 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
+      if (window.lenisInstance) window.lenisInstance.stop();
+
+      if (window.gsap && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.fromTo(lightbox, { opacity: 0 }, { opacity: 1, duration: 0.25, ease: 'power2.out' });
+        gsap.fromTo(lightboxCard, { opacity: 0, y: 24, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: 'expo.out', clearProps: 'transform' });
+      }
     }
 
     function closeLightbox() {
       lightbox.classList.remove('active');
       document.body.style.overflow = '';
+      if (window.lenisInstance) window.lenisInstance.start();
     }
 
     function closeLightboxOnBackdrop(e) {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+      if (e.target === lightbox) closeLightbox();
     }
 
     window.openLightbox = openLightbox;
@@ -1614,11 +2121,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     window.closeLightboxOnBackdrop = closeLightboxOnBackdrop;
 
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-        closeLightbox();
-      }
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
     });
 
+    // Mobile Drawer
     const mobileToggle = document.getElementById('mobile-toggle');
     const mobileClose = document.getElementById('mobile-close');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -1642,6 +2148,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
     mobileLinks.forEach(function(link) { link.addEventListener('click', closeMobileMenu); });
 
+    // Inquiry Form WhatsApp Forwarder
     function handleInquirySubmit(e) {
       e.preventDefault();
       const name = document.getElementById('client-name').value;
@@ -1667,12 +2174,209 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       }, 600);
     }
     window.handleInquirySubmit = handleInquirySubmit;
+
+    // =========================================================================
+    // HERON-INSPIRED GSAP + LENIS + SPLITTEXT MOTION ENGINE
+    // =========================================================================
+    (function initStudioMotion() {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const preloader = document.getElementById('studioPreloader');
+      const preloaderFill = document.getElementById('preloaderFill');
+
+      function dismissPreloader() {
+        if (!preloader) return;
+        if (window.gsap && !reducedMotion) {
+          gsap.to(preloaderFill, { scaleX: 1, duration: 0.35, ease: 'power2.out' });
+          gsap.to(preloader, {
+            yPercent: -100,
+            duration: 0.65,
+            delay: 0.28,
+            ease: 'expo.inOut',
+            onComplete: function() {
+              preloader.style.display = 'none';
+            }
+          });
+        } else {
+          preloader.style.display = 'none';
+        }
+      }
+
+      // Guarantee preloader never stalls on any slow resource
+      const safetyTimer = setTimeout(dismissPreloader, 900);
+      window.addEventListener('load', function() {
+        clearTimeout(safetyTimer);
+        dismissPreloader();
+      });
+
+      if (reducedMotion || !window.gsap) {
+        if (preloader) preloader.style.display = 'none';
+        return;
+      }
+
+      if (window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+      if (window.SplitText) gsap.registerPlugin(SplitText);
+
+      // 1. Initialize Lenis Smooth Inertia Scrolling
+      if (window.Lenis) {
+        const lenis = new Lenis({
+          duration: 1.15,
+          easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+          smoothWheel: true,
+          wheelMultiplier: 0.95
+        });
+        window.lenisInstance = lenis;
+
+        if (window.ScrollTrigger) {
+          lenis.on('scroll', ScrollTrigger.update);
+          gsap.ticker.add(function(time) {
+            lenis.raf(time * 1000);
+          });
+          gsap.ticker.lagSmoothing(0);
+        }
+
+        // Anchor smooth scrolling via Lenis
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+          anchor.addEventListener('click', function(e) {
+            const href = anchor.getAttribute('href');
+            if (href && href.length > 1) {
+              const target = document.querySelector(href);
+              if (target) {
+                e.preventDefault();
+                lenis.scrollTo(target, { offset: -76, duration: 1.1 });
+              }
+            }
+          });
+        });
+      }
+
+      // 2. Scroll Progress Line under Sticky Navbar
+      const navProg = document.getElementById('navProgress');
+      if (navProg && window.ScrollTrigger) {
+        gsap.to(navProg, {
+          scaleX: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: document.body,
+            start: 'top top',
+            end: 'bottom bottom',
+            scrub: 0.2
+          }
+        });
+      }
+
+      // 3. Hero SplitText Editorial Entrance & Stagger
+      const heroHeadline = document.getElementById('heroHeadline');
+      if (heroHeadline && window.SplitText) {
+        try {
+          const split = new SplitText(heroHeadline, { type: 'lines,words' });
+          gsap.from(split.words, {
+            yPercent: 105,
+            opacity: 0,
+            duration: 0.85,
+            stagger: 0.06,
+            ease: 'expo.out',
+            delay: 0.25,
+            clearProps: 'transform,opacity'
+          });
+        } catch (err) {}
+      }
+
+      gsap.from('.hero-stagger', {
+        y: 22,
+        opacity: 0,
+        duration: 0.75,
+        stagger: 0.08,
+        ease: 'power3.out',
+        delay: 0.3,
+        clearProps: 'transform,opacity'
+      });
+
+      // 4. Hero Interactive CAD Crosshair & Coordinate Readout (Heron-AI signature!)
+      const crossV = document.getElementById('cadCrossV');
+      const crossH = document.getElementById('cadCrossH');
+      const coordPill = document.getElementById('cadCoords');
+      if (heroVp && crossV && crossH && coordPill) {
+        const quickV = gsap.quickTo(crossV, 'left', { duration: 0.15, ease: 'power2.out' });
+        const quickH = gsap.quickTo(crossH, 'top', { duration: 0.15, ease: 'power2.out' });
+
+        heroVp.addEventListener('mousemove', function(e) {
+          const rect = heroVp.getBoundingClientRect();
+          const rx = e.clientX - rect.left;
+          const ry = e.clientY - rect.top;
+          quickV(rx);
+          quickH(ry);
+          const mmX = Math.round((rx / rect.width) * 12800).toString().padStart(5, '0');
+          const mmY = Math.round((ry / rect.height) * 5400).toString().padStart(4, '0');
+          coordPill.textContent = 'X: ' + mmX + ' mm | Y: ' + mmY + ' mm | SCALE 1:100';
+        });
+      }
+
+      // 5. ScrollTrigger Staggered Reveals Across Sections
+      if (window.ScrollTrigger) {
+        gsap.utils.toArray('.reveal-head').forEach(function(el) {
+          gsap.from(el, {
+            y: 24,
+            opacity: 0,
+            duration: 0.7,
+            ease: 'power3.out',
+            clearProps: 'transform,opacity',
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+          });
+        });
+
+        gsap.utils.toArray('.reveal-card').forEach(function(el) {
+          gsap.from(el, {
+            y: 28,
+            opacity: 0,
+            duration: 0.75,
+            ease: 'power3.out',
+            clearProps: 'transform,opacity',
+            scrollTrigger: { trigger: el, start: 'top 88%', once: true }
+          });
+        });
+
+        gsap.from('.scope-grid .scope-list-item', {
+          x: -18,
+          opacity: 0,
+          duration: 0.55,
+          stagger: 0.05,
+          ease: 'power2.out',
+          clearProps: 'transform,opacity',
+          scrollTrigger: { trigger: '.scope-grid', start: 'top 85%', once: true }
+        });
+
+        gsap.from('.team-grid .team-card', {
+          y: 28,
+          scale: 0.96,
+          opacity: 0,
+          duration: 0.65,
+          stagger: 0.055,
+          ease: 'expo.out',
+          clearProps: 'transform,opacity',
+          scrollTrigger: { trigger: '.team-grid', start: 'top 85%', once: true }
+        });
+
+        ScrollTrigger.batch('.project-card', {
+          start: 'top 90%',
+          once: true,
+          onEnter: function(batch) {
+            gsap.from(batch, {
+              y: 28,
+              opacity: 0,
+              duration: 0.65,
+              stagger: 0.07,
+              ease: 'power3.out',
+              clearProps: 'transform,opacity'
+            });
+          }
+        });
+      }
+    })();
   </script>
 </body>
 </html>
 `;
 
-// Helpful SEO 404 Page, Sitemap & Robots matching Google SEO Starter Guide
 const notFoundHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1757,7 +2461,6 @@ async function run() {
     fs.writeFileSync(path.join(dir, 'sitemap.xml'), sitemapXml, 'utf8');
     fs.writeFileSync(path.join(dir, 'robots.txt'), robotsTxt, 'utf8');
 
-    // Ensure public/ also carries sitemap, robots, 404 for Vite dist/ builds
     const pubDir = path.join(dir, 'public');
     if (fs.existsSync(pubDir)) {
       fs.writeFileSync(path.join(pubDir, '404.html'), notFoundHtml, 'utf8');

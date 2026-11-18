@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', 'Hind', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-nepali: 'Hind', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-primary: #8B1A1A;
+  --color-primary-dark: #6B1212;
+  --color-primary-light: #B02828;
+  --color-primary-muted: #F5E8E8;
+  --color-accent: #1A3A2A;
+  --color-surface: #FDFAF6;
+  --color-surface-alt: #F7EFEF;
+  --color-surface-dark: #1C0A0A;
+  --color-text-primary: #1C1010;
+  --color-text-secondary: #6B4A4A;
+  --color-border-warm: #E5D0D0;
+}
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', 'Hind', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #FDFAF6;
+    color: #1C1010;
+  }
+  
+  body {
+    background-color: #FDFAF6;
+    color: #1C1010;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif, .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Saubhagya Ghar Warm Editorial Design Utilities */
+.label-caps {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: rgba(176, 40, 40, 0.3);
+  background-color: #F5E8E8;
+  color: #8B1A1A;
+  padding: 0.25rem 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.card-saubhagya {
+  background-color: #FFFFFF;
+  border: 1px solid #E5D0D0;
+  border-radius: 1.25rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-saubhagya:hover {
+  border-color: #B02828;
+  box-shadow: 0 16px 40px -12px rgba(139, 26, 26, 0.12);
+  transform: translateY(-2px);
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Elegant scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F7EFEF;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8BABA;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8B1A1A;
+}

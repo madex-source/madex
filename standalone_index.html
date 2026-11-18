@@ -1,0 +1,1946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Scale and Spaces Private Limited | Architecture, Home Renovation &amp; Engineering Nepal</title>
+  <meta name="description" content="Scale and Spaces Private Limited is the premier architecture, home renovation, interior design, and turnkey engineering firm in Kathmandu and Birgunj, Nepal." />
+  <meta property="og:title" content="Scale and Spaces Private Limited | Architecture, Home Renovation &amp; Engineering Nepal" />
+  <meta property="og:description" content="Scale and Spaces Private Limited - Integrated architecture, engineering, and home renovation practice in Kathmandu &amp; Birgunj." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" href="assets/logo.jpg" />
+  <link rel="apple-touch-icon" href="assets/logo.jpg" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              navy: '#0A192F',
+              dark: '#071224',
+              coral: '#FF5722',
+              orange: '#F97316',
+              amber: '#D97706',
+              azure: '#0284C7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #F8FAFC; color: #0F172A; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+    .animate-marquee { display: flex; width: max-content; animation: marqueeScroll 40s linear infinite; }
+    .animate-marquee:hover { animation-play-state: paused; }
+    .scrollbar-thin::-webkit-scrollbar { height: 6px; }
+    .scrollbar-thin::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 3px; }
+  </style>
+</head>
+<body class="antialiased selection:bg-[#FF5722] selection:text-white">
+
+  <!-- Top Utility Announcement Bar -->
+  <div class="bg-[#0A192F] text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-3 text-center sm:text-left">
+        <span class="inline-flex items-center gap-1.5 font-medium text-white">
+          <i class="fa-solid fa-shield-halved text-[#FF5722]"></i>
+          Nepal's Premier Architectural &amp; Home Renovation Practice
+        </span>
+        <span class="hidden md:inline text-slate-500">|</span>
+        <span class="hidden md:inline text-slate-400">Tokha-6, Kathmandu • Birgunj-12, Parsa</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="tel:+9779703881733" class="flex items-center gap-1.5 hover:text-white transition-colors">
+          <i class="fa-solid fa-phone text-[#FF5722]"></i>
+          <span class="font-semibold text-white">+977 9703881733</span>
+        </a>
+        <span class="hidden sm:inline text-slate-600">|</span>
+        <a href="mailto:studio@scaleandspaces.com" class="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors">
+          <i class="fa-solid fa-envelope text-[#FF5722]"></i>
+          <span>studio@scaleandspaces.com</span>
+        </a>
+        <span id="syncIndicator" class="hidden lg:inline-flex items-center gap-1 text-[11px] text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Sheet Live</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation (Saubhagya Ghar Clean Navbar) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex items-center justify-between h-20 gap-8" style="display: flex; justify-content: space-between; align-items: center; height: 5rem;">
+        <a href="#home" class="flex items-center gap-3 shrink-0">
+          <img src="assets/logo.svg" onerror="this.onerror=null; this.src='assets/logo.jpg';" alt="Scale and Spaces Logo" class="w-10 h-10 object-contain rounded-lg shadow-xs" />
+          <div class="flex flex-col">
+            <span class="text-xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              SCALE <span class="text-[#FF5722]">&amp;</span> SPACES
+            </span>
+            <span class="text-[10px] font-semibold tracking-wider text-slate-500">
+              Scale and Spaces Private Limited
+            </span>
+          </div>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-700">
+          <a href="#services" class="hover:text-[#FF5722] transition-colors whitespace-nowrap">Services</a>
+          <a href="#packages" class="hover:text-[#FF5722] transition-colors whitespace-nowrap">Packages</a>
+          <a href="#calculator" class="hover:text-[#FF5722] transition-colors whitespace-nowrap">Cost Estimator</a>
+          <a href="#hub" class="hover:text-[#FF5722] transition-colors whitespace-nowrap">Engineering Hub</a>
+          <a href="#portfolio" class="hover:text-[#FF5722] transition-colors whitespace-nowrap">Portfolio &amp; 3D</a>
+          <a href="#rates" class="hover:text-[#FF5722] transition-colors whitespace-nowrap">Material Rates</a>
+          <a href="#about" class="hover:text-[#FF5722] transition-colors whitespace-nowrap">About</a>
+          <a href="#faq" class="hover:text-[#FF5722] transition-colors whitespace-nowrap">FAQs</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-3 shrink-0">
+          <button onclick="openInspectionModal()" class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-bold text-white bg-[#FF5722] hover:bg-[#E64A19] rounded-lg shadow-sm transition-all whitespace-nowrap">
+            <span>Book Free Inspection</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </button>
+        </div>
+
+        <button onclick="toggleMobileNav()" class="lg:hidden p-2 text-slate-700 hover:text-slate-900 rounded-lg">
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden lg:hidden py-4 border-t border-slate-100 flex flex-col space-y-2 text-sm font-semibold text-slate-700">
+        <a href="#services" onclick="toggleMobileNav()" class="px-3 py-2 rounded-md hover:bg-slate-100">Services</a>
+        <a href="#packages" onclick="toggleMobileNav()" class="px-3 py-2 rounded-md hover:bg-slate-100">Packages</a>
+        <a href="#calculator" onclick="toggleMobileNav()" class="px-3 py-2 rounded-md hover:bg-slate-100">Live BOQ Cost Estimator</a>
+        <a href="#hub" onclick="toggleMobileNav()" class="px-3 py-2 rounded-md hover:bg-slate-100">17 Engineering Calculators</a>
+        <a href="#portfolio" onclick="toggleMobileNav()" class="px-3 py-2 rounded-md hover:bg-slate-100">Portfolio &amp; 3D</a>
+        <a href="#rates" onclick="toggleMobileNav()" class="px-3 py-2 rounded-md hover:bg-slate-100">Current Material Rates</a>
+        <a href="#about" onclick="toggleMobileNav()" class="px-3 py-2 rounded-md hover:bg-slate-100">About Our Firm</a>
+        <a href="#faq" onclick="toggleMobileNav()" class="px-3 py-2 rounded-md hover:bg-slate-100">FAQs</a>
+        <button onclick="openInspectionModal(); toggleMobileNav();" class="w-full text-center py-2.5 bg-[#FF5722] text-white font-bold rounded-lg shadow-sm">
+          Book Free Site Inspection &rarr;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (Synced from Google Sheets Hero Tab) -->
+  <section id="home" class="relative overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 pt-10 pb-16 lg:pt-16 lg:pb-24 border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#FF5722] uppercase tracking-wider" id="heroBadge">
+            <span class="w-2 h-2 rounded-full bg-[#FF5722]"></span>
+            <span>Nepal's Premier Architectural Practice</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]" id="heroTitle">
+            Home Renovation, Architecture &amp; Interior Design in Nepal
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0" id="heroDesc">
+            Scale and Spaces Private Limited is an integrated architectural, engineering, and construction practice operating from Tokha-6, Kathmandu and Birgunj-12, Parsa. Sensitizing scale to create spaces where environment interacts with thoughtful design and structural engineering accuracy.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <button onclick="openInspectionModal()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-base font-bold text-white bg-[#FF5722] hover:bg-[#E64A19] rounded-xl shadow-md transition-all">
+              <i class="fa-regular fa-calendar-check"></i>
+              <span id="heroBtn1Text">Book Free Inspection</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+            <a href="#calculator" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-base font-bold text-slate-800 bg-white hover:bg-slate-50 border border-slate-300 rounded-xl shadow-xs transition-all">
+              <i class="fa-solid fa-calculator text-[#FF5722]"></i>
+              <span>Instant BOQ Estimator</span>
+            </a>
+            <a href="tel:+9779703881733" class="hidden xl:inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 px-3 py-2">
+              <i class="fa-solid fa-phone text-[#FF5722]"></i>
+              <span id="heroBtn2Text">+977 9703881733</span>
+            </a>
+          </div>
+
+          <!-- Quick Service Tag Pills -->
+          <div class="pt-4 border-t border-slate-200/80">
+            <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Guaranteed Turnkey Disciplines</div>
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2 text-xs font-medium text-slate-700">
+              <span class="inline-flex items-center gap-1 bg-white px-2.5 py-1 rounded-md border border-slate-200"><i class="fa-solid fa-circle-check text-emerald-600"></i> Complete Home Renovation</span>
+              <span class="inline-flex items-center gap-1 bg-white px-2.5 py-1 rounded-md border border-slate-200"><i class="fa-solid fa-circle-check text-emerald-600"></i> 2D &amp; 3D Naksha Pass</span>
+              <span class="inline-flex items-center gap-1 bg-white px-2.5 py-1 rounded-md border border-slate-200"><i class="fa-solid fa-circle-check text-emerald-600"></i> Modular Kitchens</span>
+              <span class="inline-flex items-center gap-1 bg-white px-2.5 py-1 rounded-md border border-slate-200"><i class="fa-solid fa-circle-check text-emerald-600"></i> NBC 205 Earthquake Proof</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Feature Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 group">
+            <img src="https://i.postimg.cc/SRvT1GYp/Modern-Luxuary-Living-room-Project1.jpg" alt="Featured Suite" class="w-full h-[380px] sm:h-[440px] object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+            <div class="absolute bottom-0 inset-x-0 p-5 sm:p-6 text-white space-y-2">
+              <div class="flex items-center justify-between text-xs font-semibold">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#FF5722] text-white">
+                  <i class="fa-solid fa-sparkles"></i> Featured Living Suite
+                </span>
+                <span class="text-slate-300">Birgunj-12 • Kathmandu-6</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold tracking-tight text-white">Contemporary Architectural Renovation &amp; Fitout</h3>
+              <p class="text-xs text-slate-300 line-clamp-2">Acoustic fluted wall treatments, 3000K warm cove ceiling lights, and NBC 205 structural load redistribution.</p>
+              <div class="pt-2 flex items-center justify-between text-xs text-slate-200">
+                <span class="font-semibold text-emerald-400">100% Itemized BOQ Tracked</span>
+                <a href="#portfolio" class="inline-flex items-center gap-1 text-white hover:text-[#FF5722] font-bold underline underline-offset-4">View 3D Tour &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Strip -->
+      <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 p-5 bg-white rounded-2xl border border-slate-200/80 shadow-xs">
+        <div class="flex items-center gap-3 p-2">
+          <div class="w-10 h-10 rounded-xl bg-orange-50 text-[#FF5722] flex items-center justify-center shrink-0 text-lg"><i class="fa-solid fa-building"></i></div>
+          <div><div class="text-base font-black text-slate-900">Tokha-6</div><div class="text-xs text-slate-500 font-medium">Head Office, Kathmandu</div></div>
+        </div>
+        <div class="flex items-center gap-3 p-2">
+          <div class="w-10 h-10 rounded-xl bg-blue-50 text-[#0284C7] flex items-center justify-center shrink-0 text-lg"><i class="fa-solid fa-location-dot"></i></div>
+          <div><div class="text-base font-black text-slate-900">Birgunj-12</div><div class="text-xs text-slate-500 font-medium">Regional Office, Parsa</div></div>
+        </div>
+        <div class="flex items-center gap-3 p-2">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 text-lg"><i class="fa-solid fa-shield-halved"></i></div>
+          <div><div class="text-base font-black text-slate-900">NBC 205:2024</div><div class="text-xs text-slate-500 font-medium">Seismic Code Certified</div></div>
+        </div>
+        <div class="flex items-center gap-3 p-2">
+          <div class="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 text-lg"><i class="fa-solid fa-calculator"></i></div>
+          <div><div class="text-base font-black text-slate-900">Live BOQ</div><div class="text-xs text-slate-500 font-medium">Zero Budget Inflation</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Core Services (Saubhagya Ghar 3x2 Grid) -->
+  <section id="services" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
+          <span>Specialized Disciplines</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Integrated Services Built for Nepal's Standards
+        </h2>
+        <p class="mt-3 text-base text-slate-600">
+          From single-room interior renovations to multi-storey NBC 205 earthquake-resistant constructions, we deliver turnkey precision with transparent cost tracking.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="flex flex-col bg-slate-50 rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:shadow-xl overflow-hidden group">
+          <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&fit=crop&q=80" alt="Renovation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent"></div>
+            <div class="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-xs font-bold text-slate-900 shadow-xs">
+              <i class="fa-solid fa-home text-[#FF5722]"></i> Complete Renovation
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#FF5722] transition-colors">Complete Home Renovation &amp; Remodeling</h3>
+              <p class="mt-2 text-sm text-slate-600">Full-scale residential transformation including wall removals, layout redesign, flooring replacements, and luxury aesthetic upgrades.</p>
+            </div>
+            <div class="pt-2 flex items-center justify-between">
+              <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20am%20inquiring%20about%20Complete%20Home%20Renovation." target="_blank" class="text-xs font-bold text-[#FF5722] hover:text-[#E64A19]">Inquire Scope &rarr;</a>
+              <button onclick="openInspectionModal('Home Renovation')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">Book Visit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="flex flex-col bg-slate-50 rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:shadow-xl overflow-hidden group">
+          <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+            <img src="https://i.postimg.cc/ryKvxdrN/Bedroom-render-Project2-1.png" alt="Naksha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent"></div>
+            <div class="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-xs font-bold text-slate-900 shadow-xs">
+              <i class="fa-solid fa-compass-drafting text-[#FF5722]"></i> Naksha Pass
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#FF5722] transition-colors">Architectural 2D &amp; 3D Naksha Pass</h3>
+              <p class="mt-2 text-sm text-slate-600">AutoCAD working blueprints, municipal permit submission packages, bioclimatic cross-ventilation, and 3D photorealistic elevations.</p>
+            </div>
+            <div class="pt-2 flex items-center justify-between">
+              <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20need%20Architectural%20Naksha%20Pass%20drawings." target="_blank" class="text-xs font-bold text-[#FF5722] hover:text-[#E64A19]">Inquire Scope &rarr;</a>
+              <button onclick="openInspectionModal('Naksha Pass')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">Book Visit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="flex flex-col bg-slate-50 rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:shadow-xl overflow-hidden group">
+          <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+            <img src="https://i.postimg.cc/1XH29vcT/Modular-Kitchen-vs-Carpenters-Kitchen-in-Birgunj.jpg" alt="Kitchen" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent"></div>
+            <div class="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-xs font-bold text-slate-900 shadow-xs">
+              <i class="fa-solid fa-utensils text-[#FF5722]"></i> Modular Kitchen
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#FF5722] transition-colors">Modular Kitchens &amp; Interior Architecture</h3>
+              <p class="mt-2 text-sm text-slate-600">Custom ergonomic kitchens with moisture-sealed BWP marine ply, quartz countertops, false ceilings, and ambient acoustic illumination.</p>
+            </div>
+            <div class="pt-2 flex items-center justify-between">
+              <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20want%20to%20consult%20for%20a%20Modular%20Kitchen." target="_blank" class="text-xs font-bold text-[#FF5722] hover:text-[#E64A19]">Inquire Scope &rarr;</a>
+              <button onclick="openInspectionModal('Modular Kitchen')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">Book Visit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="flex flex-col bg-slate-50 rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:shadow-xl overflow-hidden group">
+          <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&fit=crop&q=80" alt="Civil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent"></div>
+            <div class="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-xs font-bold text-slate-900 shadow-xs">
+              <i class="fa-solid fa-building-shield text-[#FF5722]"></i> NBC 205 Civil
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#FF5722] transition-colors">NBC 205:2024 Civil &amp; Structural Engineering</h3>
+              <p class="mt-2 text-sm text-slate-600">Earthquake-resistant RCC column, footing, and plinth schedules formulated for Nepal's seismic PGA zones (0.35g to 0.40g).</p>
+            </div>
+            <div class="pt-2 flex items-center justify-between">
+              <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20need%20NBC%20205%20structural%20engineering." target="_blank" class="text-xs font-bold text-[#FF5722] hover:text-[#E64A19]">Inquire Scope &rarr;</a>
+              <button onclick="openInspectionModal('NBC 205 Engineering')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">Book Visit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="flex flex-col bg-slate-50 rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:shadow-xl overflow-hidden group">
+          <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&fit=crop&q=80" alt="Waterproofing" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent"></div>
+            <div class="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-xs font-bold text-slate-900 shadow-xs">
+              <i class="fa-solid fa-droplet text-[#FF5722]"></i> Waterproofing
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#FF5722] transition-colors">Dampness, Seepage &amp; Waterproofing</h3>
+              <p class="mt-2 text-sm text-slate-600">Scientific chemical diagnosis and treatment for rising wall dampness, leaking terrace slabs, and bathroom tile seepages across Nepal.</p>
+            </div>
+            <div class="pt-2 flex items-center justify-between">
+              <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20have%20wall%20dampness%20issues." target="_blank" class="text-xs font-bold text-[#FF5722] hover:text-[#E64A19]">Inquire Scope &rarr;</a>
+              <button onclick="openInspectionModal('Waterproofing')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">Book Visit</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="flex flex-col bg-slate-50 rounded-2xl border border-slate-200 hover:border-slate-300 transition-all hover:shadow-xl overflow-hidden group">
+          <div class="relative h-48 w-full overflow-hidden bg-slate-900">
+            <img src="https://i.postimg.cc/jn7G8bwV/Resturant-Office-Interior.png" alt="Commercial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent"></div>
+            <div class="absolute top-3.5 left-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-xs font-bold text-slate-900 shadow-xs">
+              <i class="fa-solid fa-city text-[#FF5722]"></i> Commercial Fitouts
+            </div>
+          </div>
+          <div class="p-6 flex flex-col flex-1 justify-between space-y-4">
+            <div>
+              <h3 class="text-lg font-bold text-slate-900 group-hover:text-[#FF5722] transition-colors">Commercial, Clinic &amp; Hospital Fitouts</h3>
+              <p class="mt-2 text-sm text-slate-600">Turnkey architectural and interior execution for corporate offices, medical clinics, sterile hospital zones, and high-footfall restaurants.</p>
+            </div>
+            <div class="pt-2 flex items-center justify-between">
+              <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20have%20a%20commercial%20project." target="_blank" class="text-xs font-bold text-[#FF5722] hover:text-[#E64A19]">Inquire Scope &rarr;</a>
+              <button onclick="openInspectionModal('Commercial Fitout')" class="text-xs font-semibold px-3 py-1.5 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100">Book Visit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live BOQ Cost Estimator -->
+  <section id="calculator" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-xs font-bold text-[#FF5722] uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Interactive Estimator</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          Instant Room &amp; Project Cost Calculator
+        </h2>
+        <p class="mt-3 text-base text-slate-600">
+          Estimate your design or turnkey construction investment in seconds based on current Nepal market pricing and NBC structural standards.
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto bg-white rounded-3xl border border-slate-200/90 shadow-xl overflow-hidden p-6 sm:p-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">1. Space / Project Type</label>
+            <select id="boqRoom" onchange="runBoqCalc()" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 font-semibold">
+              <option value="living">Living Room Suite</option>
+              <option value="bedroom" selected>Master Bedroom Suite</option>
+              <option value="kitchen">Modular Chef Kitchen &amp; Dining</option>
+              <option value="bathroom">Luxury Bathroom / Sanitary</option>
+              <option value="home">Full Residence (2BHK / 3BHK Flat)</option>
+              <option value="office">Commercial Workspace / Office</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">2. Scope of Deliverables</label>
+            <select id="boqScope" onchange="runBoqCalc()" class="w-full px-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-slate-900 font-semibold">
+              <option value="tier1">Tier 1: 2D Architectural &amp; MEP Sets (Rs. 25–45/sq.ft)</option>
+              <option value="tier2" selected>Tier 2: 3D Visualization &amp; Blueprints (Rs. 65–110/sq.ft)</option>
+              <option value="tier3">Tier 3: Turnkey Construction Execution (Rs. 1,600–2,800/sq.ft)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mt-8 p-6 bg-slate-50 rounded-2xl border border-slate-200">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">3. Floor Area (Square Feet)</label>
+              <p class="text-xs text-slate-500">Drag to adjust the carpet / built-up square footage</p>
+            </div>
+            <div class="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-xl border border-slate-300 shadow-2xs font-mono font-bold text-lg text-slate-900">
+              <span id="boqAreaDisplay">350</span>
+              <span class="text-xs text-slate-500">sq.ft</span>
+            </div>
+          </div>
+          <input type="range" min="80" max="4000" step="10" value="350" id="boqAreaRange" oninput="runBoqCalc()" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-ew-resize accent-[#FF5722]" />
+        </div>
+
+        <div class="mt-8 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-slate-900 to-[#0A192F] text-white shadow-xl">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div class="space-y-2">
+              <div class="text-xs font-bold uppercase tracking-widest text-[#FF5722] flex items-center gap-1.5">
+                <i class="fa-solid fa-sparkles"></i> Estimated Investment Range (NPR)
+              </div>
+              <div class="text-3xl sm:text-4xl lg:text-5xl font-black font-mono tracking-tight" id="boqPriceOutput">
+                Rs. 22,750 – 38,500
+              </div>
+              <p class="text-xs text-slate-300">Subject to on-site structural audit in Kathmandu or Birgunj. Zero hidden fees.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+              <button onclick="exportBoqWhatsApp()" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-md transition-all">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Send Estimate to WhatsApp
+              </button>
+              <button onclick="openInspectionModal()" class="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-bold text-slate-200 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl transition-all">
+                Book Free Inspection &rarr;
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inspection Packages (Synced from 'Packages' Tab) -->
+  <section id="packages" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
+          <span>Transparent Inspection Tiers</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Design &amp; Site Inspection Packages</h2>
+        <p class="mt-3 text-base text-slate-600">Transparent, fixed pricing for site measurements, structural feasibility, AutoCAD 2D drafting, and photorealistic 3D visualization.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch" id="packagesContainer">
+        <!-- Default Fallbacks (Replaced dynamically if Google Sheet responds) -->
+        <div class="flex flex-col justify-between rounded-3xl p-8 bg-white border border-slate-200 hover:shadow-xl transition-all">
+          <div>
+            <span class="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 bg-slate-100 text-slate-700">Basic Tier</span>
+            <h3 class="text-2xl font-bold mb-2">Estimation Only</h3>
+            <div class="text-3xl font-black font-mono text-slate-900 mb-4">Rs. 1,500 <span class="text-xs font-semibold text-slate-500">/ project</span></div>
+            <p class="text-sm text-slate-600 mb-6">Professional cost estimation and material volume takeoff for your project.</p>
+            <ul class="space-y-3 text-sm text-slate-700 mb-8 pt-4 border-t border-slate-100">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Basic Property Assessment</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Itemized BOQ Cost Estimation</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Material Quantity Schedule</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Direct WhatsApp Consultation</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20want%20the%20Estimation%20Only%20Package." target="_blank" class="w-full text-center py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-sm">Request on WhatsApp</a>
+        </div>
+
+        <div class="relative flex flex-col justify-between rounded-3xl p-8 bg-slate-900 text-white shadow-2xl ring-2 ring-[#FF5722] scale-100 lg:-translate-y-2">
+          <div class="absolute -top-4 right-8 px-4 py-1.5 rounded-full bg-[#FF5722] text-white text-xs font-extrabold uppercase shadow-md">Most Popular</div>
+          <div>
+            <span class="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 bg-white/10 text-orange-300">Architectural</span>
+            <h3 class="text-2xl font-bold mb-2">With 2D Working Plan</h3>
+            <div class="text-3xl font-black font-mono text-white mb-4">Rs. 2,500 <span class="text-xs font-semibold text-slate-400">/ project</span></div>
+            <p class="text-sm text-slate-300 mb-6">Complete property measurement with contractor-ready AutoCAD floor plans.</p>
+            <ul class="space-y-3 text-sm text-slate-200 mb-8 pt-4 border-t border-white/15">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Complete Property Site Inspection</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Detailed 2D AutoCAD Floor Plans</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Cost Estimation with BOQ Breakdown</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Material &amp; Specification Guidance</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Priority Engineer Review</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20want%20the%202D%20Working%20Plan%20Package." target="_blank" class="w-full text-center py-3 bg-[#FF5722] hover:bg-[#E64A19] text-white font-bold rounded-xl text-sm shadow-md">Request on WhatsApp</a>
+        </div>
+
+        <div class="flex flex-col justify-between rounded-3xl p-8 bg-white border border-slate-200 hover:shadow-xl transition-all">
+          <div>
+            <span class="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 bg-slate-100 text-slate-700">Full Luxury</span>
+            <h3 class="text-2xl font-bold mb-2">With 2D &amp; 3D Plan</h3>
+            <div class="text-3xl font-black font-mono text-slate-900 mb-4">Rs. 20,000 <span class="text-xs font-semibold text-slate-500">/ project</span></div>
+            <p class="text-sm text-slate-600 mb-6">Comprehensive visualization service with realistic 3D renders and VR tour.</p>
+            <ul class="space-y-3 text-sm text-slate-700 mb-8 pt-4 border-t border-slate-100">
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Comprehensive Structural Site Audit</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Detailed 2D Working Blueprints</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Full HD Photorealistic 3D Renders</li>
+              <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-600"></i> Interactive 360° VR Walkthrough</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20want%20the%20Complete%202D%20and%203D%20Package." target="_blank" class="w-full text-center py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl text-sm">Request on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / After Slider -->
+  <section class="py-16 sm:py-24 bg-slate-900 text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-bold text-orange-400 uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-layer-group"></i> Technical Execution
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">2D AutoCAD Blueprint to Photorealistic Reality</h2>
+        <p class="mt-3 text-base text-slate-300">Drag the divider to explore how exact AutoCAD working drawings convert into contractor-ready, photorealistic 3D environments.</p>
+      </div>
+
+      <div class="max-w-4xl mx-auto relative h-[320px] sm:h-[480px] rounded-3xl overflow-hidden shadow-2xl border-2 border-slate-700" id="baContainer">
+        <img src="https://i.postimg.cc/ryKvxdrN/Bedroom-render-Project2-1.png" alt="3D Reality" class="absolute inset-0 w-full h-full object-cover" />
+        <div id="baOverlay" class="absolute inset-0 overflow-hidden" style="clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);">
+          <img src="https://i.postimg.cc/jjb8122k/Bedroom-Layout-Project2.png" alt="2D Layout" class="absolute inset-0 w-full h-full object-cover bg-white" />
+        </div>
+        <div id="baHandle" class="absolute top-0 bottom-0 w-1 bg-white shadow-lg pointer-events-none" style="left: 50%;">
+          <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-[#FF5722] text-white flex items-center justify-center shadow-xl border-2 border-white">
+            <i class="fa-solid fa-arrows-left-right text-xs"></i>
+          </div>
+        </div>
+        <div class="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-slate-900/90 text-xs font-mono font-bold uppercase text-white shadow-md">AutoCAD 2D Blueprint</div>
+        <div class="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-[#FF5722]/90 text-xs font-mono font-bold uppercase text-white shadow-md">3D Rendered Reality</div>
+        <input type="range" min="0" max="100" value="50" id="baSliderRange" oninput="updateBeforeAfter(this.value)" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-20" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete 17 Calculators Studio Engineering Hub -->
+  <section id="hub" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-wrench text-[#FF5722]"></i> Engineering Suite
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">17 Engineering &amp; Interior Calculators</h2>
+        <p class="mt-3 text-base text-slate-600">Professional estimation tools specifically formulated for Nepal building codes, material ratios, municipal permits, and interior fitouts.</p>
+      </div>
+
+      <div class="flex justify-center gap-3 mb-10 flex-wrap">
+        <button id="btnSuiteInt" onclick="setHubSuite('interior')" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-[#FF5722] text-white shadow-md">Interior Studio (6 Tools)</button>
+        <button id="btnSuiteCiv" onclick="setHubSuite('civil')" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-100 text-slate-700">Civil Takeoffs (6 Tools)</button>
+        <button id="btnSuiteNbc" onclick="setHubSuite('nbc')" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-100 text-slate-700">NBC 205:2024 Suite (5 Tools)</button>
+      </div>
+
+      <!-- Hub Content Box -->
+      <div class="max-w-4xl mx-auto bg-slate-50 rounded-3xl border border-slate-200/90 shadow-lg p-6 sm:p-8">
+        <!-- 1. Interior Suite Content -->
+        <div id="hubInteriorSuite">
+          <div class="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-thin">
+            <button onclick="setIntSubTool('paint')" class="int-chip px-4 py-2 rounded-lg text-xs font-bold bg-slate-900 text-white">🎨 Paint &amp; Putty</button>
+            <button onclick="setIntSubTool('ceiling')" class="int-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">💡 False Ceiling &amp; LED</button>
+            <button onclick="setIntSubTool('lighting')" class="int-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">🔆 Room Lux</button>
+            <button onclick="setIntSubTool('kitchen')" class="int-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">🍳 Modular Kitchen</button>
+            <button onclick="setIntSubTool('curtain')" class="int-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">🪟 Curtains &amp; Fabric</button>
+            <button onclick="setIntSubTool('ac')" class="int-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">❄️ AC Tonnage</button>
+          </div>
+
+          <!-- Paint Tool -->
+          <div id="tool-paint" class="space-y-4">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Length (ft)</label><input type="number" id="pL" value="14" oninput="runPaintCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Width (ft)</label><input type="number" id="pW" value="12" oninput="runPaintCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Height (ft)</label><input type="number" id="pH" value="10" oninput="runPaintCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Deduction (sq.ft)</label><input type="number" id="pDed" value="50" oninput="runPaintCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Estimated Wall Area</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="pAreaOut">470 sq.ft</div>
+              <div class="text-sm text-slate-600" id="pBreakdownOut">Putty: ~24 kg • Primer: ~4.7 L • Emulsion: ~8.5 L</div>
+            </div>
+          </div>
+
+          <!-- Ceiling Tool -->
+          <div id="tool-ceiling" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Length (ft)</label><input type="number" id="cL" value="16" oninput="runCeilCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Width (ft)</label><input type="number" id="cW" value="14" oninput="runCeilCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Board Size</label><select id="cBoard" onchange="runCeilCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="24">4ft × 6ft</option><option value="32">4ft × 8ft</option></select></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Gypsum Board Requirement</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="cSheetsOut">11 Sheets</div>
+              <div class="text-sm text-slate-600" id="cBreakdownOut">Ceiling Area: 224 sq.ft • Perimeter L-Channel: ~60 Rft</div>
+            </div>
+          </div>
+
+          <!-- Lighting Tool -->
+          <div id="tool-lighting" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Function</label><select id="lLux" onchange="runLuxCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="150">Living Room (150 Lux)</option><option value="100">Bedroom (100 Lux)</option><option value="300" selected>Kitchen / Study (300 Lux)</option></select></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Area (sq.ft)</label><input type="number" id="lArea" value="150" oninput="runLuxCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">LED Wattage</label><select id="lWatt" onchange="runLuxCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="7">7W</option><option value="9" selected>9W</option><option value="12">12W</option></select></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Recommended Downlights</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="lCountOut">6 Downlights</div>
+              <div class="text-sm text-slate-600">Total Output: ~4,180 Lumens • Total Power Load: ~54W</div>
+            </div>
+          </div>
+
+          <!-- Kitchen Tool -->
+          <div id="tool-kitchen" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Layout</label><select id="kLayout" onchange="runKitCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="1.0">Straight Wall</option><option value="1.8" selected>L-Shape Corner</option><option value="2.5">U-Shape Grand</option></select></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Primary Wall Run (ft)</label><input type="number" id="kLen" value="10" oninput="runKitCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Cabinet Run &amp; Countertop</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="kRftOut">18 Running Feet</div>
+              <div class="text-sm text-slate-600">Base Cabinets: 18 Rft • Overhead: ~14 Rft • Countertop: ~40 sq.ft</div>
+            </div>
+          </div>
+
+          <!-- Curtain Tool -->
+          <div id="tool-curtain" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Width (in)</label><input type="number" id="curtW" value="72" oninput="runCurtCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Height (in)</label><input type="number" id="curtH" value="96" oninput="runCurtCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Fullness</label><select id="curtFull" onchange="runCurtCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="1.8">1.8× Eyelet</option><option value="2.2" selected>2.2× Pinch Pleat</option></select></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Drapery Fabric Requirement</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="curtMetersOut">~9.5 Meters</div>
+              <div class="text-sm text-slate-600">Total Flat Width: 158" • Track Length: 6.0 Feet</div>
+            </div>
+          </div>
+
+          <!-- AC Tool -->
+          <div id="tool-ac" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Area (sq.ft)</label><input type="number" id="acA" value="180" oninput="runAcCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Height (ft)</label><input type="number" id="acH" value="10" oninput="runAcCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Exposure</label><select id="acExp" onchange="runAcCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="1.0">Intermediate Floor</option><option value="1.2" selected>Top Floor (Sun)</option></select></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Recommended AC Capacity</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="acTonOut">1.5 Ton</div>
+              <div class="text-sm text-slate-600">Estimated Heat Load: ~21,600 BTU/hr</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Civil Suite Content -->
+        <div id="hubCivilSuite" class="hidden">
+          <div class="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-thin">
+            <button onclick="setCivSubTool('cost')" class="civ-chip px-4 py-2 rounded-lg text-xs font-bold bg-slate-900 text-white">🏠 Building Cost</button>
+            <button onclick="setCivSubTool('plinth')" class="civ-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">📐 Allowable Plinth</button>
+            <button onclick="setCivSubTool('brick')" class="civ-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">🧱 Brickwork</button>
+            <button onclick="setCivSubTool('rcc')" class="civ-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">🏗️ Concrete RCC</button>
+            <button onclick="setCivSubTool('steel')" class="civ-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">🔩 Stirrup Length</button>
+            <button onclick="setCivSubTool('land')" class="civ-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">🗺️ Trace Map</button>
+          </div>
+
+          <!-- Building Cost -->
+          <div id="tool-cost" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Plinth (sq.ft)</label><input type="number" id="hPlinth" value="1000" oninput="runCostCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Storeys</label><select id="hStoreys" onchange="runCostCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="1">1</option><option value="2" selected>2</option><option value="2.5">2.5</option><option value="3">3</option></select></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Tier</label><select id="hRate" onchange="runCostCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="2600">Standard (Rs. 2,600/sq.ft)</option><option value="3200" selected>Premium (Rs. 3,200/sq.ft)</option><option value="3800">Luxury (Rs. 3,800/sq.ft)</option></select></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Estimated Construction Investment</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="hCostOut">Rs. 64.0 Lakhs</div>
+              <div class="text-sm text-slate-600">Built-up: 2,000 sq.ft • OPC Cement: ~800 Bags • Rebar: ~7.6 Tons</div>
+            </div>
+          </div>
+
+          <!-- Plinth Tool -->
+          <div id="tool-plinth" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Unit</label><select id="plUnit" onchange="runPlinthCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="terai" selected>Terai (Kattha)</option><option value="sqft">Sq.Ft</option></select></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Area Value</label><input type="number" id="plVal" value="10" oninput="runPlinthCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Plot Width (ft)</label><input type="number" id="plPlotW" value="30" oninput="runPlinthCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Permissible Ground Plinth Area</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="plResultOut">1,215 sq.ft</div>
+              <div class="text-sm text-slate-600">Gross Plot Area: 1,822 sq.ft • Road setback applied.</div>
+            </div>
+          </div>
+
+          <!-- Brickwork -->
+          <div id="tool-brick" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Length (ft)</label><input type="number" id="bL" value="30" oninput="runBrickCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Height (ft)</label><input type="number" id="bH" value="10" oninput="runBrickCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Thickness</label><select id="bT" onchange="runBrickCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="9">9" Main</option><option value="4.5">4.5" Partition</option></select></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Brickwork Takeoff</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="bBricksOut">~2,318 Bricks</div>
+              <div class="text-sm text-slate-600">Net Wall: 240 sq.ft • Cement: ~6.2 Bags (1:6 mix)</div>
+            </div>
+          </div>
+
+          <!-- RCC Tool -->
+          <div id="tool-rcc" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Length (ft)</label><input type="number" id="rL" value="20" oninput="runRccCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Width (ft)</label><input type="number" id="rW" value="15" oninput="runRccCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Depth (in)</label><input type="number" id="rD" value="5" oninput="runRccCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">M20 Concrete Mix Takeoff</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="rCementOut">~28 Bags Cement</div>
+              <div class="text-sm text-slate-600">River Sand: ~52 cu.ft • 20mm Gitti: ~105 cu.ft</div>
+            </div>
+          </div>
+
+          <!-- Stirrup Tie -->
+          <div id="tool-steel" class="space-y-4 hidden">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Width B (mm)</label><input type="number" id="tB" value="250" oninput="runSteelCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Depth D (mm)</label><input type="number" id="tD" value="355" oninput="runSteelCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Cover (mm)</label><input type="number" id="tCov" value="25" oninput="runSteelCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Dia (mm)</label><input type="number" id="tDia" value="8" oninput="runSteelCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Stirrup Bar Cutting Length</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="tLenOut">1,210 mm (1.21 m)</div>
+              <div class="text-sm text-slate-600">Weight per Ring: ~0.48 kg (with 135° seismic hooks)</div>
+            </div>
+          </div>
+
+          <!-- Trace Map -->
+          <div id="tool-land" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Scale</label><select id="trScale" onchange="runLandCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="500">1:500</option><option value="1200" selected>1:1200</option></select></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Map Length (cm)</label><input type="number" id="trCm" value="5" oninput="runLandCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Ground Distance</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="trDistOut">60.0 Meters (196.8 Feet)</div>
+              <div class="text-sm text-slate-600">1 cm on Lalpurja map = 12 meters on ground.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. NBC 205 Suite Content -->
+        <div id="hubNbcSuite" class="hidden">
+          <div class="flex gap-2 overflow-x-auto pb-3 mb-6 scrollbar-thin">
+            <button onclick="setNbcSubTool('pga')" class="nbc-chip px-4 py-2 rounded-lg text-xs font-bold bg-slate-900 text-white">🇳🇵 PGA Lookup</button>
+            <button onclick="setNbcSubTool('detailing')" class="nbc-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">📋 Member Detailing</button>
+            <button onclick="setNbcSubTool('soil')" class="nbc-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">⚖️ Soil Bearing (SBC)</button>
+            <button onclick="setNbcSubTool('far')" class="nbc-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">🏢 FAR &amp; BCR</button>
+            <button onclick="setNbcSubTool('septic')" class="nbc-chip px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border">🚰 Septic Tank</button>
+          </div>
+
+          <!-- PGA Tool -->
+          <div id="tool-pga" class="space-y-4">
+            <div><label class="text-xs font-bold text-slate-600 block mb-1">Select Municipality</label><select id="nbcPgaSelect" onchange="runPgaCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="0.35" selected>Parsa - Birgunj Metropolitan (PGA 0.35g)</option><option value="0.40">Chitwan - Bharatpur Metropolitan (PGA 0.40g)</option><option value="0.35">Kathmandu Metropolitan (PGA 0.35g)</option></select></div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Seismic Parameter</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="pgaOut">PGA (Z) = 0.35g</div>
+              <div class="text-sm text-slate-600">Importance Factor I = 1.0 • Ductility Rμ = 4.0</div>
+            </div>
+          </div>
+
+          <!-- Member Detailing -->
+          <div id="tool-detailing" class="space-y-4 hidden">
+            <div><label class="text-xs font-bold text-slate-600 block mb-1">Storeys</label><select id="nbcStoreys" onchange="runDetailingCalc()" class="w-full px-3 py-2 bg-white border rounded-lg"><option value="2">2 Storeys (Sec 8)</option><option value="3">3 Storeys (Sec 9)</option></select></div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Mandatory Schedule</div>
+              <div class="text-2xl font-black text-slate-900 font-mono my-1" id="detailOut">Col: 350×350 mm | Footing: 1.5×1.5 m</div>
+              <div class="text-sm text-slate-600" id="detailSubOut">Rebar: 4-16Ø + 4-12Ø Fe500 • Plinth: 250×355 mm</div>
+            </div>
+          </div>
+
+          <!-- Soil SBC -->
+          <div id="tool-soil" class="space-y-4 hidden">
+            <div><label class="text-xs font-bold text-slate-600 block mb-1">Drop Impression Depth (mm)</label><input type="number" id="sbcDepthVal" value="15" oninput="runSoilCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Safe Bearing Capacity (SBC)</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="sbcOut">150 kN/m²</div>
+              <div class="text-sm text-slate-600">Classification: Medium Compact Soil • NBC 205 Cl 3.5 protocol.</div>
+            </div>
+          </div>
+
+          <!-- FAR -->
+          <div id="tool-far" class="space-y-4 hidden">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Plot Area (sq.ft)</label><input type="number" id="farPlotVal" value="2000" oninput="runFarCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+              <div><label class="text-xs font-bold text-slate-600 block mb-1">Total Built-up (sq.ft)</label><input type="number" id="farBuiltVal" value="3200" oninput="runFarCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+            </div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Municipal Compliance</div>
+              <div class="text-3xl font-black text-slate-900 font-mono my-1" id="farOut">FAR: 1.60</div>
+              <div class="text-sm text-slate-600">FAR &le; 2.0. Standard municipal approval ready.</div>
+            </div>
+          </div>
+
+          <!-- Septic Tank -->
+          <div id="tool-septic" class="space-y-4 hidden">
+            <div><label class="text-xs font-bold text-slate-600 block mb-1">Household Users</label><input type="number" id="septicUsersVal" value="8" oninput="runSepticCalc()" class="w-full px-3 py-2 bg-white border rounded-lg" /></div>
+            <div class="p-5 bg-white rounded-2xl border shadow-xs">
+              <div class="text-xs font-bold text-slate-500 uppercase">Septic Tank Dimensions</div>
+              <div class="text-2xl font-black text-slate-900 font-mono my-1" id="septicOut">7.2 ft × 3.6 ft × 5.0 ft</div>
+              <div class="text-sm text-slate-600">Liquid Volume: ~2,400 Liters • 2-chamber RCC construction.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Works & 360 VR (All 50+ Projects from Official Portfolio) -->
+  <section id="portfolio" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-compass text-[#FF5722]"></i> Verified Company Portfolio
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">Design Works, 3D Renders &amp; AutoCAD Blueprints</h2>
+        <p class="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed">
+          Explore built architectural residences, commercial towers, healthcare complexes, public civic landscapes, and turnkey luxury interiors across Kathmandu, Birgunj, and Nepal.
+        </p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-8" id="portfolioCategoryFilters">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div class="flex items-center justify-between text-xs font-bold text-slate-500 mb-6 px-1">
+        <span id="portfolioCountBadge">Showing all projects</span>
+        <span>Click any card for full blueprints &amp; 3D view</span>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolioContainer">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Continuous Marquee Reel (Synced from 'Posts' Tab) -->
+  <section class="py-12 bg-white border-b border-slate-200 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 flex justify-between items-center">
+      <div>
+        <span class="text-xs font-bold uppercase tracking-widest text-[#FF5722]">Live Project Reel</span>
+        <h4 class="text-lg font-bold text-slate-900">Continuous Construction Feed</h4>
+      </div>
+      <span class="text-xs text-slate-500">Hover to pause</span>
+    </div>
+    <div class="w-full overflow-hidden">
+      <div class="animate-marquee flex gap-6 px-4" id="postsMarqueeTrack">
+        <a href="#portfolio" class="w-72 shrink-0 bg-slate-50 rounded-2xl border overflow-hidden shadow-xs block">
+          <div class="h-44 w-full overflow-hidden bg-slate-900"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800" alt="Post" class="w-full h-full object-cover" /></div>
+          <div class="p-4"><div class="text-xs font-bold text-slate-900 truncate">Modern Residence Facade</div><p class="text-[11px] text-slate-500 mt-1 truncate">Natural stone cladding and thermal insulation.</p></div>
+        </a>
+        <a href="#portfolio" class="w-72 shrink-0 bg-slate-50 rounded-2xl border overflow-hidden shadow-xs block">
+          <div class="h-44 w-full overflow-hidden bg-slate-900"><img src="https://i.postimg.cc/ryKvxdrN/Bedroom-render-Project2-1.png" alt="Post" class="w-full h-full object-cover" /></div>
+          <div class="p-4"><div class="text-xs font-bold text-slate-900 truncate">Luxury Master Suite</div><p class="text-[11px] text-slate-500 mt-1 truncate">Floating consoles and indirect backlighting.</p></div>
+        </a>
+        <a href="#portfolio" class="w-72 shrink-0 bg-slate-50 rounded-2xl border overflow-hidden shadow-xs block">
+          <div class="h-44 w-full overflow-hidden bg-slate-900"><img src="https://i.postimg.cc/jn7G8bwV/Resturant-Office-Interior.png" alt="Post" class="w-full h-full object-cover" /></div>
+          <div class="p-4"><div class="text-xs font-bold text-slate-900 truncate">Commercial Dining &amp; Lounge</div><p class="text-[11px] text-slate-500 mt-1 truncate">Acoustic baffle ceiling and pendant illumination.</p></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rates & Resource Hub (Synced from 'Rates' & 'Downloads' Tabs) -->
+  <section id="rates" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-book-open text-[#FF5722]"></i> Market Intelligence
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Client Resource Hub &amp; Construction Rates</h2>
+        <p class="mt-3 text-base text-slate-600">Live civil engineering market rates for Kathmandu and Birgunj, updated continuously.</p>
+      </div>
+
+      <div class="max-w-5xl mx-auto overflow-x-auto rounded-2xl border border-slate-200 shadow-xs bg-white">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-slate-900 text-white text-xs font-mono uppercase tracking-wider">
+              <th class="py-3.5 px-6">Material / Specification</th>
+              <th class="py-3.5 px-4">Category</th>
+              <th class="py-3.5 px-4">Standard Unit</th>
+              <th class="py-3.5 px-6">Market Rate (NPR)</th>
+              <th class="py-3.5 px-4">Status</th>
+            </tr>
+          </thead>
+          <tbody id="ratesTableBody" class="divide-y divide-slate-100 font-medium text-slate-700">
+            <tr><td class="py-3.5 px-6 font-bold text-slate-900">OPC Cement (Shivam / Hetauda)</td><td class="py-3.5 px-4 text-xs font-semibold text-slate-500"><span class="px-2 py-0.5 rounded-full bg-slate-100">Civil</span></td><td class="py-3.5 px-4 text-xs">50 kg Bag</td><td class="py-3.5 px-6 font-bold text-[#FF5722] font-mono">Rs. 720 – 770</td><td class="py-3.5 px-4 text-xs text-emerald-600 font-semibold">Current</td></tr>
+            <tr><td class="py-3.5 px-6 font-bold text-slate-900">TMT Steel (Fe 500 Grade)</td><td class="py-3.5 px-4 text-xs font-semibold text-slate-500"><span class="px-2 py-0.5 rounded-full bg-slate-100">Civil</span></td><td class="py-3.5 px-4 text-xs">Per Kg</td><td class="py-3.5 px-6 font-bold text-[#FF5722] font-mono">Rs. 92 – 98</td><td class="py-3.5 px-4 text-xs text-emerald-600 font-semibold">Current</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Firm & Leadership (Synced from 'About' & 'Team' Tabs) -->
+  <section id="about" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900">
+            <img src="https://i.postimg.cc/05wwzfcw/Profile-Pic.png" alt="Profile" id="aboutPhotoImg" class="w-full h-[460px] object-cover" src="assets/team/team-chetan.jpg" />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            <div class="absolute bottom-5 inset-x-5 text-white">
+              <span class="inline-block px-3 py-1 rounded-full bg-[#FF5722] text-xs font-bold uppercase mb-1">Licensed Nepal Practice</span>
+              <h4 class="text-lg font-bold">Scale and Spaces Private Limited</h4>
+              <p class="text-xs text-slate-300">Tokha-6, Kathmandu • Birgunj-12, Parsa</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 text-xs font-bold text-slate-800 uppercase">Corporate Philosophy</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight" id="aboutTitleText">Sensitizing Scale to Create Spaces that Inspire</h2>
+          <p class="text-slate-600" id="aboutBioP1Text">Scale and Spaces Private Limited was founded on the philosophy that architecture must harmonize structural rigor with human experience. Operating from our dual offices in Kathmandu and Birgunj, we deliver comprehensive solutions from conceptual sketches to turnkey construction.</p>
+          <p class="text-slate-600" id="aboutBioP2Text">Our multidisciplinary practice combines architectural planning, 3D photorealistic visualization, advanced civil engineering analysis (NBC 205:2024 / NBC 105:2020), and strict Bill of Quantities (BOQ) cost controls to prevent budget inflation.</p>
+          <div class="grid grid-cols-3 gap-4 py-6 border-y border-slate-200">
+            <div><div class="text-3xl font-black text-slate-900 font-mono" id="stat1Val">50+</div><div class="text-xs text-slate-500 font-semibold uppercase">Completed Projects</div></div>
+            <div><div class="text-3xl font-black text-emerald-600 font-mono" id="stat2Val">100%</div><div class="text-xs text-slate-500 font-semibold uppercase">Engineering Code</div></div>
+            <div><div class="text-3xl font-black text-[#FF5722] font-mono" id="stat3Val">2</div><div class="text-xs text-slate-500 font-semibold uppercase">Offices (KTM &amp; Birgunj)</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Team Members -->
+      <div id="teamContainer" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center">
+          <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-2 border-slate-200"><img src="https://i.postimg.cc/05wwzfcw/Profile-Pic.png" alt="Er. Chetan" class="w-full h-full object-cover" /></div>
+          <h4 class="text-lg font-bold text-slate-900">Er. Chetan Kr. Sarraf</h4>
+          <div class="text-xs font-bold text-[#FF5722] uppercase mt-0.5 mb-2">Director &amp; Lead Civil Engineer</div>
+          <p class="text-xs text-slate-600">Specializing in structural blueprints, NBC 205 compliance, and BOQ valuation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs (Synced from 'FAQs' Tab) -->
+  <section id="faq" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border text-xs font-bold text-slate-700 uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-circle-question text-[#FF5722]"></i> Clear Answers
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-4" id="faqAccordionContainer">
+        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
+          <button onclick="toggleFaq(this)" class="w-full py-5 px-6 text-left flex justify-between items-center font-bold text-slate-900">
+            <span>What services does Scale and Spaces Private Limited offer?</span>
+            <i class="fa-solid fa-chevron-down text-slate-400"></i>
+          </button>
+          <div class="px-6 pb-6 text-sm text-slate-600 border-t border-slate-100 pt-3">
+            We provide full-scope architectural design, home renovation &amp; remodeling, interior architecture, structural civil engineering (NBC 205 / NBC 105), 3D visualization, municipal Naksha Pass drawing approvals, and turnkey construction management across Nepal.
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 overflow-hidden bg-white">
+          <button onclick="toggleFaq(this)" class="w-full py-5 px-6 text-left flex justify-between items-center font-bold text-slate-900">
+            <span>Where are your offices located, and do you conduct site visits?</span>
+            <i class="fa-solid fa-chevron-down text-slate-400"></i>
+          </button>
+          <div class="px-6 pb-6 text-sm text-slate-600 border-t border-slate-100 pt-3 hidden">
+            We operate dual offices: our Head Office is in Tokha-6, Kathmandu, and our Regional Office is located in Birgunj-12, Parsa. We routinely conduct physical site inspections throughout Kathmandu Valley and the Central Terai region.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Inspection Scheduler -->
+  <section id="contact" class="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 text-xs font-bold text-slate-800 uppercase">Direct Consultation</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Collaborate with Scale &amp; Spaces</h2>
+          <p class="text-base text-slate-600">Book a comprehensive site inspection, review your 2D AutoCAD floor plans, or partner for complete turnkey NBC 205 architectural execution.</p>
+
+          <div class="space-y-4">
+            <a href="tel:+9779703881733" class="flex items-center gap-4 p-4 bg-white rounded-2xl border shadow-xs">
+              <div class="w-12 h-12 rounded-xl bg-orange-50 text-[#FF5722] flex items-center justify-center text-lg"><i class="fa-solid fa-phone"></i></div>
+              <div><div class="text-xs font-bold uppercase text-slate-500">Phone &amp; WhatsApp</div><div class="text-base font-bold text-slate-900">+977 9703881733</div></div>
+            </a>
+            <a href="mailto:studio@scaleandspaces.com" class="flex items-center gap-4 p-4 bg-white rounded-2xl border shadow-xs">
+              <div class="w-12 h-12 rounded-xl bg-blue-50 text-[#0284C7] flex items-center justify-center text-lg"><i class="fa-solid fa-envelope"></i></div>
+              <div><div class="text-xs font-bold uppercase text-slate-500">Official Inquiries</div><div class="text-base font-bold text-slate-900">studio@scaleandspaces.com</div></div>
+            </a>
+            <div class="p-4 bg-white rounded-2xl border text-xs text-slate-600 space-y-2">
+              <div><strong>Head Office:</strong> Tokha-6, Kathmandu Valley, Nepal</div>
+              <div><strong>Regional Hub:</strong> Birgunj-12, Parsa District, Nepal</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-white rounded-3xl border border-slate-200 shadow-xl p-6 sm:p-10">
+          <h3 class="text-xl font-extrabold text-slate-900 mb-1">Request Free Property Site Inspection</h3>
+          <p class="text-xs text-slate-500 mb-6">Dispatches directly to our lead engineering desk and WhatsApp.</p>
+
+          <form onsubmit="handleContactSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Your Name *</label>
+                <input type="text" id="cName" required placeholder="Ramesh Shrestha" class="w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold uppercase text-slate-700 mb-1">WhatsApp / Phone *</label>
+                <input type="tel" id="cPhone" required placeholder="+977 98XXXXXXXX" class="w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Email Address</label>
+              <input type="email" id="cEmail" required placeholder="ramesh@example.com" class="w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase text-slate-700 mb-1">Project Scope &amp; Needs *</label>
+              <textarea id="cMessage" rows="3" required placeholder="Describe residential or commercial requirements in Kathmandu or Birgunj..." class="w-full px-4 py-3 bg-slate-50 border rounded-xl text-sm"></textarea>
+            </div>
+            <button type="submit" class="w-full py-4 bg-[#FF5722] hover:bg-[#E64A19] text-white font-bold rounded-xl shadow-md transition-all">
+              <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Send Request (WhatsApp &amp; Email)
+            </button>
+            <div id="cStatus" class="hidden p-3 bg-orange-50 border border-orange-200 text-xs font-semibold text-[#FF5722] rounded-xl text-center"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Footer -->
+  <footer class="bg-slate-900 text-slate-300 text-sm border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="https://i.postimg.cc/cJbhzmkF/Logo.png" alt="Logo" class="w-9 h-9 object-contain" onerror="this.src='https://i.postimg.cc/Y043kmZp/Favicon.png'" />
+            <span class="text-xl font-extrabold text-white">SCALE <span class="text-[#FF5722]">&amp;</span> SPACES</span>
+          </div>
+          <p class="text-xs text-slate-400">Sensitizing scale to create spaces where human life interacts with structural safety. Integrated architects, civil engineers, and construction managers operating in Kathmandu and Birgunj.</p>
+        </div>
+        <div class="lg:col-span-3 space-y-2 text-xs text-slate-400">
+          <h4 class="font-bold uppercase tracking-wider text-white mb-2">Offices</h4>
+          <div><strong>Head Office:</strong> Tokha-6, Kathmandu, Nepal</div>
+          <div><strong>Regional Office:</strong> Birgunj-12, Parsa, Nepal</div>
+          <div><strong>Phone:</strong> +977-9703881733</div>
+          <div><strong>Email:</strong> studio@scaleandspaces.com</div>
+        </div>
+        <div class="lg:col-span-5 flex flex-col justify-between items-start sm:items-end">
+          <div class="flex gap-4 text-sm text-slate-400">
+            <a href="https://www.instagram.com/scaleandspaces/" target="_blank" class="hover:text-white"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/p/Scale-and-Spaces-61555038874110/" target="_blank" class="hover:text-white"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+            <a href="https://np.linkedin.com/in/chetansarraf" target="_blank" class="hover:text-white"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+          <div class="text-xs text-slate-500 mt-6">&copy; 2026 Scale and Spaces Private Limited. All rights reserved.</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Dock -->
+  <div class="fixed bottom-5 right-5 z-40 flex flex-col items-center gap-2.5">
+    <a href="https://wa.me/9779703881733" target="_blank" class="w-12 h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white flex items-center justify-center shadow-xl text-2xl transition-transform hover:scale-110" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="tel:+9779703881733" class="w-10 h-10 rounded-full bg-[#FF5722] hover:bg-[#E64A19] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-105" aria-label="Call"><i class="fa-solid fa-phone text-sm"></i></a>
+  </div>
+
+  <!-- Inspection Booking Modal -->
+  <div id="modalInspection" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+    <div class="relative w-full max-w-lg bg-white rounded-3xl overflow-hidden shadow-2xl border">
+      <div class="bg-slate-900 text-white p-6 relative">
+        <button onclick="closeInspectionModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center">&times;</button>
+        <span class="inline-block px-3 py-1 rounded-full bg-[#FF5722] text-xs font-bold uppercase mb-2">Zero-Cost Site Audit</span>
+        <h3 class="text-xl font-extrabold">Schedule Free Property Inspection</h3>
+        <p class="text-xs text-slate-300 mt-1">Our civil engineer will inspect on-site in Kathmandu Valley or Parsa/Bara.</p>
+      </div>
+      <form onsubmit="handleModalSubmit(event)" class="p-6 space-y-4">
+        <div><label class="block text-xs font-bold uppercase text-slate-700 mb-1">Full Name *</label><input type="text" id="mName" required placeholder="Binod Adhikari" class="w-full px-3.5 py-2.5 bg-slate-50 border rounded-xl text-sm" /></div>
+        <div><label class="block text-xs font-bold uppercase text-slate-700 mb-1">WhatsApp / Phone *</label><input type="tel" id="mPhone" required placeholder="+977 98XXXXXXXX" class="w-full px-3.5 py-2.5 bg-slate-50 border rounded-xl text-sm" /></div>
+        <div><label class="block text-xs font-bold uppercase text-slate-700 mb-1">Scope</label><select id="mScope" class="w-full px-3.5 py-2.5 bg-slate-50 border rounded-xl text-sm"><option value="Full Property Inspection">Full Property Inspection</option><option value="Home Renovation">Home Renovation</option><option value="2D/3D Naksha">2D/3D Naksha</option><option value="NBC 205 Review">NBC 205 Review</option></select></div>
+        <button type="submit" class="w-full py-3.5 bg-[#FF5722] hover:bg-[#E64A19] text-white font-bold text-sm rounded-xl shadow-md">Dispatch via WhatsApp &rarr;</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="modalLightbox" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+    <div class="relative w-full max-w-3xl bg-white rounded-3xl overflow-hidden shadow-2xl border max-h-[90vh] flex flex-col">
+      <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-white/90 text-slate-800 flex items-center justify-center shadow-md font-bold">&times;</button>
+      <div class="h-72 sm:h-96 w-full bg-slate-950 shrink-0"><img id="lbImg" src="" alt="Preview" class="w-full h-full object-cover" /></div>
+      <div class="p-6 overflow-y-auto space-y-3">
+        <span id="lbCategory" class="px-3 py-1 rounded-full bg-orange-50 border text-xs font-bold text-[#FF5722] uppercase"></span>
+        <h3 id="lbTitle" class="text-2xl font-extrabold text-slate-900"></h3>
+        <p id="lbDesc" class="text-sm text-slate-600"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC (AUTOMATIC GOOGLE SHEETS LIVE SYNC + CALCULATORS) -->
+  <script>
+    const GOOGLE_SHEET_ID = "1JHdOnFs271bT_2Sgb4eGO2LIEqyxv0OvAGdYCXh-7Wg";
+
+    function formatImageUrl(url) {
+      if (!url || String(url).trim() === '') return '';
+      const str = String(url).trim();
+      const m = str.match(/\/d\/([a-zA-Z0-9_-]+)/) || str.match(/id=([a-zA-Z0-9_-]+)/);
+      return m && m[1] ? `https://lh3.googleusercontent.com/d/${m[1]}` : str;
+    }
+
+    function toggleMobileNav() {
+      const el = document.getElementById('mobileMenu');
+      el.classList.toggle('hidden');
+    }
+
+    function openInspectionModal(preset) {
+      if (preset) {
+        const sel = document.getElementById('mScope');
+        if (sel) sel.value = preset;
+      }
+      const m = document.getElementById('modalInspection');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    function closeInspectionModal() {
+      const m = document.getElementById('modalInspection');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    function openLightbox(title, cat, desc, img) {
+      document.getElementById('lbTitle').textContent = title;
+      document.getElementById('lbCategory').textContent = cat;
+      document.getElementById('lbDesc').textContent = desc;
+      document.getElementById('lbImg').src = img;
+      const m = document.getElementById('modalLightbox');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const m = document.getElementById('modalLightbox');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    function updateBeforeAfter(val) {
+      document.getElementById('baOverlay').style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+      document.getElementById('baHandle').style.left = `${val}%`;
+    }
+
+    // BOQ Calc
+    function runBoqCalc() {
+      const r = document.getElementById('boqRoom').value;
+      const s = document.getElementById('boqScope').value;
+      const a = parseFloat(document.getElementById('boqAreaRange').value) || 350;
+      document.getElementById('boqAreaDisplay').textContent = a.toLocaleString();
+
+      let minR = s === 'tier1' ? 25 : s === 'tier2' ? 65 : 1600;
+      let maxR = s === 'tier1' ? 45 : s === 'tier2' ? 110 : 2800;
+      let mult = r === 'kitchen' ? 1.15 : r === 'bathroom' ? 1.25 : 1.0;
+
+      const minT = Math.round(a * minR * mult);
+      const maxT = Math.round(a * maxR * mult);
+
+      const fMin = minT >= 100000 ? `Rs. ${(minT / 100000).toFixed(2)} Lakhs` : `Rs. ${minT.toLocaleString()}`;
+      const fMax = maxT >= 100000 ? `Rs. ${(maxT / 100000).toFixed(2)} Lakhs` : `Rs. ${maxT.toLocaleString()}`;
+
+      document.getElementById('boqPriceOutput').textContent = `${fMin} – ${fMax}`;
+    }
+
+    function exportBoqWhatsApp() {
+      const a = document.getElementById('boqAreaRange').value;
+      const pr = document.getElementById('boqPriceOutput').textContent;
+      const msg = `*Scale & Spaces - BOQ Estimate Inquiry*%0A%0A*Area:* ${a} sq.ft%0A*Estimate:* ${encodeURIComponent(pr)}%0A%0APlease arrange site visit inspection.`;
+      window.open(`https://wa.me/9779703881733?text=${msg}`, '_blank');
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const n = document.getElementById('cName').value;
+      const p = document.getElementById('cPhone').value;
+      const em = document.getElementById('cEmail').value;
+      const m = document.getElementById('cMessage').value;
+
+      fetch("https://formsubmit.co/ajax/studio@scaleandspaces.com", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({ Name: n, Phone: p, Email: em, Scope: m })
+      }).catch(() => {});
+
+      const text = `*Scale and Spaces Inquiry*%0A%0A*Name:* ${encodeURIComponent(n)}%0A*Phone:* ${encodeURIComponent(p)}%0A*Email:* ${encodeURIComponent(em)}%0A*Scope:* ${encodeURIComponent(m)}`;
+      window.open(`https://wa.me/9779703881733?text=${text}`, '_blank');
+      document.getElementById('cStatus').classList.remove('hidden');
+      document.getElementById('cStatus').textContent = "Inquiry sent to WhatsApp & engineering desk!";
+    }
+
+    function handleModalSubmit(e) {
+      e.preventDefault();
+      const n = document.getElementById('mName').value;
+      const p = document.getElementById('mPhone').value;
+      const s = document.getElementById('mScope').value;
+      const text = `*Free Site Inspection Request*%0A%0A*Name:* ${encodeURIComponent(n)}%0A*Phone:* ${encodeURIComponent(p)}%0A*Scope:* ${encodeURIComponent(s)}`;
+      window.open(`https://wa.me/9779703881733?text=${text}`, '_blank');
+      closeInspectionModal();
+    }
+
+    function toggleFaq(btn) {
+      const ans = btn.nextElementSibling;
+      ans.classList.toggle('hidden');
+    }
+
+    // Hub Suite Toggles
+    function setHubSuite(s) {
+      document.getElementById('hubInteriorSuite').classList.toggle('hidden', s !== 'interior');
+      document.getElementById('hubCivilSuite').classList.toggle('hidden', s !== 'civil');
+      document.getElementById('hubNbcSuite').classList.toggle('hidden', s !== 'nbc');
+
+      document.getElementById('btnSuiteInt').className = s === 'interior' ? 'px-5 py-2.5 rounded-xl font-bold text-sm bg-[#FF5722] text-white shadow-md' : 'px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-100 text-slate-700';
+      document.getElementById('btnSuiteCiv').className = s === 'civil' ? 'px-5 py-2.5 rounded-xl font-bold text-sm bg-[#0A192F] text-white shadow-md' : 'px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-100 text-slate-700';
+      document.getElementById('btnSuiteNbc').className = s === 'nbc' ? 'px-5 py-2.5 rounded-xl font-bold text-sm bg-emerald-700 text-white shadow-md' : 'px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-100 text-slate-700';
+    }
+
+    function setIntSubTool(t) {
+      ['paint', 'ceiling', 'lighting', 'kitchen', 'curtain', 'ac'].forEach(id => {
+        document.getElementById(`tool-${id}`).classList.toggle('hidden', id !== t);
+      });
+    }
+
+    function setCivSubTool(t) {
+      ['cost', 'plinth', 'brick', 'rcc', 'steel', 'land'].forEach(id => {
+        document.getElementById(`tool-${id}`).classList.toggle('hidden', id !== t);
+      });
+    }
+
+    function setNbcSubTool(t) {
+      ['pga', 'detailing', 'soil', 'far', 'septic'].forEach(id => {
+        document.getElementById(`tool-${id}`).classList.toggle('hidden', id !== t);
+      });
+    }
+
+    // Calculators math
+    function runPaintCalc() {
+      const l = parseFloat(document.getElementById('pL').value)||0, w = parseFloat(document.getElementById('pW').value)||0, h = parseFloat(document.getElementById('pH').value)||0, d = parseFloat(document.getElementById('pDed').value)||0;
+      const net = Math.max(0, 2*(l+w)*h - d);
+      document.getElementById('pAreaOut').textContent = `${Math.round(net)} sq.ft`;
+      document.getElementById('pBreakdownOut').textContent = `Putty: ~${Math.round(net*0.05)} kg • Primer: ~${(net/100).toFixed(1)} L • Emulsion: ~${(net/55).toFixed(1)} L`;
+    }
+    function runCeilCalc() {
+      const l = parseFloat(document.getElementById('cL').value)||0, w = parseFloat(document.getElementById('cW').value)||0, b = parseFloat(document.getElementById('cBoard').value)||24;
+      document.getElementById('cSheetsOut').textContent = `${Math.ceil((l*w*1.1)/b)} Sheets`;
+      document.getElementById('cBreakdownOut').textContent = `Ceiling Area: ${l*w} sq.ft • Perimeter L-Channel: ~${Math.round(2*(l+w))} Rft`;
+    }
+    function runLuxCalc() {
+      const lux = parseFloat(document.getElementById('lLux').value)||150, a = parseFloat(document.getElementById('lArea').value)||0, watt = parseFloat(document.getElementById('lWatt').value)||9;
+      const count = Math.ceil((lux * a * 0.0929) / (watt === 7 ? 630 : watt === 9 ? 810 : 1080));
+      document.getElementById('lCountOut').textContent = `${count} Downlights`;
+    }
+    function runKitCalc() {
+      const l = parseFloat(document.getElementById('kLen').value)||0, f = parseFloat(document.getElementById('kLayout').value)||1.8;
+      document.getElementById('kRftOut').textContent = `${Math.round(l*f)} Running Feet`;
+    }
+    function runCurtCalc() {
+      const w = parseFloat(document.getElementById('curtW').value)||0, h = parseFloat(document.getElementById('curtH').value)||0, f = parseFloat(document.getElementById('curtFull').value)||2.2;
+      document.getElementById('curtMetersOut').textContent = `~${((Math.ceil((w*f)/48)*((h+12)*0.0254))).toFixed(1)} Meters`;
+    }
+    function runAcCalc() {
+      const a = parseFloat(document.getElementById('acA').value)||0, h = parseFloat(document.getElementById('acH').value)||10, exp = parseFloat(document.getElementById('acExp').value)||1.0;
+      const btu = a*h*6*exp;
+      document.getElementById('acTonOut').textContent = btu > 20000 ? "2.0 Ton" : btu > 14000 ? "1.5 Ton" : "1.0 Ton";
+    }
+    function runCostCalc() {
+      const p = parseFloat(document.getElementById('hPlinth').value)||0, s = parseFloat(document.getElementById('hStoreys').value)||1, r = parseFloat(document.getElementById('hRate').value)||3200;
+      document.getElementById('hCostOut').textContent = `Rs. ${((p*s*r)/100000).toFixed(1)} Lakhs`;
+    }
+    function runPlinthCalc() {
+      const u = document.getElementById('plUnit').value, raw = parseFloat(document.getElementById('plVal').value)||0, pw = parseFloat(document.getElementById('plPlotW').value)||30;
+      const sqft = u === 'terai' ? raw * 3645 : raw;
+      document.getElementById('plResultOut').textContent = `${Math.round(Math.max(0, sqft - 5*pw)*0.7).toLocaleString()} sq.ft`;
+    }
+    function runBrickCalc() {
+      const l = parseFloat(document.getElementById('bL').value)||0, h = parseFloat(document.getElementById('bH').value)||0, t = parseFloat(document.getElementById('bT').value)||9;
+      const net = Math.max(0, l*h - 60);
+      document.getElementById('bBricksOut').textContent = `~${Math.ceil(net*(t===4.5?4.6:9.2)*1.05).toLocaleString()} Bricks`;
+    }
+    function runRccCalc() {
+      const l = parseFloat(document.getElementById('rL').value)||0, w = parseFloat(document.getElementById('rW').value)||0, d = parseFloat(document.getElementById('rD').value)||0;
+      const dry = l*w*(d/12)*1.54;
+      document.getElementById('rCementOut').textContent = `~${((dry*(1/5.5))/1.25).toFixed(1)} Bags Cement`;
+    }
+    function runSteelCalc() {
+      const b = parseFloat(document.getElementById('tB').value)||250, d = parseFloat(document.getElementById('tD').value)||355, cov = parseFloat(document.getElementById('tCov').value)||25, dia = parseFloat(document.getElementById('tDia').value)||8;
+      const len = 2*((b-2*cov)+(d-2*cov)) + 2*Math.max(65, 10*dia) - 6*dia;
+      document.getElementById('tLenOut').textContent = `${len} mm (${(len/1000).toFixed(2)} m)`;
+    }
+    function runLandCalc() {
+      const sc = parseFloat(document.getElementById('trScale').value)||1200, cm = parseFloat(document.getElementById('trCm').value)||0;
+      const m = (cm * sc)/100;
+      document.getElementById('trDistOut').textContent = `${m.toFixed(1)} Meters (${(m*3.28).toFixed(1)} Feet)`;
+    }
+    function runPgaCalc() {
+      document.getElementById('pgaOut').textContent = `PGA (Z) = ${document.getElementById('nbcPgaSelect').value}g`;
+    }
+    function runDetailingCalc() {
+      const s = document.getElementById('nbcStoreys').value;
+      document.getElementById('detailOut').textContent = s === "2" ? "Col: 350×350 mm | Footing: 1.5×1.5 m" : "Col: 400×400 mm | Footing: 1.9×1.9 m";
+      document.getElementById('detailSubOut').textContent = s === "2" ? "Rebar: 4-16Ø + 4-12Ø Fe500 (NBC 205 Sec 8)" : "Rebar: 8-16Ø or 4-20Ø+4-16Ø (NBC 205 Sec 9)";
+    }
+    function runSoilCalc() {
+      const d = parseFloat(document.getElementById('sbcDepthVal').value)||15;
+      document.getElementById('sbcOut').textContent = d <= 12 ? "200 kN/m²" : d <= 17 ? "150 kN/m²" : "125 kN/m²";
+    }
+    function runFarCalc() {
+      const p = parseFloat(document.getElementById('farPlotVal').value)||1, b = parseFloat(document.getElementById('farBuiltVal').value)||0;
+      document.getElementById('farOut').textContent = `FAR: ${(b/p).toFixed(2)}`;
+    }
+    function runSepticCalc() {
+      const u = parseFloat(document.getElementById('septicUsersVal').value)||6;
+      document.getElementById('septicOut').textContent = `${(u*0.9).toFixed(1)} ft × ${(u*0.45).toFixed(1)} ft × 5.0 ft`;
+    }
+
+    // Google Sheets Live Sync
+    async function syncGoogleSheets() {
+      try {
+        const fetchTab = (tab) => new Promise((resolve) => {
+          const cb = 'cb_' + Math.floor(Math.random()*1000000);
+          window[cb] = (j) => {
+            delete window[cb];
+            if (s.parentNode) s.parentNode.removeChild(s);
+            resolve(j && j.table && j.table.rows ? j.table.rows.map(r => (r.c||[]).map(c => c && c.v !== null ? c.v : '')) : []);
+          };
+          const s = document.createElement('script');
+          s.src = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=responseHandler:${cb}&sheet=${encodeURIComponent(tab)}&t=${Date.now()}`;
+          s.onerror = () => { delete window[cb]; if (s.parentNode) s.parentNode.removeChild(s); resolve([]); };
+          document.body.appendChild(s);
+        });
+
+        // 1. Packages
+        const pkgs = await fetchTab('Packages');
+        if (pkgs && pkgs.length > 1) {
+          const valid = pkgs.filter((r, idx) => idx > 0 && r[0]);
+          if (valid.length > 0) {
+            document.getElementById('packagesContainer').innerHTML = valid.map(r => `
+              <div class="flex flex-col justify-between rounded-3xl p-8 bg-white border border-slate-200 hover:shadow-xl transition-all">
+                <div>
+                  <span class="inline-block text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 bg-slate-100 text-slate-700">${r[0]}</span>
+                  <h3 class="text-2xl font-bold mb-2">${r[1]||'Tier'}</h3>
+                  <div class="text-3xl font-black font-mono text-slate-900 mb-4">${r[2]||''}</div>
+                  <p class="text-sm text-slate-600 mb-6">${r[3]||''}</p>
+                </div>
+                <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20want%20the%20${encodeURIComponent(r[1]||'Package')}." target="_blank" class="w-full text-center py-3 bg-slate-900 text-white font-bold rounded-xl text-sm">Request on WhatsApp</a>
+              </div>
+            `).join('');
+          }
+        }
+
+        // 2. Rates
+        const rates = await fetchTab('Rates');
+        if (rates && rates.length > 1) {
+          const valid = rates.filter((r, idx) => idx > 0 && r[0]);
+          if (valid.length > 0) {
+            document.getElementById('ratesTableBody').innerHTML = valid.map(r => `
+              <tr class="hover:bg-slate-50">
+                <td class="py-3.5 px-6 font-bold text-slate-900">${r[0]}</td>
+                <td class="py-3.5 px-4 text-xs font-semibold text-slate-500"><span class="px-2 py-0.5 rounded-full bg-slate-100">${r[1]||'Civil'}</span></td>
+                <td class="py-3.5 px-4 text-xs">${r[2]||''}</td>
+                <td class="py-3.5 px-6 font-bold text-[#FF5722] font-mono">${r[3]||''}</td>
+                <td class="py-3.5 px-4 text-xs text-emerald-600 font-semibold">${r[4]||'Current'}</td>
+              </tr>
+            `).join('');
+          }
+        }
+
+        // 3. Ads / Hiring Popup (Synced with Ads Tab)
+        const adsData = await fetchTab('Ads');
+        if (adsData && adsData.length > 1) {
+          const validAds = adsData.filter((r, idx) => idx > 0 && (r[0] || r[1]));
+          if (validAds.length > 0) {
+            window.activeAds = validAds.map(r => ({
+              title: r[0] || 'Announcement',
+              imageUrl: r[1] || '',
+              caption: r[2] || '',
+            }));
+            renderAd(0);
+            document.getElementById('btnOpenAds').classList.remove('hidden');
+            setTimeout(() => openAdsModal(), 2500);
+          }
+        }
+      } catch (e) {
+        console.warn("Sheet live sync fallback", e);
+      }
+    }
+
+    // Ads Carousel State
+    window.activeAds = [
+      {
+        title: 'Hiring',
+        imageUrl: 'https://i.postimg.cc/TYFVjwS0/Hiring.jpg',
+        caption: 'Ready to join our team'
+      },
+      {
+        title: 'Festival Greeting',
+        imageUrl: 'https://i.postimg.cc/XqX5dSkT/Gemini-Generated-Image-uok69suok69suok6.jpg',
+        caption: 'Happy Dashain'
+      }
+    ];
+    let currentAdIndex = 0;
+
+    function renderAd(idx) {
+      if (!window.activeAds || window.activeAds.length === 0) return;
+      currentAdIndex = (idx + window.activeAds.length) % window.activeAds.length;
+      const ad = window.activeAds[currentAdIndex];
+      const isHiring = /hiring|job|career|vacancy/i.test(ad.title + ' ' + ad.caption);
+
+      document.getElementById('adTitle').textContent = ad.title;
+      document.getElementById('adCaption').textContent = ad.caption;
+      const img = document.getElementById('adImage');
+      if (ad.imageUrl) {
+        img.src = ad.imageUrl;
+        img.classList.remove('hidden');
+      } else {
+        img.classList.add('hidden');
+      }
+
+      document.getElementById('adBadgeText').textContent = isHiring ? 'Career Vacancy' : 'Notice & Announcement';
+      const btnWA = document.getElementById('adBtnWhatsApp');
+      const text = isHiring 
+        ? `Hello Scale and Spaces, I am applying for the job vacancy "${ad.title}" (${ad.caption}). Here is my profile:`
+        : `Hello Scale and Spaces, I am inquiring regarding "${ad.title}".`;
+      btnWA.href = `https://wa.me/9779703881733?text=${encodeURIComponent(text)}`;
+      btnWA.innerHTML = `<i class="fa-brands fa-whatsapp text-lg mr-1.5"></i> ${isHiring ? 'Apply on WhatsApp' : 'Inquire on WhatsApp'}`;
+
+      const btnMail = document.getElementById('adBtnMail');
+      if (isHiring) {
+        btnMail.classList.remove('hidden');
+        btnMail.href = `mailto:studio@scaleandspaces.com?subject=Job%20Application:%20${encodeURIComponent(ad.title)}`;
+      } else {
+        btnMail.classList.add('hidden');
+      }
+
+      document.getElementById('adCounter').textContent = `${currentAdIndex + 1} / ${window.activeAds.length}`;
+    }
+
+    function prevAd() { renderAd(currentAdIndex - 1); }
+    function nextAd() { renderAd(currentAdIndex + 1); }
+
+    function openAdsModal() {
+      renderAd(currentAdIndex);
+      const m = document.getElementById('modalQuickAds');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+
+    function closeAdsModal() {
+      const m = document.getElementById('modalQuickAds');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+
+    // Multilingual AI Chatbot Logic
+    const chatKnowledge = {
+      aim: `🏛️ **Foundational Aim & Mission of Scale and Spaces Private Limited:**
+
+At **Scale and Spaces Private Limited**, our foundational aim is **"Sensitizing Scale, Harmonizing Spaces"** — uniting cutting-edge architectural creativity with rigorous civil engineering safety across Nepal (Kathmandu & Birgunj).
+
+**Our 5 Core Pillars:**
+1. **Life Safety First (NBC 205:2024 Compliance):** Every residential and commercial structure is engineered for earthquake resilience under Nepal National Building Codes (NBC 205 & NBC 105), protecting families against seismic hazards.
+2. **Photorealistic Clarity Before Pouring Concrete:** We eliminate costly contractor blunders on site through ultra-HD 3D visualization and 360° VR digital walkthroughs before construction begins.
+3. **Transparent Financial Control:** We provide transparent Bill of Quantities (BOQ) with live market rates so clients experience Zero Unexpected Cost Overruns.
+4. **Bioclimatic & Sustainable Design:** Tailoring buildings to local topography, solar path, and natural cross-ventilation in Kathmandu Valley and Terai climates.
+5. **Turnkey Peace of Mind:** Single-point accountability from municipal Naksha Pass and structural analysis to turnkey interior execution and final key handover.
+
+*Led by Lead Civil Engineer **Er. Chetan Kumar Sarraf**, we are dedicated to raising the standard of architectural living in Nepal.*`,
+      hiring: `💼 **Scale and Spaces Private Limited is actively hiring!**
+
+We currently have open opportunities:
+• **Architect / 3D Visualizer** (Birgunj Office - in front of Indian Embassy & Kathmandu)
+• **Site Engineer / Civil Supervisor** (NBC 205 structural compliance & site execution)
+• **AutoCAD / Lumion Detailer**
+
+**How to Apply:**
+1. View the **Full Resolution Hiring Poster** on our website popup.
+2. Email your CV & Portfolio to: **studio@scaleandspaces.com**
+3. Or apply directly on WhatsApp: **+977 9703881733**`,
+      naksha: `📐 **Municipal Naksha Pass & Design Packages:**\n1. Estimation Only: Rs. 1,500 (Full BOQ takeoff)\n2. 2D Working Plan: Rs. 2,500 (Detailed AutoCAD set for municipality approval)\n3. 2D & 3D Complete Plan: Rs. 20,000 (Renders + 360° VR Tour).\nAll designs comply with NBC 205:2024.`,
+      cost: `🧱 **Turnkey Construction Cost Rates (2026):**\n• Standard: Rs. 2,600 – 2,900 / sq.ft\n• Premium: Rs. 3,000 – 3,400 / sq.ft\n• Luxury: Rs. 3,500 – 4,000+ / sq.ft\nA typical 2.5-storey home (~2,000 sq.ft) averages Rs. 58–68 Lakhs. Try our Live Cost Estimator!`,
+      office: `🏢 **Practice Locations:**\n📍 Kathmandu: Tokha-6, Kathmandu, Nepal\n📍 Birgunj: Birgunj-12, Parsa, Nepal (Infront of Indian Embassy)\n📞 WhatsApp: +977 9703881733\n✉️ Email: studio@scaleandspaces.com\n👨‍💼 Lead Engineer: Er. Chetan Kumar Sarraf`,
+      nepali: `नमस्ते! **Scale and Spaces Private Limited** मा स्वागत छ। हामी काठमाडौँ (टोखा-६) र बीरगंज (बीरगंज-१२) मा २D/३D नक्सा पास, घर निर्माण र इन्जिनियरिङ्ग परामर्श प्रदान गर्दछौं।\n\nथप जानकारी वा साइट भिजिटको लागि WhatsApp (+977 9703881733) मा कुरा गर्नुहोस्!`
+    };
+
+    function toggleChatDrawer() {
+      const drawer = document.getElementById('chatDrawer');
+      drawer.classList.toggle('hidden');
+      drawer.classList.toggle('flex');
+      if (!drawer.classList.contains('hidden')) {
+        document.getElementById('chatInput').focus();
+      }
+    }
+
+    function sendChatMessage(preset) {
+      const input = document.getElementById('chatInput');
+      const text = (preset || input.value).trim();
+      if (!text) return;
+
+      const body = document.getElementById('chatMessages');
+      // Append User message
+      body.innerHTML += `
+        <div class="flex justify-end gap-2 text-xs">
+          <div class="bg-[#FF5722] text-white px-3.5 py-2.5 rounded-2xl rounded-tr-none max-w-[85%] font-medium shadow-xs">
+            ${text}
+          </div>
+        </div>
+      `;
+      input.value = '';
+      body.scrollTop = body.scrollHeight;
+
+      // Smart multilingual response generator
+      setTimeout(() => {
+        let reply = '';
+        const q = text.toLowerCase();
+        if (/aim|mission|vision|goal|objective|purpose|who are you|about|उद्देश्य|लक्ष्य|k ho aim/i.test(q)) reply = chatKnowledge.aim;
+        else if (/hiring|vacancy|job|career|apply|भर्ना|नौकरी|architect|engineer/i.test(q)) reply = chatKnowledge.hiring;
+        else if (/naksha|municipal|pass|2d|3d|drawing|नक्सा/i.test(q)) reply = chatKnowledge.naksha;
+        else if (/cost|price|rate|sqft|खर्च|लागत|lakh/i.test(q)) reply = chatKnowledge.cost;
+        else if (/office|address|kathmandu|birgunj|tokha|ठेगाना|phone|contact/i.test(q)) reply = chatKnowledge.office;
+        else reply = chatKnowledge.nepali;
+
+        body.innerHTML += `
+          <div class="flex justify-start gap-2 text-xs">
+            <div class="w-6 h-6 rounded-full bg-[#0A192F] text-[#FF5722] flex items-center justify-center shrink-0 text-[10px] font-bold">AI</div>
+            <div class="bg-white border border-slate-200 text-slate-800 px-3.5 py-2.5 rounded-2xl rounded-tl-none max-w-[85%] shadow-xs leading-relaxed whitespace-pre-line">
+              ${reply}
+              <div class="mt-2 pt-2 border-t border-slate-100">
+                <a href="https://wa.me/9779703881733?text=${encodeURIComponent('Hi Er. Chetan, I was chatting with the Scale and Spaces AI Assistant regarding: ' + text)}" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-600 hover:text-emerald-700">
+                  <i class="fa-brands fa-whatsapp"></i> Chat with Er. Chetan on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+        body.scrollTop = body.scrollHeight;
+      }, 350);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      runBoqCalc();
+      syncGoogleSheets();
+    });
+  </script>
+
+  <!-- Quick Ads / Hiring Floating Trigger -->
+  <button id="btnOpenAds" onclick="openAdsModal()" class="fixed left-4 bottom-24 sm:bottom-6 z-40 flex items-center gap-2 px-4 py-2.5 bg-[#0A192F] hover:bg-[#1E293B] text-white text-xs font-bold rounded-full shadow-2xl border border-orange-500/40 transition-all hover:scale-105">
+    <span class="w-2.5 h-2.5 rounded-full bg-[#FF5722] animate-ping"></span>
+    <i class="fa-solid fa-briefcase text-[#FF5722]"></i>
+    <span>Notices &amp; Hiring</span>
+  </button>
+
+  <!-- Quick Ads Popup Modal (Full Resolution Image Display & Adaptive Side-by-Side Layout) -->
+  <div id="modalQuickAds" class="hidden fixed inset-0 z-50 items-center justify-center p-2.5 sm:p-5 bg-slate-950/85 backdrop-blur-md overflow-y-auto">
+    <div class="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200 my-auto flex flex-col max-h-[94vh] animate-scale-up" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between px-6 py-3.5 bg-gradient-to-r from-slate-900 via-[#0A192F] to-slate-900 text-white shrink-0">
+        <div class="flex items-center gap-2.5">
+          <i class="fa-solid fa-bullhorn text-[#FF5722]"></i>
+          <div>
+            <span id="adBadgeText" class="text-xs font-black uppercase tracking-wider text-orange-400 block leading-tight">Notice &amp; Hiring</span>
+            <span class="text-[10px] text-slate-400 block">Scale and Spaces Private Limited</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span id="adCounter" class="text-xs font-mono text-slate-300 bg-white/10 px-2.5 py-1 rounded-full">1 / 2</span>
+          <button onclick="closeAdsModal()" class="p-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/10"><i class="fa-solid fa-xmark text-lg"></i></button>
+        </div>
+      </div>
+      <div class="overflow-y-auto flex-1 flex flex-col md:flex-row">
+        <!-- Left Side: Poster at Natural Full Height without grey letterboxing -->
+        <div class="md:w-7/12 bg-slate-950 flex flex-col items-center justify-center relative p-3 sm:p-5 border-b md:border-b-0 md:border-r border-slate-200">
+          <div class="relative group max-h-[55vh] md:max-h-[75vh] w-full flex items-center justify-center">
+            <img id="adImage" src="https://i.postimg.cc/TYFVjwS0/Hiring.jpg" alt="Announcement" class="max-h-[55vh] md:max-h-[72vh] w-auto max-w-full object-contain rounded-xl shadow-2xl cursor-zoom-in" onclick="openFullscreenAd()" />
+            <button onclick="openFullscreenAd()" class="absolute bottom-3 right-3 flex items-center gap-1.5 px-3.5 py-2 bg-black/85 hover:bg-black text-white text-xs font-bold rounded-full backdrop-blur-md shadow-2xl border border-white/20 transition-all hover:scale-105">
+              <i class="fa-solid fa-magnifying-glass-plus text-[#FF5722]"></i> 100% Full Resolution
+            </button>
+            <button onclick="prevAd()" class="absolute left-2 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/75 text-white hover:bg-black shadow-xl"><i class="fa-solid fa-chevron-left"></i></button>
+            <button onclick="nextAd()" class="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/75 text-white hover:bg-black shadow-xl"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+          <p class="text-[11px] text-slate-400 mt-2 text-center">Click poster to zoom in full HD resolution.</p>
+        </div>
+        <!-- Right Side: Details & Actions -->
+        <div class="p-5 sm:p-7 md:w-5/12 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between gap-2">
+              <span class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full shrink-0">Active Opportunity</span>
+              <span class="text-xs text-slate-500 font-medium">Scale and Spaces</span>
+            </div>
+            <div>
+              <h3 id="adTitle" class="text-2xl font-black text-slate-900 tracking-tight leading-tight">Hiring</h3>
+              <p class="text-sm font-semibold text-[#FF5722] mt-0.5">Architectural &amp; Engineering Practice</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl space-y-2 text-xs sm:text-sm text-slate-700">
+              <p><strong>Position:</strong> An Architect / 3D Visualizer</p>
+              <p><strong>Offices:</strong> Birgunj (Infront of Indian Embassy) &amp; Tokha-6, Kathmandu</p>
+              <p><strong>Scope:</strong> "To think beyond walls, to design what's next!" (AutoCAD, 3D Renders, NBC 205 compliance)</p>
+              <p><strong>Email CV:</strong> studio@scaleandspaces.com</p>
+            </div>
+            <p id="adCaption" class="text-xs text-slate-500">Direct applications on WhatsApp or Email are accepted immediately.</p>
+          </div>
+          <div class="pt-5 space-y-2.5">
+            <a id="adBtnWhatsApp" href="https://wa.me/9779703881733" target="_blank" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-[#25D366] hover:bg-[#20BD5A] text-white text-sm font-extrabold rounded-xl shadow-md transition-all">
+              <i class="fa-brands fa-whatsapp text-lg"></i> Apply on WhatsApp
+            </a>
+            <a id="adBtnMail" href="mailto:studio@scaleandspaces.com?subject=Job%20Application" class="w-full inline-flex items-center justify-center gap-2 px-5 py-3 bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold rounded-xl shadow-md transition-all">
+              <i class="fa-solid fa-envelope"></i> Send Resume / CV
+            </a>
+            <button onclick="openFullscreenAd()" class="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition-colors">
+              <i class="fa-solid fa-expand text-[#FF5722]"></i> Inspect Raw Poster
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Raw Lightbox for Ads Image with Zoom Controls -->
+  <div id="modalFullscreenAd" class="hidden fixed inset-0 z-[60] bg-black/95 backdrop-blur-xl flex-col p-3 sm:p-5 animate-fade-in" onclick="closeFullscreenAd()">
+    <div class="flex items-center justify-between text-white pb-3 max-w-6xl mx-auto w-full shrink-0" onclick="event.stopPropagation()">
+      <div class="flex items-center gap-3">
+        <span class="text-sm font-bold">Scale and Spaces &bull; Full Resolution Notice</span>
+        <span id="zoomPercentIndicator" class="text-xs text-orange-400 bg-white/10 px-2.5 py-0.5 rounded-full font-mono">100%</span>
+      </div>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <button onclick="zoomAd(-0.25)" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white" title="Zoom Out"><i class="fa-solid fa-magnifying-glass-minus"></i></button>
+        <button onclick="zoomAd(0, true)" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white" title="Reset Zoom"><i class="fa-solid fa-rotate-left"></i></button>
+        <button onclick="zoomAd(0.25)" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white" title="Zoom In"><i class="fa-solid fa-magnifying-glass-plus"></i></button>
+        <a id="adRawLink" href="https://i.postimg.cc/TYFVjwS0/Hiring.jpg" target="_blank" class="px-3 py-1.5 bg-[#FF5722] hover:bg-[#E64A19] text-xs font-bold rounded-lg text-white">
+          <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i> Open Raw JPG
+        </a>
+        <button onclick="closeFullscreenAd()" class="p-2 text-white hover:bg-white/20 rounded-full"><i class="fa-solid fa-xmark text-lg"></i></button>
+      </div>
+    </div>
+    <div class="flex-1 flex items-center justify-center overflow-auto p-2" onclick="event.stopPropagation()">
+      <img id="adFullscreenImg" src="https://i.postimg.cc/TYFVjwS0/Hiring.jpg" alt="Poster" class="max-w-full max-h-[85vh] object-contain rounded-xl shadow-2xl transition-transform duration-150" />
+    </div>
+  </div>
+
+  <script>
+    let currentAdZoom = 1;
+    function zoomAd(delta, reset) {
+      if (reset) currentAdZoom = 1;
+      else currentAdZoom = Math.min(3, Math.max(0.75, currentAdZoom + delta));
+      const img = document.getElementById('adFullscreenImg');
+      if (img) img.style.transform = `scale(${currentAdZoom})`;
+      const lbl = document.getElementById('zoomPercentIndicator');
+      if (lbl) lbl.textContent = `${Math.round(currentAdZoom * 100)}%`;
+    }
+    function openFullscreenAd() {
+      const src = document.getElementById('adImage').src;
+      document.getElementById('adFullscreenImg').src = src;
+      document.getElementById('adRawLink').href = src;
+      zoomAd(0, true);
+      const m = document.getElementById('modalFullscreenAd');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+    function closeFullscreenAd() {
+      const m = document.getElementById('modalFullscreenAd');
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+  </script>
+
+  <!-- AI Chatbot Launcher (Clean Mobile & Desktop Positioning) -->
+  <button onclick="toggleChatDrawer()" class="fixed right-4 bottom-5 sm:bottom-6 z-40 flex items-center gap-2.5 px-3.5 sm:px-4 py-2.5 sm:py-3 bg-gradient-to-r from-[#0A192F] to-[#1E293B] hover:from-[#1E293B] hover:to-[#0A192F] text-white rounded-full shadow-2xl border border-orange-500/40 transition-all hover:scale-105 active:scale-95">
+    <img src="https://i.postimg.cc/cJbhzmkF/Logo.png" alt="Scale & Spaces" class="w-6 h-6 object-contain" onerror="this.src='https://i.postimg.cc/Y043kmZp/Favicon.png'" />
+    <div class="flex flex-col text-left">
+      <span class="text-xs font-black tracking-tight leading-none text-white flex items-center gap-1">
+        Ask Engineer AI
+        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+      </span>
+      <span class="text-[10px] text-orange-400 font-semibold leading-tight">नेपाली • हिंदी • English</span>
+    </div>
+  </button>
+
+  <!-- AI Chatbot Drawer (Responsive Bottom Sheet on Mobile, Floating Card on Desktop) -->
+  <div id="chatDrawer" class="hidden fixed inset-x-0 bottom-0 sm:inset-auto sm:right-4 sm:bottom-5 z-50 w-full sm:w-[410px] h-[85vh] sm:h-[580px] max-h-[100dvh] sm:max-h-[85vh] bg-white border border-slate-200 shadow-2xl rounded-t-3xl sm:rounded-3xl flex-col overflow-hidden animate-scale-up">
+    <div class="flex items-center justify-between px-4 py-3 bg-[#0A192F] text-white shrink-0">
+      <div class="flex items-center gap-2.5">
+        <img src="https://i.postimg.cc/cJbhzmkF/Logo.png" alt="Logo" class="w-7 h-7 object-contain" onerror="this.src='https://i.postimg.cc/Y043kmZp/Favicon.png'" />
+        <div>
+          <div class="text-xs font-extrabold flex items-center gap-1">Scale &amp; Spaces AI <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span></div>
+          <div class="text-[10px] text-slate-300">Er. Chetan Kr. Sarraf • Tokha &amp; Birgunj</div>
+        </div>
+      </div>
+      <button onclick="toggleChatDrawer()" class="text-slate-300 hover:text-white p-1.5"><i class="fa-solid fa-xmark text-lg"></i></button>
+    </div>
+    <div class="px-3.5 py-1.5 bg-slate-100 text-[11px] text-slate-600 border-b flex justify-between shrink-0">
+      <span>Multi-Lingual Assistant:</span><span class="font-bold text-slate-700">नेपाली • हिंदी • English • Mixed</span>
+    </div>
+    <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-50 text-xs">
+      <div class="flex justify-start gap-2">
+        <div class="w-6 h-6 rounded-full bg-[#0A192F] text-[#FF5722] flex items-center justify-center shrink-0 text-[10px] font-bold">AI</div>
+        <div class="bg-white border border-slate-200 text-slate-800 px-3.5 py-2.5 rounded-2xl rounded-tl-none max-w-[85%] shadow-xs leading-relaxed">
+          <strong>Namaste! / नमस्ते!</strong> Welcome to Scale and Spaces Private Limited. Ask me about 2D/3D Naksha Pass, building construction cost per sq.ft in Nepal, NBC 205 earthquake codes, or current hiring opportunities in Nepali, Hindi or English!
+        </div>
+      </div>
+    </div>
+    <div class="px-2.5 py-1.5 bg-white border-t flex gap-1.5 overflow-x-auto scrollbar-none text-[11px] shrink-0">
+      <button onclick="sendChatMessage('2.5 tala ghar ko naksha pass cost?')" class="px-2.5 py-1 bg-slate-100 hover:bg-orange-50 border border-slate-200 rounded-full whitespace-nowrap font-medium">📐 Naksha Pass Cost?</button>
+      <button onclick="sendChatMessage('Are you hiring right now?')" class="px-2.5 py-1 bg-slate-100 hover:bg-orange-50 border border-slate-200 rounded-full whitespace-nowrap font-medium">💼 Current Hiring?</button>
+      <button onclick="sendChatMessage('Cost per sq.ft in Nepal?')" class="px-2.5 py-1 bg-slate-100 hover:bg-orange-50 border border-slate-200 rounded-full whitespace-nowrap font-medium">🧱 Cost per sq.ft?</button>
+    </div>
+    <form onsubmit="event.preventDefault(); sendChatMessage();" class="p-3 bg-white border-t flex gap-2 shrink-0">
+      <input id="chatInput" type="text" placeholder="Type in Nepali, Hindi or English..." class="flex-1 px-3.5 py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs sm:text-sm outline-none focus:border-[#FF5722] focus:bg-white transition-all" />
+      <button type="submit" class="px-4 py-2 bg-[#FF5722] hover:bg-[#E64A19] text-white rounded-xl text-xs font-bold transition-all"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+
+  <script>
+    // Embedded Master Datasets
+    const MASTER_PORTFOLIO = [{"title":"Mithila Tower & Commercial Complex","category":"Commercial","client":"Dr. Manoj Ray","location":"Jiwisa Chowk, Malangwa","year":"2024 A.D.","imageUrl":"assets/projects/mithila_tower.jpg","description":"Multi-storey commercial complex designed with central atrium daylighting, retail promenades, earthquake-resistant RCC frame under NBC 205, and high-traffic circulation.","highlights":"NBC 205 Seismic Compliance • Commercial Atrium • Daylight Optimization"},{"title":"Hyatt Community Hospital","category":"Institutional","client":"Hyatt Healthcare Trust","location":"Barhathwa, Sarlahi","year":"2025 A.D.","imageUrl":"assets/projects/hyatt_hospital_1.jpg","description":"Tertiary multi-specialty healthcare facility engineered for sterile medical zoning, ICU flows, medical gas distribution lines, and emergency trauma vehicular access.","highlights":"NBC 105 Seismic Code • Sterile Zoning • Medical Gas Pipeline • 150-Bed Capacity"},{"title":"Hyatt Community Hospital - Campus Perspective","category":"Institutional","client":"Hyatt Healthcare Trust","location":"Barhathwa, Sarlahi","year":"2025 A.D.","imageUrl":"assets/projects/hyatt_hospital_2.jpg","description":"Campus perspective showing ambulance bays, outpatient reception plazas, solar orientation, and landscape buffer zones.","highlights":"Emergency Ramp • Passive Shading • Hospital Circulation"},{"title":"Commercial Complex of Mr. Aashiq Ansari","category":"Commercial","client":"Mr. Aashiq Ansari","location":"Gandak, Birgunj","year":"2023 A.D.","imageUrl":"assets/projects/aashiq_ansari_commercial.jpg","description":"Modern commercial retail building featuring double-glazed glass storefronts, mezzanine retail storage, and structural concrete framing.","highlights":"Retail Glazing • Mezzanine Engineering • High Footfall Design"},{"title":"Commercial Building for Mr. Umashankar","category":"Commercial","client":"Mr. Umashankar","location":"Birgunj, Parsa","year":"2026 A.D.","imageUrl":"assets/projects/umashankar_commercial.jpg","description":"Contemporary high-visibility retail and corporate office development along major transit corridors with municipal Naksha Pass documentation.","highlights":"Commercial Bye-laws • Naksha Pass Approved • Modern Facade"},{"title":"Commercial Building of Mr. Anand Chaudhary","category":"Commercial","client":"Mr. Anand Chaudhary","location":"Birgunj-7, Parsa","year":"2026 A.D.","imageUrl":"assets/projects/anand_chaudhary_commercial.jpg","description":"Five-storey commercial building with column-free retail floor plates, elevator core integration, and earthquake ductile detailing.","highlights":"Column-free Spans • Ductile Detailing • Modern Aluminium Louvers"},{"title":"Commercial cum Residence for Mr. Kamlesh Agrawal","category":"Commercial","client":"Mr. Kamlesh Agrawal","location":"Adarshnagar, Birgunj","year":"2025 A.D.","imageUrl":"assets/projects/kamlesh_agrawal_commercial.jpg","description":"Mixed-use commercial and luxury residential tower in Adarshnagar, featuring ground-floor showrooms with luxury duplex private residence above.","highlights":"Mixed-use Zoning • Private Elevator • Acoustic Separation"},{"title":"BYD Birgunj Showroom & Corporate Complex","category":"Commercial","client":"BYD Birgunj","location":"Birgunj, Parsa","year":"2023 A.D.","imageUrl":"assets/projects/byd_showroom_1.jpg","description":"Flagship electric vehicle showroom with double-height structural glass curtain wall facade, EV heavy charging foundations, and executive VIP lounge.","highlights":"Double-height Curtain Wall • EV Charging Bay • Corporate Brand Guidelines"},{"title":"BYD Birgunj - Service Bay & Experience Center","category":"Commercial","client":"BYD Birgunj","location":"Birgunj, Parsa","year":"2023 A.D.","imageUrl":"assets/projects/byd_showroom_2.jpg","description":"Complete architectural plan and Lumion 3D visualization for customer delivery bays, technical diagnostics workshop, and corporate reception.","highlights":"Industrial Heavy Floor Slab • 3D Photorealism • Delivery Pavilion"},{"title":"Adarsh City Center & Yash Commercial Hub","category":"Commercial","client":"Yash Petrol Pump & Adarsh Group","location":"Inarwamal, Harnaiya, Bara","year":"2025 A.D.","imageUrl":"assets/projects/adarsh_city_center_1.jpg","description":"Transit-oriented retail and food plaza adjoining highway petrol center with basement parking, escalators, and covered promenades.","highlights":"Highway Transit Plaza • Basement Soil Stabilization • Food Court"},{"title":"Adarsh City Center - Retail Promenade","category":"Commercial","client":"Yash Petrol Pump & Adarsh Group","location":"Inarwamal, Harnaiya, Bara","year":"2025 A.D.","imageUrl":"assets/projects/adarsh_city_center_2.jpg","description":"Architectural elevation and lighting scheme for the pedestrian retail concourse and outdoor landscaped terraces.","highlights":"Landscape Terraces • Outdoor Dining • Architectural Lighting"},{"title":"The Shavdaahgriham & Masterplan (Ranighat Samshanghat)","category":"Landscape","client":"Birgunj Metropolitan City Office","location":"Ranighat, Birgunj","year":"2021 A.D.","imageUrl":"assets/projects/shavdaahgriham_ranighat_1.jpg","description":"Civic masterplan and landscape architecture for riverfront crematorium, scattering gardens, and serene public reflection spaces.","highlights":"Riverfront Landscaping • Native Terai Vegetation • Heritage Preservation"},{"title":"Electrical Crematorium (Ranighat Samshanghat)","category":"Landscape","client":"Birgunj Metropolitan City Office","location":"Ranighat, Birgunj","year":"2021 A.D.","imageUrl":"assets/projects/shavdaahgriham_crematorium.jpg","description":"Modern eco-friendly electrical crematorium engineered with high-efficiency exhaust scrubbers and minimal emotional distress architecture.","highlights":"Eco-friendly Engineering • Calming Geometry • Municipal Milestone"},{"title":"Ranighat Shavdaahgriham - Traditional Khapada Roof","category":"Landscape","client":"Birgunj Metropolitan City Office","location":"Ranighat, Birgunj","year":"2021 A.D.","imageUrl":"assets/projects/shavdaahgriham_roof.jpg","description":"Preservation of indigenous Terai architectural heritage using traditional clay Khapada roofing integrated with contemporary steel tension trusses.","highlights":"Indigenous Khapada Clay • Hybrid Steel Trusses • Thermal Comfort"},{"title":"Recreational Mato Park","category":"Landscape","client":"Pokhariya Municipality","location":"Pokhariya, Parsa","year":"2025 A.D.","imageUrl":"assets/projects/recreational_mato_park_1.jpg","description":"Public botanical and leisure park integrating earth architecture mounds, water retention ponds, walking tracks, and children play zones.","highlights":"Sustainable Earth Architecture • Rainwater Harvesting • Public Civic Plaza"},{"title":"Recreational Mato Park - Amphitheater & Plaza","category":"Landscape","client":"Pokhariya Municipality","location":"Pokhariya, Parsa","year":"2025 A.D.","imageUrl":"assets/projects/recreational_mato_park_2.jpg","description":"Central community gathering amphitheater with stepped grass seating, native shade trees, and permeable paving.","highlights":"Open Amphitheater • Permeable Pavers • Native Flora"},{"title":"Landscape Makeover of Inland Revenue Office (IRO)","category":"Landscape","client":"Inland Revenue Office, Birgunj","location":"Birgunj, Parsa","year":"2020 A.D.","imageUrl":"assets/projects/iro_birgunj_landscape.jpg","description":"Government office premises revitalization featuring welcoming entry gates, shaded waiting corridors, and drought-tolerant Terai landscaping.","highlights":"Government Campus Revitalization • Shaded Walkways • Low-maintenance Plants"},{"title":"Residence of Mr. Tulsi Gupta","category":"Residential","client":"Mr. Tulsi Gupta","location":"Birgunj, Parsa","year":"2024 A.D.","imageUrl":"assets/projects/tulsi_gupta_residence_1.jpg","description":"Ultra-luxury modern family residence with Italian marble floors, fluted acoustic paneling, concealed cove LED lighting, and private courtyard.","highlights":"Turnkey Interior Fitout • NBC 205 Frame • Smart Home Automation"},{"title":"Residence of Mr. Tulsi Gupta - Exterior View","category":"Residential","client":"Mr. Tulsi Gupta","location":"Birgunj, Parsa","year":"2024 A.D.","imageUrl":"assets/projects/tulsi_gupta_residence_2.jpg","description":"Architectural facade elevation featuring textured plaster, wood-finish exterior louvers, glass railings, and evening landscape lighting.","highlights":"Climate-responsive Louvers • Architectural Lighting • Grand Balcony"},{"title":"Residence of Dr. Shahid Alam","category":"Residential","client":"Dr. Shahid Alam","location":"Birgunj, Parsa","year":"2024 A.D.","imageUrl":"assets/projects/shahid_alam_residence.jpg","description":"Contemporary villa designed for medical professional family with climate-responsive facade, spacious bedrooms, and earthquake-proof RCC structure.","highlights":"Passive Climate Shading • Custom Joinery • Structural Blueprints"},{"title":"Residence of Mr. Rohan Yadav","category":"Residential","client":"Mr. Rohan Yadav","location":"Ranighat, Birgunj","year":"2022 A.D.","imageUrl":"assets/projects/rohan_yadav_residence.jpg","description":"Refined 2.5-storey residential bungalow with open-plan kitchen, south-facing daylighting, and complete municipal approval drawings.","highlights":"Daylight Planning • Naksha Pass Set • Open Plan Layout"},{"title":"Residence for Mr. Sumit Singh","category":"Residential","client":"Mr. Sumit Singh","location":"Brahma Chowk, Birgunj","year":"2025 A.D.","imageUrl":"assets/projects/sumit_singh_residence.jpg","description":"Sleek geometric contemporary villa with cantilevered balconies, custom metal pergolas, and optimized cross-ventilation.","highlights":"Cantilever Balconies • Geometric Elevations • Cross Ventilation"},{"title":"Residence cum Commercial Building of Dr. Ashok Shah","category":"Residential","client":"Dr. Ashok Shah","location":"Lath Galli, Birgunj","year":"2019 A.D.","imageUrl":"assets/projects/ashok_shah_residence.jpg","description":"Urban medical clinic on lower floor with comfortable private residential quarters above, maximizing narrow plot frontage.","highlights":"Clinic Integration • Efficient Core • Urban Infill Design"},{"title":"Residence Building of Mr. Rajeshwar Tiwari","category":"Residential","client":"Mr. Rajeshwar Tiwari","location":"Birgunj-13, Parsa","year":"2022 A.D.","imageUrl":"assets/projects/rajeshwar_tiwari_residence.jpg","description":"Traditional Terai family home reimagined with modern earthquake-resistant structural grid, spacious verandas, and puja room.","highlights":"NBC 205 Frame • Vastu Compliant • Traditional Veranda"},{"title":"Residence of Mr. Tikaram Dhakal","category":"Residential","client":"Mr. Tikaram Dhakal","location":"Budhanilkantha, Kathmandu","year":"2025 A.D.","imageUrl":"assets/projects/tikaram_dhakal_residence.jpg","description":"Valley hillside residence capturing Himalayan mountain views, south-facing solar gain, and seismic slope retaining foundation engineering.","highlights":"Himalayan Panorama • Hill Slope Foundation • Solar Orientation"},{"title":"Residence of Mr. Samir Ojha","category":"Residential","client":"Mr. Samir Ojha","location":"Tokha-6, Kathmandu","year":"2025 A.D.","imageUrl":"assets/projects/samir_ojha_residence.jpg","description":"Modern urban villa in Tokha featuring 2.5 storeys, modular kitchen, rooftop solar terrace, and complete Naksha Pass municipal documentation.","highlights":"Tokha Bye-laws • Modular Kitchen • Solar Ready Terrace"},{"title":"Residence of Mr. Prakash Amatya","category":"Residential","client":"Mr. Prakash Amatya","location":"Chandragiri, Kathmandu","year":"2023 A.D.","imageUrl":"assets/projects/prakash_amatya_residence.jpg","description":"Contemporary multi-family residence with stepped gardens, open terrace pavilions, and seismic foundation engineering.","highlights":"Stepped Garden • Mountain Views • Seismic Engineering"},{"title":"Residence of Mr. Yagya Raj Upreti","category":"Residential","client":"Mr. Yagya Raj Upreti","location":"Chandragiri, Kathmandu","year":"2021 A.D.","imageUrl":"assets/projects/yagya_raj_upreti_residence.jpg","description":"Hilltop residence designed for thermal comfort, natural brick finishes, insulated glass windows, and earthquake safety.","highlights":"Thermal Comfort • Insulated Glazing • Brick Accent Architecture"},{"title":"Residence of Mr. Bidur Khatiwada","category":"Residential","client":"Mr. Bidur Khatiwada","location":"Sirutaar, Lalitpur","year":"2021 A.D.","imageUrl":"assets/projects/bidur_khatiwada_residence.jpg","description":"Suburban Lalitpur villa combining modern minimalist aesthetics, private courtyard gardens, and full structural civil engineering.","highlights":"Lalitpur Bye-laws • Courtyard Garden • Turnkey Engineering"},{"title":"Residence of Mr. Uma Shah","category":"Residential","client":"Mr. Uma Shah","location":"Tokha-6, Kathmandu","year":"2019 A.D.","imageUrl":"assets/projects/uma_shah_residence.jpg","description":"Kathmandu Valley residential home designed with traditional brick elements, open kitchen, and reinforced concrete frame.","highlights":"Valley Architecture • RCC Frame • Modern Traditional Blend"},{"title":"Residence of Mr. Laxmi Prasad Poudel","category":"Residential","client":"Mr. Laxmi Prasad Poudel","location":"Bhaktapur","year":"2019 A.D.","imageUrl":"assets/projects/laxmi_poudel_residence.jpg","description":"Family residence in historic Bhaktapur respecting local municipal architectural bye-laws and Newari traditional accents.","highlights":"Bhaktapur Bye-laws • Heritage Context • Reinforced Frame"},{"title":"Residence of Mr. Narayan Baral","category":"Residential","client":"Mr. Narayan Baral","location":"Birtamod, Jhapa","year":"2021 A.D.","imageUrl":"assets/projects/narayan_baral_residence.jpg","description":"Spacious Eastern Nepal residence featuring climate-responsive overhangs, wide porch, and turnkey interior joinery.","highlights":"Eastern Terai Climate • Wide Porch • Custom Interior"},{"title":"Residence of Mr. Bhim Baral","category":"Residential","client":"Mr. Bhim Baral","location":"Birtamod, Jhapa","year":"2021 A.D.","imageUrl":"assets/projects/bhim_baral_residence.jpg","description":"Modern duplex home designed for joint family living with independent access, double garage, and landscaped lawn.","highlights":"Duplex Plan • Landscaped Frontage • Double Garage"},{"title":"Residence of Mr. Chiran Khatiwada","category":"Residential","client":"Mr. Chiran Khatiwada","location":"Budhabare, Jhapa","year":"2024 A.D.","imageUrl":"assets/projects/chiran_khatiwada_residence.jpg","description":"Contemporary rural villa integrating scenic tea garden views, deep verandahs, and earthquake-proof civil detailing.","highlights":"Tea Garden Views • Deep Verandahs • Ductile RCC"},{"title":"Residence of Jagdish Mahato","category":"Residential","client":"Mr. Jagdish Mahato","location":"Janakpurdham, Dhanusha","year":"2024 A.D.","imageUrl":"assets/projects/jagdish_mahato_residence.jpg","description":"Grand residential villa in Janakpur featuring classical Mithila arches, central courtyard ventilation, and modern luxury suites.","highlights":"Mithila Classical Touch • Courtyard Ventilation • Luxury Suites"},{"title":"Low-rise Apartment for Birgunj Customs Office","category":"Institutional","client":"Birgunj Customs Office","location":"Birgunj Customs, Birgunj","year":"2024 A.D.","imageUrl":"assets/projects/birgunj_customs_apartment.jpg","description":"Staff housing and executive residential quarters for customs officers, built with high security, seismic durability, and communal facilities.","highlights":"Government Staff Housing • NBC 205 Compliance • Secure Compound"},{"title":"Office Building for Alpine High School","category":"Institutional","client":"Alpine High School","location":"Birgunj-13, Parsa","year":"2024 A.D.","imageUrl":"assets/projects/alpine_high_school.jpg","description":"Administrative academic building featuring principal office, conference boardroom, staff lounges, and student advisory center.","highlights":"Educational Administration • Boardroom Acoustic Design • Natural Light"},{"title":"Institutional Building of Aria Institute","category":"Institutional","client":"Aria Institute","location":"Birgunj-13, Parsa","year":"2023 A.D.","imageUrl":"assets/projects/aria_institute.jpg","description":"Higher education building with multimedia lecture halls, computer labs, student library, and fire safety egress staircases.","highlights":"Higher Education Facility • Fire Safety Egress • Sound Dampening"},{"title":"Standards & Metrology Calibration Center","category":"Institutional","client":"Standards and Metrology Office, Birgunj","location":"Hetauda, Makwanpur","year":"2020 A.D.","imageUrl":"assets/projects/standards_metrology_hetauda.jpg","description":"Specialized precision measurement laboratory building with vibration-isolated foundations and thermal stabilization.","highlights":"Vibration Isolation • High Precision Labs • Government Infrastructure"},{"title":"Administrative Building of Arun Rural Municipality","category":"Institutional","client":"Arun Rural Municipality, Bhojpur","location":"Pyauli, Arun, Bhojpur","year":"2023 A.D.","imageUrl":"assets/projects/arun_rural_municipality_1.jpg","description":"Local government municipal headquarters designed with civic assembly hall, mayoral offices, public service counters, and solar power.","highlights":"Civic Architecture • Mountain Terrain Retaining • Universal Accessibility"},{"title":"Arun Rural Municipality - Elevation & Plaza","category":"Institutional","client":"Arun Rural Municipality, Bhojpur","location":"Pyauli, Arun, Bhojpur","year":"2023 A.D.","imageUrl":"assets/projects/arun_rural_municipality_2.jpg","description":"Public plaza, flagpole ceremonial ground, and stone-cladded municipal facade overlooking the Arun river valley.","highlights":"Ceremonial Plaza • Stone Cladding • Public Counters"},{"title":"Blood Transfusion Service Center","category":"Institutional","client":"Project Office of Urban Development & Building Construction, Dhankuta","location":"Khandbari, Sankhuwasabha","year":"2021 A.D.","imageUrl":"assets/projects/blood_transfusion_center.jpg","description":"Critical regional healthcare facility with temperature-controlled cold chain blood storage, donor lounges, and sterile laboratory suites.","highlights":"Critical Healthcare • Cold Chain Storage • Sterile Lab Zoning"},{"title":"Multipurpose Block of Himalaya Kiran Public Campus","category":"Institutional","client":"Himalaya Kiran Public Campus","location":"Khandbari, Sankhuwasabha","year":"2022 A.D.","imageUrl":"assets/projects/himalaya_kiran_campus.jpg","description":"University multipurpose academic block featuring 400-seat auditorium, exam halls, and earthquake-resistant structural grid.","highlights":"400-Seat Auditorium • Campus Masterplan • Structural Grid"},{"title":"Office Building of Animal Quarantine Office","category":"Institutional","client":"Animal Quarantine Office","location":"Kakarbhitta, Jhapa","year":"2022 A.D.","imageUrl":"assets/projects/animal_quarantine_jhapa.jpg","description":"Cross-border quarantine inspection building with laboratory screening rooms, administrative desks, and vehicle inspection ramps.","highlights":"Border Inspection Facility • Bio-secure Labs • Quarantine Ramps"},{"title":"ISCKON Temple Complex","category":"Religious","client":"ISCKON Birgunj / Ramjanki Temple Trust","location":"Behind Ramjanki Temple, Birgunj","year":"2020 A.D.","imageUrl":"assets/projects/isckon_temple_birgunj.jpg","description":"Sacred temple complex combining traditional Vedic shikhara geometry with seismic RCC core engineering and devotional prayer halls.","highlights":"Vedic Architecture • Shikhara Geometry • Acoustically Tuned Bhajan Hall"},{"title":"Temple Complex of Kalikamai Temple","category":"Religious","client":"Kalikamai Temple Management Committee","location":"Kalikamai, Parsa","year":"2020 A.D.","imageUrl":"assets/projects/kalikamai_temple_complex.jpg","description":"Pilgrimage complex masterplan with circumambulation walkways, sacred water kund, pilgrim shelters, and ornate brick carvings.","highlights":"Pilgrimage Masterplan • Sacred Kund • Ornate Carvings"},{"title":"Temple of Arun Adhyatmik Kendra","category":"Religious","client":"Arun Adhyatmik Kendra","location":"Pyauli, Bhojpur","year":"2024 A.D.","imageUrl":"assets/projects/arun_adhyatmik_temple.jpg","description":"Spiritual meditation sanctuary positioned on peaceful hilltop ridge, designed with natural local stone, timber rafters, and meditation gardens.","highlights":"Spiritual Sanctuary • Timber Rafters • Mountain Meditation Gardens"},{"title":"Interior Design - Residence of Mr. Bidur Khatiwada","category":"Interior","client":"Mr. Bidur Khatiwada","location":"Sirutaar, Lalitpur","year":"2020 A.D.","imageUrl":"assets/projects/interior_bidur_khatiwada_1.jpg","description":"Scandinavian minimalist interior styling with fluted charcoal acoustic paneling, concealed cove LED lighting, and Italian marble flooring.","highlights":"Acoustic Fluting • Cove Lighting • Italian Marble"},{"title":"Living Room & Entertainment Unit - Bidur Khatiwada","category":"Interior","client":"Mr. Bidur Khatiwada","location":"Sirutaar, Lalitpur","year":"2020 A.D.","imageUrl":"assets/projects/interior_bidur_khatiwada_2.jpg","description":"Custom floating TV credenza with concealed cable routing, backlit profile LED niches, and matte PU paint finish.","highlights":"Custom Joinery • Backlit Profile LED • Concealed Wiring"},{"title":"Modular Kitchen with BWP Marine Ply & Acrylic","category":"Interior","client":"Mr. Bidur Khatiwada","location":"Sirutaar, Lalitpur","year":"2020 A.D.","imageUrl":"assets/projects/interior_bidur_khatiwada_kitchen.jpg","description":"Ergonomic modular kitchen built with Boiling Water Proof (BWP) 710 marine plywood, soft-close Blum hardware, and high-gloss acrylic shutters.","highlights":"BWP 710 Marine Ply • Soft-close Tandem Boxes • Quartz Countertop"},{"title":"Interior Design - Residence of Mr. Narayan Baral","category":"Interior","client":"Mr. Narayan Baral","location":"Birtamode, Jhapa","year":"2021 A.D.","imageUrl":"assets/projects/interior_narayan_baral_1.jpg","description":"Warm contemporary interior featuring rich walnut laminates, coffered gypsum false ceilings, and ambient 3000K warm illumination.","highlights":"Walnut Joinery • Coffered Ceiling • 3000K Warm Ambiance"},{"title":"Foyer & Dining Suite - Narayan Baral","category":"Interior","client":"Mr. Narayan Baral","location":"Birtamode, Jhapa","year":"2021 A.D.","imageUrl":"assets/projects/interior_narayan_baral_dining.jpg","description":"Open-plan dining space with integrated crockery unit, fluted glass partitions, and designer chandelier accent.","highlights":"Fluted Glass • Crockery Display • Designer Chandelier"},{"title":"Master Bedroom Suite - Narayan Baral","category":"Interior","client":"Mr. Narayan Baral","location":"Birtamode, Jhapa","year":"2021 A.D.","imageUrl":"assets/projects/interior_narayan_baral_bedroom.jpg","description":"Luxury master bedroom with floor-to-ceiling cushioned headboard, integrated dresser unit, and bedside pendant drop lights.","highlights":"Cushioned Headboard • Floor-to-ceiling Wardrobes • Bedside Pendants"},{"title":"Interior Design - Residence of Mr. Nitesh Singh","category":"Interior","client":"Mr. Nitesh Singh","location":"Kalaiya, Bara","year":"2024 A.D.","imageUrl":"assets/projects/interior_nitesh_singh_living.jpg","description":"Modern luxury interior execution across living room with marble wall claddings, magnetic track lighting, and custom plush sectional sofa.","highlights":"Magnetic Track Lights • Marble Cladding • Custom Furniture"},{"title":"Custom TV Console & Media Wall - Nitesh Singh","category":"Interior","client":"Mr. Nitesh Singh","location":"Kalaiya, Bara","year":"2024 A.D.","imageUrl":"assets/projects/interior_nitesh_singh_tv.jpg","description":"Minimalist entertainment console with integrated acoustic wood louvers, concealed sub-woofer bay, and satin finish cabinetry.","highlights":"Acoustic Slats • Concealed Equipment Bay • Satin Finish"},{"title":"Master Suite & Walk-in Wardrobe - Nitesh Singh","category":"Interior","client":"Mr. Nitesh Singh","location":"Kalaiya, Bara","year":"2024 A.D.","imageUrl":"assets/projects/interior_nitesh_singh_master.jpg","description":"Full-height walk-in wardrobe with tinted glass profile doors, interior sensor LEDs, jewelry organizer trays, and private dressing lounge.","highlights":"Tinted Glass Wardrobe • Sensor LED Illumination • Dressing Lounge"},{"title":"Modern Luxury Living Room Suite","category":"Interior","client":"Scale & Spaces Signature Suite","location":"Birgunj / Kathmandu","year":"2024 A.D.","imageUrl":"assets/projects/interior_modern_luxury_living.jpg","description":"Signature living room design by Scale and Spaces featuring floating false ceiling, acoustic panels, concealed HVAC diffusers, and luxury furniture.","highlights":"Floating False Ceiling • Concealed HVAC • Luxury Materials"},{"title":"National Logo Design Competition - Winning Entry","category":"Branding","client":"National Architectural Competition","location":"Nepal","year":"2022 A.D.","imageUrl":"assets/projects/logo_competition_winner.jpg","description":"First Prize Winning architectural logo design demonstrating structural geometry, spatial balance, and the golden ratio in brand identity.","highlights":"First Prize Winner • Golden Ratio • Brand Identity"}];
+    const MASTER_TEAM = [{"name":"Er. Chetan Kr. Sarraf","role":"Interior Designer & Lead Civil Engineer","photoUrl":"assets/team/team-chetan.jpg","bio":"Co-founder & Lead Engineer. Specializing in high-end luxury interiors, NBC 205 structural blueprints, AutoCAD detailing, and transparent BOQ valuation."},{"name":"Ar. Supriya Thapa","role":"Principal Architect","photoUrl":"assets/team/team-supriya.jpg","bio":"Leads bioclimatic spatial design, contemporary luxury villas, aesthetic elevations, and municipal bye-law compliance across Nepal."},{"name":"Ar. Yateendra K Labh","role":"Director / Architect","photoUrl":"assets/team/team-yateendra.jpg","bio":"Oversees large-scale masterplanning, institutional healthcare infrastructure, commercial complexes, and urban landscape developments."},{"name":"Er. Sunil Chaurasiya","role":"Structural Engineer","photoUrl":"assets/team/team-sunil.jpg","bio":"Directs NBC 205:2024 and NBC 105:2020 earthquake engineering, column-beam ductile detailing, and bar bending schedules."},{"name":"Megnath Gupta","role":"Project Manager","photoUrl":"assets/team/team-megnath.jpg","bio":"Manages turnkey project execution, material procurement schedules, quality control, and on-site contractor logistics."},{"name":"Ar. Ashmin R Bhattarai","role":"Architect & 3D Visualization Lead","photoUrl":"assets/team/team-ashmin.jpg","bio":"Expert in ultra-photorealistic Lumion 3D renderings, virtual reality walkthroughs, and architectural lighting plans."},{"name":"Bishal Manandar","role":"Electrical Engineer","photoUrl":"assets/team/team-bishal.jpg","bio":"Specialist in electrical conduit layouts, power load balancing, smart home automation, and solar backup engineering."},{"name":"Wasim Alam","role":"Site Engineer","photoUrl":"assets/team/team-wasim.jpg","bio":"Directs on-site structural audits, concrete batch slump tests, and foundation soil bearing checks."},{"name":"Sheetal Gupta","role":"Architectural Designer","photoUrl":"assets/team/team-sheetal.jpg","bio":"Specializes in 2D working drawings, spatial zoning, interior clearances, and municipal Naksha Pass documentation."}];
+    const MASTER_RATES = [{"item":"OPC Cement (Shivam / Hetauda 53G)","category":"Civil","unit":"50 kg Bag","rate":"Rs. 720 – 770","status":"Verified 2026"},{"item":"TMT Steel Rebar (Fe 500D Grade)","category":"Civil","unit":"Per Kg","rate":"Rs. 92 – 98","status":"Verified 2026"},{"item":"First-Class Red Clay Bricks (Chimney)","category":"Civil","unit":"Per 1,000 Pcs","rate":"Rs. 14,500 – 16,000","status":"Verified 2026"},{"item":"Coarse River Sand (Washed)","category":"Civil","unit":"Per Tiper (100 cu.ft)","rate":"Rs. 9,500 – 11,500","status":"Verified 2026"},{"item":"Crushed Stone Aggregate (20mm / 40mm)","category":"Civil","unit":"Per Tiper (100 cu.ft)","rate":"Rs. 10,500 – 12,500","status":"Verified 2026"},{"item":"UPVC Soundproof Glazed Windows","category":"Openings","unit":"sq.ft","rate":"Rs. 650 – 850","status":"Verified 2026"},{"item":"Italian / Spanish Marble & Granite","category":"Finishes","unit":"sq.ft","rate":"Rs. 350 – 650","status":"Verified 2026"},{"item":"Modular Kitchen (BWP 710 Marine Ply + Acrylic)","category":"Interior","unit":"Running Feet","rate":"Rs. 2,800 – 3,400","status":"Verified 2026"},{"item":"Gypsum False Ceiling with LED Coving","category":"Interior","unit":"sq.ft","rate":"Rs. 165 – 195","status":"Verified 2026"},{"item":"2-Coat Putty + Primer + Luxury Emulsion Paint","category":"Finishes","unit":"sq.ft","rate":"Rs. 38 – 48","status":"Verified 2026"}];
+
+    let currentSelectedCategory = 'All';
+
+    function renderPortfolioCards(category = 'All') {
+      currentSelectedCategory = category;
+      const container = document.getElementById('portfolioContainer');
+      const countBadge = document.getElementById('portfolioCountBadge');
+      if (!container) return;
+
+      const filtered = category === 'All' 
+        ? MASTER_PORTFOLIO 
+        : MASTER_PORTFOLIO.filter(p => p.category.toLowerCase() === category.toLowerCase());
+
+      if (countBadge) {
+        countBadge.textContent = `Showing ${filtered.length} project${filtered.length === 1 ? '' : 's'} (${category})`;
+      }
+
+      container.innerHTML = filtered.map((item, idx) => {
+        const catBadgeColors = {
+          Commercial: 'bg-blue-100 text-blue-800 border-blue-200',
+          Residential: 'bg-emerald-100 text-emerald-800 border-emerald-200',
+          Interior: 'bg-amber-100 text-amber-800 border-amber-200',
+          Landscape: 'bg-teal-100 text-teal-800 border-teal-200',
+          Institutional: 'bg-purple-100 text-purple-800 border-purple-200',
+          Religious: 'bg-rose-100 text-rose-800 border-rose-200',
+          Branding: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+        }[item.category] || 'bg-slate-100 text-slate-800 border-slate-200';
+
+        return `
+          <div class="group bg-white rounded-2xl border border-slate-200 hover:border-[#FF5722] shadow-xs hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
+               onclick="openLightbox(\`${item.title.replace(/'/g, "\\'")}\`, \`${item.category}\`, \`${item.description.replace(/'/g, "\\'")}\`, \`${item.imageUrl}\`, \`${item.client || ''}\`, \`${item.location || ''}\`, \`${item.year || ''}\`, \`${item.highlights || ''}\`)">
+            <div>
+              <div class="relative h-64 w-full overflow-hidden bg-slate-900">
+                <img src="${item.imageUrl}" 
+                     alt="${item.title}" 
+                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                     loading="lazy"
+                     onerror="this.onerror=null; this.src='assets/logo.jpg';" />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-70 group-hover:opacity-85 transition-opacity"></div>
+                <div class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider border shadow-xs ${catBadgeColors}">
+                  ${item.category}
+                </div>
+                ${item.year ? `<div class="absolute top-3.5 right-3.5 px-2.5 py-0.5 rounded-md bg-black/60 backdrop-blur-xs text-[11px] font-mono font-semibold text-white">${item.year}</div>` : ''}
+                <div class="absolute bottom-3 right-3 w-9 h-9 rounded-full bg-[#FF5722] text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                  <i class="fa-solid fa-expand text-xs"></i>
+                </div>
+              </div>
+
+              <div class="p-6">
+                <h3 class="font-bold text-lg text-slate-900 group-hover:text-[#FF5722] transition-colors leading-snug line-clamp-2">
+                  ${item.title}
+                </h3>
+                <div class="flex items-center gap-2 mt-2 text-xs font-semibold text-slate-500">
+                  <i class="fa-solid fa-location-dot text-[#FF5722]"></i>
+                  <span>${item.location || 'Nepal'}</span>
+                  ${item.client ? `<span>•</span> <span class="truncate">${item.client}</span>` : ''}
+                </div>
+                <p class="text-xs text-slate-600 mt-3 line-clamp-2 leading-relaxed">
+                  ${item.description}
+                </p>
+              </div>
+            </div>
+
+            <div class="px-6 pb-6 pt-0">
+              <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="font-bold text-[#FF5722] inline-flex items-center gap-1">
+                  <span>Inspect Blueprints</span>
+                  <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </span>
+                <span class="text-[11px] text-slate-400 font-mono">Scale &amp; Spaces</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      renderCategoryButtons();
+    }
+
+    function renderCategoryButtons() {
+      const btnContainer = document.getElementById('portfolioCategoryFilters');
+      if (!btnContainer) return;
+
+      const categories = ['All', 'Commercial', 'Residential', 'Interior', 'Landscape', 'Institutional', 'Religious', 'Branding'];
+      btnContainer.innerHTML = categories.map(cat => {
+        const count = cat === 'All' ? MASTER_PORTFOLIO.length : MASTER_PORTFOLIO.filter(p => p.category.toLowerCase() === cat.toLowerCase()).length;
+        const isActive = currentSelectedCategory.toLowerCase() === cat.toLowerCase();
+        return `
+          <button onclick="renderPortfolioCards('${cat}')" 
+                  class="px-4 py-2 rounded-xl text-xs font-bold tracking-wider transition-all inline-flex items-center gap-1.5 ${
+                    isActive 
+                      ? 'bg-[#FF5722] text-white shadow-md shadow-orange-500/20' 
+                      : 'bg-white text-slate-700 border border-slate-200 hover:border-[#FF5722]/50 hover:bg-slate-50'
+                  }">
+            <span>${cat}</span>
+            <span class="px-1.5 py-0.5 rounded-full text-[10px] ${isActive ? 'bg-white/25 text-white' : 'bg-slate-100 text-slate-500'}">${count}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function renderTeamMembers() {
+      const container = document.getElementById('teamContainer');
+      if (!container) return;
+
+      container.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8";
+      container.innerHTML = MASTER_TEAM.map(member => `
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 text-center hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-28 h-28 rounded-2xl overflow-hidden mx-auto mb-4 border-2 border-slate-200 shadow-sm bg-slate-100">
+              <img src="${member.photoUrl}" 
+                   alt="${member.name}" 
+                   class="w-full h-full object-cover" 
+                   loading="lazy"
+                   onerror="this.onerror=null; this.src='assets/logo.jpg';" />
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">${member.name}</h4>
+            <div class="text-xs font-bold text-[#FF5722] uppercase mt-1 mb-3 tracking-wider">${member.role}</div>
+            <p class="text-xs text-slate-600 leading-relaxed">${member.bio}</p>
+          </div>
+          <div class="pt-4 mt-4 border-t border-slate-100 flex items-center justify-center gap-3 text-slate-400">
+            <span class="text-[11px] font-bold text-slate-500"><i class="fa-solid fa-shield-halved text-emerald-500 mr-1"></i>Verified Member</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function renderRatesTable() {
+      const tbody = document.getElementById('ratesTableBody');
+      if (!tbody) return;
+      tbody.innerHTML = MASTER_RATES.map(r => `
+        <tr class="hover:bg-slate-50 transition-colors">
+          <td class="py-3.5 px-6 font-bold text-slate-900">${r.item}</td>
+          <td class="py-3.5 px-4 text-xs font-semibold text-slate-500"><span class="px-2 py-0.5 rounded-full bg-slate-100">${r.category}</span></td>
+          <td class="py-3.5 px-4 text-xs text-slate-600 font-mono">${r.unit}</td>
+          <td class="py-3.5 px-6 font-bold text-[#FF5722] font-mono">${r.rate}</td>
+          <td class="py-3.5 px-4 text-xs text-emerald-600 font-semibold">${r.status}</td>
+        </tr>
+      `).join('');
+    }
+
+    function renderMarqueeReel() {
+      const track = document.getElementById('postsMarqueeTrack');
+      if (!track) return;
+      const featured = MASTER_PORTFOLIO.slice(0, 10);
+      const htmlList = featured.map(p => `
+        <div onclick="openLightbox(\`${p.title.replace(/'/g, "\\'")}\`, \`${p.category}\`, \`${p.description.replace(/'/g, "\\'")}\`, \`${p.imageUrl}\`, \`${p.client || ''}\`, \`${p.location || ''}\`, \`${p.year || ''}\`, \`${p.highlights || ''}\`)"
+             class="w-72 shrink-0 bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-xs block cursor-pointer hover:shadow-lg transition-all">
+          <div class="h-44 w-full overflow-hidden bg-slate-900">
+            <img src="${p.imageUrl}" alt="${p.title}" class="w-full h-full object-cover" loading="lazy" />
+          </div>
+          <div class="p-4">
+            <span class="text-[10px] font-bold uppercase text-[#FF5722]">${p.category}</span>
+            <div class="text-xs font-bold text-slate-900 truncate mt-0.5">${p.title}</div>
+            <p class="text-[11px] text-slate-500 mt-1 truncate">${p.location || 'Nepal'} • ${p.year || '2025'}</p>
+          </div>
+        </div>
+      `).join('');
+      // Duplicate for smooth continuous marquee scroll
+      track.innerHTML = htmlList + htmlList;
+    }
+
+    // Extended Lightbox Handler with Full Project Details
+    window.openLightbox = function(title, cat, desc, img, client, location, year, highlights) {
+      document.getElementById('lbTitle').textContent = title || 'Project Details';
+      document.getElementById('lbCategory').textContent = cat || 'Architecture';
+      document.getElementById('lbDesc').textContent = desc || '';
+      document.getElementById('lbImg').src = img || 'assets/logo.jpg';
+
+      let detailsBox = document.getElementById('lbExtraDetails');
+      if (!detailsBox) {
+        detailsBox = document.createElement('div');
+        detailsBox.id = 'lbExtraDetails';
+        detailsBox.className = 'mt-4 pt-4 border-t border-slate-200 space-y-2 text-xs text-slate-600';
+        document.getElementById('lbDesc').parentNode.appendChild(detailsBox);
+      }
+
+      detailsBox.innerHTML = `
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          ${client ? `<div><strong class="text-slate-900">Client:</strong> ${client}</div>` : ''}
+          ${location ? `<div><strong class="text-slate-900">Location:</strong> ${location}</div>` : ''}
+          ${year ? `<div><strong class="text-slate-900">Year:</strong> ${year}</div>` : ''}
+          ${highlights ? `<div class="col-span-2 mt-1"><strong class="text-slate-900">Key Highlights:</strong> <span class="text-emerald-700 font-semibold">${highlights}</span></div>` : ''}
+        </div>
+        <div class="pt-3">
+          <a href="https://wa.me/9779703881733?text=Hi%20Scale%20and%20Spaces,%20I%20am%20inquiring%20about%20the%20project:%20${encodeURIComponent(title)}" 
+             target="_blank" 
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all">
+            <i class="fa-brands fa-whatsapp text-sm"></i>
+            <span>Inquire About This Design</span>
+          </a>
+        </div>
+      `;
+
+      const m = document.getElementById('modalLightbox');
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    };
+
+    // Auto-init on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPortfolioCards('All');
+      renderTeamMembers();
+      renderRatesTable();
+      renderMarqueeReel();
+      syncGoogleSheets();
+    });
+  </script>
+
+</body>
+</html>

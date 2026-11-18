@@ -916,7 +916,7 @@ const articlesData = [
     heading: 'Seismic-Resilient Residence Design Under Nepal National Building Code',
     image: 'assets/projects/prakash_amatya_residence.jpg',
     desc: 'How integrated architectural grid planning, balanced shear stiffness, and NBC ductile detailing safeguard modern reinforced-concrete homes across Kathmandu Valley and the Terai belt while streamlining municipal building permit approvals.',
-    link: '#services',
+    link: 'https://bishwokc.com.np/blog/earthquake-resistant-house-design-nepal',
     category: 'Structural & NBC',
     date: 'Studio Note · 2026'
   },
@@ -1049,6 +1049,51 @@ const jsonLdSchema = {
   }
 };
 
+function animatedCompanyLogoSvg(maskId, opts) {
+  const o = opts || {};
+  const cls = o.className || 'ss-logo-draw-svg';
+  const fillColor = o.fillColor || '#111111';
+  const traceColor = o.traceColor || '#8F0000';
+  const guideOpacity = o.guideOpacity != null ? o.guideOpacity : '0.16';
+  const dur = o.dur || '1.15s';
+  const loopAttr = o.loop ? 'indefinite' : '1';
+  const fillAttr = o.loop ? '' : ' fill="freeze"';
+  const vals = o.loop ? '100;0;0' : '100;0';
+  const keys = o.loop ? '0;0.74;1' : '0;1';
+  const splines = o.loop ? '0.45 0 0.55 1;0 0 1 1' : '0.45 0 0.55 1';
+  return `<svg class="${cls}" viewBox="120 180 850 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scale and Spaces geometric logo animation">
+    <defs>
+      <mask id="${maskId}" maskUnits="userSpaceOnUse" x="100" y="160" width="900" height="680">
+        <rect x="100" y="160" width="900" height="680" fill="#000000"/>
+        <path class="ss-logo-mask-path" d="M570 348 L185 348 L406 738 L686 255 L909 640 L520 640"
+              pathLength="100" fill="none" stroke="#ffffff" stroke-width="58"
+              stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"
+              stroke-dasharray="100" stroke-dashoffset="100">
+          <animate class="ss-logo-smil-anim" attributeName="stroke-dashoffset"
+                   values="${vals}" keyTimes="${keys}"
+                   calcMode="spline" keySplines="${splines}"
+                   dur="${dur}" repeatCount="${loopAttr}"${fillAttr}/>
+        </path>
+      </mask>
+    </defs>
+    <g>
+      <path fill="none" stroke="${traceColor}" stroke-opacity="${guideOpacity}" stroke-width="2.5" stroke-dasharray="10 8"
+            d="M686 233 L407 712 L202 360 L565 358 L576 338 L164 338 L405 756 L685 276 L890 628 L528 630 L516 650 L928 651 Z"/>
+      <path fill="${fillColor}" mask="url(#${maskId})"
+            d="M686 233 L407 712 L202 360 L565 358 L576 338 L164 338 L405 756 L685 276 L890 628 L528 630 L516 650 L928 651 Z"/>
+      <path class="ss-logo-pen-trace" d="M570 348 L185 348 L406 738 L686 255 L909 640 L520 640"
+            pathLength="100" fill="none" stroke="${traceColor}" stroke-opacity="0.72" stroke-width="4"
+            stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"
+            stroke-dasharray="100" stroke-dashoffset="100">
+        <animate class="ss-logo-smil-anim" attributeName="stroke-dashoffset"
+                 values="${vals}" keyTimes="${keys}"
+                 calcMode="spline" keySplines="${splines}"
+                 dur="${dur}" repeatCount="${loopAttr}"${fillAttr}/>
+      </path>
+    </g>
+  </svg>`;
+}
+
 const customCss = `
     /* ==========================================================================
        SCALE AND SPACES ARCHITECTURAL PORTFOLIO DESIGN + WATERCOLOR MOTION SYSTEM
@@ -1148,21 +1193,105 @@ const customCss = `
       z-index: 1;
     }
 
-    /* Architectural Preloader Curtain (Full-Page Architectural Elevation & Art Drawing) */
+    /* Architectural Preloader Curtain (Transparent Frosted Cream Surface + Company Logo Draw) */
     .studio-preloader {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background-color: #F0EFEA;
-      background-image: url('assets/art/watercolor-paper-wash.jpg');
-      background-size: cover;
-      background-position: center;
+      background: rgba(240, 239, 234, 0.84);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       pointer-events: auto;
       overflow: hidden;
+    }
+    .ss-preloader-emblem {
+      position: relative;
+      z-index: 4;
+      width: min(260px, 60vw);
+      height: auto;
+      pointer-events: none;
+      filter: drop-shadow(0 8px 24px rgba(17, 17, 17, 0.06));
+    }
+    .ss-transition-veil {
+      position: fixed;
+      inset: 0;
+      z-index: 9600;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      background: rgba(240, 239, 234, 0.56);
+      backdrop-filter: blur(7px);
+      -webkit-backdrop-filter: blur(7px);
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 280ms cubic-bezier(0.4, 0, 0.2, 1), visibility 280ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .ss-transition-veil.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .ss-transition-veil.is-blocking {
+      pointer-events: auto;
+      background: rgba(240, 239, 234, 0.78);
+    }
+    .ss-transition-logo-svg {
+      width: min(200px, 44vw);
+      height: auto;
+      display: block;
+    }
+    .ss-transition-label {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      font-weight: 700;
+      background: rgba(244, 243, 238, 0.72);
+      padding: 0.2rem 0.65rem;
+      border: 1px solid rgba(143, 0, 0, 0.14);
+    }
+    .ss-heading-hud {
+      position: fixed;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      z-index: 42;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.42rem 0.85rem 0.42rem 0.6rem;
+      background: rgba(244, 243, 238, 0.82);
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+      border: 1px solid rgba(143, 0, 0, 0.2);
+      box-shadow: 0 6px 20px -8px rgba(17, 17, 17, 0.14);
+      pointer-events: none;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 300ms ease, transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .ss-heading-hud.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .ss-heading-hud-svg {
+      width: 34px;
+      height: 25px;
+      display: block;
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) {
+      .ss-heading-hud {
+        bottom: 0.9rem;
+        left: 0.9rem;
+        max-width: calc(100vw - 5.5rem);
+      }
     }
     .preloader-center-stage {
       position: fixed;
@@ -2692,6 +2821,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       </svg>
     </div>
 
+    <div class="relative z-[4] flex flex-col items-center gap-3 pointer-events-none">
+      ${animatedCompanyLogoSvg('ssMaskPreloader', { className: 'ss-preloader-emblem', dur: '1.1s', loop: false })}
+      <span class="text-[10px] font-mono uppercase tracking-[0.26em] text-[#8F0000] font-bold">Scale &amp; Spaces Studio</span>
+    </div>
+
     <div class="preloader-colophon-bottom">
       <div class="flex items-center gap-3">
         <img src="assets/logo.svg" alt="" style="height: 28px; width: auto; max-width: 32px;" onerror="this.src='assets/logo.jpg'" />
@@ -2705,6 +2839,18 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <div>03 Structural &amp; MEP &bull; 04 Turnkey Execution</div>
       </div>
     </div>
+  </div>
+
+  <!-- TRANSPARENT PAGE & SECTION TRANSITION VEIL (Draws Company Logo Smoothly on Page/Heading Jump) -->
+  <div id="ssTransitionVeil" class="ss-transition-veil" aria-hidden="true">
+    ${animatedCompanyLogoSvg('ssMaskVeil', { className: 'ss-transition-logo-svg', dur: '0.82s', loop: false })}
+    <span id="ssTransitionLabel" class="ss-transition-label">Scale &amp; Spaces</span>
+  </div>
+
+  <!-- SUBTLE HEADING-TO-HEADING SCROLL HUD (Non-blocking Transparent Emblem Draw) -->
+  <div id="ssHeadingHud" class="ss-heading-hud" aria-hidden="true">
+    ${animatedCompanyLogoSvg('ssMaskHud', { className: 'ss-heading-hud-svg', dur: '0.72s', loop: false, guideOpacity: '0.22' })}
+    <span id="ssHeadingHudText" class="text-[10.5px] font-mono uppercase tracking-widest text-[#111111] font-bold truncate">Home</span>
   </div>
 
   <!-- 2D CANVAS INK RIBBON TRAIL + SUBTLE ARCHITECTURAL NIB POINTER -->
@@ -2885,11 +3031,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </p>
 
           <div class="hero-stagger flex flex-wrap items-center gap-3 sm:gap-4 mt-7">
-            <a href="#projects" class="btn-crimson text-xs py-2.5 px-5">
-              ${icons.grid} <span>Explore Projects</span>
+            <a id="cms-hero-cta1" href="#projects" class="btn-crimson text-xs py-2.5 px-5">
+              ${icons.grid} <span id="cms-hero-cta1-label">Explore Projects</span>
             </a>
-            <a href="#contact" class="btn-outline text-xs py-2.5 px-5">
-              ${icons.phone} <span>Consult Studio</span>
+            <a id="cms-hero-cta2" href="#contact" class="btn-outline text-xs py-2.5 px-5">
+              ${icons.phone} <span id="cms-hero-cta2-label">Consult Studio</span>
             </a>
           </div>
         </div>
@@ -3184,6 +3330,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             <p id="cms-about-p2" class="text-[#767070]">
               From bespoke family residences and commercial high-rises to community hospitals, civic ghats, and corporate interiors, every drawing transitions seamlessly from sketch to site execution.
             </p>
+            <a id="cms-about-link" href="#contact" class="btn-outline text-xs py-2 px-4 self-start mt-1 hidden">
+              <span id="cms-about-link-label">For More Details</span> &rarr;
+            </a>
           </div>
         </div>
 
@@ -3296,7 +3445,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 <div class="pt-2.5 border-t border-[#DDD8CE]/70 flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider">
                   <span class="text-[#767070] text-[10px] font-mono">Read Preview</span>
                   ${a.link
-                    ? `<a href="${a.link}" ${/^https?:\/\//i.test(a.link) ? 'target="_blank" rel="noopener noreferrer"' : ''} onclick="event.stopPropagation();" class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] no-underline transition-colors text-[10px]">For More Details &rarr;</a>`
+                    ? `<a href="${a.link}" ${/^https?:\/\//i.test(a.link) ? 'target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"' : `onclick="event.stopPropagation(); return !handleSmartHrefClick(event, '${a.link}');"`} class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] no-underline transition-colors text-[10px]">For More Details &rarr;</a>`
                     : `<button type="button" onclick="event.stopPropagation(); openArticleModal(${idx});" class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] border-0 cursor-pointer transition-colors text-[10px] font-bold uppercase tracking-wider">For More Details &rarr;</button>`}
                 </div>
               </div>
@@ -3540,22 +3689,23 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                   <div class="min-w-0">
                     <div class="flex flex-wrap items-center gap-2 mb-1">
                       <span class="text-[10px] font-mono uppercase tracking-widest text-[#8F0000] font-bold">${loc.label}</span>
-                      <span class="inline-flex items-center gap-1 text-[10px] font-bold text-[#111111] bg-[#E8E6DF] px-2 py-0.5">${loc.rating} &#9733; (${loc.reviews})</span>
+                      <span id="cms-loc-${loc.id}-rating" class="inline-flex items-center gap-1 text-[10px] font-bold text-[#111111] bg-[#E8E6DF] px-2 py-0.5">${loc.rating} &#9733; (${loc.reviews})</span>
                     </div>
-                    <h4 class="text-sm sm:text-base font-bold text-[#111111] truncate" style="font-family: var(--font-sans);">${loc.name}</h4>
-                    <p class="text-xs text-[#767070] mt-0.5 m-0">${loc.address} &bull; <span class="font-mono text-[11px]">${loc.plusCode}</span></p>
+                    <h4 id="cms-loc-${loc.id}-name" class="text-sm sm:text-base font-bold text-[#111111] truncate" style="font-family: var(--font-sans);">${loc.name}</h4>
+                    <p id="cms-loc-${loc.id}-address" class="text-xs text-[#767070] mt-0.5 m-0">${loc.address} &bull; <span class="font-mono text-[11px]">${loc.plusCode}</span></p>
                   </div>
                   <div class="flex items-center gap-2 shrink-0">
-                    <a href="${loc.mapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-crimson text-[11px] py-2 px-3 no-underline whitespace-nowrap">
+                    <a id="cms-loc-${loc.id}-maps" href="${loc.mapsUrl}" target="_blank" rel="noopener noreferrer" class="btn-crimson text-[11px] py-2 px-3 no-underline whitespace-nowrap">
                       Open in Maps &nearr;
                     </a>
-                    <a href="${loc.directionsUrl}" target="_blank" rel="noopener noreferrer" class="btn-outline text-[11px] py-2 px-3 no-underline whitespace-nowrap">
+                    <a id="cms-loc-${loc.id}-dir" href="${loc.directionsUrl}" target="_blank" rel="noopener noreferrer" class="btn-outline text-[11px] py-2 px-3 no-underline whitespace-nowrap">
                       Directions
                     </a>
                   </div>
                 </div>
                 <div class="relative w-full h-[320px] sm:h-[360px] bg-[#E8E6DF]">
                   <iframe
+                    id="cms-loc-${loc.id}-embed"
                     src="${loc.embedUrl}"
                     title="Google Map for ${loc.name}"
                     class="w-full h-full border-0 block"
@@ -3594,7 +3744,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           <span class="text-white font-bold uppercase tracking-wider mb-1">Explore</span>
           <a href="#home" class="text-[#CCCCCC] no-underline hover:text-white">Home</a>
           <a href="#services" class="text-[#CCCCCC] no-underline hover:text-white">Services &amp; Scope</a>
-          <a href="#projects" class="text-[#CCCCCC] no-underline hover:text-white">Projects (${projectsData.length})</a>
+          <a href="#projects" class="text-[#CCCCCC] no-underline hover:text-white">Projects (<span id="cms-footer-projects-count">${projectsData.length}</span>)</a>
           <a href="#about" class="text-[#CCCCCC] no-underline hover:text-white">About Studio</a>
           <a href="#team" class="text-[#CCCCCC] no-underline hover:text-white">Team &bull; Articles &bull; Reviews &bull; Partners</a>
         </div>
@@ -3679,6 +3829,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             </div>
             <a id="modal-inquire" href="https://wa.me/9779703881733" target="_blank" rel="noopener noreferrer" class="btn-crimson text-xs py-2 text-center">
               ${icons.whatsapp} <span>Inquire Studio</span>
+            </a>
+            <a id="modal-project-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-outline text-xs py-2 text-center hidden">
+              <span>For More Details</span> &rarr;
             </a>
           </div>
         </div>
@@ -3847,23 +4000,35 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     // Discrete Cookie Consent Preference Persistence
     ${cookieBannerScript}
 
-    // Category Filtering with Clean URL Sync & GSAP Staggered Entrance
-    const tabs = document.querySelectorAll('.filter-tab');
+    // Category Filtering with Clean URL Sync & GSAP Staggered Entrance (scoped strictly to #projects-grid)
     const projectCountEl = document.getElementById('project-count');
-    const validCategories = ['all', 'Commercial', 'Landscape', 'Residences', 'Institutional', 'Religious', 'Interior', 'Branding'];
     let currentCategoryFilter = 'all';
 
+    function getValidCategories() {
+      const cats = ['all'];
+      document.querySelectorAll('#projects-grid .project-card').forEach(function(card) {
+        const c = card.getAttribute('data-category');
+        if (c && cats.indexOf(c) === -1) cats.push(c);
+      });
+      document.querySelectorAll('.filter-tab[data-category]').forEach(function(t) {
+        const c = t.getAttribute('data-category');
+        if (c && cats.indexOf(c) === -1) cats.push(c);
+      });
+      return cats;
+    }
+
     function applyFilter(cat, updateUrl) {
+      const validCategories = getValidCategories();
       const targetCat = validCategories.indexOf(cat) !== -1 ? cat : 'all';
       currentCategoryFilter = targetCat;
-      tabs.forEach(function(t) {
+      document.querySelectorAll('.filter-tab').forEach(function(t) {
         t.classList.toggle('active', t.getAttribute('data-category') === targetCat);
       });
       document.querySelectorAll('.discipline-card').forEach(function(dc) {
         dc.classList.toggle('is-active', dc.getAttribute('data-cat') === targetCat);
       });
 
-      const liveCards = document.querySelectorAll('.project-card');
+      const liveCards = document.querySelectorAll('#projects-grid .project-card');
       const shown = [];
       liveCards.forEach(function(card) {
         const cardCat = card.getAttribute('data-category');
@@ -3894,18 +4059,20 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       if (window.ScrollTrigger) ScrollTrigger.refresh();
     }
 
-    tabs.forEach(function(tab) {
-      tab.addEventListener('click', function() {
-        applyFilter(tab.getAttribute('data-category'), true);
+    const filterRowEl = document.querySelector('.filter-scroll-row');
+    if (filterRowEl) {
+      filterRowEl.addEventListener('click', function(e) {
+        const tab = e.target && e.target.closest ? e.target.closest('.filter-tab') : null;
+        if (tab) applyFilter(tab.getAttribute('data-category'), true);
       });
-    });
+    }
 
     // Apply ?category= URL filter cleanly on initial load if supplied
     (function syncInitialUrlFilter() {
       try {
         const params = new URLSearchParams(window.location.search);
         const cat = params.get('category');
-        if (cat && validCategories.indexOf(cat) !== -1 && cat !== 'all') {
+        if (cat && cat !== 'all') {
           applyFilter(cat, false);
         }
       } catch (err) {}
@@ -3915,6 +4082,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       applyFilter(cat, true);
       const sec = document.getElementById('projects');
       if (sec) {
+        if (window.playLogoTransition) window.playLogoTransition('Projects / ' + (cat === 'all' ? 'All' : cat), 680, false);
         if (window.lenisInstance) {
           window.lenisInstance.scrollTo(sec, { offset: -76, duration: 0.9 });
         } else {
@@ -4051,6 +4219,23 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
       const waMsg = encodeURIComponent("Hello Scale and Spaces, I would like to inquire regarding your project: " + p.title + " (" + p.location + ").");
       modalInquire.href = "https://wa.me/" + (window.__ssWhatsappNumber || "9779703881733") + "?text=" + waMsg;
+      const projLinkEl = document.getElementById('modal-project-link');
+      if (projLinkEl) {
+        const pHref = normalizeExternalUrl(p.link || '');
+        if (pHref) {
+          projLinkEl.href = pHref;
+          if (/^https?:\\/\\//i.test(pHref)) {
+            projLinkEl.setAttribute('target', '_blank');
+            projLinkEl.setAttribute('rel', 'noopener noreferrer');
+          } else {
+            projLinkEl.removeAttribute('target');
+            projLinkEl.removeAttribute('rel');
+          }
+          projLinkEl.classList.remove('hidden');
+        } else {
+          projLinkEl.classList.add('hidden');
+        }
+      }
 
       modalGallery.innerHTML = '';
       if (activeProjectImages.length > 1) {
@@ -4202,12 +4387,87 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     }
 
     function normalizeExternalUrl(raw) {
-      const s = String(raw || '').trim();
+      let s = String(raw || '').trim();
       if (!s) return '';
+      const hlMatch = s.match(/^=HYPERLINK\\(\\s*"([^"]+)"/i);
+      if (hlMatch && hlMatch[1]) s = hlMatch[1].trim();
+      const mdMatch = s.match(/^\\[[^\\]]+\\]\\((https?:\\/\\/[^)]+)\\)$/i);
+      if (mdMatch && mdMatch[1]) s = mdMatch[1].trim();
       if (/^(javascript|data|vbscript):/i.test(s)) return '';
       if (/^(https?:\\/\\/|#|\\?|\\/)/i.test(s)) return s;
       return 'https://' + s;
     }
+
+    function replayLogoStroke(containerEl, durationMs) {
+      if (!containerEl || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+      const dur = durationMs || 760;
+      const paths = containerEl.querySelectorAll('.ss-logo-mask-path, .ss-logo-pen-trace');
+      paths.forEach(function(pathEl) {
+        if (typeof pathEl.animate === 'function') {
+          try {
+            pathEl.getAnimations().forEach(function(a) { a.cancel(); });
+            pathEl.animate(
+              [{ strokeDashoffset: 100 }, { strokeDashoffset: 0 }],
+              { duration: dur, easing: 'cubic-bezier(0.45, 0, 0.55, 1)', fill: 'forwards' }
+            );
+          } catch (e) {}
+        }
+      });
+    }
+    window.replayLogoStroke = replayLogoStroke;
+
+    let __ssVeilTimer = null;
+    function playLogoTransition(label, durationMs, blocking) {
+      const veil = document.getElementById('ssTransitionVeil');
+      const labelEl = document.getElementById('ssTransitionLabel');
+      if (!veil) return;
+      if (labelEl) labelEl.textContent = label || 'Scale & Spaces';
+      clearTimeout(__ssVeilTimer);
+      veil.classList.toggle('is-blocking', !!blocking);
+      veil.classList.add('is-active');
+      replayLogoStroke(veil, Math.max(420, (durationMs || 720) - 120));
+      if (!blocking) {
+        __ssVeilTimer = setTimeout(function() {
+          veil.classList.remove('is-active', 'is-blocking');
+        }, durationMs || 720);
+      }
+    }
+    window.playLogoTransition = playLogoTransition;
+
+    window.addEventListener('pageshow', function() {
+      const veil = document.getElementById('ssTransitionVeil');
+      if (veil) veil.classList.remove('is-active', 'is-blocking');
+    });
+
+    function handleSmartHrefClick(e, rawUrl) {
+      const href = normalizeExternalUrl(rawUrl);
+      if (!href) return false;
+      if (/^https?:\\/\\//i.test(href)) return false;
+      if (href.indexOf('?category=') !== -1) {
+        try {
+          const cat = decodeURIComponent(href.split('?category=')[1].split('#')[0] || '');
+          if (cat && window.selectCategoryFilter) {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
+            if (typeof closeArticleModal === 'function') closeArticleModal();
+            window.selectCategoryFilter(cat);
+            return true;
+          }
+        } catch (err) {}
+      }
+      if (href.charAt(0) === '#') {
+        const target = document.querySelector(href);
+        if (target) {
+          if (e) { e.preventDefault(); e.stopPropagation(); }
+          if (typeof closeArticleModal === 'function') closeArticleModal();
+          playLogoTransition((target.id || 'Section').replace(/[-_]/g, ' '), 680, false);
+          if (window.lenisInstance) window.lenisInstance.scrollTo(target, { offset: -76, duration: 0.9 });
+          else target.scrollIntoView({ behavior: 'smooth' });
+          return true;
+        }
+      }
+      return false;
+    }
+    window.handleSmartHrefClick = handleSmartHrefClick;
 
     function renderPartnersGrid(list) {
       const ptGrid = document.getElementById('partners-grid');
@@ -4289,7 +4549,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           '<div class="pt-2.5 border-t border-[#DDD8CE]/70 flex items-center justify-between gap-2 text-[11px] font-bold uppercase tracking-wider">' +
           '<span class="text-[#767070] text-[10px] font-mono">Read Preview</span>' +
           (linkHref
-            ? '<a href="' + escHtml(linkHref) + '" ' + (/^https?:\\/\\//i.test(linkHref) ? 'target="_blank" rel="noopener noreferrer" ' : '') + 'onclick="event.stopPropagation();" class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] no-underline transition-colors text-[10px]">For More Details &rarr;</a>'
+            ? '<a href="' + escHtml(linkHref) + '" ' + (/^https?:\\/\\//i.test(linkHref) ? 'target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"' : 'onclick="event.stopPropagation(); return !handleSmartHrefClick(event, \\'' + escHtml(linkHref).replace(/'/g, '') + '\\');"') + ' class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] no-underline transition-colors text-[10px]">For More Details &rarr;</a>'
             : '<button type="button" onclick="event.stopPropagation(); openArticleModal(' + idx + ');" class="inline-flex items-center gap-1 px-2.5 py-1 bg-[#8F0000] text-white hover:bg-[#B00000] border-0 cursor-pointer transition-colors text-[10px] font-bold uppercase tracking-wider">For More Details &rarr;</button>') +
           '</div></div></article>';
       }).join('');
@@ -4371,18 +4631,19 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       }
 
       function parseGvizTable(json) {
-        const table = json && json.table;
+        if (!json || json.status === 'error') return null;
+        const table = json.table;
         if (!table || !table.cols || !table.rows || !table.rows.length) return [];
         const hasColLabels = table.cols.some(function(c) { return c && c.label && String(c.label).trim() !== ''; });
         let headers = table.cols.map(function(c, i) {
-          return String((c && (c.label || c.id)) || ('col' + i)).trim();
+          return String((c && (c.label || c.id)) || ('col' + i)).replace(/^\\uFEFF/, '').trim();
         });
         let dataRows = table.rows;
         if (!hasColLabels && table.rows.length > 1) {
           const firstRow = table.rows[0];
           if (firstRow && firstRow.c) {
             headers = firstRow.c.map(function(cell, i) {
-              const v = cell && cell.v != null ? String(cell.v).trim() : '';
+              const v = cell && cell.v != null ? String(cell.v).replace(/^\\uFEFF/, '').trim() : '';
               return v || headers[i];
             });
             dataRows = table.rows.slice(1);
@@ -4407,7 +4668,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
       function parseGvizResponse(text) {
         const start = text.indexOf('{');
         const end = text.lastIndexOf('}');
-        if (start === -1 || end === -1) return [];
+        if (start === -1 || end === -1) return null;
         return parseGvizTable(JSON.parse(text.slice(start, end + 1)));
       }
 
@@ -4421,7 +4682,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             settled = true;
             try { delete window[cbName]; } catch (e) {}
             if (script.parentNode) script.parentNode.removeChild(script);
-            resolve([]);
+            resolve(null);
           }, 8000);
           window[cbName] = function(payload) {
             if (settled) return;
@@ -4437,7 +4698,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             clearTimeout(timer);
             try { delete window[cbName]; } catch (e) {}
             if (script.parentNode) script.parentNode.removeChild(script);
-            resolve([]);
+            resolve(null);
           };
           script.src = 'https://docs.google.com/spreadsheets/d/' + encodeURIComponent(sheetId) +
             '/gviz/tq?tqx=' + encodeURIComponent('responseHandler:' + cbName) +
@@ -4462,6 +4723,49 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           }
         } catch (err) {}
         return fetchSheetTabJsonp(sheetId, tabName);
+      }
+
+      function pickField(row, candidates) {
+        if (!row || typeof row !== 'object') return '';
+        const keys = Object.keys(row);
+        for (let i = 0; i < candidates.length; i++) {
+          const want = candidates[i].toLowerCase().replace(/[^a-z0-9]/g, '');
+          for (let j = 0; j < keys.length; j++) {
+            const kNorm = keys[j].toLowerCase().replace(/[^a-z0-9]/g, '');
+            if (kNorm === want && row[keys[j]] !== '') {
+              return String(row[keys[j]]).trim();
+            }
+          }
+        }
+        return '';
+      }
+
+      function renderSmartActionLink(rawUrl, labelText, extraClasses) {
+        const href = normalizeExternalUrl(rawUrl);
+        if (!href) return '';
+        const isExt = /^https?:\\/\\//i.test(href);
+        const safeHref = escHtml(href).replace(/'/g, '');
+        const attr = isExt
+          ? 'target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();"'
+          : 'onclick="event.stopPropagation(); return !handleSmartHrefClick(event, \\'' + safeHref + '\\');"';
+        return '<a href="' + escHtml(href) + '" ' + attr + ' class="' + (extraClasses || 'text-[#8F0000] font-bold no-underline hover:underline text-[11px] inline-flex items-center gap-1') + '">' + escHtml(labelText || 'For More Details') + ' &rarr;</a>';
+      }
+
+      function applySmartLinkAttrs(el, rawUrl) {
+        if (!el) return '';
+        const href = normalizeExternalUrl(rawUrl);
+        if (!href) return '';
+        el.href = href;
+        if (/^https?:\\/\\//i.test(href)) {
+          el.setAttribute('target', '_blank');
+          el.setAttribute('rel', 'noopener noreferrer');
+          el.onclick = null;
+        } else {
+          el.removeAttribute('target');
+          el.removeAttribute('rel');
+          el.onclick = function(ev) { return !handleSmartHrefClick(ev, href); };
+        }
+        return href;
       }
 
       function kvRowsToMap(rows) {
@@ -4499,13 +4803,34 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         const tabsToLoad = ['Settings', 'Hero', 'About', 'Services', 'Projects', 'Team', 'Articles', 'Reviews', 'FAQs', 'Partners'];
         const results = await Promise.allSettled(tabsToLoad.map(function(name) { return fetchSheetTab(sheetId, name); }));
         const dataByTab = {};
+        let readableTabCount = 0;
         tabsToLoad.forEach(function(name, i) {
-          dataByTab[name] = (results[i] && results[i].status === 'fulfilled') ? results[i].value : [];
+          const val = (results[i] && results[i].status === 'fulfilled') ? results[i].value : null;
+          if (Array.isArray(val)) readableTabCount++;
+          dataByTab[name] = Array.isArray(val) ? val : [];
         });
+
+        if (readableTabCount === 0) {
+          if (!window.__ssWarnedAuth) {
+            window.__ssWarnedAuth = true;
+            if (window.console && console.warn) {
+              console.warn('[Scale & Spaces CMS] Google Sheet "' + sheetId + '" returned 401/restricted to unauthenticated requests. Enable Share -> Anyone with the link (Viewer) on your Sheet for real-time updates.');
+            }
+            try {
+              if (new URLSearchParams(window.location.search).get('cms') === 'debug') {
+                const dbg = document.createElement('div');
+                dbg.style.cssText = 'position:fixed;bottom:14px;right:14px;z-index:9998;background:#8F0000;color:#fff;padding:10px 14px;font:12px/1.4 monospace;box-shadow:0 8px 24px rgba(0,0,0,.22);max-width:340px;';
+                dbg.textContent = 'Sheet CMS locked (HTTP 401): Open Share in Google Sheets -> General access -> Anyone with the link (Viewer).';
+                document.body.appendChild(dbg);
+              }
+            } catch (e) {}
+          }
+          return;
+        }
 
         let anyTabChanged = false;
 
-        // 1. Settings overrides (Email, Phone, WhatsApp, Offices, Tagline, Domain)
+        // 1. Settings overrides (Email, Phone, WhatsApp, Offices, Tagline, Domain, Studio Locations)
         if (isTabChanged('Settings', dataByTab.Settings)) {
           anyTabChanged = true;
           const s = kvRowsToMap(dataByTab.Settings);
@@ -4540,16 +4865,44 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             if (waCta) waCta.textContent = 'WhatsApp (' + displayPhone + ')';
           }
           if (s.Head_Office) {
-            ['cms-hero-head-office', 'cms-contact-head-office', 'cms-footer-head-office'].forEach(function(id) {
+            ['cms-hero-head-office', 'cms-contact-head-office', 'cms-footer-head-office', 'cms-loc-kathmandu-address'].forEach(function(id) {
               const el = document.getElementById(id);
               if (el) el.textContent = s.Head_Office;
             });
           }
           if (s.Contact_Office) {
-            ['cms-hero-branch-office', 'cms-contact-branch-office', 'cms-footer-branch-office'].forEach(function(id) {
+            ['cms-hero-branch-office', 'cms-contact-branch-office', 'cms-footer-branch-office', 'cms-loc-birgunj-address'].forEach(function(id) {
               const el = document.getElementById(id);
               if (el) el.textContent = s.Contact_Office;
             });
+          }
+          if (s.Maps_KTM_Address) {
+            const el = document.getElementById('cms-loc-kathmandu-address');
+            if (el) el.textContent = s.Maps_KTM_Address;
+          }
+          if (s.Maps_BRJ_Address) {
+            const el = document.getElementById('cms-loc-birgunj-address');
+            if (el) el.textContent = s.Maps_BRJ_Address;
+          }
+          if (s.Maps_KTM_Rating) {
+            const el = document.getElementById('cms-loc-kathmandu-rating');
+            if (el) el.textContent = s.Maps_KTM_Rating;
+          }
+          if (s.Maps_BRJ_Rating) {
+            const el = document.getElementById('cms-loc-birgunj-rating');
+            if (el) el.textContent = s.Maps_BRJ_Rating;
+          }
+          if (s.Maps_KTM_URL) applySmartLinkAttrs(document.getElementById('cms-loc-kathmandu-maps'), s.Maps_KTM_URL);
+          if (s.Maps_KTM_Directions) applySmartLinkAttrs(document.getElementById('cms-loc-kathmandu-dir'), s.Maps_KTM_Directions);
+          if (s.Maps_KTM_Embed) {
+            const emb = document.getElementById('cms-loc-kathmandu-embed');
+            if (emb && /^https:\\/\\//i.test(s.Maps_KTM_Embed)) emb.src = s.Maps_KTM_Embed;
+          }
+          if (s.Maps_BRJ_URL) applySmartLinkAttrs(document.getElementById('cms-loc-birgunj-maps'), s.Maps_BRJ_URL);
+          if (s.Maps_BRJ_Directions) applySmartLinkAttrs(document.getElementById('cms-loc-birgunj-dir'), s.Maps_BRJ_Directions);
+          if (s.Maps_BRJ_Embed) {
+            const emb = document.getElementById('cms-loc-birgunj-embed');
+            if (emb && /^https:\\/\\//i.test(s.Maps_BRJ_Embed)) emb.src = s.Maps_BRJ_Embed;
           }
           if (s.Tagline) {
             const tagEl = document.getElementById('cms-footer-tagline');
@@ -4629,6 +4982,16 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               }
             }
           }
+          if (h.CTA1_Text) {
+            const lbl = document.getElementById('cms-hero-cta1-label');
+            if (lbl) lbl.textContent = h.CTA1_Text;
+          }
+          if (h.CTA1_Link) applySmartLinkAttrs(document.getElementById('cms-hero-cta1'), h.CTA1_Link);
+          if (h.CTA2_Text) {
+            const lbl = document.getElementById('cms-hero-cta2-label');
+            if (lbl) lbl.textContent = h.CTA2_Text;
+          }
+          if (h.CTA2_Link) applySmartLinkAttrs(document.getElementById('cms-hero-cta2'), h.CTA2_Link);
         }
 
         // 3. About overrides
@@ -4655,48 +5018,70 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               if (el) el.textContent = mapEls[id];
             }
           });
+          const abLinkEl = document.getElementById('cms-about-link');
+          const abLinkLbl = document.getElementById('cms-about-link-label');
+          if (abLinkEl) {
+            if (ab.Link && normalizeExternalUrl(ab.Link)) {
+              applySmartLinkAttrs(abLinkEl, ab.Link);
+              if (abLinkLbl && ab.Link_Text) abLinkLbl.textContent = ab.Link_Text;
+              abLinkEl.classList.remove('hidden');
+            } else {
+              abLinkEl.classList.add('hidden');
+            }
+          }
         }
 
-        // 4. Services sync
+        // 4. Services sync (supports Title, Note, Order, Link/URL)
         if (isTabChanged('Services', dataByTab.Services)) {
           anyTabChanged = true;
-          const svcRows = dataByTab.Services.filter(function(r) { return r.Title; });
+          const svcRows = dataByTab.Services.filter(function(r) { return pickField(r, ['Title', 'Service', 'Name']); });
           const svcGrid = document.getElementById('services-grid');
           if (svcGrid && svcRows.length) {
-            svcRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            svcRows.sort(function(a, b) { return (Number(pickField(a, ['Order'])) || 999) - (Number(pickField(b, ['Order'])) || 999); });
             svcGrid.innerHTML = svcRows.map(function(item) {
+              const title = pickField(item, ['Title', 'Service', 'Name']);
+              const note = pickField(item, ['Note', 'Description', 'Details']);
+              const link = pickField(item, ['Link', 'URL', 'Website', 'Href']);
+              const linkHtml = renderSmartActionLink(link, 'For More Details', 'text-[#8F0000] font-bold no-underline hover:underline text-[11px] shrink-0 ml-2 whitespace-nowrap');
               return '<div class="scope-list-item justify-between"><div class="flex items-center gap-3 min-w-0">' +
                 '<span class="inline-block w-2 h-2 bg-[#8F0000] shrink-0"></span>' +
-                '<span class="text-sm sm:text-base font-bold text-[#111111]">' + escHtml(item.Title) + '</span></div>' +
-                '<span class="text-xs text-[#767070] text-right shrink-0 ml-2">' + escHtml(item.Note || '') + '</span></div>';
+                '<span class="text-sm sm:text-base font-bold text-[#111111]">' + escHtml(title) + '</span></div>' +
+                '<div class="flex items-center gap-3 shrink-0 ml-2 text-right">' +
+                (note ? '<span class="text-xs text-[#767070]">' + escHtml(note) + '</span>' : '') +
+                linkHtml + '</div></div>';
             }).join('');
           }
         }
 
-        // 5. Projects sync
+        // 5. Projects sync (supports all fields + optional Link/URL + dynamic categories)
         if (isTabChanged('Projects', dataByTab.Projects)) {
           anyTabChanged = true;
-          const pRows = dataByTab.Projects.filter(function(r) { return r.Title && r.Image_URL; });
+          const pRows = dataByTab.Projects.filter(function(r) { return pickField(r, ['Title', 'Name']); });
           const pGrid = document.getElementById('projects-grid');
           if (pGrid && pRows.length) {
             projects = pRows.map(function(r, idx) {
-              const imgMain = normalizeSheetMediaUrl(r.Image_URL);
-              const extraImgs = String(r.Gallery_URLs || '').split(/[|,\\n]+/).map(normalizeSheetMediaUrl).filter(Boolean);
+              const extraRaw = pickField(r, ['Gallery_URLs', 'Gallery', 'Images']);
+              const extraImgs = String(extraRaw || '').split(/[|,\\n]+/).map(normalizeSheetMediaUrl).filter(Boolean);
+              const rawImg = pickField(r, ['Image_URL', 'Image', 'Cover']);
+              const imgMain = normalizeSheetMediaUrl(rawImg) || extraImgs[0] || 'assets/projects/cover_studio_tower.jpg';
               const imgs = extraImgs.length ? ([imgMain].concat(extraImgs.filter(function(u) { return u !== imgMain; }))) : [imgMain];
+              const cat = pickField(r, ['Category', 'Type']) || 'Commercial';
               return {
-                id: r.ID || ('sheet-project-' + (idx + 1)),
-                title: r.Title,
-                client: r.Client || 'Studio Commission',
-                location: r.Location || 'Nepal',
-                year: r.Year || '2025 A.D.',
-                category: r.Category || 'Commercial',
-                categoryLabel: r.Category_Label || r.Category || 'Architecture',
+                id: pickField(r, ['ID', 'Slug']) || ('sheet-project-' + (idx + 1)),
+                title: pickField(r, ['Title', 'Name']),
+                client: pickField(r, ['Client']) || 'Studio Commission',
+                location: pickField(r, ['Location', 'City']) || 'Nepal',
+                year: pickField(r, ['Year', 'Date']) || '2025 A.D.',
+                category: cat,
+                categoryLabel: pickField(r, ['Category_Label']) || cat || 'Architecture',
                 image: imgMain,
                 images: imgs,
-                desc: r.Desc || ''
+                desc: pickField(r, ['Desc', 'Description', 'Overview']) || '',
+                link: normalizeExternalUrl(pickField(r, ['Link', 'URL', 'Website', 'Href']))
               };
             });
             pGrid.innerHTML = projects.map(function(p) {
+              const cardLinkHtml = renderSmartActionLink(p.link, 'For More Details', 'text-[#111111] hover:text-[#8F0000] font-bold no-underline hover:underline text-[11px]');
               return '<article class="project-card wc-hover-card" data-category="' + escHtml(p.category) + '" data-id="' + escHtml(p.id) + '">' +
                 '<div class="project-image-box" onclick="openLightbox(\\'' + escHtml(p.id).replace(/'/g, '') + '\\')">' +
                 '<img src="' + escHtml(p.image) + '" alt="' + escHtml(p.title + ' - ' + p.client) + '" loading="lazy" />' +
@@ -4706,43 +5091,60 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 '<h3 class="text-base sm:text-lg font-bold text-[#C00000] mb-0.5 leading-snug cursor-pointer hover:underline" style="font-family: var(--font-sans);" onclick="openLightbox(\\'' + escHtml(p.id).replace(/'/g, '') + '\\')">' + escHtml(p.title) + '</h3>' +
                 '<p class="text-sm font-bold text-[#111111] mb-1.5">' + escHtml(p.client) + '</p>' +
                 '<p class="text-xs text-[#767070] leading-relaxed mb-3">' + escHtml(p.desc) + '</p></div>' +
-                '<div class="pt-3 border-t border-[#DDD8CE] flex justify-between items-center text-xs"><span class="text-[#767070] font-semibold">' + escHtml(p.categoryLabel) + '</span>' +
-                '<button type="button" onclick="openLightbox(\\'' + escHtml(p.id).replace(/'/g, '') + '\\')" class="text-[#8F0000] font-bold bg-transparent border-0 cursor-pointer hover:underline p-0">Inspect &rarr;</button></div></div></article>';
+                '<div class="pt-3 border-t border-[#DDD8CE] flex justify-between items-center gap-2 text-xs"><span class="text-[#767070] font-semibold">' + escHtml(p.categoryLabel) + '</span>' +
+                '<div class="flex items-center gap-3">' + cardLinkHtml +
+                '<button type="button" onclick="openLightbox(\\'' + escHtml(p.id).replace(/'/g, '') + '\\')" class="text-[#8F0000] font-bold bg-transparent border-0 cursor-pointer hover:underline p-0">Inspect &rarr;</button></div></div></div></article>';
             }).join('');
+            const filterBar = document.querySelector('.filter-scroll-row');
+            if (filterBar) {
+              projects.forEach(function(p) {
+                if (p.category && !filterBar.querySelector('.filter-tab[data-category="' + CSS.escape(p.category) + '"]')) {
+                  const btn = document.createElement('button');
+                  btn.type = 'button';
+                  btn.className = 'filter-tab';
+                  btn.setAttribute('data-category', p.category);
+                  btn.textContent = p.category;
+                  filterBar.appendChild(btn);
+                }
+              });
+            }
             const allTab = document.querySelector('.filter-tab[data-category="all"]');
             if (allTab) allTab.textContent = 'All (' + projects.length + ')';
+            const fProjCount = document.getElementById('cms-footer-projects-count');
+            if (fProjCount) fProjCount.textContent = String(projects.length);
             applyFilter(currentCategoryFilter, false);
           }
         }
 
-        // 6. Team sync
+        // 6. Team sync (supports all fields + CV_URL / Link / Website)
         if (isTabChanged('Team', dataByTab.Team)) {
           anyTabChanged = true;
-          const tRows = dataByTab.Team.filter(function(r) { return r.Name; });
+          const tRows = dataByTab.Team.filter(function(r) { return pickField(r, ['Name']); });
           const tGrid = document.getElementById('team-grid');
           if (tGrid && tRows.length) {
-            tRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            tRows.sort(function(a, b) { return (Number(pickField(a, ['Order'])) || 999) - (Number(pickField(b, ['Order'])) || 999); });
             teamMembers = tRows.map(function(r) {
+              const name = pickField(r, ['Name']);
               return {
-                name: r.Name,
-                role: r.Role || 'Team Member',
-                image: normalizeSheetMediaUrl(r.Photo_URL || 'assets/team/team-yateendra.jpg'),
-                office: r.Office || 'Kathmandu & Birgunj',
-                experience: r.Experience || 'Practice Specialist',
-                qualification: r.Qualification || 'Studio Specialist',
-                specialization: r.Specialization || r.Role || '',
-                bio: r.Bio || '',
-                keyProjects: r.Key_Projects || '',
-                email: r.Email || 'studio@scaleandspaces.com',
-                cvLabel: r.CV_Label || (r.Name + ' — Profile & CV'),
-                cvUrl: r.CV_URL || ''
+                name: name,
+                role: pickField(r, ['Role']) || 'Team Member',
+                image: normalizeSheetMediaUrl(pickField(r, ['Photo_URL', 'Photo', 'Image_URL', 'Image']) || 'assets/team/team-yateendra.jpg'),
+                office: pickField(r, ['Office', 'Location']) || 'Kathmandu & Birgunj',
+                experience: pickField(r, ['Experience']) || 'Practice Specialist',
+                qualification: pickField(r, ['Qualification']) || 'Studio Specialist',
+                specialization: pickField(r, ['Specialization']) || pickField(r, ['Role']) || '',
+                bio: pickField(r, ['Bio', 'Description']) || '',
+                keyProjects: pickField(r, ['Key_Projects', 'Projects']) || '',
+                email: pickField(r, ['Email']) || 'studio@scaleandspaces.com',
+                cvLabel: pickField(r, ['CV_Label']) || (name + ' — Profile & CV'),
+                cvUrl: normalizeExternalUrl(pickField(r, ['CV_URL', 'Link', 'Website', 'URL']))
               };
             });
             tGrid.innerHTML = teamMembers.map(function(m, idx) {
               const parts = String(m.name).split(' ');
               const first = parts.slice(0, -1).join(' ');
               const last = parts[parts.length - 1] || '';
-              return '<div class="team-card wc-hover-card" role="button" tabindex="0" onclick="openTeamModal(' + idx + ')">' +
+              return '<div class="team-card wc-hover-card" role="button" tabindex="0" aria-label="View profile for ' + escHtml(m.name) + '" onclick="openTeamModal(' + idx + ')" onkeydown="if(event.key===\\'Enter\\'||event.key===\\' \\'){event.preventDefault();openTeamModal(' + idx + ');}">' +
                 '<div class="team-circle-stage"><div class="team-img-wrap"><img src="' + escHtml(m.image) + '" alt="' + escHtml(m.name) + '" loading="lazy" /></div></div>' +
                 '<div class="team-name-box">' + escHtml(first) + ' <b>' + escHtml(last) + '</b></div>' +
                 '<div class="team-role-box">' + escHtml(m.role) + '</div></div>';
@@ -4750,24 +5152,26 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           }
         }
 
-        // 7. Reviews sync
+        // 7. Reviews sync (supports Link/URL + full fields)
         if (isTabChanged('Reviews', dataByTab.Reviews)) {
           anyTabChanged = true;
-          const rRows = dataByTab.Reviews.filter(function(r) { return r.Name && r.Review_Comment; });
+          const rRows = dataByTab.Reviews.filter(function(r) { return pickField(r, ['Name', 'Author']) && pickField(r, ['Review_Comment', 'Comment', 'Quote']); });
           const rGrid = document.getElementById('reviews-grid');
           if (rGrid && rRows.length) {
             reviewsList = rRows.map(function(r) {
               return {
-                author: r.Name,
-                rating: Math.max(1, Math.min(5, parseInt(r.Rating, 10) || 5)),
-                city: r.City || 'Nepal',
-                scope: r.Project_Scope || 'Architecture',
-                quote: r.Review_Comment,
-                date: r.Date || ''
+                author: pickField(r, ['Name', 'Author']),
+                rating: Math.max(1, Math.min(5, parseInt(pickField(r, ['Rating']), 10) || 5)),
+                city: pickField(r, ['City', 'Location']) || 'Nepal',
+                scope: pickField(r, ['Project_Scope', 'Scope']) || 'Architecture',
+                quote: pickField(r, ['Review_Comment', 'Comment', 'Quote']),
+                date: pickField(r, ['Date', 'Year']) || '',
+                link: pickField(r, ['Link', 'URL', 'Website', 'Href'])
               };
             });
             rGrid.innerHTML = reviewsList.map(function(r) {
               const stars = new Array(r.rating + 1).join('&#9733;');
+              const revLinkHtml = renderSmartActionLink(r.link, 'For More Details', 'text-[#8F0000] font-bold no-underline hover:underline text-[10px] mt-1 inline-block');
               return '<div class="hairline-matrix-cell flex flex-col justify-between gap-4"><div>' +
                 '<div class="flex items-center justify-between gap-2 mb-3"><span class="text-[#8F0000] font-serif text-lg">&ldquo;</span>' +
                 '<span class="text-xs font-bold text-[#8F0000]">' + stars + '</span></div>' +
@@ -4775,65 +5179,72 @@ const htmlBodyTemplate = `<!DOCTYPE html>
                 '<div class="pt-3 border-t border-[#DDD8CE]/70 flex items-end justify-between gap-2"><div>' +
                 '<div class="text-xs font-bold text-[#111111]">' + escHtml(r.author) + '</div>' +
                 '<div class="text-[11px] text-[#767070] mt-0.5">' + escHtml(r.scope + ' • ' + r.city) + '</div></div>' +
-                '<span class="text-[10px] font-mono text-[#767070]">' + escHtml(r.date) + '</span></div></div>';
+                '<div class="text-right"><span class="text-[10px] font-mono text-[#767070] block">' + escHtml(r.date) + '</span>' + revLinkHtml + '</div></div></div>';
             }).join('');
           }
         }
 
-        // 8. FAQs sync
+        // 8. FAQs sync (supports Link/URL + full fields)
         if (isTabChanged('FAQs', dataByTab.FAQs)) {
           anyTabChanged = true;
-          const fRows = dataByTab.FAQs.filter(function(r) { return r.Question && r.Answer; });
+          const fRows = dataByTab.FAQs.filter(function(r) { return pickField(r, ['Question']) && pickField(r, ['Answer']); });
           const fList = document.getElementById('faqs-list');
           if (fList && fRows.length) {
-            fRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            fRows.sort(function(a, b) { return (Number(pickField(a, ['Order'])) || 999) - (Number(pickField(b, ['Order'])) || 999); });
             faqsList = fRows.map(function(r) {
-              return { category: r.Category || 'FAQ', question: r.Question, answer: r.Answer };
+              return {
+                category: pickField(r, ['Category']) || 'FAQ',
+                question: pickField(r, ['Question']),
+                answer: pickField(r, ['Answer']),
+                link: pickField(r, ['Link', 'URL', 'Website', 'Href'])
+              };
             });
             fList.innerHTML = faqsList.map(function(f, idx) {
+              const faqLinkHtml = renderSmartActionLink(f.link, 'For More Details', 'text-[#8F0000] font-bold no-underline hover:underline text-xs mt-2 inline-flex items-center gap-1');
               return '<div class="faq-item ' + (idx === 0 ? 'is-open' : '') + '">' +
                 '<button type="button" class="faq-trigger" aria-expanded="' + (idx === 0 ? 'true' : 'false') + '" onclick="toggleFaqItem(this)">' +
                 '<div class="pr-2"><span class="block text-[10px] font-mono uppercase tracking-widest text-[#8F0000] font-bold mb-0.5">' + escHtml(f.category) + '</span>' +
                 '<span class="text-sm sm:text-base font-bold leading-snug">' + escHtml(f.question) + '</span></div>' +
                 '<span class="faq-plus" aria-hidden="true">+</span></button>' +
-                '<div class="faq-body">' + escHtml(f.answer) + '</div></div>';
+                '<div class="faq-body"><div>' + escHtml(f.answer) + '</div>' + (faqLinkHtml ? '<div>' + faqLinkHtml + '</div>' : '') + '</div></div>';
             }).join('');
           }
         }
 
-        // 9. Partners sync (Shows Logo + Name in grid; full details & website redirect on click)
+        // 9. Partners sync (Shows Logo + Name in grid; full details & website/link redirect on click)
         if (isTabChanged('Partners', dataByTab.Partners)) {
           anyTabChanged = true;
-          const ptRows = dataByTab.Partners.filter(function(r) { return r.Logo_URL || r.Name; });
+          const ptRows = dataByTab.Partners.filter(function(r) { return pickField(r, ['Logo_URL', 'Logo']) || pickField(r, ['Name', 'Title']); });
           if (ptRows.length) {
-            ptRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            ptRows.sort(function(a, b) { return (Number(pickField(a, ['Order'])) || 999) - (Number(pickField(b, ['Order'])) || 999); });
             const mappedPartners = ptRows.map(function(l) {
+              const name = pickField(l, ['Name', 'Title']) || 'Partner';
               return {
-                img: normalizeSheetMediaUrl(l.Logo_URL),
-                name: (l.Name || 'Partner').trim(),
-                alt: (l.Name || 'Partner').trim() + ' logo',
-                desc: (l.Description || '').trim(),
-                url: normalizeExternalUrl(l.Website || '')
+                img: normalizeSheetMediaUrl(pickField(l, ['Logo_URL', 'Logo', 'Image_URL'])),
+                name: name,
+                alt: name + ' logo',
+                desc: pickField(l, ['Description', 'Desc', 'Overview']),
+                url: normalizeExternalUrl(pickField(l, ['Website', 'Link', 'URL', 'Href']))
               };
             });
             renderPartnersGrid(mappedPartners);
           }
         }
 
-        // 10. Articles sync
+        // 10. Articles sync (Heading, Image_URL, Description, Link/URL, Category, Date, Order)
         if (isTabChanged('Articles', dataByTab.Articles)) {
           anyTabChanged = true;
-          const artRows = dataByTab.Articles.filter(function(r) { return r.Heading; });
+          const artRows = dataByTab.Articles.filter(function(r) { return pickField(r, ['Heading', 'Title', 'Name']); });
           if (artRows.length) {
-            artRows.sort(function(a, b) { return (Number(a.Order) || 999) - (Number(b.Order) || 999); });
+            artRows.sort(function(a, b) { return (Number(pickField(a, ['Order'])) || 999) - (Number(pickField(b, ['Order'])) || 999); });
             const mappedArticles = artRows.map(function(a) {
               return {
-                heading: (a.Heading || '').trim(),
-                image: normalizeSheetMediaUrl(a.Image_URL || a.Image || ''),
-                desc: (a.Description || a.Summary || '').trim(),
-                link: normalizeExternalUrl(a.Link || a.URL || ''),
-                category: (a.Category || 'Studio Article').trim(),
-                date: (a.Date || '').trim()
+                heading: pickField(a, ['Heading', 'Title', 'Name']),
+                image: normalizeSheetMediaUrl(pickField(a, ['Image_URL', 'Image', 'Cover'])),
+                desc: pickField(a, ['Description', 'Summary', 'Desc']),
+                link: normalizeExternalUrl(pickField(a, ['Link', 'URL', 'Website', 'Href'])),
+                category: pickField(a, ['Category']) || 'Studio Article',
+                date: pickField(a, ['Date', 'Year']) || ''
               };
             });
             renderArticlesGrid(mappedArticles);
@@ -5128,6 +5539,59 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           preRulerV.style.left = e.clientX + 'px';
         });
       }
+      if (preloader && window.replayLogoStroke) {
+        window.replayLogoStroke(preloader, 980);
+      }
+
+      // Cross-page navigation transition using transparent Company Logo draw veil
+      document.querySelectorAll('a[href]').forEach(function(linkEl) {
+        const href = linkEl.getAttribute('href') || '';
+        const tgt = linkEl.getAttribute('target') || '';
+        if (!href || tgt === '_blank' || /^(#|mailto:|tel:|https?:|javascript:)/i.test(href)) return;
+        if (!/\\.html($|#|\\?)/i.test(href)) return;
+        linkEl.addEventListener('click', function(e) {
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+          e.preventDefault();
+          const pageLabel = (linkEl.textContent || 'Loading').replace(/\\s+/g, ' ').trim();
+          if (window.playLogoTransition) window.playLogoTransition(pageLabel, 380, true);
+          setTimeout(function() { window.location.href = href; }, 240);
+        });
+      });
+
+      // Non-blocking Heading-to-Heading scroll indicator (Company Logo draws on heading entry)
+      (function initHeadingScrollHud() {
+        const hudEl = document.getElementById('ssHeadingHud');
+        const hudTxt = document.getElementById('ssHeadingHudText');
+        if (!hudEl || !hudTxt || !('IntersectionObserver' in window)) return;
+        let lastId = 'home';
+        let hideTimer = null;
+        let readyForHud = false;
+        setTimeout(function() { readyForHud = true; }, 1600);
+
+        const sections = document.querySelectorAll('main section[id], #studio-locations');
+        const io = new IntersectionObserver(function(entries) {
+          if (!readyForHud || (document.documentElement && document.documentElement.classList.contains('modal-open'))) return;
+          entries.forEach(function(entry) {
+            if (!entry.isIntersecting) return;
+            const id = entry.target.id || '';
+            if (!id || id === lastId || window.scrollY < 110) return;
+            lastId = id;
+            const hd = entry.target.querySelector('h2, h3, h1');
+            const cleanTitle = hd
+              ? hd.textContent.replace(/_+$/g, '').replace(/\\s+/g, ' ').trim()
+              : id.replace(/[-_]/g, ' ');
+            hudTxt.textContent = cleanTitle.slice(0, 36);
+            hudEl.classList.add('is-visible');
+            if (window.replayLogoStroke) window.replayLogoStroke(hudEl, 640);
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(function() {
+              hudEl.classList.remove('is-visible');
+            }, 1500);
+          });
+        }, { rootMargin: '-32% 0px -52% 0px', threshold: 0.01 });
+
+        sections.forEach(function(sec) { io.observe(sec); });
+      })();
 
       // Draw Full-Page Architectural Elevation & Landscape Contour Artwork using real path lengths
       if (window.gsap) {
@@ -5225,7 +5689,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         });
         gsap.ticker.lagSmoothing(0);
 
-        // Anchor smooth scrolling via Lenis
+        // Anchor smooth scrolling via Lenis + smooth transparent Company Logo draw
         document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
           anchor.addEventListener('click', function(e) {
             const href = anchor.getAttribute('href');
@@ -5233,6 +5697,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
               const target = document.querySelector(href);
               if (target) {
                 e.preventDefault();
+                const hd = target.querySelector('h1, h2, h3');
+                const secTitle = hd ? hd.textContent.replace(/_+$/g, '').replace(/\\s+/g, ' ').trim() : href.replace('#', '');
+                if (window.playLogoTransition) window.playLogoTransition(secTitle, 720, false);
                 lenis.scrollTo(target, { offset: -76, duration: 0.9 });
               }
             }
@@ -5581,6 +6048,10 @@ function buildLegalPage(page, compiledCss) {
   <style>${compiledCss}</style>
 </head>
 <body class="bg-[#F0EFEA] text-[#111111]">
+  <div id="ssTransitionVeil" class="ss-transition-veil is-active" aria-hidden="true">
+    ${animatedCompanyLogoSvg('ssMaskLegalVeil', { className: 'ss-transition-logo-svg', dur: '0.82s', loop: false })}
+    <span id="ssTransitionLabel" class="ss-transition-label">${page.heading}</span>
+  </div>
   <div class="bg-[#E8E6DF] border-b border-[#DDD8CE] text-xs py-2 text-[#767070] hidden sm:block">
     <div class="portfolio-container flex justify-between items-center gap-2">
       <div><strong class="text-[#111111]">SCALE AND SPACES Pvt. Ltd.</strong> &bull; Architecture &bull; Engineering &bull; Interiors</div>
@@ -5658,6 +6129,33 @@ function buildLegalPage(page, compiledCss) {
     </div>
   </footer>
   ${cookieBannerMarkup(true)}
+  <script>
+    (function(){
+      var veil = document.getElementById('ssTransitionVeil');
+      var lbl = document.getElementById('ssTransitionLabel');
+      function hideVeil(){ if (veil) veil.classList.remove('is-active', 'is-blocking'); }
+      if (veil) {
+        setTimeout(hideVeil, 480);
+        window.addEventListener('pageshow', hideVeil);
+      }
+      document.querySelectorAll('a[href]').forEach(function(a){
+        var href = a.getAttribute('href') || '';
+        if (!href || a.getAttribute('target') === '_blank' || /^(#|mailto:|tel:|https?:|javascript:)/i.test(href)) return;
+        a.addEventListener('click', function(e){
+          if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || !veil) return;
+          e.preventDefault();
+          if (lbl) lbl.textContent = (a.textContent || 'Loading').replace(/\\s+/g, ' ').trim();
+          veil.classList.add('is-active', 'is-blocking');
+          veil.querySelectorAll('.ss-logo-mask-path, .ss-logo-pen-trace').forEach(function(p){
+            if (typeof p.animate === 'function') {
+              p.animate([{ strokeDashoffset: 100 }, { strokeDashoffset: 0 }], { duration: 480, easing: 'cubic-bezier(0.45, 0, 0.55, 1)', fill: 'forwards' });
+            }
+          });
+          setTimeout(function(){ window.location.href = href; }, 240);
+        });
+      });
+    })();
+  </script>
   <script>${cookieBannerScript}</script>
 </body>
 </html>`;
@@ -5812,9 +6310,9 @@ async function run() {
       ['Stat4_Label', 'Civic Emblem Prize'],
       ['Banner_Headline', 'From Concept Massing to Built Architectural Realities']
     ],
-    Services: [['Title', 'Note', 'Order']].concat(scopeItems.map((s, i) => [s.title, s.note, i + 1])),
-    Projects: [['ID', 'Title', 'Client', 'Category', 'Category_Label', 'Location', 'Year', 'Desc', 'Image_URL', 'Gallery_URLs']].concat(
-      projectsData.map(p => [p.id, p.title, p.client, p.category, p.categoryLabel, p.location, p.year, p.desc, p.image, (p.images || []).join(' | ')])
+    Services: [['Title', 'Note', 'Order', 'Link']].concat(scopeItems.map((s, i) => [s.title, s.note, i + 1, ''])),
+    Projects: [['ID', 'Title', 'Client', 'Category', 'Category_Label', 'Location', 'Year', 'Desc', 'Image_URL', 'Gallery_URLs', 'Link']].concat(
+      projectsData.map(p => [p.id, p.title, p.client, p.category, p.categoryLabel, p.location, p.year, p.desc, p.image, (p.images || []).join(' | '), p.link || ''])
     ),
     Team: [['Name', 'Role', 'Photo_URL', 'Qualification', 'Experience', 'Specialization', 'Bio', 'Key_Projects', 'Office', 'Email', 'CV_Label', 'CV_URL', 'Order']].concat(
       teamData.map((m, i) => [m.name, m.role, m.image, m.qualification, m.experience, m.specialization, m.bio, m.keyProjects, m.office, m.email, m.cvLabel, m.cvUrl, i + 1])
@@ -5822,11 +6320,11 @@ async function run() {
     Articles: [['Heading', 'Image_URL', 'Description', 'Link', 'Category', 'Date', 'Order']].concat(
       articlesData.map((a, i) => [a.heading, a.image, a.desc, a.link || '', a.category || 'Studio Article', a.date || '2026', i + 1])
     ),
-    Reviews: [['Name', 'Rating', 'City', 'Project_Scope', 'Review_Comment', 'Date']].concat(
-      reviewsData.map(r => [r.author, r.rating, r.city, r.scope, r.quote, r.date])
+    Reviews: [['Name', 'Rating', 'City', 'Project_Scope', 'Review_Comment', 'Date', 'Link']].concat(
+      reviewsData.map(r => [r.author, r.rating, r.city, r.scope, r.quote, r.date, r.link || ''])
     ),
-    FAQs: [['Question', 'Answer', 'Category', 'Order']].concat(
-      faqsData.map((f, i) => [f.question, f.answer, f.category, i + 1])
+    FAQs: [['Question', 'Answer', 'Category', 'Order', 'Link']].concat(
+      faqsData.map((f, i) => [f.question, f.answer, f.category, i + 1, f.link || ''])
     ),
     Partners: [['Name', 'Logo_URL', 'Description', 'Website', 'Order']].concat(
       clientLogos.map((l, i) => [l.name, l.img, l.desc, l.url || '', i + 1])

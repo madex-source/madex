@@ -653,10 +653,10 @@ const jsonLdSchema = {
 
 const customCss = `
     /* ==========================================================================
-       SCALE AND SPACES ARCHITECTURAL PORTFOLIO DESIGN + HERON MOTION SYSTEM
+       SCALE AND SPACES ARCHITECTURAL PORTFOLIO DESIGN + WATERCOLOR MOTION SYSTEM
        Canvas: #F0EFEA | Crimson: #8F0000 / #C00000 | Serif: EB Garamond | Sans: Calibri
-       Enhanced with Architectural Hairline Blueprint Grid, Registration Marks,
-       Lenis Kinetic Inertia, GSAP ScrollTrigger & SplitText Editorial Motion.
+       Enhanced with Cold-Press Watercolor Paper Substrate, Ink Turbulence Masks,
+       Layered Elevation Shadows, Architectural Cursor Nib & Lenis/GSAP Motion.
        ========================================================================== */
     :root {
       --bg-canvas: #F0EFEA;
@@ -672,6 +672,8 @@ const customCss = `
       --text-muted: #767070;
       --border-line: #DDD8CE;
       --border-drafting: rgba(17, 17, 17, 0.055);
+      --shadow-paper: 0 2px 6px rgba(34, 24, 18, 0.04), 0 12px 28px -12px rgba(78, 22, 16, 0.12);
+      --shadow-elevated: 0 8px 18px rgba(34, 24, 18, 0.06), 0 24px 48px -14px rgba(108, 18, 12, 0.22);
       --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --font-serif: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
       --font-sans: 'Calibri', 'Carlito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -692,7 +694,18 @@ const customCss = `
       position: relative;
     }
 
-    /* Architectural Blueprint Hairline Grid Background (inspired by Heron AI Vellum Grid) */
+    /* Ambient Watercolor Paper Wash Substrate + Architectural Vellum Hairline Grid */
+    .watercolor-paper-wash {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: url('assets/art/watercolor-paper-wash.jpg');
+      background-size: cover;
+      background-position: center bottom;
+      opacity: 0.28;
+      mix-blend-mode: multiply;
+    }
     .vellum-drafting-grid {
       position: fixed;
       inset: 0;
@@ -711,32 +724,300 @@ const customCss = `
       z-index: 1;
     }
 
-    /* Editorial Preloader Curtain (Subtle architectural paper curtain) */
+    /* Subtle Ambient Watercolor Corner Washes inside Major Sections */
+    .wc-section-wash {
+      position: relative;
+      overflow: hidden;
+    }
+    .wc-section-wash::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(52% 45% at 4% 12%, rgba(143, 0, 0, 0.042), transparent 68%),
+        radial-gradient(48% 42% at 96% 88%, rgba(236, 124, 48, 0.055), transparent 70%);
+    }
+    .wc-section-wash > .portfolio-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Architectural Atelier Preloader Curtain with Elevation Line Drawing */
     .studio-preloader {
       position: fixed;
       inset: 0;
       z-index: 9999;
       background-color: #F0EFEA;
+      background-image: url('assets/art/watercolor-paper-wash.jpg');
+      background-size: cover;
+      background-position: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 1.25rem;
+      gap: 1.15rem;
+      padding: 2rem;
       pointer-events: auto;
     }
+    .preloader-frame {
+      position: relative;
+      max-width: 520px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(8px);
+      border: 1px solid #D8D1C5;
+      padding: 2rem 1.75rem 1.75rem;
+      box-shadow: 0 24px 60px -18px rgba(80, 18, 12, 0.18), 0 4px 14px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .preloader-sketch-svg {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      display: block;
+    }
+    .preloader-sketch-path {
+      stroke-dasharray: 900;
+      stroke-dashoffset: 900;
+    }
     .preloader-line {
-      width: 140px;
+      width: 100%;
       height: 2px;
-      background: #DDD8CE;
+      background: #E2DCD0;
       overflow: hidden;
       position: relative;
     }
     .preloader-line-fill {
       position: absolute;
       inset: 0;
-      background: var(--crimson);
+      background: linear-gradient(90deg, var(--crimson), var(--ochre));
       transform-origin: left center;
       transform: scaleX(0);
+    }
+    .preloader-ruler-v {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: rgba(143, 0, 0, 0.16);
+      pointer-events: none;
+    }
+    .preloader-ruler-h {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: rgba(143, 0, 0, 0.16);
+      pointer-events: none;
+    }
+    .preloader-coord-readout {
+      position: fixed;
+      bottom: 18px;
+      right: 22px;
+      font-family: monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Interactive Image After-Effect Stage (Heron Explore Kinetic Plate Trail) */
+    .atelier-trail-stage {
+      position: relative;
+      overflow: hidden;
+      min-height: 290px;
+      background-color: #EFECE5;
+      background-image:
+        radial-gradient(circle at 20% 25%, rgba(143, 0, 0, 0.055), transparent 55%),
+        radial-gradient(circle at 80% 75%, rgba(236, 124, 48, 0.07), transparent 55%),
+        url('assets/art/watercolor-paper-wash.jpg');
+      background-size: cover;
+      background-position: center;
+      border-bottom: 1px solid var(--border-line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: crosshair;
+      user-select: none;
+    }
+    .atelier-trail-clone {
+      position: absolute;
+      width: 170px;
+      height: 118px;
+      object-fit: cover;
+      border: 4px solid #FFFFFF;
+      outline: 1px solid #DDD8CE;
+      box-shadow: 0 22px 44px -10px rgba(74, 18, 12, 0.28), 0 4px 12px rgba(0, 0, 0, 0.08);
+      pointer-events: none;
+      will-change: transform, opacity;
+    }
+    @media (max-width: 640px) {
+      .atelier-trail-clone {
+        width: 132px;
+        height: 92px;
+      }
+    }
+
+    /* 2D Canvas Pen Velocity Trail + Magnetic Architectural Cursor (Desktop) */
+    .studio-cursor-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9997;
+      display: none;
+    }
+    .studio-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 9998;
+      display: none;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .studio-cursor-canvas,
+      .studio-cursor {
+        display: block;
+      }
+    }
+    .studio-cursor-ring {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 34px;
+      height: 34px;
+      margin-left: -17px;
+      margin-top: -17px;
+      border-radius: 9999px;
+      border: 1.25px solid rgba(143, 0, 0, 0.55);
+      background: rgba(143, 0, 0, 0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: width 0.28s var(--ease-expo), height 0.28s var(--ease-expo), margin 0.28s var(--ease-expo), border-color 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
+      opacity: 0;
+    }
+    .studio-cursor-ring.is-visible {
+      opacity: 1;
+    }
+    .studio-cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 6px;
+      margin-left: -3px;
+      margin-top: -3px;
+      border-radius: 9999px;
+      background-color: var(--crimson);
+      opacity: 0;
+      transition: transform 0.2s var(--ease-expo), opacity 0.2s ease, background-color 0.2s ease;
+    }
+    .studio-cursor-dot.is-visible {
+      opacity: 1;
+    }
+    .studio-cursor-label {
+      font-family: var(--font-sans);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      opacity: 0;
+      transform: scale(0.85);
+      transition: opacity 0.2s ease, transform 0.2s var(--ease-expo);
+      white-space: nowrap;
+    }
+    .studio-cursor-ring.is-card-hover {
+      width: 76px;
+      height: 76px;
+      margin-left: -38px;
+      margin-top: -38px;
+      background: rgba(143, 0, 0, 0.88);
+      border-color: #FFFFFF;
+      box-shadow: 0 10px 26px rgba(143, 0, 0, 0.32);
+      backdrop-filter: blur(2px);
+    }
+    .studio-cursor-ring.is-card-hover .studio-cursor-label {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .studio-cursor-ring.is-interactive-hover {
+      width: 48px;
+      height: 48px;
+      margin-left: -24px;
+      margin-top: -24px;
+      border-color: var(--ochre);
+      background: rgba(236, 124, 48, 0.1);
+    }
+
+    /* Interactive Watercolor Spotlight Wash on Cards & Tiles */
+    .wc-hover-card {
+      position: relative;
+      box-shadow: var(--shadow-paper);
+      transition: transform 0.45s var(--ease-expo), border-color 0.3s ease, box-shadow 0.45s var(--ease-expo);
+    }
+    .wc-hover-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(143, 0, 0, 0.085), rgba(236, 124, 48, 0.045) 45%, transparent 72%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      z-index: 2;
+    }
+    .wc-hover-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--crimson);
+      box-shadow: var(--shadow-elevated);
+    }
+    .wc-hover-card:hover::after {
+      opacity: 1;
+    }
+
+    /* Full-Service Architectural Atelier Medallions */
+    .service-pillar-card {
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border-line);
+      padding: 1rem 0.95rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.45rem;
+      box-shadow: var(--shadow-paper);
+      transition: transform 0.4s var(--ease-expo), border-color 0.25s ease, box-shadow 0.4s var(--ease-expo);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-pillar-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--crimson);
+      box-shadow: var(--shadow-elevated);
+    }
+    .service-pillar-icon {
+      width: 34px;
+      height: 34px;
+      color: var(--crimson);
+      transition: transform 0.4s var(--ease-expo);
+    }
+    .service-pillar-card:hover .service-pillar-icon {
+      transform: scale(1.1) rotate(-3deg);
+    }
+
+    /* Watercolor Ink Reveal Frame */
+    .wc-ink-plate {
+      filter: drop-shadow(0 18px 34px rgba(74, 24, 16, 0.14));
+      will-change: transform, opacity;
     }
 
     h1, h2, h3, .font-serif, .serif-heading {
@@ -859,8 +1140,9 @@ const customCss = `
       top: 0;
       bottom: 0;
       width: 1px;
-      background: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.45);
       pointer-events: none;
+      z-index: 6;
       opacity: 0;
       transition: opacity 0.2s ease;
     }
@@ -869,8 +1151,9 @@ const customCss = `
       left: 0;
       right: 0;
       height: 1px;
-      background: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.45);
       pointer-events: none;
+      z-index: 6;
       opacity: 0;
       transition: opacity 0.2s ease;
     }
@@ -878,14 +1161,15 @@ const customCss = `
       position: absolute;
       bottom: 14px;
       right: 14px;
-      background: rgba(17, 17, 17, 0.72);
+      z-index: 6;
+      background: rgba(17, 17, 17, 0.78);
       backdrop-filter: blur(6px);
       color: #F0EFEA;
       font-family: monospace;
       font-size: 0.7rem;
       letter-spacing: 0.06em;
       padding: 0.35rem 0.65rem;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.25);
       pointer-events: none;
     }
     .hero-viewport-frame:hover .cad-crosshair-v,
@@ -893,7 +1177,7 @@ const customCss = `
       opacity: 1;
     }
 
-    /* Hero Showcase Slideshow Crossfade */
+    /* Hero Showcase Slideshow with Watercolor Ink Sweep Transition */
     .hero-slide-img {
       position: absolute;
       inset: 0;
@@ -901,11 +1185,13 @@ const customCss = `
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 0.8s var(--ease-expo), transform 1.2s var(--ease-expo);
-      transform: scale(1.03);
+      clip-path: circle(0% at 50% 50%);
+      transition: opacity 0.9s var(--ease-expo), transform 1.4s var(--ease-expo), clip-path 1.1s var(--ease-expo);
+      transform: scale(1.045);
     }
     .hero-slide-img.is-active {
       opacity: 1;
+      clip-path: circle(145% at 50% 50%);
       transform: scale(1);
     }
     .hero-slide-tab {
@@ -918,15 +1204,22 @@ const customCss = `
       background: #F7F6F2;
       color: var(--text-muted);
       cursor: pointer;
-      transition: all 0.25s var(--ease-expo);
+      transition: all 0.28s var(--ease-expo);
+      box-shadow: 0 2px 6px rgba(34, 24, 18, 0.03);
+    }
+    .hero-slide-tab:hover {
+      border-color: var(--crimson);
+      color: var(--crimson);
+      transform: translateY(-2px);
     }
     .hero-slide-tab.is-active {
       background: var(--crimson);
       border-color: var(--crimson);
       color: #FFFFFF;
+      box-shadow: 0 6px 14px rgba(143, 0, 0, 0.22);
     }
 
-    /* Buttons */
+    /* Buttons with Rolling Ink Physics (adapted from Heron AI .btn-fill) */
     .btn-crimson {
       display: inline-flex;
       align-items: center;
@@ -942,14 +1235,28 @@ const customCss = `
       padding: 0.65rem 1.5rem;
       border: 1px solid var(--crimson);
       text-decoration: none;
-      transition: transform 0.3s var(--ease-expo), background-color 0.25s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 6px 16px -4px rgba(143, 0, 0, 0.25);
+      transition: transform 0.35s var(--ease-expo), background-color 0.25s ease, box-shadow 0.35s ease;
       cursor: pointer;
+    }
+    .btn-crimson::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.2) 50%, transparent 80%);
+      transform: translateX(-110%);
+      transition: transform 0.65s var(--ease-expo);
+    }
+    .btn-crimson:hover::before {
+      transform: translateX(110%);
     }
     .btn-crimson:hover {
       background-color: var(--crimson-hover);
       border-color: var(--crimson-hover);
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(143, 0, 0, 0.22);
+      box-shadow: 0 12px 24px -6px rgba(143, 0, 0, 0.34);
     }
 
     .btn-outline {
@@ -957,7 +1264,7 @@ const customCss = `
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      background-color: transparent;
+      background-color: rgba(255, 255, 255, 0.72);
       color: var(--text-main);
       font-family: var(--font-sans);
       font-size: 0.875rem;
@@ -967,13 +1274,17 @@ const customCss = `
       padding: 0.65rem 1.5rem;
       border: 1px solid var(--text-main);
       text-decoration: none;
-      transition: transform 0.3s var(--ease-expo), background-color 0.25s ease, color 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px -4px rgba(34, 24, 18, 0.1);
+      transition: transform 0.35s var(--ease-expo), background-color 0.25s ease, color 0.25s ease, box-shadow 0.35s ease;
       cursor: pointer;
     }
     .btn-outline:hover {
       background-color: var(--text-main);
       color: #FFFFFF;
       transform: translateY(-2px);
+      box-shadow: 0 10px 22px -6px rgba(17, 17, 17, 0.22);
     }
 
     /* Page 4 Category Discipline Cards */
@@ -985,13 +1296,16 @@ const customCss = `
       align-items: center;
       gap: 1rem;
       cursor: pointer;
-      transition: transform 0.35s var(--ease-expo), border-color 0.25s ease, box-shadow 0.35s var(--ease-expo);
+      box-shadow: var(--shadow-paper);
+      transition: transform 0.38s var(--ease-expo), border-color 0.25s ease, box-shadow 0.38s var(--ease-expo);
       text-align: left;
+      position: relative;
+      overflow: hidden;
     }
     .discipline-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
       border-color: var(--crimson);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+      box-shadow: var(--shadow-elevated);
     }
     .discipline-monogram {
       width: 44px;
@@ -1007,10 +1321,11 @@ const customCss = `
       padding: 0 4px 1px 0;
       line-height: 0.85;
       flex-shrink: 0;
-      transition: background-color 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.4s var(--ease-expo);
     }
     .discipline-card:hover .discipline-monogram {
       background: var(--crimson);
+      transform: scale(1.06);
     }
 
     /* Filter Tabs */
@@ -1023,24 +1338,28 @@ const customCss = `
       font-weight: 700;
       padding: 0.5rem 1rem;
       cursor: pointer;
-      transition: all 0.25s var(--ease-expo);
+      box-shadow: 0 2px 6px rgba(34, 24, 18, 0.04);
+      transition: all 0.28s var(--ease-expo);
       white-space: nowrap;
     }
     .filter-tab:hover {
       color: var(--text-main);
       border-color: var(--text-main);
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(34, 24, 18, 0.08);
     }
     .filter-tab.active {
       background-color: var(--crimson);
       color: #FFFFFF;
       border-color: var(--crimson);
+      box-shadow: 0 8px 18px -4px rgba(143, 0, 0, 0.28);
     }
 
-    /* Project Cards */
+    /* Project Cards with Watercolor Depth Shadows */
     .project-card {
       background-color: var(--bg-card);
       border: 1px solid var(--border-line);
+      box-shadow: var(--shadow-paper);
       transition: transform 0.45s var(--ease-expo), border-color 0.3s ease, box-shadow 0.45s var(--ease-expo);
       display: flex;
       flex-direction: column;
@@ -1048,9 +1367,9 @@ const customCss = `
       will-change: transform;
     }
     .project-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       border-color: var(--crimson);
-      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow-elevated);
     }
     .project-image-box {
       position: relative;
@@ -1063,42 +1382,46 @@ const customCss = `
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.7s var(--ease-expo);
+      transition: transform 0.8s var(--ease-expo);
       display: block;
     }
     .project-card:hover .project-image-box img {
-      transform: scale(1.06);
+      transform: scale(1.07);
     }
     .project-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(143, 0, 0, 0.62);
+      background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(143, 0, 0, 0.72), rgba(28, 12, 10, 0.78));
       backdrop-filter: blur(2px);
       display: flex;
       align-items: center;
       justify-content: center;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.35s ease;
     }
     .project-card:hover .project-overlay {
       opacity: 1;
     }
 
-    /* Team Card exact replica of Page 3 PDF */
+    /* Team Card exact replica of Page 3 PDF + Layered Elevation */
     .team-card {
       background: #FFFFFF;
       border: 1px solid var(--border-line);
+      box-shadow: var(--shadow-paper);
       display: flex;
       flex-direction: column;
-      transition: transform 0.4s var(--ease-expo), box-shadow 0.4s var(--ease-expo), border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.45s var(--ease-expo), box-shadow 0.45s var(--ease-expo), border-color 0.3s ease;
     }
     .team-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       border-color: var(--crimson);
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
+      box-shadow: var(--shadow-elevated);
     }
     .team-circle-stage {
       background-color: #F7F6F2;
+      background-image: radial-gradient(circle at 50% 45%, rgba(236, 124, 48, 0.08), transparent 72%);
       padding: 1.25rem 1rem 0.75rem;
       display: flex;
       justify-content: center;
@@ -1111,12 +1434,13 @@ const customCss = `
       overflow: hidden;
       background-color: #F2F0EB;
       border: 1.5px solid #BDB7AB;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-      transition: border-color 0.3s ease, transform 0.5s var(--ease-expo);
+      box-shadow: 0 8px 20px rgba(72, 24, 16, 0.1);
+      transition: border-color 0.3s ease, transform 0.55s var(--ease-expo), box-shadow 0.45s var(--ease-expo);
     }
     .team-card:hover .team-img-wrap {
       border-color: var(--crimson);
-      transform: scale(1.03);
+      transform: scale(1.04);
+      box-shadow: 0 14px 28px rgba(143, 0, 0, 0.18);
     }
     .team-img-wrap img {
       width: 100%;
@@ -1149,7 +1473,7 @@ const customCss = `
       font-weight: 400;
     }
 
-    /* Scope of Works Bullet */
+    /* Scope of Works Bullet with Tactile Paper Shadow */
     .scope-list-item {
       display: flex;
       align-items: center;
@@ -1157,12 +1481,13 @@ const customCss = `
       padding: 0.9rem 1.25rem;
       background: #FFFFFF;
       border: 1px solid var(--border-line);
+      box-shadow: var(--shadow-paper);
       transition: border-color 0.25s ease, transform 0.35s var(--ease-expo), box-shadow 0.35s var(--ease-expo);
     }
     .scope-list-item:hover {
       border-color: var(--crimson);
       transform: translateX(6px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+      box-shadow: var(--shadow-elevated);
     }
     .scope-square {
       width: 10px;
@@ -1170,7 +1495,7 @@ const customCss = `
       background-color: #111111;
       border: 1px solid #111111;
       flex-shrink: 0;
-      transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.3s var(--ease-expo);
+      transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.35s var(--ease-expo);
     }
     .scope-list-item:hover .scope-square {
       background-color: var(--crimson);
@@ -1292,16 +1617,68 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 </head>
 <body>
 
-  <!-- ARCHITECTURAL VELLUM GRID OVERLAY (Heron Inspired) -->
+  <!-- WATERCOLOR PAPER SUBSTRATE & ARCHITECTURAL VELLUM GRID OVERLAY -->
+  <div class="watercolor-paper-wash" aria-hidden="true"></div>
   <div class="vellum-drafting-grid" aria-hidden="true"></div>
 
-  <!-- EDITORIAL CURTAIN PRELOADER (Ultra-fast, <0.75s) -->
+  <!-- SHARED SVG WATERCOLOR INK-TURBULENCE DISPLACEMENT FILTER (Heron AI Inspired) -->
+  <svg width="0" height="0" style="position:absolute;pointer-events:none;" aria-hidden="true">
+    <defs>
+      <filter id="studioInkDisplace">
+        <feTurbulence type="fractalNoise" baseFrequency="0.032 0.045" numOctaves="4" seed="11" result="noise" />
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="68" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+        <feGaussianBlur in="displaced" stdDeviation="1.4" result="blurred" />
+        <feComponentTransfer in="blurred">
+          <feFuncA type="linear" slope="2.1" intercept="-0.45" />
+        </feComponentTransfer>
+      </filter>
+    </defs>
+  </svg>
+
+  <!-- ARCHITECTURAL ATELIER PRELOADER CURTAIN (Drafting Ruler + Elevation Wireframe Draw) -->
   <div id="studioPreloader" class="studio-preloader" aria-hidden="true">
-    <img src="assets/logo.svg" alt="" style="height: 52px; width: auto;" onerror="this.src='assets/logo.jpg'" />
-    <span class="text-xs font-bold tracking-widest uppercase text-[#111111]">Scale and Spaces Pvt. Ltd.</span>
-    <div class="preloader-line">
-      <div id="preloaderFill" class="preloader-line-fill"></div>
+    <div id="preRulerV" class="preloader-ruler-v"></div>
+    <div id="preRulerH" class="preloader-ruler-h"></div>
+    <div id="preCoordReadout" class="preloader-coord-readout">DATUM 0.00M // X: 0640 | Y: 0400</div>
+
+    <div class="preloader-frame">
+      <div class="flex items-center justify-between w-full text-[10px] font-mono uppercase tracking-widest text-[#767070] border-b border-[#E4DDD1] pb-2">
+        <span>SCALE &amp; SPACES // ATELIER</span>
+        <span>DESIGNING SPACES &bull; NEPAL</span>
+      </div>
+
+      <!-- Animated Architectural Elevation Wireframe SVG (Scope: Architecture, Structure, Interiors, Turnkey) -->
+      <svg class="preloader-sketch-svg" viewBox="0 0 380 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line class="preloader-sketch-path" x1="12" y1="82" x2="368" y2="82" stroke="#111111" stroke-width="1.2" />
+        <path class="preloader-sketch-path" d="M44 82V42H136V22L198 14V82" stroke="#111111" stroke-width="1.4" />
+        <path class="preloader-sketch-path" d="M136 42H264V54H336V82" stroke="#111111" stroke-width="1.3" />
+        <path class="preloader-sketch-path" d="M26 52H228" stroke="#8F0000" stroke-width="1.4" />
+        <path class="preloader-sketch-path" d="M64 82V56H104V82M152 82V36H184V82M222 82V60H252V82" stroke="#767070" stroke-width="1" />
+        <path class="preloader-sketch-path" d="M294 54A28 28 0 1 1 322 82" stroke="#8F0000" stroke-width="1.4" />
+        <circle cx="294" cy="82" r="2.5" fill="#8F0000" />
+      </svg>
+
+      <div class="flex items-center justify-between w-full gap-3">
+        <div class="flex items-center gap-2.5">
+          <img src="assets/logo.svg" alt="" style="height: 30px; width: auto; max-width: 34px;" onerror="this.src='assets/logo.jpg'" />
+          <span class="text-xs font-bold tracking-widest uppercase text-[#111111]">Scale and Spaces Pvt. Ltd.</span>
+        </div>
+        <span id="preloaderPct" class="text-xs font-mono font-bold text-[#8F0000]">0%</span>
+      </div>
+
+      <div class="preloader-line">
+        <div id="preloaderFill" class="preloader-line-fill"></div>
+      </div>
     </div>
+  </div>
+
+  <!-- 2D CANVAS VELOCITY INK TRAIL + MAGNETIC ARCHITECTURAL POINTER FOLLOWER -->
+  <canvas id="studioCursorCanvas" class="studio-cursor-canvas" aria-hidden="true"></canvas>
+  <div id="studioCursor" class="studio-cursor" aria-hidden="true">
+    <div id="cursorRing" class="studio-cursor-ring">
+      <span id="cursorLabel" class="studio-cursor-label">VIEW</span>
+    </div>
+    <div id="cursorDot" class="studio-cursor-dot"></div>
   </div>
 
   <!-- TOP EDITORIAL STUDIO BAR -->
@@ -1386,34 +1763,34 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
   <main id="top">
     <!-- ======================================================================
-         COVER / HERO SECTION (Page 1 of Portfolio PDF + Heron Drafting Viewport)
+         COVER / HERO SECTION (Page 1 of Portfolio PDF + Drafting & Watercolor Atelier)
          ====================================================================== -->
-    <section class="pt-10 pb-14 md:pt-14 md:pb-20 border-b border-[#DDD8CE] relative">
+    <section class="pt-6 pb-10 md:pt-8 md:pb-14 border-b border-[#DDD8CE] wc-section-wash">
       <div class="portfolio-container">
-        <div class="hero-stagger flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-6">
+        <div class="hero-stagger flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 mb-3">
           <p class="text-sm md:text-base text-[#111111] tracking-wide">
             Architecture | Engineering | Construction
           </p>
-          <p class="text-xl md:text-2xl tracking-wider text-[#111111]">
+          <p class="text-lg md:text-2xl tracking-wider text-[#111111]">
             <span style="color:#FF0000;">|</span> DESIGN <strong>PORTFOLIO</strong>
           </p>
         </div>
 
         <!-- Single Semantic H1 with GSAP SplitText reveal -->
-        <div class="my-6 md:my-8">
+        <div class="my-3 md:my-4">
           <h1 id="heroHeadline" class="portfolio-crimson-quote">
-            <span class="block text-2xl sm:text-3xl md:text-4xl font-bold mb-1" style="font-family: Georgia, 'EB Garamond', serif;">Designing Spaces,</span>
-            <span class="block text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight" style="font-family: 'EB Garamond', Georgia, serif;">
+            <span class="block text-xl sm:text-2xl md:text-3xl font-bold mb-0.5" style="font-family: Georgia, 'EB Garamond', serif;">Designing Spaces,</span>
+            <span class="block text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight" style="font-family: 'EB Garamond', Georgia, serif;">
               Defining Lifestyles<span style="font-size: 1.15em;">!</span>
             </span>
           </h1>
-          <p class="hero-stagger text-sm md:text-base text-[#767070] mt-4 max-w-3xl">
+          <p class="hero-stagger text-xs sm:text-sm text-[#767070] mt-2 max-w-3xl">
             Official architectural, civil engineering, landscape masterplanning, and interior design portfolio of <strong class="text-[#111111]">Scale and Spaces Private Limited</strong>.
           </p>
         </div>
 
         <!-- Studio Offices Line (Page 1 Bottom Strip) -->
-        <div class="hero-stagger bg-[#E8E6DF] border border-[#DDD8CE] px-4 py-3 flex flex-col md:flex-row justify-between items-start md:items-center text-xs sm:text-sm text-[#111111] gap-2 mb-8">
+        <div class="hero-stagger bg-[#E8E6DF] border border-[#DDD8CE] px-4 py-2.5 flex flex-col md:flex-row justify-between items-start md:items-center text-xs sm:text-sm text-[#111111] gap-2 mb-5">
           <div><strong class="text-[#8F0000]">Head Office:</strong> Tokha-6, Kathmandu</div>
           <div class="hidden md:block text-[#B8B3A8]">|</div>
           <div><strong class="text-[#8F0000]">Contact Office:</strong> Birgunj-12, Parsa</div>
@@ -1422,11 +1799,11 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         </div>
 
         <!-- Interactive Architectural Cover Frame with Crosshair Telemetry & Slide Switcher -->
-        <div class="hero-stagger bg-white border border-[#DDD8CE] overflow-hidden shadow-sm relative">
+        <div class="hero-stagger bg-white border border-[#DDD8CE] overflow-hidden relative" style="box-shadow: var(--shadow-elevated);">
           <span class="arch-crosshair" style="top:8px;left:8px;z-index:5;" aria-hidden="true">${icons.crosshair}</span>
           <span class="arch-crosshair" style="top:8px;right:8px;z-index:5;" aria-hidden="true">${icons.crosshair}</span>
 
-          <div id="heroViewport" class="hero-viewport-frame aspect-[16/9] md:aspect-[21/9] bg-[#E2DFD8]" onclick="openLightbox(currentHeroId)">
+          <div id="heroViewport" class="hero-viewport-frame aspect-[16/9] md:aspect-[21/8] bg-[#E2DFD8]" style="max-height: 410px;" onclick="openLightbox(currentHeroId)">
             <img src="assets/projects/cover_studio_tower.jpg" data-hero-slide="0" data-project-id="mithila-tower" alt="Scale and Spaces conceptual steel-and-timber tower sketch to build render" class="hero-slide-img is-active" />
             <img src="assets/projects/mithila_tower.jpg" data-hero-slide="1" data-project-id="mithila-tower" alt="Mithila Tower commercial building in Jiwisa Chowk, Malangwa by Scale and Spaces Pvt. Ltd." class="hero-slide-img" />
             <img src="assets/projects/hyatt_hospital_1.jpg" data-hero-slide="2" data-project-id="hyatt-community-hospital" alt="Hyatt Community Hospital architectural facade in Barhathwa, Sarlahi" class="hero-slide-img" />
@@ -1435,7 +1812,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             <!-- CAD Crosshair lines tracking pointer -->
             <div id="cadCrossV" class="cad-crosshair-v" aria-hidden="true"></div>
             <div id="cadCrossH" class="cad-crosshair-h" aria-hidden="true"></div>
-            <div id="cadCoords" class="cad-coord-pill" aria-hidden="true">X: 0000 mm | Y: 0000 mm | SCALE 1:100</div>
+            <div id="cadCoords" class="cad-coord-pill">X: 00000 mm | Y: 0000 mm | SCALE 1:100</div>
           </div>
 
           <div class="p-4 sm:p-6 bg-white border-t border-[#DDD8CE] flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
@@ -1461,9 +1838,9 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     </section>
 
     <!-- ======================================================================
-         SCOPE OF WORKS_ (Page 2 of Portfolio PDF + Sticky Studio Sketch)
+         SCOPE OF WORKS_ (Page 2 of Portfolio PDF + Watercolor Ink Atelier Plate)
          ====================================================================== -->
-    <section id="scope-of-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] relative">
+    <section id="scope-of-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
       <div class="portfolio-container">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 reveal-head">
           <div>
@@ -1477,35 +1854,107 @@ const htmlBodyTemplate = `<!DOCTYPE html>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <!-- 10 Deliverables List matching Page 2 -->
           <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5 scope-grid">
             ${scopeItems.map(item => `
-              <div class="scope-list-item">
+              <div class="scope-list-item wc-hover-card">
                 <span class="scope-square"></span>
                 <span class="text-base font-normal text-[#111111]">${item}</span>
               </div>
             `).join('')}
           </div>
 
-          <!-- Architectural Wireframe Drawing Plate from Page 2 -->
-          <div class="lg:col-span-5 bg-white border border-[#DDD8CE] p-4 shadow-sm reveal-card">
-            <div class="overflow-hidden border border-[#DDD8CE] bg-[#F0EFEA]">
-              <img src="assets/projects/cover_studio_tower.jpg" alt="Architectural concept wireframe and volumetric structural framing model by Scale and Spaces" class="w-full h-auto object-cover block" loading="lazy" />
+          <!-- Signature Watercolor Architectural Ink-Masked Plate (Heron Ink-Mask Reveal) -->
+          <div id="atelierInkStage" class="lg:col-span-5 bg-white border border-[#DDD8CE] p-4 wc-hover-card reveal-card relative" style="cursor: pointer;" title="Hover or click to replay watercolor ink wash">
+            <span class="arch-crosshair" style="top:6px;left:6px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
+            <span class="arch-crosshair" style="top:6px;right:6px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
+            <div class="overflow-hidden border border-[#DDD8CE] bg-[#F0EFEA] relative wc-ink-plate">
+              <svg viewBox="0 0 1200 896" width="100%" class="block w-full h-auto" role="img" aria-label="Bespoke architectural watercolor rendering, orthographic section elevation, and crimson compass arcs by Scale and Spaces">
+                <defs>
+                  <mask id="atelierWatercolorMask" maskContentUnits="userSpaceOnUse">
+                    <rect x="0" y="0" width="1200" height="896" fill="#181818" opacity="0.18" />
+                    <circle id="atelierInkCircle" cx="560" cy="430" r="820" fill="white" style="filter: url(#studioInkDisplace);" />
+                  </mask>
+                </defs>
+                <rect x="0" y="0" width="1200" height="896" fill="#F0EFEA" />
+                <image href="assets/art/atelier-architecture-art.jpg" x="0" y="0" width="1200" height="896" preserveAspectRatio="xMidYMid slice" mask="url(#atelierWatercolorMask)" />
+              </svg>
             </div>
             <div class="pt-3 flex justify-between items-center text-xs text-[#767070]">
-              <span class="font-bold text-[#111111]">CONCEPT TO TURNKEY WORKFLOW</span>
-              <span>Page 02 &bull; Portfolio</span>
+              <span class="font-bold text-[#111111]">ATELIER CONCEPT &amp; ORTHOGRAPHIC ELEVATIONS</span>
+              <span class="text-[#8F0000] font-semibold">Full Architectural Practice</span>
             </div>
+          </div>
+        </div>
+
+        <!-- Full Architectural Services Workflow Pillars (Minimal SVG Drafting Icons) -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 mt-10 reveal-head">
+          <div class="service-pillar-card wc-hover-card">
+            <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="16" cy="11" r="4"/><path d="M16 15V28M9 28H23M6 9C11 5 21 5 26 9"/></svg>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">01 // Survey</span>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Site Analysis &amp; Topographical Survey</p>
+          </div>
+          <div class="service-pillar-card wc-hover-card">
+            <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 26L16 6L28 26H4Z"/><path d="M16 6V26M10 16H22"/></svg>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">02 // Architecture</span>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Concept Forms &amp; 3D Visualization</p>
+          </div>
+          <div class="service-pillar-card wc-hover-card">
+            <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="6" y="6" width="20" height="20"/><path d="M6 16H26M16 6V26M6 6L26 26"/></svg>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">03 // Structure</span>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Seismic Analysis &amp; Structural Engineering</p>
+          </div>
+          <div class="service-pillar-card wc-hover-card">
+            <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 26V10C8 7 12 5 16 5C20 5 24 7 24 10V26"/><path d="M4 26H28M12 14H20M12 20H20"/></svg>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">04 // Interiors &amp; MEP</span>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Interior Joinery, Electrical &amp; Sanitary</p>
+          </div>
+          <div class="service-pillar-card wc-hover-card">
+            <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="6" y="5" width="16" height="22"/><path d="M22 9H26V27H10M10 11H18M10 16H18M10 21H15"/></svg>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">05 // Working Set</span>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Municipal Permit &amp; Tender BOQ Docs</p>
+          </div>
+          <div class="service-pillar-card wc-hover-card">
+            <svg class="service-pillar-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="16" cy="16" r="10"/><path d="M16 10V16L21 19M4 16H7M25 16H28"/></svg>
+            <span class="text-[11px] font-mono uppercase tracking-wider text-[#8F0000] font-bold">06 // Execution</span>
+            <p class="text-xs font-bold text-[#111111] leading-snug">Site Supervision &amp; Turnkey Delivery</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ======================================================================
+         INTERACTIVE IMAGE AFTER-EFFECT STAGE (Heron Explore Kinetic Plate Trail)
+         ====================================================================== -->
+    <section id="atelierTrailStage" class="atelier-trail-stage py-14 md:py-16" aria-label="Interactive Architectural Plate Trail Showcase">
+      <span class="arch-crosshair" style="top:14px;left:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
+      <span class="arch-crosshair" style="top:14px;right:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
+      <span class="arch-crosshair" style="bottom:14px;left:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
+      <span class="arch-crosshair" style="bottom:14px;right:16px;z-index:4;" aria-hidden="true">${icons.crosshair}</span>
+
+      <div id="atelierTrailLayer" class="pointer-events-none absolute inset-0 overflow-hidden z-[1]" aria-hidden="true"></div>
+
+      <div class="portfolio-container text-center relative z-[2] pointer-events-none select-none">
+        <span class="inline-block text-[11px] font-mono uppercase tracking-[0.2em] text-[#8F0000] font-bold mb-2">
+          ATELIER IMAGE AFTER-EFFECT // MOVE POINTER OR CLICK STAGE
+        </span>
+        <p class="text-2xl sm:text-3xl md:text-4xl font-bold serif-heading text-[#111111] max-w-2xl mx-auto leading-tight">
+          From Sketch &amp; Concept Massing to Built Architectural Realities
+        </p>
+        <p class="text-xs sm:text-sm text-[#767070] mt-2 max-w-xl mx-auto">
+          Sweep your pointer across the drawing table to stream live renders across residential, commercial, institutional, and interior works.
+        </p>
+        <button id="atelierCascadeBtn" type="button" class="btn-outline text-xs py-1.5 px-4 mt-4 pointer-events-auto">
+          Cascade Studio Plates
+        </button>
+      </div>
+    </section>
+
+    <!-- ======================================================================
          THE FULL TEAM (Page 3 of Portfolio PDF — All 10 Verified Members)
          ====================================================================== -->
-    <section id="the-full-team" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] relative">
+    <section id="the-full-team" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] wc-section-wash">
       <div class="portfolio-container">
         <div class="text-center mb-12 reveal-head">
           <h2 class="portfolio-section-title">THE FULL TEAM</h2>
@@ -1521,7 +1970,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             const first = parts.slice(0, -1).join(' ');
             const last = parts[parts.length - 1];
             return `
-              <div class="team-card">
+              <div class="team-card wc-hover-card">
                 <div class="team-circle-stage">
                   <div class="team-img-wrap">
                     <img src="${m.image}" alt="${m.name} — ${m.role} at Scale and Spaces Pvt. Ltd." loading="lazy" />
@@ -1543,7 +1992,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     <!-- ======================================================================
          OUR WORKS_ DISCIPLINE INDEX & GALLERY (Pages 4-68 of Portfolio PDF)
          ====================================================================== -->
-    <section id="our-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] relative">
+    <section id="our-works" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F7F6F2] wc-section-wash">
       <div class="portfolio-container">
         <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 gap-4 reveal-head">
           <div>
@@ -1559,27 +2008,27 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
         <!-- Page 4 Architectural Category Quick Index -->
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-8 reveal-head">
-          <button type="button" onclick="selectCategoryFilter('Residences')" class="discipline-card">
+          <button type="button" onclick="selectCategoryFilter('Residences')" class="discipline-card wc-hover-card">
             <span class="discipline-monogram">R</span>
             <span class="text-xs sm:text-sm font-bold text-[#111111]">Residences</span>
           </button>
-          <button type="button" onclick="selectCategoryFilter('Commercial')" class="discipline-card">
+          <button type="button" onclick="selectCategoryFilter('Commercial')" class="discipline-card wc-hover-card">
             <span class="discipline-monogram">C</span>
             <span class="text-xs sm:text-sm font-bold text-[#111111]">Commercial</span>
           </button>
-          <button type="button" onclick="selectCategoryFilter('Landscape')" class="discipline-card">
+          <button type="button" onclick="selectCategoryFilter('Landscape')" class="discipline-card wc-hover-card">
             <span class="discipline-monogram">L</span>
             <span class="text-xs sm:text-sm font-bold text-[#111111]">Landscape Development</span>
           </button>
-          <button type="button" onclick="selectCategoryFilter('Interior')" class="discipline-card">
+          <button type="button" onclick="selectCategoryFilter('Interior')" class="discipline-card wc-hover-card">
             <span class="discipline-monogram">I</span>
             <span class="text-xs sm:text-sm font-bold text-[#111111]">Interior Design</span>
           </button>
-          <button type="button" onclick="selectCategoryFilter('Institutional')" class="discipline-card">
+          <button type="button" onclick="selectCategoryFilter('Institutional')" class="discipline-card wc-hover-card">
             <span class="discipline-monogram">O</span>
             <span class="text-xs sm:text-sm font-bold text-[#111111]">Office Building</span>
           </button>
-          <button type="button" onclick="selectCategoryFilter('Religious')" class="discipline-card">
+          <button type="button" onclick="selectCategoryFilter('Religious')" class="discipline-card wc-hover-card">
             <span class="discipline-monogram">R</span>
             <span class="text-xs sm:text-sm font-bold text-[#111111]">Religious Complexes</span>
           </button>
@@ -1600,7 +2049,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         <!-- Project Gallery Grid -->
         <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           ${projectsData.map(p => `
-            <article class="project-card" data-category="${p.category}" data-id="${p.id}">
+            <article class="project-card wc-hover-card" data-category="${p.category}" data-id="${p.id}">
               <div class="project-image-box" onclick="openLightbox('${p.id}')">
                 <img src="${p.image}" alt="${p.title} ${p.client} architectural design in ${p.location} (${p.year}) by Scale and Spaces Pvt. Ltd." loading="lazy" />
                 <div class="project-overlay">
@@ -1637,7 +2086,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     <!-- ======================================================================
          FEATURED CIVIC MASTERPLAN: THE SHAVDAAHGRIHAM (Pages 18-19)
          ====================================================================== -->
-    <section id="ranighat-masterplan" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] relative">
+    <section id="ranighat-masterplan" class="py-14 md:py-20 border-b border-[#DDD8CE] bg-[#F0EFEA] wc-section-wash">
       <div class="portfolio-container">
         <div class="mb-8 reveal-head">
           <span class="text-xs font-bold uppercase tracking-widest text-[#C00000] block mb-1">Landscape Development Feature</span>
@@ -1647,22 +2096,22 @@ const htmlBodyTemplate = `<!DOCTYPE html>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div class="lg:col-span-7 flex flex-col gap-4 reveal-card">
-            <div class="border border-[#DDD8CE] bg-white overflow-hidden cursor-pointer" onclick="openLightbox('shavdaahgriham-crematorium')">
+            <div class="border border-[#DDD8CE] bg-white overflow-hidden cursor-pointer wc-hover-card wc-ink-plate" onclick="openLightbox('shavdaahgriham-crematorium')">
               <img src="assets/projects/shavdaahgriham_crematorium.jpg" alt="The Shavdaahgriham electrical crematorium architecture at Ranighat, Birgunj" class="w-full h-auto object-cover block" loading="lazy" />
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div class="border border-[#DDD8CE] bg-white overflow-hidden">
+              <div class="border border-[#DDD8CE] bg-white overflow-hidden wc-hover-card">
                 <img src="assets/projects/shavdaahgriham_roof.jpg" alt="Waterfront cremation platform and riverfront steps at Ranighat Samshanghat" class="w-full h-48 object-cover block" loading="lazy" />
                 <p class="p-2.5 text-xs text-[#767070] bg-white border-t border-[#DDD8CE]">Riverfront ghats &amp; ceremonial platform</p>
               </div>
-              <div class="border border-[#DDD8CE] bg-white overflow-hidden">
+              <div class="border border-[#DDD8CE] bg-white overflow-hidden wc-hover-card">
                 <img src="assets/projects/shavdaahgriham_ranighat_1.jpg" alt="Ranighat riverfront crematorium park masterplan and scattering gardens" class="w-full h-48 object-cover block" loading="lazy" />
                 <p class="p-2.5 text-xs text-[#767070] bg-white border-t border-[#DDD8CE]">Landscape masterplan &amp; scattering gardens</p>
               </div>
             </div>
           </div>
 
-          <div class="lg:col-span-5 bg-white border border-[#DDD8CE] p-6 md:p-8 flex flex-col gap-5 reveal-card">
+          <div class="lg:col-span-5 bg-white border border-[#DDD8CE] p-6 md:p-8 flex flex-col gap-5 reveal-card wc-hover-card">
             <div>
               <h3 class="text-xl font-bold text-[#111111] mb-1" style="font-family: var(--font-sans);">REDEVELOPMENT OF RANIGHAT SAMSHANGHAT</h3>
               <p class="text-sm font-bold text-[#C00000]">of Birgunj Metropolitan City Office</p>
@@ -2175,37 +2624,341 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     }
     window.handleInquirySubmit = handleInquirySubmit;
 
+    // Interactive CAD Crosshair & Coordinate Readout (Always enabled, GSAP smoothed if available)
+    (function initHeroCrosshair() {
+      const crossV = document.getElementById('cadCrossV');
+      const crossH = document.getElementById('cadCrossH');
+      const coordPill = document.getElementById('cadCoords');
+      if (!heroVp || !crossV || !crossH || !coordPill) return;
+
+      const quickV = window.gsap ? gsap.quickTo(crossV, 'left', { duration: 0.15, ease: 'power2.out' }) : function(v) { crossV.style.left = v + 'px'; };
+      const quickH = window.gsap ? gsap.quickTo(crossH, 'top', { duration: 0.15, ease: 'power2.out' }) : function(v) { crossH.style.top = v + 'px'; };
+
+      heroVp.addEventListener('mousemove', function(e) {
+        const rect = heroVp.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const rx = Math.max(0, Math.min(rect.width, e.clientX - rect.left));
+        const ry = Math.max(0, Math.min(rect.height, e.clientY - rect.top));
+        quickV(rx);
+        quickH(ry);
+        const mmX = Math.round((rx / rect.width) * 12800).toString().padStart(5, '0');
+        const mmY = Math.round((ry / rect.height) * 5400).toString().padStart(4, '0');
+        coordPill.textContent = 'X: ' + mmX + ' mm | Y: ' + mmY + ' mm | SCALE 1:100';
+      });
+    })();
+
     // =========================================================================
-    // HERON-INSPIRED GSAP + LENIS + SPLITTEXT MOTION ENGINE
+    // POINTER HOVER ENGINE: 2D CANVAS INK TRAIL + MAGNETIC BADGE + WATERCOLOR
+    // =========================================================================
+    (function initPointerAndWatercolorHover() {
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // 1. Per-card radial watercolor light & shadow depth (--mx / --my)
+      document.addEventListener('mousemove', function(e) {
+        const card = e.target.closest ? e.target.closest('.wc-hover-card') : null;
+        if (card) {
+          const rect = card.getBoundingClientRect();
+          if (rect.width && rect.height) {
+            card.style.setProperty('--mx', (e.clientX - rect.left).toFixed(1) + 'px');
+            card.style.setProperty('--my', (e.clientY - rect.top).toFixed(1) + 'px');
+          }
+        }
+      });
+
+      // 2. Interactive replayable ink-mask bloom on the Architectural Atelier Plate
+      const atelierStage = document.getElementById('atelierInkStage');
+      const inkCircle = document.getElementById('atelierInkCircle');
+      if (atelierStage && inkCircle) {
+        atelierStage.addEventListener('click', function(e) {
+          if (!window.gsap || reducedMotion) return;
+          const svg = atelierStage.querySelector('svg');
+          if (!svg) return;
+          const rect = svg.getBoundingClientRect();
+          const cx = ((e.clientX - rect.left) / rect.width) * 1200;
+          const cy = ((e.clientY - rect.top) / rect.height) * 896;
+          inkCircle.setAttribute('cx', cx.toFixed(0));
+          inkCircle.setAttribute('cy', cy.toFixed(0));
+          gsap.fromTo(inkCircle, { attr: { r: 30 } }, { attr: { r: 960 }, duration: 1.35, ease: 'power2.out' });
+        });
+      }
+
+      // 3. Interactive Kinetic Image After-Effect Trail (Heron Explore Adapted)
+      (function initAtelierImageTrail() {
+        const trailStage = document.getElementById('atelierTrailStage');
+        const trailLayer = document.getElementById('atelierTrailLayer');
+        const cascadeBtn = document.getElementById('atelierCascadeBtn');
+        if (!trailStage || !trailLayer || reducedMotion) return;
+
+        const plateUrls = [
+          'assets/projects/cover_studio_tower.jpg',
+          'assets/projects/mithila_tower.jpg',
+          'assets/art/atelier-architecture-art.jpg',
+          'assets/projects/hyatt_hospital_1.jpg',
+          'assets/projects/tulsi_gupta_residence_1.jpg',
+          'assets/projects/adarsh_city_center_1.jpg',
+          'assets/projects/interior_modern_luxury_living.jpg'
+        ];
+        let plateIdx = 0;
+        let lastSpawnX = 0;
+        let lastSpawnY = 0;
+        let zSeed = 10;
+        let activeClones = 0;
+
+        function spawnTrailPlate(x, y, vx, vy) {
+          if (activeClones > 11) return;
+          const img = document.createElement('img');
+          img.src = plateUrls[plateIdx % plateUrls.length];
+          img.alt = '';
+          plateIdx++;
+          zSeed++;
+          activeClones++;
+          img.className = 'atelier-trail-clone';
+          img.style.left = x + 'px';
+          img.style.top = y + 'px';
+          img.style.zIndex = String(zSeed);
+          trailLayer.appendChild(img);
+
+          const rot = (Math.random() - 0.5) * 10;
+          const throwX = Math.max(-70, Math.min(70, vx * 0.45));
+          const throwY = Math.max(-50, Math.min(50, vy * 0.45));
+
+          if (window.gsap) {
+            gsap.timeline({
+              onComplete: function() {
+                img.remove();
+                activeClones = Math.max(0, activeClones - 1);
+              }
+            })
+              .fromTo(img,
+                { opacity: 0, scale: 0.72, xPercent: -50, yPercent: -50, x: 0, y: 0, rotation: rot * 0.4 },
+                { opacity: 0.96, scale: 1, x: throwX, y: throwY, rotation: rot, duration: 0.42, ease: 'expo.out' }
+              )
+              .to(img, {
+                opacity: 0,
+                y: throwY + 95,
+                scale: 0.88,
+                duration: 0.68,
+                ease: 'power2.in'
+              }, 0.52);
+          } else {
+            img.style.transform = 'translate(-50%, -50%) rotate(' + rot + 'deg)';
+            setTimeout(function() {
+              img.remove();
+              activeClones = Math.max(0, activeClones - 1);
+            }, 900);
+          }
+        }
+
+        trailStage.addEventListener('mousemove', function(e) {
+          const rect = trailStage.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const dx = x - lastSpawnX;
+          const dy = y - lastSpawnY;
+          if (Math.hypot(dx, dy) > 54) {
+            spawnTrailPlate(x, y, dx, dy);
+            lastSpawnX = x;
+            lastSpawnY = y;
+          }
+        });
+
+        function playPlateCascade() {
+          const rect = trailStage.getBoundingClientRect();
+          for (let k = 0; k < 5; k++) {
+            setTimeout(function() {
+              const cx = rect.width * (0.2 + k * 0.15);
+              const cy = rect.height * (0.42 + (k % 2 === 0 ? -0.08 : 0.1));
+              spawnTrailPlate(cx, cy, (k - 2) * 18, -12);
+            }, k * 90);
+          }
+        }
+
+        if (cascadeBtn) {
+          cascadeBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            playPlateCascade();
+          });
+        }
+      })();
+
+      // 4. Desktop 2D Canvas Pen Velocity Ink Trail + Magnetic Context Badge
+      const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      const ring = document.getElementById('cursorRing');
+      const dot = document.getElementById('cursorDot');
+      const label = document.getElementById('cursorLabel');
+      const cursorCanvas = document.getElementById('studioCursorCanvas');
+      if (!canHover || !ring || !dot || !label || reducedMotion) return;
+
+      const moveRingX = window.gsap ? gsap.quickTo(ring, 'x', { duration: 0.28, ease: 'power3.out' }) : function(v) { ring.style.left = v + 'px'; };
+      const moveRingY = window.gsap ? gsap.quickTo(ring, 'y', { duration: 0.28, ease: 'power3.out' }) : function(v) { ring.style.top = v + 'px'; };
+      const moveDotX = window.gsap ? gsap.quickTo(dot, 'x', { duration: 0.08, ease: 'power2.out' }) : function(v) { dot.style.left = v + 'px'; };
+      const moveDotY = window.gsap ? gsap.quickTo(dot, 'y', { duration: 0.08, ease: 'power2.out' }) : function(v) { dot.style.top = v + 'px'; };
+
+      // 2D Canvas Ink Ribbon Engine (adapted from Heron AI window.__canvasCursor)
+      const ctx = cursorCanvas ? cursorCanvas.getContext('2d') : null;
+      const penPos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+      const smoothPos = { x: penPos.x, y: penPos.y };
+      const inkTrail = [];
+      let penVisible = false;
+
+      function sizeCursorCanvas() {
+        if (!cursorCanvas || !ctx) return;
+        const dpr = Math.min(2, window.devicePixelRatio || 1);
+        cursorCanvas.width = window.innerWidth * dpr;
+        cursorCanvas.height = window.innerHeight * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      if (ctx) {
+        sizeCursorCanvas();
+        window.addEventListener('resize', sizeCursorCanvas);
+        (function renderPenTrail() {
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+          smoothPos.x += (penPos.x - smoothPos.x) * 0.28;
+          smoothPos.y += (penPos.y - smoothPos.y) * 0.28;
+          if (penVisible) {
+            inkTrail.push({ x: smoothPos.x, y: smoothPos.y });
+            if (inkTrail.length > 14) inkTrail.shift();
+            if (inkTrail.length > 2) {
+              ctx.lineCap = 'round';
+              ctx.lineWidth = 1.6;
+              for (let j = 1; j < inkTrail.length; j++) {
+                const alpha = (j / inkTrail.length) * 0.42;
+                ctx.strokeStyle = 'rgba(143, 0, 0, ' + alpha.toFixed(3) + ')';
+                ctx.beginPath();
+                ctx.moveTo(inkTrail[j - 1].x, inkTrail[j - 1].y);
+                ctx.lineTo(inkTrail[j].x, inkTrail[j].y);
+                ctx.stroke();
+              }
+            }
+          } else {
+            inkTrail.length = 0;
+          }
+          requestAnimationFrame(renderPenTrail);
+        })();
+      }
+
+      document.addEventListener('mousemove', function(e) {
+        penPos.x = e.clientX;
+        penPos.y = e.clientY;
+        penVisible = true;
+        ring.classList.add('is-visible');
+        dot.classList.add('is-visible');
+        moveRingX(e.clientX);
+        moveRingY(e.clientY);
+        moveDotX(e.clientX);
+        moveDotY(e.clientY);
+
+        const target = e.target;
+        ring.classList.remove('is-card-hover', 'is-interactive-hover');
+        if (!target || !target.closest) return;
+
+        if (target.closest('#heroViewport')) {
+          ring.classList.add('is-card-hover');
+          label.textContent = '1:100 VIEW';
+        } else if (target.closest('#atelierInkStage')) {
+          ring.classList.add('is-card-hover');
+          label.textContent = 'INK WASH';
+        } else if (target.closest('#atelierTrailStage')) {
+          ring.classList.add('is-card-hover');
+          label.textContent = 'SKETCH TRAIL';
+        } else if (target.closest('.project-card')) {
+          ring.classList.add('is-card-hover');
+          label.textContent = 'VIEW PLATE';
+        } else if (target.closest('.team-card')) {
+          ring.classList.add('is-card-hover');
+          label.textContent = 'TEAM';
+        } else if (target.closest('a, button, .discipline-card, .filter-tab')) {
+          ring.classList.add('is-interactive-hover');
+        }
+      });
+
+      document.addEventListener('mouseleave', function() {
+        penVisible = false;
+        ring.classList.remove('is-visible');
+        dot.classList.remove('is-visible');
+      });
+    })();
+
+    // =========================================================================
+    // HERON-INSPIRED GSAP + LENIS + SPLITTEXT + WATERCOLOR MOTION ENGINE
     // =========================================================================
     (function initStudioMotion() {
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const preloader = document.getElementById('studioPreloader');
       const preloaderFill = document.getElementById('preloaderFill');
+      const preloaderPct = document.getElementById('preloaderPct');
+      const preRulerV = document.getElementById('preRulerV');
+      const preRulerH = document.getElementById('preRulerH');
+      const preCoord = document.getElementById('preCoordReadout');
+      const mainEl = document.querySelector('main');
+      let preloaderDismissed = false;
+
+      if (preloader && preRulerV && preRulerH) {
+        preloader.addEventListener('mousemove', function(e) {
+          preRulerV.style.left = e.clientX + 'px';
+          preRulerH.style.top = e.clientY + 'px';
+          if (preCoord) {
+            preCoord.textContent = 'DATUM 0.00M // X: ' + String(Math.round(e.clientX)).padStart(4, '0') + ' | Y: ' + String(Math.round(e.clientY)).padStart(4, '0');
+          }
+        });
+      }
+
+      // Animate Architectural Wireframe Paths during boot preloader
+      if (window.gsap && !reducedMotion) {
+        const sketchPaths = document.querySelectorAll('.preloader-sketch-path');
+        if (sketchPaths.length) {
+          gsap.to(sketchPaths, {
+            strokeDashoffset: 0,
+            duration: 0.72,
+            stagger: 0.05,
+            ease: 'power2.inOut'
+          });
+        }
+        const pctCounter = { val: 0 };
+        gsap.to(pctCounter, {
+          val: 100,
+          duration: 0.78,
+          ease: 'power2.out',
+          onUpdate: function() {
+            if (preloaderPct) preloaderPct.textContent = Math.round(pctCounter.val) + '%';
+          }
+        });
+        if (preloaderFill) {
+          gsap.to(preloaderFill, { scaleX: 1, duration: 0.78, ease: 'power2.out' });
+        }
+      }
 
       function dismissPreloader() {
-        if (!preloader) return;
+        if (!preloader || preloaderDismissed) return;
+        preloaderDismissed = true;
+        if (preloaderPct) preloaderPct.textContent = '100%';
         if (window.gsap && !reducedMotion) {
-          gsap.to(preloaderFill, { scaleX: 1, duration: 0.35, ease: 'power2.out' });
+          gsap.to(preloaderFill, { scaleX: 1, duration: 0.25, ease: 'power2.out' });
           gsap.to(preloader, {
             yPercent: -100,
             duration: 0.65,
-            delay: 0.28,
+            delay: 0.25,
             ease: 'expo.inOut',
             onComplete: function() {
               preloader.style.display = 'none';
             }
           });
+          if (mainEl) {
+            gsap.fromTo(mainEl,
+              { clipPath: 'inset(3% 2% 3% 2%)' },
+              { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.8, delay: 0.35, ease: 'expo.out', clearProps: 'clipPath' }
+            );
+          }
         } else {
           preloader.style.display = 'none';
         }
       }
 
       // Guarantee preloader never stalls on any slow resource
-      const safetyTimer = setTimeout(dismissPreloader, 900);
+      const safetyTimer = setTimeout(dismissPreloader, 1050);
       window.addEventListener('load', function() {
         clearTimeout(safetyTimer);
-        dismissPreloader();
+        setTimeout(dismissPreloader, 350);
       });
 
       if (reducedMotion || !window.gsap) {
@@ -2275,7 +3028,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
             duration: 0.85,
             stagger: 0.06,
             ease: 'expo.out',
-            delay: 0.25,
+            delay: 0.45,
             clearProps: 'transform,opacity'
           });
         } catch (err) {}
@@ -2287,32 +3040,45 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         duration: 0.75,
         stagger: 0.08,
         ease: 'power3.out',
-        delay: 0.3,
+        delay: 0.48,
         clearProps: 'transform,opacity'
       });
 
-      // 4. Hero Interactive CAD Crosshair & Coordinate Readout (Heron-AI signature!)
-      const crossV = document.getElementById('cadCrossV');
-      const crossH = document.getElementById('cadCrossH');
-      const coordPill = document.getElementById('cadCoords');
-      if (heroVp && crossV && crossH && coordPill) {
-        const quickV = gsap.quickTo(crossV, 'left', { duration: 0.15, ease: 'power2.out' });
-        const quickH = gsap.quickTo(crossH, 'top', { duration: 0.15, ease: 'power2.out' });
-
-        heroVp.addEventListener('mousemove', function(e) {
-          const rect = heroVp.getBoundingClientRect();
-          const rx = e.clientX - rect.left;
-          const ry = e.clientY - rect.top;
-          quickV(rx);
-          quickH(ry);
-          const mmX = Math.round((rx / rect.width) * 12800).toString().padStart(5, '0');
-          const mmY = Math.round((ry / rect.height) * 5400).toString().padStart(4, '0');
-          coordPill.textContent = 'X: ' + mmX + ' mm | Y: ' + mmY + ' mm | SCALE 1:100';
-        });
-      }
-
-      // 5. ScrollTrigger Staggered Reveals Across Sections
+      // 4. Watercolor Ink-Mask Reveal on Atelier Plate + Scroll Parallax & Batch Stagger
       if (window.ScrollTrigger) {
+        const inkCircle = document.getElementById('atelierInkCircle');
+        if (inkCircle) {
+          gsap.fromTo(
+            inkCircle,
+            { attr: { r: 60 } },
+            {
+              attr: { r: 920 },
+              duration: 1.5,
+              ease: 'power2.out',
+              scrollTrigger: {
+                trigger: '#atelierInkStage',
+                start: 'top 84%',
+                once: true
+              }
+            }
+          );
+        }
+
+        gsap.utils.toArray('.wc-ink-plate').forEach(function(el) {
+          gsap.fromTo(
+            el,
+            { clipPath: 'inset(12% 0% 12% 0%)', opacity: 0.7 },
+            {
+              clipPath: 'inset(0% 0% 0% 0%)',
+              opacity: 1,
+              duration: 1.05,
+              ease: 'expo.out',
+              clearProps: 'clipPath,opacity',
+              scrollTrigger: { trigger: el, start: 'top 86%', once: true }
+            }
+          );
+        });
+
         gsap.utils.toArray('.reveal-head').forEach(function(el) {
           gsap.from(el, {
             y: 24,

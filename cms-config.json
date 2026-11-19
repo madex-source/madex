@@ -1,6 +1,7 @@
 {
   "sheetId": "1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts",
   "enabled": true,
+  "appsScriptUrl": "",
   "sheetUrl": "https://docs.google.com/spreadsheets/d/1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts/edit",
-  "note": "Paste Google Spreadsheet ID from the shared sheet URL (Anyone with link -> Viewer)"
+  "note": "Private Google Sheet Web App CMS: set appsScriptUrl to your deployed Google Apps Script /exec URL (keeps the Sheet Restricted)."
 }

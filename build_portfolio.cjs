@@ -4568,9 +4568,10 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     window.closeArticleModal = closeArticleModal;
     window.closeArticleOnBackdrop = closeArticleOnBackdrop;
 
-    // Live Google Sheet CMS Hydration (Upgradable Real-Time Sync: Settings, Hero, About, Services, Projects, Team, Articles, Reviews, FAQs, Partners)
+    // Live Google Sheet CMS Hydration (Upgradable Real-Time Sync: Apps Script Private Bridge + gviz Fallback across all 10 tabs)
     (function initGoogleSheetCms() {
       const DEFAULT_SHEET_ID = '1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts';
+      const DEFAULT_APPS_SCRIPT_URL = '';
       window.__ssWhatsappNumber = window.__ssWhatsappNumber || '9779703881733';
       let jsonpCounter = 0;
       let lastTabSigs = {};
@@ -4768,46 +4769,116 @@ const htmlBodyTemplate = `<!DOCTYPE html>
         return map;
       }
 
+      function fetchViaAppsScriptJsonp(execUrl) {
+        return new Promise(function(resolve) {
+          const cbName = '__ssExecCb_' + (++jsonpCounter) + '_' + Date.now();
+          let settled = false;
+          const script = document.createElement('script');
+          const timer = setTimeout(function() {
+            if (settled) return;
+            settled = true;
+            try { delete window[cbName]; } catch (e) {}
+            if (script.parentNode) script.parentNode.removeChild(script);
+            resolve(null);
+          }, 9000);
+          window[cbName] = function(payload) {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            try { delete window[cbName]; } catch (e) {}
+            if (script.parentNode) script.parentNode.removeChild(script);
+            if (payload && payload.tabs && typeof payload.tabs === 'object') resolve(payload.tabs);
+            else resolve(null);
+          };
+          script.onerror = function() {
+            if (settled) return;
+            settled = true;
+            clearTimeout(timer);
+            try { delete window[cbName]; } catch (e) {}
+            if (script.parentNode) script.parentNode.removeChild(script);
+            resolve(null);
+          };
+          const sep = execUrl.indexOf('?') !== -1 ? '&' : '?';
+          script.src = execUrl + sep + 'callback=' + encodeURIComponent(cbName) + '&_ts=' + Date.now();
+          document.head.appendChild(script);
+        });
+      }
+
+      async function fetchViaAppsScript(execUrl) {
+        if (!execUrl) return null;
+        if (window.location && window.location.protocol === 'file:') {
+          return fetchViaAppsScriptJsonp(execUrl);
+        }
+        try {
+          const sep = execUrl.indexOf('?') !== -1 ? '&' : '?';
+          const res = await fetch(execUrl + sep + '_ts=' + Date.now(), { cache: 'no-store', redirect: 'follow' });
+          if (res.ok) {
+            const json = await res.json();
+            if (json && json.tabs && typeof json.tabs === 'object') return json.tabs;
+          }
+        } catch (err) {}
+        return fetchViaAppsScriptJsonp(execUrl);
+      }
+
       async function runSheetSync() {
         let sheetId = '';
+        let execUrl = DEFAULT_APPS_SCRIPT_URL;
         try {
-          const q = new URLSearchParams(window.location.search).get('sheet');
+          const params = new URLSearchParams(window.location.search);
+          const q = params.get('sheet');
+          const qExec = params.get('exec');
           if (q) sheetId = q.trim();
+          if (qExec) execUrl = qExec.trim();
         } catch (err) {}
-        if (!sheetId && (!window.location || window.location.protocol !== 'file:')) {
+        if (!window.location || window.location.protocol !== 'file:') {
           try {
             const cfgRes = await fetch('cms-config.json?v=' + Date.now());
             if (cfgRes.ok) {
               const cfg = await cfgRes.json();
               if (cfg && cfg.enabled === false) return;
-              if (cfg && cfg.sheetId) sheetId = String(cfg.sheetId).trim();
+              if (!sheetId && cfg && cfg.sheetId) sheetId = String(cfg.sheetId).trim();
+              if (!execUrl && cfg && cfg.appsScriptUrl) execUrl = String(cfg.appsScriptUrl).trim();
             }
           } catch (err) {}
         }
         if (!sheetId) sheetId = DEFAULT_SHEET_ID;
-        if (!sheetId) return;
+        if (!sheetId && !execUrl) return;
 
         const tabsToLoad = ['Settings', 'Hero', 'About', 'Services', 'Projects', 'Team', 'Articles', 'Reviews', 'FAQs', 'Partners'];
-        const results = await Promise.allSettled(tabsToLoad.map(function(name) { return fetchSheetTab(sheetId, name); }));
         const dataByTab = {};
         let readableTabCount = 0;
-        tabsToLoad.forEach(function(name, i) {
-          const val = (results[i] && results[i].status === 'fulfilled') ? results[i].value : null;
-          if (Array.isArray(val)) readableTabCount++;
-          dataByTab[name] = Array.isArray(val) ? val : [];
-        });
+
+        if (execUrl) {
+          const execTabs = await fetchViaAppsScript(execUrl);
+          if (execTabs) {
+            tabsToLoad.forEach(function(name) {
+              const rows = execTabs[name];
+              if (Array.isArray(rows)) readableTabCount++;
+              dataByTab[name] = Array.isArray(rows) ? rows : [];
+            });
+          }
+        }
+
+        if (readableTabCount === 0 && sheetId) {
+          const results = await Promise.allSettled(tabsToLoad.map(function(name) { return fetchSheetTab(sheetId, name); }));
+          tabsToLoad.forEach(function(name, i) {
+            const val = (results[i] && results[i].status === 'fulfilled') ? results[i].value : null;
+            if (Array.isArray(val)) readableTabCount++;
+            dataByTab[name] = Array.isArray(val) ? val : [];
+          });
+        }
 
         if (readableTabCount === 0) {
           if (!window.__ssWarnedAuth) {
             window.__ssWarnedAuth = true;
             if (window.console && console.warn) {
-              console.warn('[Scale & Spaces CMS] Google Sheet "' + sheetId + '" returned 401/restricted to unauthenticated requests. Enable Share -> Anyone with the link (Viewer) on your Sheet for real-time updates.');
+              console.warn('[Scale & Spaces CMS] Sheet "' + sheetId + '" is private (HTTP 401). Deploy Scale_and_Spaces_AppsScript.gs and set appsScriptUrl in cms-config.json (or pass ?exec=...) so live updates load while keeping the Sheet Restricted.');
             }
             try {
               if (new URLSearchParams(window.location.search).get('cms') === 'debug') {
                 const dbg = document.createElement('div');
-                dbg.style.cssText = 'position:fixed;bottom:14px;right:14px;z-index:9998;background:#8F0000;color:#fff;padding:10px 14px;font:12px/1.4 monospace;box-shadow:0 8px 24px rgba(0,0,0,.22);max-width:340px;';
-                dbg.textContent = 'Sheet CMS locked (HTTP 401): Open Share in Google Sheets -> General access -> Anyone with the link (Viewer).';
+                dbg.style.cssText = 'position:fixed;bottom:14px;right:14px;z-index:9998;background:#8F0000;color:#fff;padding:10px 14px;font:12px/1.4 monospace;box-shadow:0 8px 24px rgba(0,0,0,.22);max-width:360px;';
+                dbg.textContent = 'Private Sheet CMS: Waiting for Apps Script Web App URL (appsScriptUrl in cms-config.json).';
                 document.body.appendChild(dbg);
               }
             } catch (e) {}
@@ -6327,8 +6398,9 @@ async function run() {
   let existingCfg = {
     sheetId: defaultSheetId,
     enabled: true,
+    appsScriptUrl: '',
     sheetUrl: 'https://docs.google.com/spreadsheets/d/' + defaultSheetId + '/edit',
-    note: 'Share Sheet as Anyone with link -> Viewer (or transfer ownership to scaleandspaces@gmail.com anytime)'
+    note: 'Private Google Sheet Web App CMS: set appsScriptUrl to your deployed Google Apps Script /exec URL (keeps the Sheet Restricted).'
   };
   if (fs.existsSync(existingCfgPath)) {
     try {
@@ -6337,10 +6409,13 @@ async function run() {
         existingCfg = Object.assign({}, existingCfg, parsed);
         if (!existingCfg.sheetId) existingCfg.sheetId = defaultSheetId;
         existingCfg.sheetUrl = 'https://docs.google.com/spreadsheets/d/' + existingCfg.sheetId + '/edit';
+        existingCfg.note = 'Private Google Sheet Web App CMS: set appsScriptUrl to your deployed Google Apps Script /exec URL (keeps the Sheet Restricted).';
       }
     } catch (e) {}
   }
   const cmsConfigStr = JSON.stringify(existingCfg, null, 2) + '\n';
+  const appsScriptSrcPath = path.join(__dirname, 'Scale_and_Spaces_AppsScript.gs');
+  const appsScriptSrc = fs.existsSync(appsScriptSrcPath) ? fs.readFileSync(appsScriptSrcPath, 'utf8') : '';
 
   baseDirs.forEach(dir => {
     fs.mkdirSync(dir, { recursive: true });
@@ -6351,6 +6426,7 @@ async function run() {
     fs.writeFileSync(path.join(dir, 'robots.txt'), robotsTxt, 'utf8');
     fs.writeFileSync(path.join(dir, 'CNAME'), cnameTxt, 'utf8');
     fs.writeFileSync(path.join(dir, 'cms-config.json'), cmsConfigStr, 'utf8');
+    if (appsScriptSrc) fs.writeFileSync(path.join(dir, 'Scale_and_Spaces_AppsScript.gs'), appsScriptSrc, 'utf8');
     XLSX.writeFile(wb, path.join(dir, 'Scale_and_Spaces_CMS.xlsx'));
 
     renderedLegalPages.forEach(lp => {

@@ -4571,7 +4571,7 @@ const htmlBodyTemplate = `<!DOCTYPE html>
     // Live Google Sheet CMS Hydration (Upgradable Real-Time Sync: Apps Script Private Bridge + gviz Fallback across all 10 tabs)
     (function initGoogleSheetCms() {
       const DEFAULT_SHEET_ID = '1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts';
-      const DEFAULT_APPS_SCRIPT_URL = '';
+      const DEFAULT_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzjQupU_TnM5JO39-Tnuqri5uP1bwIzARciEdUuhLyXrSIcbNWbeUe2ZO7q4LZYsL7eNQ/exec';
       window.__ssWhatsappNumber = window.__ssWhatsappNumber || '9779703881733';
       let jsonpCounter = 0;
       let lastTabSigs = {};
@@ -6395,10 +6395,11 @@ async function run() {
 
   const existingCfgPath = path.join(__dirname, 'cms-config.json');
   const defaultSheetId = '1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts';
+  const defaultExecUrl = 'https://script.google.com/macros/s/AKfycbzjQupU_TnM5JO39-Tnuqri5uP1bwIzARciEdUuhLyXrSIcbNWbeUe2ZO7q4LZYsL7eNQ/exec';
   let existingCfg = {
     sheetId: defaultSheetId,
     enabled: true,
-    appsScriptUrl: '',
+    appsScriptUrl: defaultExecUrl,
     sheetUrl: 'https://docs.google.com/spreadsheets/d/' + defaultSheetId + '/edit',
     note: 'Private Google Sheet Web App CMS: set appsScriptUrl to your deployed Google Apps Script /exec URL (keeps the Sheet Restricted).'
   };
@@ -6408,6 +6409,7 @@ async function run() {
       if (parsed && typeof parsed === 'object') {
         existingCfg = Object.assign({}, existingCfg, parsed);
         if (!existingCfg.sheetId) existingCfg.sheetId = defaultSheetId;
+        if (!existingCfg.appsScriptUrl) existingCfg.appsScriptUrl = defaultExecUrl;
         existingCfg.sheetUrl = 'https://docs.google.com/spreadsheets/d/' + existingCfg.sheetId + '/edit';
         existingCfg.note = 'Private Google Sheet Web App CMS: set appsScriptUrl to your deployed Google Apps Script /exec URL (keeps the Sheet Restricted).';
       }

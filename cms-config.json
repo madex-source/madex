@@ -1,7 +1,7 @@
 {
   "sheetId": "1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts",
   "enabled": true,
-  "appsScriptUrl": "",
+  "appsScriptUrl": "https://script.google.com/macros/s/AKfycbzjQupU_TnM5JO39-Tnuqri5uP1bwIzARciEdUuhLyXrSIcbNWbeUe2ZO7q4LZYsL7eNQ/exec",
   "sheetUrl": "https://docs.google.com/spreadsheets/d/1ITHet6vFTLALr3u01Db-GGPRh1sAzdtuiGR1fvJruts/edit",
   "note": "Private Google Sheet Web App CMS: set appsScriptUrl to your deployed Google Apps Script /exec URL (keeps the Sheet Restricted)."
 }
